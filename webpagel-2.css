@@ -1,0 +1,114 @@
+/* CSS code for the style of the website */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: wheat;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background-color: red;
+        }
+
+        .header h1 {
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            text-shadow:  5px 0px blue;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: white;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: blue;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .nav a:hover {
+            color: yellow;
+        }
+
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .main .card {
+            width: 30%;
+            margin: 10px;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+
+        .main .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .main .card .content {
+            padding: 20px;
+        }
+
+        .main .card .content h3 {
+            text-align: center;
+            color: blue;
+        }
+
+        .main .card .content p {
+            text-align: start;
+        }
+
+        .main .card .content a {
+            display: block;
+            text-align: center;
+            text-decoration: solid;
+            color: blue;
+            padding: 10px;
+            border: 1px solid blue;
+            background-color: wheat;
+            
+        }
+
+        .main .card .content a:hover {
+            color: yellow;
+            background-color: blue;
+        }
+
+        .footer {
+            background-color: #fff;
+            color: black;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 768px) {
+            /* CSS code for the responsiveness of the website */
+            .nav {
+                flex-direction: column;
+            }
+
+            .main .card {
+                width: 90%;
+            }
+        }
