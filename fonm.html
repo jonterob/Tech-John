@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>registration form</title>
+    </head>
+    
+        <style>
+            form {
+            border: 1px solid #c73838; /* Set border style, width, and color */
+            padding: 20px; /* Add some padding for better appearance */
+            width: 500px; /* Set the width of the form */
+            margin: 20px auto; /* Center the form on the page */
+            border-radius: 50px;
+        }
+        textarea{background-color: rgb(143, 116, 116);}
+        textarea{border-radius: 15px;}
+        input{border-radius: 50px;}
+        </style>
+        <body>
+        <form action="process_form.php"method="post" >
+            <p style="color: red;"><b style="font-size: 50px;">Student Details:</b></p>
+        <table>
+            <tr>
+                <th style="color: blue;">Reg No:</th>
+                <td><input type="text" name="Reg No:"required></td>
+            </tr>
+            <tr>
+                <th style="color: blue;">Name:</th>
+                <td><input type="text" name="Name"required></td>
+            </tr>
+        </table>
+        <p style="color: red;"><b style="font-size: 50px;">Education History:</b></p>
+        <textarea name="Education History" id="Education History" cols="60" rows="10"required></textarea>
+        <p style="text-align: center;"><input type="submit" button="submit"style="background-color: RED;"> <input type="reset" button="reset"style="background-color:red;"></p>
+        <footer>&copy;All righs reserved by <a href="mailto:jonterob756@gmail.com">jonte rob</a></footer></body>
+        </form>
+    
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html><html><head><title>form</title></head>
+  <style>form{width: 30%;margin:auto;border: 1px solid blue  ;padding: 20px;border-radius: 20px;background-color: wheat;}input,select,text area{padding-bottom: 7px;margin-bottom: 30px;border-radius: 40px;width: 60%;display: block;}div{display: flex;text-align: center;padding-top: 50px;}</style>
+  <body><form action="process.php" method="post">
+      <h1>Enter the personal details :</h1>
+      Enter your First Name : <input type="text" placeholder="Please enter your First Name :" required style="background-color: chartreuse;"/>
+      Enter your Middle name : <input type="text" placeholder="Please enter your Middle Name :" required style="background-color: chartreuse;"/>
+      Enter your Last Name : <input type="text" placeholder="Please enter your last Name :" required style="background-color: chartreuse;"/>
+      Enter your Nationality : <input type="text" placeholder="Please enter your Nationality :" required style="background-color: chartreuse;"/>
+      Enter your Date Of Birth : <input type="date" required style="background-color: chartreuse;">
+      Enter your Age : <input type="number" placeholder="Please enter your Age :" required style="background-color: chartreuse;"/>
+      Enter your Email : <input type="email" placeholder="Please enter your Email here" required style="background-color: chartreuse;"/>
+      Select your Gender :<select name="Gender" required style="background-color: chartreuse;width: 40%;">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                          </select>
+      Please select your Education level :
+      <select name="Level" required style="background-color: chartreuse;width: 40%;">
+                          <option value="Primary">Primary</option>
+                          <option value="Secondary">Secondary</option>
+                          <option value="Undergraduate">Undergraduate</option>
+                          <option value="Master-degree">Master-degree</option>
+                          <option value="Doctorate">Doctorate</option>
+                          </select>
+      Please upload your Photo :<input type="file" required style="background-color: chartreuse;width: 40%;"/>
+      Please write more about yourself here:
+      <textarea cols="50" rows="10" placeholder="Write more about yourself here in paragraph form:" style="font-style: italic;background-color: lightseagreen;bottom: 10px;"></textarea> </textarea>
+      <div><input type="submit" value="Send details" style="background-color: chartreuse; color: red; width: 25%;margin-left: 50px;">  <input type="reset" value="Reset Details" style="background-color:chartreuse;color: red;width: 25%;margin-left: 70px;"></div>
+</form></body></html>

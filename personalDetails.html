@@ -1,0 +1,192 @@
+<!DOCTYPE html><html><head><title>form</title></head>
+<style>
+  h2{
+    border-top: 1px solid green;
+    border-bottom: 9px solid green;
+    border-left: 2px solid green;
+    border-right: 1px solid green;
+    text-align: center;
+    border-radius: 30px;
+    background-color: beige;
+    padding: 10px;
+  }
+  p{
+    border-top: 1px solid black;
+    text-align: center;
+  }
+   form{
+    width: 30%;
+    margin:auto;
+    border: 1px solid blue  ;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: wheat;
+    }
+  input,select{
+    padding-bottom: 7px;
+    margin-bottom: 30px;
+    border-radius: 40px;
+    width: 60%;
+    display: block;
+    background-color: chartreuse;;
+    }
+ textarea{
+    width: 80%;
+    font-style: italic;
+    background-color: lightseagreen;
+    border-radius: 10px;
+    }
+ div{
+    display: flex;
+    text-align: center;
+    padding-top: 20px;
+    }
+</style>
+<body>
+     <body>
+          <form action="process.php" method="post">
+            <h2>Please enter your personal details :</h2>
+            Enter your First Name : <input type="text" placeholder="Please enter your First Name :" required />
+            Enter your Middle name : <input type="text" placeholder="Please enter your Middle Name :" required />
+            Enter your Last Name : <input type="text" placeholder="Please enter your last Name :" required />
+            Enter your Nationality : <input type="text" placeholder="Please enter your Nationality :" required/>
+            Enter your Date Of Birth : <input type="date" required >
+            Enter your Age : <input type="number" placeholder="Please enter your Age :" required />
+            Enter your Email : <input type="email" placeholder="Please enter your Email here" required />
+            Please range us in a scale of 1 to 10 :<input type="range" required/>
+            What is your favourite color? <input type="color" required>
+            Select your Gender :<select name="Gender" required >
+                                  <option value="0">--Select your Gender--</option>
+                                  <option value="male">Male</option>
+                                  <option value="female">Female</option>
+                                  <option value="other">Other</option>
+                                </select>
+            Please select your level of Education :
+                                <select name="Level" required >
+                                <option value="0">--Select Level of Education--</option>
+                                <option value="Primary">Primary</option>
+                                <option value="Secondary">Secondary</option>
+                                <option value="Undergraduate">Undergraduate</option>
+                                <option value="Master-degree">Master-degree</option>
+                                <option value="Doctorate">Doctorate</option>
+                                </select>
+            please select your Tribe :
+<select name="Tribe" required>
+<option value="0">--Select Tribe--</option>
+<option value="ABAGUSII">ABAGUSII</option>
+<option value="ABALUHYA">ABALUHYA</option>
+<option value="ABASUBA">ABASUBA</option>
+<option value="AGIKUYU">AGIKUYU</option>
+<option value="AJURAN">AJURAN</option>
+<option value="AMERICAN">AMERICAN</option>
+<option value="AMERU">AMERU</option>
+<option value="ARAB">ARAB</option>
+<option value="BAJUN">BAJUN</option>
+<option value="BAJUNI">BAJUNI</option>
+<option value="BANTU">BANTU</option>
+<option value="BORANA">BORANA</option>
+<option value="BUKUSU">BUKUSU</option>
+<option value="BUNYALA">BUNYALA</option>
+<option value="BURJI">BURJI</option>
+<option value="CHAGGA">CHAGGA</option>
+<option value="CHONYI">CHONYI</option>
+<option value="DAGODIA">DAGODIA</option>
+<option value="DIGO">DIGO</option>
+<option value="DURUMA">DURUMA</option>
+<option value="ELGEYO">ELGEYO</option>
+<option value="EMBIAN">EMBIAN</option>
+<option value="EMBU">EMBU</option>
+<option value="GABRA">GABRA</option>
+<option value="GICUKU  GATANG&#39;ARA">GICUKU  GATANG&#39;ARA</option>
+<option value="GIKUYU">GIKUYU</option>
+<option value="GIRIAMA">GIRIAMA</option>
+<option value="GIRYAMA">GIRYAMA</option>
+<option value="GURREH">GURREH</option>
+<option value="GUSII">GUSII</option>
+<option value="GUSSI">GUSSI</option>
+<option value="ISUKHA">ISUKHA</option>
+<option value="ITESO">ITESO</option>
+<option value="JIBANA">JIBANA</option>
+<option value="KALENJIN">KALENJIN</option>
+<option value="KALENJINE">KALENJINE</option>
+<option value="KAMBA">KAMBA</option>
+<option value="KAMBE">KAMBE</option>
+<option value="KAUMA">KAUMA</option>
+<option value="KEIYO">KEIYO</option>
+<option value="KENYA">KENYA</option>
+<option value="KENYAN">KENYAN</option>
+<option value="KENYAN ARAB">KENYAN ARAB</option>
+<option value="KIKIYU">KIKIYU</option>
+<option value="KIKUYU">KIKUYU</option>
+<option value="KILIFI">KILIFI</option>
+<option value="KIPSIGIS">KIPSIGIS</option>
+<option value="KISII">KISII</option>
+<option value="KISIII">KISIII</option>
+<option value="KIUKUYU">KIUKUYU</option>
+<option value="KURIA">KURIA</option>
+<option value="LALI">LALI</option>
+<option value="LUGHYA">LUGHYA</option>
+<option value="LUHYA">LUHYA</option>
+<option value="LUO">LUO</option>
+<option value="LUYHA">LUYHA</option>
+<option value="LUYIA">LUYIA</option>
+<option value="MAASAI">MAASAI</option>
+<option value="MARACHI">MARACHI</option>
+<option value="MARAGOLI">MARAGOLI</option>
+<option value="MARAKWET">MARAKWET</option>
+<option value="MARAMA">MARAMA</option>
+<option value="MBEERE">MBEERE</option>
+<option value="MBEEREAN">MBEEREAN</option>
+<option value="MDURUMA">MDURUMA</option>
+<option value="MERIAN">MERIAN</option>
+<option value="MERU">MERU</option>
+<option value="MIJIKENDA">MIJIKENDA</option>
+<option value="MIJIKENDA-CHONYI">MIJIKENDA-CHONYI</option>
+<option value="MIJIKENDA-GIRIAMA">MIJIKENDA-GIRIAMA</option>
+<option value="MKAMBA">MKAMBA</option>
+<option value="MKISII">MKISII</option>
+<option value="MORAN">MORAN</option>
+<option value="MURALE">MURALE</option>
+<option value="MUTHAMBI">MUTHAMBI</option>
+<option value="NANDI">NANDI</option>
+<option value="NDERA">NDERA</option>
+<option value="NDIGO">NDIGO</option>
+<option value="NDURUMA">NDURUMA</option>
+<option value="NGIRIAMA">NGIRIAMA</option>
+<option value="OGIEK">OGIEK</option>
+<option value="ORMA">ORMA</option>
+<option value="OROMO">OROMO</option>
+<option value="PARE">PARE</option>
+<option value="POKOMO">POKOMO</option>
+<option value="POKOT">POKOT</option>
+<option value="RABAI">RABAI</option>
+<option value="RENDILLE">RENDILLE</option>
+<option value="RIBE">RIBE</option>
+<option value="SABAOT">SABAOT</option>
+<option value="SAMBURU">SAMBURU</option>
+<option value="SANYE">SANYE</option>
+<option value="SENGWER">SENGWER</option>
+<option value="SOMALI">SOMALI</option>
+<option value="SOUTH SUDAN">SOUTH SUDAN</option>
+<option value="SUBA">SUBA</option>
+<option value="SWAHILI">SWAHILI</option>
+<option value="TACHONI">TACHONI</option>
+<option value="TAITA">TAITA</option>
+<option value="TAVETA">TAVETA</option>
+<option value="TERIK">TERIK</option>
+<option value="TESO">TESO</option>
+<option value="THARAKA">THARAKA</option>
+<option value="TUGEN">TUGEN</option>
+<option value="TURKANA">TURKANA</option>
+<option value="WANGA">WANGA</option>
+<option value="YAAKU">YAAKU</option>
+            Please upload your Photo :<input type="file" required />
+            Please write more about yourself here:
+            <textarea cols="50" rows="10" placeholder="Write more about yourself here in paragraph form:"required></textarea>
+                <div>
+                    <input type="submit" value="Send details" style=" color: blue; width: 25%;margin-left: 40px;"><input type="reset" value="Reset Details" style=" color: blue;width: 25%;margin-left: 60px;">
+                </div>
+            <p>All rights reserved &copy; 2024 by <a href="mailto:jonterob756@gmail.com">jonterob</a></p>
+        </form>  
+    </body>
+</html>

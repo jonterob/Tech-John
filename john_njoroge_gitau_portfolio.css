@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 30px auto;
+    width: 90%;
+} 
+header {
+    display: flex;
+    color: blue;
+    border-radius: 40px;
+    width: 80%;
+    margin: 20px auto;font-style: Bodoni MT ;
+}
+
+section {
+    padding: 1px;
+    margin: 20px auto;
+    border-radius: 50px;
+    width: 80%;
+    display: block; 
+}
+
+h1{
+    border-bottom: 5px solid green;
+}
+
+h2{
+    border-bottom: 2px solid orangered;
+}
+
+footer {
+    padding: 1px;
+    width: 83%;
+    text-align: center;
+    border-radius: 20px;
+    margin: 20px auto;
+}
+#headerText {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    color: red;
+}
+#dateTime {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+    color: blue;
+}
