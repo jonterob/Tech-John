@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Car Game</title>
+  <style>
+    /* CSS code for styling the game elements */
+    .gameArea {
+      height: 100vh;
+      width: 400px;
+      margin: auto;
+      position: relative;
+      background-color: black;
+      overflow: hidden;
+      border-left: 4px solid white;
+      border-right: 4px solid white;
+    }
+
+    .car {
+      background: url(blue-car.png); /* You need to have a blue car image in the same folder as this file */
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      height: 75px;
+      width: 50px;
+      position: absolute;
+      top: 520px;
+    }
+
+    .opponents {
+      background: url(red-car.png); /* You need to have a red car image in the same folder as this file */
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      height: 75px;
+      width: 50px;
+      position: absolute;
+      top: -100px;
+    }
+
+    .roadLines {
+      height: 50px;
+      width: 10px;
+      background-color: yellow;
+      position: absolute;
+      margin-left: 195px;
+    }
+
+    .startGame {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .scoreBoard {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: red;
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="gameArea">
+    <!-- HTML code for creating the game elements -->
+    <div class="car"></div>
+    <div class="opponents"></div>
+    <div class="roadLines"></div>
+    <div class="roadLines" style="top: 150px;"></div>
+    <div class="roadLines" style="top: 300px;"></div>
+    <div class="roadLines" style="top: 450px;"></div>
+    <div class="roadLines" style="top: 600px;"></div>
+    <div class="startGame">Start Game</div>
+    <div class="scoreBoard">Score: 0</div>
+  </div>
+  <script>
+    /* JavaScript code for adding the game logic and functionality */
+    // Get the game elements by their class names
+    let car = document.querySelector(".car");
+    let opponents = document.querySelector(".opponents");
+    let roadLines = document.querySelectorAll(".roadLines");
+    let startGame = document.querySelector(".startGame");
+    let scoreBoard = document.querySelector(".scoreBoard");
+
+    // Define some variables for the game state and settings
+    let gameArea = document.querySelector(".gameArea");
+    let gameAreaWidth = gameArea.offsetWidth;
+    let gameAreaHeight = gameArea.offsetHeight;
+    let carWidth = car.offsetWidth;
+    let carHeight = car.offsetHeight;
+    let opponentsWidth = opponents.offsetWidth;
+    let opponentsHeight = opponents.offsetHeight;
+    let carX = gameAreaWidth / 2 - carWidth / 2; // The initial horizontal position of the car
+    let carY = gameAreaHeight - carHeight - 20; // The initial vertical position of the car
+    let opponentsX = Math.floor(Math.random() * (gameAreaWidth - opponentsWidth)); // The initial horizontal position of the opponents
+    let opponentsY = -opponentsHeight; // The initial vertical position of the opponents
+    let roadLinesY = 0; // The initial vertical position of the road lines
+    let speed = 5; // The speed of the car and the opponents
+    let score = 0; // The initial score of the game
+    let gameOn = false; // The flag to indicate whether the game is on or not
+
+    // Define a function to start the game
+    function start() {
+      // Hide the start game button
+      startGame.style.display = "none";
+      // Set the game on flag to true
+      gameOn = true;
+      // Call the update function to update the game elements
+      update();
+    }
+
+    // Define a function to update the game elements
+    function update() {
+      // Check if the game is on
+      if (gameOn) {
+        // Move the car according to the user input
+        moveCar();
+        // Move the opponents
+        moveOpponents();
+        // Move the road lines
+        moveRoadLines();
+        // Update the score
+        updateScore();
+        // Check for collision
+        checkCollision();
+        // Request the next animation frame
+        requestAnimationFrame(update);
+      }
+    }
+
+    // Define a function to move the car according to the user input
+    function moveCar() {
+      // Add an event listener for the keydown event
+      document.addEventListener("keydown", function (e) {
+        // Check which key is pressed
+        if (e.key == "ArrowLeft") {
+          // Move the car to the left by decreasing its horizontal position
+          carX -= speed;
+        } else if (e.key == "ArrowRight") {
+          // Move the car to the right by increasing its horizontal position
+          carX += speed;
+        }
+        // Check the boundaries of the car
+        if (carX < 0) {
+          // Prevent the car from going out of the left boundary
+          carX = 0;
+        } else if (carX > gameAreaWidth - carWidth) {
+          // Prevent the car from going out of the right boundary
+          carX = gameAreaWidth - carWidth;
+        }
+        // Set the horizontal position of the car
+        car.style.left = carX + "px";
+      });
+    }
+
+    // Define a function to move the opponents
+    function moveOpponents() {
+      // Increase the vertical position of the opponents by the speed
+      opponentsY += speed;
+      // Check if the opponents have reached the bottom of the game area
+      if (opponentsY > gameAreaHeight) {
+        // Reset the vertical position of the opponents to the top
+        opponentsY = -opponentsHeight;
+        // Randomize the horizontal position of the opponents
+        opponentsX = Math.floor(Math.random() * (gameAreaWidth - opponentsWidth));
+        // Increase the score by one
+        score++;
+      }
+      // Set the horizontal and vertical position of the opponents
+      opponents.style.left = opponentsX + "px";
+      opponents.style.top = opponentsY + "px";
+    }
+
+    // Define a function to move the road lines
+    function moveRoadLines() {
+      // Loop through the road lines
+      for (let i = 0; i < roadLines.length; i++) {
+        // Get the current road line
+        let roadLine = roadLines[i];
+        // Get the vertical position of the road line
+        let roadLineY = roadLine.offsetTop;
+        // Increase the vertical position of the road line by the speed
+        roadLineY += speed;
+        // Check if the road line has reached the bottom of the game area
+        if (roadLineY > gameAreaHeight) {
+          // Reset the vertical position of the road line to the top
+          roadLineY = -100;
+        }
+        // Set the vertical position of the road line
+        roadLine.style.top = roadLineY + "px";
+      }
+    }
+
+    // Define a function to update the score
+    function updateScore() {
+      // Set the text content of the score board to the score
+      scoreBoard.textContent = "Score: " + score;
+    }
+
+    // Define a function to check for collision
+    function checkCollision() {
+      // Calculate the distance between the car and the opponents
+      let distanceX = Math.abs(carX - opponentsX);
+      let distanceY = Math.abs(carY - opponentsY);
+      // Check if the distance is less than the width and height of the car
+      if (distanceX < carWidth && distanceY < carHeight) {
+        // Stop the game
+        gameOn = false;
+        // Show the start game button
+        startGame.style.display = "block";
+        // Set the text content of the start game button to "Game Over"
+        startGame.textContent = "Game Over";
+      }
+    }
+
+    // Add an event listener for the click event on the start game button
+    startGame.addEventListener("click", start);
+  </script>
+</body>
+</html>
