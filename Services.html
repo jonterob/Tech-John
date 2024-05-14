@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Services</h1>
+    </header>
+    <main>
+        <section id="website-development">
+            <h2>Website Development</h2>
+            <p>We create a customized website for your business or personal use.</p>
+            <button onclick="requestService('Website Development')">Request Service</button>
+        </section>
+        <section id="software-development">
+            <h2>Software Development</h2>
+            <p>We develop custom software solutions tailored to your specific needs.</p>
+            <button onclick="requestService('Software Development')">Request Service</button>
+        </section>
+        <!-- Other service sections -->
+    </main>
+
+    <script>
+        function requestService(serviceName) {
+            alert(`Thank you for your interest in ${serviceName}! We will get in touch with you shortly.`);
+            // Here you can add further actions like sending a request to a backend service for processing
+        }
+    </script>
+</body>
+</html>
