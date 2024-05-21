@@ -65,28 +65,33 @@
          <section id="portfolio">
             <h2> My Portfolio</h2>
               <div class="left">
-                  <p> <b>My website page :</b> <a href=WEB\portal-1.html>Please click here!</a></p>
+                  <p> <b>My website page :</b> <a href=Home.html>Please click here!</a></p>
                       <img src="WhatsApp Image 2024-02-11 at 19.04.54_2b60aef8.jpg" alt="jonte rob" style="height: 200px;width: 200px;border-radius: 100px;"><br>
-                      <script> 
-                      function Description()
-                      {
-                        var age;
-        age = prompt("Please enter your age here");
-        var x = parseInt(age);
+                         <script>
+        function Description() {
+            var age = prompt("Please enter your age here");
 
-        if (x <=0 || x <=18) {
-                alert("Invalid input! Sorry you are not allowed to access this");
-            } else 
-         {
-    
-          alert("Jonte Rob Is A Hardworking student,Excellent In Academic Performance And very Good In Discipline,Humble And Self-Driven");
+            if (age === null) {
+                alert("Prompt canceled.");
+                return;
+            }
+
+            var x = parseInt(age);
+
+            if (isNaN(x)) {
+                alert("Invalid input! Please enter a valid number.");
+            } else if (x <= 0) {
+                alert("Invalid input! Age must be greater than 0.");
+            } else if (x <= 18) {
+                alert("Sorry, you are not allowed to access this.");
+            } else {
+                alert("Jonte Rob Is A Hardworking student, Excellent In Academic Performance And very Good In Discipline, Humble And Self-Driven.");
+            }
         }
-      }
-          </script>
-           <form>
-          </script>
-            <input type="button" value="Know More? Click me!"onclick="Description()" style="color: red;">
-                      </form>
+    </script
+        <form>
+        <button onclick="Description()">Enter Age</button>
+        </form>
                         </div>
                        <div class="section">
                    </div>
@@ -95,7 +100,7 @@
                <ul><li> <b>Email to:</b> <a href="mailto:jonterob756@gmail.com">jonterob756@gmail.com</a></li><br></b><li><b> Tel : </b>[+254110856452]</li></ul>
                    </section>
                     <footer>
-                 <p>&copy; 2023 <a href="mailto:jonterob756@gmail.com"> jonterob</a> </p>
+                 <p>&copy; 2024 <a href="mailto:jonterob756@gmail.com"> jonterob</a> </p>
                  
           
         </footer> 
