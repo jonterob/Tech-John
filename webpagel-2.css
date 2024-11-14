@@ -106,6 +106,8 @@ body {
     .nav {
         display: flex; /* Retain flex layout for smaller screens */
         flex-direction: column; /* Stack navigation items vertically */
+        justify-content: center; /* Center navigation items horizontally */
+        align-items: center; /* Center navigation items vertically */
     }
 
     .main .card {
