@@ -3,95 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Navigation</title>
+    <title>Device Detection with Flex Navigation</title>
     <style>
-        /* Reset Styles */
+        /* Basic Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Body Styles */
         body {
             font-family: Arial, sans-serif;
             background-color: wheat;
             line-height: 1.6;
         }
 
-        /* Navigation Styles */
         .nav {
-            display: -webkit-box; /* Fallback for older Android browsers */
-            display: -ms-flexbox; /* Fallback for IE */
-            display: flex; /* Standard Flexbox */
-            flex-direction: row; /* Horizontal layout by default */
-            justify-content: space-around; /* Space between items */
+            display: flex; /* Default Flexbox */
+            flex-direction: row; /* Horizontal layout */
+            justify-content: space-around; /* Space between links */
             align-items: center; /* Center items vertically */
             background-color: white;
-            padding: 10px; /* Add some spacing inside the bar */
-            flex-wrap: nowrap; /* Prevent wrapping */
-            border-bottom: 2px solid black; /* Optional for visibility */
-            gap: 10px; /* Space between items */
-            min-height: 50px; /* Ensure nav has a height */
-            position: sticky; /* Keep nav visible at the top */
-            top: 0;
-            z-index: 1000; /* Ensure it's above other content */
+            padding: 10px;
+            gap: 10px;
+            border: 1px solid black;
         }
 
-        /* Navigation Links */
         .nav a {
             text-decoration: none;
             color: blue;
             font-size: 18px;
             font-weight: bold;
-            padding: 10px 15px; /* Add space around clickable area */
-            flex-shrink: 0; /* Prevent items from shrinking */
-            transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover */
+            padding: 10px;
+            transition: color 0.3s ease, background-color 0.3s ease;
         }
 
-        /* Hover Effect */
         .nav a:hover {
             color: white;
-            background-color: blue; /* Add a background for emphasis */
-            border-radius: 5px; /* Optional: rounded edges */
+            background-color: blue;
+            border-radius: 5px;
         }
 
-        /* Responsive Design for Smaller Screens */
+        /* Mobile Adjustments */
         @media screen and (max-width: 768px) {
             .nav {
-                flex-direction: column; /* Stack items vertically */
-                justify-content: center; /* Center items */
-                align-items: center; /* Align links horizontally */
-                padding: 15px 0; /* Add vertical spacing */
+                flex-direction: column; /* Stack links vertically on small screens */
             }
-
-            .nav a {
-                font-size: 16px; /* Adjust size for smaller screens */
-                padding: 8px 10px; /* Reduce padding */
-            }
-        }
-
-        /* Extra: Style for Active Links */
-        .nav a.active {
-            color: white;
-            background-color: darkblue;
-            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
     <div class="nav">
-        <a href="#home" class="active">Home</a>
+        <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
     </div>
 
-    <!-- Example Content -->
     <div style="padding: 20px; text-align: center;">
         <h1>Welcome to My Portfolio</h1>
         <p>Scroll down to explore more...</p>
     </div>
+
+    <script>
+        // JavaScript to Detect Device
+        function detectDevice() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const nav = document.querySelector('.nav');
+
+            // Adjust flex direction dynamically based on device
+            if (isMobile) {
+                console.log('Mobile device detected');
+                nav.style.display = 'flex';
+                nav.style.flexDirection = 'column'; // Ensure vertical stacking for smaller screens
+            } else {
+                console.log('PC detected');
+                nav.style.display = 'flex';
+                nav.style.flexDirection = 'row'; // Default horizontal layout
+            }
+        }
+
+        // Run detection on page load
+        detectDevice();
+    </script>
 </body>
 </html>
