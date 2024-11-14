@@ -45,9 +45,39 @@
         </div>
         <div class="footer">
            <script type="text/javascript">
+               
                // Dynamic Year
                const currentYear = document.getElementById('currentYear');
                currentYear.textContent = new Date().getFullYear();
+               
+               // Function to detect the device type 
+               function detectDevice() { 
+                   var userAgent = navigator.userAgent.toLowerCase(); 
+                   var isAndroid = userAgent.indexOf("android") > -1; 
+                   var isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream; 
+                   
+                   if (isAndroid || isIOS) 
+                   { 
+                       return 'mobile'; 
+                   } 
+                      else { return 'desktop';
+                    }
+                   } 
+               
+               // Apply styles based on the device type 
+               function applyDeviceSpecificStyles() 
+               { 
+                   var deviceType = detectDevice(); 
+                   if (deviceType === 'mobile') 
+                   { 
+                       var nav = document.querySelector('.nav'); 
+                       nav.style.flexDirection = 'column'; 
+                       nav.style.justifyContent = 'center'; 
+                   } 
+               } 
+               
+               // Run the function on page 
+               load window.onload = applyDeviceSpecificStyles;
            </script>
             <p> © <span id="currentYear"></span> <a href="https://jonterob.github.io/Tech-John">John Njoroge Gitau.</a> All rights reserved.</p>
         </div>
