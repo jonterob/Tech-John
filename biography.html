@@ -1,109 +1,175 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>GITAU JOHN'S EDUCATIONAL JOURNEY</title>
-	<style>
-		body {
-			font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-			background-color: transparent;
-			margin: 0;
-			padding: 0;
-		}
-		
-		.container {
-			max-width: 800px;
-			margin: 20px auto;
-			padding: 20px;
-			background-color: white;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-			border-radius: 20px;
-			box-shadow: 0 0 10px rgb(84, 84, 117);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gitau John's Portfolio</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Cambria', serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #333;
+      transition: background-color 0.3s, color 0.3s;
+    }
 
-		}
-		
-		h1 {
-			text-align: center;
-			margin-bottom: 20px;
-			color: #0000ff;
-			border-top: 1px solid green;
-			border-bottom: 9px solid green;
-			border-left: 2px solid green;
-			border-right: 1px solid green;
-			border-radius: 30px;
-		}
-		
-		.img-container {
-			display: flex;
-			gap: 400px;
-			justify-content: center;
-			margin-bottom: 20px;
-		}
-		
-		.img-container img {
-			width: 150px;
-			height: 150px;
-			object-fit: cover;
-			border-radius: 50%;
-			margin: 0 10px;
-			box-shadow: 0 0 10px blue;
-		}
-		
-		.section {
-			margin-bottom: 20px;
-		}
-		
-		.section h2 {
-			margin-bottom: 10px;
-            color: #ff0000;
-		}
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
 
-		.section h3 {
-			color: blue;
-		}
-		
-		.section p {
-			margin: 5px 0;
-		}
-	</style>
+    /* Header */
+    .header {
+      text-align: center;
+      background-color: #0073e6;
+      color: #fff;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header h1 {
+      margin: 0;
+    }
+
+    .theme-toggle {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #ff9900;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .theme-toggle:hover {
+      background-color: #e68a00;
+    }
+
+    /* Sections */
+    section {
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    section:hover {
+      transform: scale(1.02);
+    }
+
+    /* Profile Section */
+    .profile-images {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .profile-images img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+
+    .profile-images img:hover {
+      transform: rotate(10deg) scale(1.1);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 10px 0;
+      background-color: #333;
+      color: #fff;
+    }
+
+    /* Dark Theme */
+    body.dark-mode {
+      background-color: #333;
+      color: #f7f7f7;
+    }
+
+    body.dark-mode .footer {
+      background-color: #555;
+    }
+  </style>
 </head>
 <body>
-	<div class="container">
-		<h1>GITAU JOHN'S EDUCATIONAL JOURNEY</h1>
-		
-		<div class="img-container">
-			<img src="WhatsApp Image 2024-02-11 at 19.05.48_1f639c6b.jpg" alt="jonte_rob">
-			<img src="Screenshot_20231217-121019.jpg" alt="jonte_rob">
-		</div>
-		
-		<div class="section">
-			<h2>Personal Background :</h2>
-			<p>I'm Gitau John Njoroge, Born in the vibrant year of 2003/02/12, third-born in the Gitau family, proudly hailing from the scenic landscapes of Murang'a County, Kenya.</p>
-		</div>
-		
-		<div class="section">
-			<h2>Educational Journey :</h2>
-			
-			<div class="subsection">
-				<h3>Primary School :</h3>
-				<p>Transitioning to Matu Primary School in 2008, I eagerly embraced the challenges of Class One and continued my primary education journey until 2016. Throughout these years, my commitment to good behavior became a hallmark of my character, fostering a positive learning environment. It was during this time that my determination to delve into the world of computer science began to take root.</p>
-			</div>
-			<div class="subsection">
-				<h3>Matu High School (2017-2020) :</h3>
-				<p>The halls of Matu High School became my academic haven from 2017 to 2020. This transformative period not only saw me pass academically but also witnessed the crystallization of my passion for computer science. The dynamic curriculum and supportive educators fueled my curiosity, and my experiences at Matu High School played a pivotal role in shaping my academic and personal growth.</p>
-				<p>Matu High School wasn't just a place of learning; it was a community that nurtured ambition and encouraged exploration. The friendships forged, lessons learned, and challenges overcome during this period were instrumental in preparing me for the next phase of my academic journey.</p>
-			</div>
-			<div class="subsection">
-				<h3>Kirinyaga University (Undergraduate Degree in Computer Science) 2020-Now :</h3>
-				<p>Having successfully completed my high school education, I embarked on a new chapter at Kirinyaga University. Currently pursuing an undergraduate degree in Computer Science, I am immersed in a world of algorithms, coding languages and the boundless possibilities of technology.</p>
-			</div>
-		</div>
-		
-		<div class="section">
-			<h2>Interests and Hobbies :</h2>
-			<p>Beyond the realm of computer science, I find joy in exploring the fusion of technology and creativity. As an avid coder, I often engage in personal coding projects, not just for academic growth but also to bring innovative ideas to life. Additionally, my love for graphic design serves as a delightful complement to my academic pursuits, allowing me to blend analytical thinking with artistic expression.</p>
-			<p>In my downtime, I am an enthusiast of photography, where I find solace and inspiration. Capturing moments through the lens allows me to appreciate the beauty in both the digital and physical worlds. These diverse interests contribute to my well-rounded personality, fostering a holistic approach to learning and enhancing my problem-solving skills.</p>
-		</div>
-	</div>
+  <header class="header">
+    <h1>Gitau John's Portfolio</h1>
+    <button id="themeToggle" class="theme-toggle">Toggle Theme</button>
+  </header>
+
+  <main class="container">
+    <section class="profile-section">
+      <div class="profile-images">
+        <img src="WhatsApp Image 2024-02-11 at 19.05.48_1f639c6b.jpg" alt="Gitau John">
+        <img src="Screenshot_20231217-121019.jpg" alt="Gitau John">
+      </div>
+      <h2>About Me</h2>
+      <p>
+        I'm Gitau John Njoroge, born in 2003 in the scenic Murang'a County, Kenya. 
+        As a passionate computer science student, I love solving problems and creating innovative solutions.
+      </p>
+    </section>
+
+    <section class="education-section">
+      <h2>Educational Journey</h2>
+      <article class="education-item">
+        <h3>Primary School</h3>
+        <p>Attended Matu Primary School from 2008 to 2016, where my passion for technology was first ignited.</p>
+      </article>
+      <article class="education-item">
+        <h3>High School</h3>
+        <p>Graduated from Matu High School (2017-2020), where I honed my academic skills and developed my love for computer science.</p>
+      </article>
+      <article class="education-item">
+        <h3>Kirinyaga University</h3>
+        <p>
+          Currently pursuing an undergraduate degree in Computer Science. Exploring the world of programming, algorithms, and cutting-edge technologies.
+        </p>
+      </article>
+    </section>
+
+    <section class="interests-section">
+      <h2>Interests and Hobbies</h2>
+      <ul>
+        <li>Coding and building innovative projects.</li>
+        <li>Graphic design and creative visualizations.</li>
+        <li>Photography as a form of storytelling.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="currentYear"></span> Gitau John. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      themeToggle.textContent = document.body.classList.contains('dark-mode')
+        ? 'Switch to Light Theme'
+        : 'Switch to Dark Theme';
+    });
+
+    // Dynamic Current Year
+    const currentYear = document.getElementById('currentYear');
+    currentYear.textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
