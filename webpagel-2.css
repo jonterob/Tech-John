@@ -1,49 +1,116 @@
-/* Global Reset */
+/* Global CSS reset */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* Body Styles */
 body {
     font-family: Arial, sans-serif;
     background-color: wheat;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-/* Navigation Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: red;
+}
+
+.header h1 {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-shadow: 5px 0px blue;
+}
+
+/* Navigation section */
 .nav {
     display: flex;
-    flex-direction: row; /* Default to horizontal layout */
-    justify-content: space-around; /* Equal spacing between links */
-    align-items: center; /* Center items vertically */
+    flex-direction: row; /* Ensure it's row by default */
+    justify-content: space-around;
+    align-items: center;
     background-color: white;
-    padding: 10px; /* Adds some spacing */
-    flex-wrap: nowrap; /* Prevents wrapping by default */
-    gap: 10px; /* Adds spacing between items */
-    border: 1px solid #ddd; /* Optional for better visibility */
+    flex-wrap: nowrap; /* Prevent wrapping unless necessary */
 }
 
-/* Navigation Links */
 .nav a {
     text-decoration: none;
     color: blue;
-    font-size: 16px; /* Adjusted for smaller screens */
+    font-size: 20px;
     font-weight: bold;
-    padding: 5px 10px; /* Adds clickable area */
-    flex-shrink: 0; /* Prevent shrinking of text on smaller screens */
 }
 
-/* Navigation Hover Effect */
 .nav a:hover {
     color: yellow;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.main .card {
+    width: 30%;
+    margin: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.main .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.main .card .content {
+    padding: 20px;
+}
+
+.main .card .content h3 {
+    text-align: center;
+    color: blue;
+}
+
+.main .card .content p {
+    text-align: start;
+}
+
+.main .card .content a {
+    display: block;
+    text-align: center;
+    text-decoration: solid;
+    color: blue;
+    padding: 10px;
+    border: 1px solid blue;
+    background-color: wheat;
+}
+
+.main .card .content a:hover {
+    color: yellow;
+    background-color: blue;
+}
+
+.footer {
+    background-color: #fff;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
 }
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .nav {
-        flex-direction: column; /* Stack items vertically */
-        justify-content: center;
-        align-items: center; /* Center align items */
+        flex-direction: column; /* Stack navigation links vertically */
+    }
+
+    .main .card {
+        width: 90%;
     }
 }
