@@ -1,116 +1,49 @@
-/* CSS code for the style of the website */
+/* Global Reset */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* Body Styles */
 body {
     font-family: Arial, sans-serif;
     background-color: wheat;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.header {
-    background-color: red;
-}
-
-.header h1 {
-    text-align: center;
-    color: white;
-    font-weight: bold;
-    text-shadow: 5px 0px blue;
-}
-
+/* Navigation Styles */
 .nav {
-    display: flex; /* Flex layout for navigation bar */
-    justify-content: space-around; /* Evenly space out navigation items */
-    align-items: center; /* Center navigation items vertically */
+    display: flex;
+    flex-direction: row; /* Default to horizontal layout */
+    justify-content: space-around; /* Equal spacing between links */
+    align-items: center; /* Center items vertically */
     background-color: white;
+    padding: 10px; /* Adds some spacing */
+    flex-wrap: nowrap; /* Prevents wrapping by default */
+    gap: 10px; /* Adds spacing between items */
+    border: 1px solid #ddd; /* Optional for better visibility */
 }
 
+/* Navigation Links */
 .nav a {
     text-decoration: none;
     color: blue;
-    font-size: 20px;
+    font-size: 16px; /* Adjusted for smaller screens */
     font-weight: bold;
+    padding: 5px 10px; /* Adds clickable area */
+    flex-shrink: 0; /* Prevent shrinking of text on smaller screens */
 }
 
+/* Navigation Hover Effect */
 .nav a:hover {
     color: yellow;
 }
 
-.main {
-    display: flex; /* Flex layout for main content */
-    flex-wrap: wrap; /* Allow content to wrap to the next line */
-    justify-content: space-between; /* Space out items in the main content */
-    padding: 20px;
-}
-
-.main .card {
-    width: 30%;
-    margin: 10px;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-
-.main .card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover; /* Cover the image while maintaining aspect ratio */
-}
-
-.main .card .content {
-    padding: 20px;
-}
-
-.main .card .content h3 {
-    text-align: center;
-    color: blue;
-}
-
-.main .card .content p {
-    text-align: start;
-}
-
-.main .card .content a {
-    display: block;
-    text-align: center;
-    text-decoration: solid;
-    color: blue;
-    padding: 10px;
-    border: 1px solid blue;
-    background-color: wheat;
-}
-
-.main .card .content a:hover {
-    color: yellow;
-    background-color: blue;
-}
-
-.footer {
-    background-color: #fff;
-    color: black;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-}
-
+/* Responsive Design */
 @media screen and (max-width: 768px) {
-    /* CSS code for the responsiveness of the website */
     .nav {
-        display: flex; /* Retain flex layout for smaller screens */
-        flex-direction: column; /* Stack navigation items vertically */
-        justify-content: center; /* Center navigation items horizontally */
-        align-items: center; /* Center navigation items vertically */
-    }
-
-    .main .card {
-        width: 90%; /* Adjust card width for smaller screens */
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center;
+        align-items: center; /* Center align items */
     }
 }
