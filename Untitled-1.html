@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Flex Navigation</title>
+    <style>
+        /* Include CSS styles directly for debugging */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: wheat;
+        }
+
+        .nav {
+            display: flex; /* Enables Flexbox */
+            flex-direction: row; /* Default layout: horizontal */
+            justify-content: space-around; /* Space between links */
+            align-items: center; /* Vertically centers items */
+            background-color: white;
+            padding: 10px; /* Adds spacing */
+            flex-wrap: nowrap; /* Prevent wrapping */
+            border: 1px solid black; /* Border for visibility */
+            gap: 10px; /* Adds spacing between links */
+            min-height: 50px; /* Prevents collapsing */
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: blue;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px 10px; /* Adds clickable area */
+            flex-shrink: 0; /* Prevent shrinking on small screens */
+        }
+
+        .nav a:hover {
+            color: yellow;
+        }
+
+        /* Responsive for smaller devices */
+        @media screen and (max-width: 768px) {
+            .nav {
+                flex-direction: column; /* Stack links vertically */
+                justify-content: center; /* Center vertically */
+                align-items: center; /* Center horizontally */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </div>
+</body>
+</html>
