@@ -1,4 +1,4 @@
-/* Global CSS reset */
+/* CSS code for the style of the website */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -27,14 +27,11 @@ body {
     text-shadow: 5px 0px blue;
 }
 
-/* Navigation section */
 .nav {
-    display: flex;
-    flex-direction: row; /* Ensure it's row by default */
-    justify-content: space-around;
-    align-items: center;
+    display: flex; /* Flex layout for navigation bar */
+    justify-content: space-around; /* Evenly space out navigation items */
+    align-items: center; /* Center navigation items vertically */
     background-color: white;
-    flex-wrap: nowrap; /* Prevent wrapping unless necessary */
 }
 
 .nav a {
@@ -49,9 +46,9 @@ body {
 }
 
 .main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: flex; /* Flex layout for main content */
+    flex-wrap: wrap; /* Allow content to wrap to the next line */
+    justify-content: space-between; /* Space out items in the main content */
     padding: 20px;
 }
 
@@ -65,7 +62,7 @@ body {
 .main .card img {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    object-fit: cover; /* Cover the image while maintaining aspect ratio */
 }
 
 .main .card .content {
@@ -104,13 +101,14 @@ body {
     font-weight: bold;
 }
 
-/* Responsive Design */
 @media screen and (max-width: 768px) {
+    /* CSS code for the responsiveness of the website */
     .nav {
-        flex-direction: column; /* Stack navigation links vertically */
+        display: flex; /* Retain flex layout for smaller screens */
+        flex-direction: column; /* Stack navigation items vertically */
     }
 
     .main .card {
-        width: 90%;
+        width: 90%; /* Adjust card width for smaller screens */
     }
 }
