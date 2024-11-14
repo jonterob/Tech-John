@@ -4,107 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gitau John's Portfolio</title>
-  <style>
-    /* Global Styles */
-    body {
-      font-family: 'Cambria', serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #f7f7f7;
-      color: #333;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    /* Header */
-    .header {
-      text-align: center;
-      background-color: #0073e6;
-      color: #fff;
-      padding: 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .header h1 {
-      margin: 0;
-    }
-
-    .theme-toggle {
-      margin-top: 10px;
-      padding: 10px 15px;
-      background-color: #ff9900;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-      font-size: 14px;
-    }
-
-    .theme-toggle:hover {
-      background-color: #e68a00;
-    }
-
-    /* Sections */
-    section {
-      margin: 20px 0;
-      padding: 20px;
-      border-radius: 8px;
-      background-color: #fff;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s;
-    }
-
-    section:hover {
-      transform: scale(1.02);
-    }
-
-    /* Profile Section */
-    .profile-images {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .profile-images img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s;
-    }
-
-    .profile-images img:hover {
-      transform: rotate(10deg) scale(1.1);
-    }
-
-    /* Footer */
-    .footer {
-      text-align: center;
-      margin-top: 40px;
-      padding: 10px 0;
-      background-color: #333;
-      color: #fff;
-    }
-
-    /* Dark Theme */
-    body.dark-mode {
-      background-color: #333;
-      color: #f7f7f7;
-    }
-
-    body.dark-mode .footer {
-      background-color: #555;
-    }
-  </style>
+  <link rel="stylesheet" href="bio.css">
 </head>
 <body>
   <header class="header">
@@ -157,19 +57,6 @@
     <p>© <span id="currentYear"></span> Gitau John. All rights reserved.</p>
   </footer>
 
-  <script>
-    // Theme Toggle
-    const themeToggle = document.getElementById('themeToggle');
-    themeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      themeToggle.textContent = document.body.classList.contains('dark-mode')
-        ? 'Switch to Light Theme'
-        : 'Switch to Dark Theme';
-    });
-
-    // Dynamic Current Year
-    const currentYear = document.getElementById('currentYear');
-    currentYear.textContent = new Date().getFullYear();
-  </script>
+  <script src="bio.js"></script>
 </body>
 </html>
