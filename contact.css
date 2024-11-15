@@ -66,17 +66,16 @@ a:hover {
     display: flex;
     justify-content: space-evenly; /* Distributes icons evenly with equal space between them */
     margin-top: 15px;
-    width: 60%; /* Adjust the width for better distribution */
+    width: 80%; /* Adjust the width for better distribution */
     margin-left: auto;
     margin-right: auto; /* Center align the icons */
     margin: 0 15px; /* Spacing between icons */
     font-size: 3em; /* Increase font size */
-    color: #333; /* Icon color */
+    color: #0000ff; /* Icon color (blue) */
     transition: color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
 }
 
 .social-media a:hover {
-    color: #b700ff;
     color: #b700ff; /* Highlight color on hover */
     transform: scale(1.2); /* Slightly enlarge on hover */
 }
@@ -84,9 +83,9 @@ a:hover {
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #b700ff;
+    background-color: #f5deb3; /* wheat */
     color: white;
-    position: relative;
+    position: fixed;
     bottom: 0;
     width: 100%;
 }
