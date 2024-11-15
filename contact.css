@@ -101,6 +101,10 @@ footer {
     border-radius: 5px;
 }
 
+.toggle-btn:hover {
+    color:blue;
+}
+
 .dark-mode {
     background-color: #333;
     color: white;
