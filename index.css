@@ -120,7 +120,7 @@ body {
         flex-direction: row; /* Stack navigation links vertically */
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 368px) {
     .nav a{
         flex-direction: row; /* Keep horizontal layout */
         overflow-x: auto; /* Allow horizontal scrolling if space runs out */
