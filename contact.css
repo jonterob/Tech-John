@@ -1,0 +1,142 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s;
+    padding-bottom: 60px; /* Add padding at the bottom */
+}
+
+header {
+    background-color: #b700ff;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    border-bottom: 4px solid #000;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 1000px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+h2 {
+    color: #b700ff;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+a {
+    color: #0073e6;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #b700ff;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.social-media {
+    display: flex;
+    justify-content: space-between; /* Distributes icons evenly with space between them */
+    margin-top: 15px;
+    width: 60%; /* Adjust the width for better distribution */
+    margin-left: auto;
+    margin-right: auto; /* Center align the icons */
+}
+
+.social-media a:hover {
+    color: #b700ff;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #b700ff;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.toggle-btn {
+    background-color: #b700ff;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin: 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+.dark-mode header {
+    background-color: #444;
+}
+
+.dark-mode footer {
+    background-color: #444;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.progress-bar > div {
+    height: 100%;
+    background-color: #b700ff;
+    width: 0%;
+    border-radius: 10px;
+    transition: width 1s;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    section {
+        padding: 15px;
+        width: 95%;
+    }
+}
