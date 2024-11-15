@@ -43,13 +43,7 @@
                 </div>
             </div>
         </div>
-        <div class="footer">
-           <script type="text/javascript">
-               
-               // Dynamic Year
-               const currentYear = document.getElementById('currentYear');
-               currentYear.textContent = new Date().getFullYear();
-               
+         <script type="text/javascript">  
                // Function to detect the device type 
                function detectDevice() { 
                    var userAgent = navigator.userAgent.toLowerCase(); 
@@ -78,8 +72,14 @@
                
                // Run the function on page 
                load window.onload = applyDeviceSpecificStyles;
+             
+             // Dynamic Year
+               const currentYear = document.getElementById('currentYear');
+               currentYear.textContent = new Date().getFullYear();
            </script>
-            <p> © <span id="currentYear"></span> <a href="https://jonterob.github.io/Tech-John">John Njoroge Gitau.</a> All rights reserved.</p>
+            <div class="footer">
+               &copy; <span id="current-year"></span> <a href="https://jonterob.github.io/Tech-John">John Njoroge Gitau.</a> All rights reserved.
+           </div>
         </div>
     </div>
 </body>
