@@ -36,7 +36,7 @@ function scrollToTop() {
 // Show "Scroll to Top" button when scrolling down
 window.addEventListener('scroll', () => {
     const scrollBtn = document.getElementById('scrollTopBtn');
-    if (window.scrollY > 100) {
+    if (window.scrollY > 150) {
         scrollBtn.classList.add('active');
     } else {
         scrollBtn.classList.remove('active');
