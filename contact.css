@@ -90,7 +90,7 @@ footer {
     bottom: 0;
     width: 100%;
 }
-
+.toggle-btn {
     background-color: #b700ff;
     color: white;
     padding: 10px;
