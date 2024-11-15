@@ -3,61 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>my_contact_information</title>
+    <title>John Njoroge - Portfolio</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: white;
-            width: 90%;
-            margin: 20px auto;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s;
         }
 
-        h1 {
-            color: rgb(183, 0, 255);
+        header {
+            background-color: #b700ff;
+            padding: 20px;
             text-align: center;
+            color: white;
+            border-bottom: 4px solid #000;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
             text-transform: uppercase;
-            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 1000px;
             background-color: white;
-            
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s, transform 0.5s;
         }
 
         h2 {
-            color: red;
-            padding-bottom: 5px;
-            text-align: center;
+            color: #b700ff;
+            font-size: 1.8em;
+            margin-bottom: 15px;
         }
-        section{
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        a {
+            color: #0073e6;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #b700ff;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .social-media a:hover {
+            color: #b700ff;
+        }
+
+        footer {
+            text-align: center;
             padding: 10px;
-            margin: 20px auto;
-            border-radius: 50px;
-            width: 90%;
-            display: block;
-            border-radius: 20px;
+            background-color: #b700ff;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .toggle-btn {
+            background-color: #b700ff;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin: 20px;
+            font-size: 1.2em;
+            border-radius: 5px;
+        }
+
+        .dark-mode {
+            background-color: #333;
+            color: white;
+        }
+
+        .dark-mode header {
+            background-color: #444;
+        }
+
+        .dark-mode footer {
+            background-color: #444;
+        }
+
+        .progress-bar {
+            height: 20px;
+            background-color: #ddd;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .progress-bar > div {
+            height: 100%;
+            background-color: #b700ff;
+            width: 0%;
+            border-radius: 10px;
+            transition: width 1s;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            section {
+                padding: 15px;
+                width: 95%;
+            }
         }
     </style>
 </head>
-   <body>
-      <header>
-        <h1><a href="F:\html\portal-1.html">John Njoroge</a> </h1>
-           </header>
-                <section>
-                    <h2>Personal Information</h2>
-                       <ul style="list-style-type: none;">
-                         <li><strong>Name :</strong>[ Gitau John Njoroge ]</li>
-                           <li><strong>Date of Birth:</strong> [12/02/2003]</li>
-                              <li><strong>Gender:</strong> [Male]</li>
-                                  <li><strong>Place of Birth:</strong> [Murang'a]</li>  
-                                <li><strong>City :</strong> [Nairobi]</li>
-                            <li><strong>Natinality:</strong> [Kenya]</li>
-                        </ul>
-                </section>
-            <section>
-              <h2>Contact Information</h2>
-                <ul style="list-style-type: none;">
-                    <li><strong>Email:</strong> <a href="mailto:jonterob756@gmail.com">jonterob756@gmail.com </a></li>
-                         <li><strong>Phone:</strong> +254110856452</li>
-                    <li><strong>Address:</strong> P.O.Box 143-10300,Kerugoga Kenya.</li>
-                </ul>
-            </section>
-          </body>
-      </html>
+<body>
+
+<header>
+    <h1 onclick="window.location.href='index.html'">John Njoroge</h1>
+</header>
+
+<button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+<section id="personal-info">
+    <h2>Personal Information</h2>
+    <ul>
+        <li><strong>Name:</strong> John Njoroge Gitau</li>
+        <li><strong>Date of Birth:</strong> 12/02/2003</li>
+        <li><strong>Gender:</strong> Male</li>
+        <li><strong>Place of Birth:</strong> Murang'a, Kenya</li>
+        <li><strong>City:</strong> Nairobi</li>
+        <li><strong>Nationality:</strong> Kenyan</li>
+    </ul>
+</section>
+
+<section id="contact-info">
+    <h2>Contact Information</h2>
+    <ul>
+        <li><strong>Email:</strong> <a href="mailto:jonterob756@gmail.com">jonterob756@gmail.com</a></li>
+        <li><strong>Phone:</strong> +254110856452</li>
+        <li><strong>Address:</strong> P.O. Box 143-10300, Kerugoga, Kenya</li>
+    </ul>
+</section>
+
+<section id="social-media">
+    <h2>Social Media</h2>
+    <div class="social-media">
+        <a href="https://wa.me/254110856452" target="_blank">WhatsApp</a>
+        <a href="https://linkedin.com/in/john-njoroge" target="_blank">LinkedIn</a>
+        <a href="https://github.com/johnnjoroge" target="_blank">GitHub</a>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>My Skills</h2>
+    <p>Below is a progress bar showcasing my current skills in programming:</p>
+    <div class="progress-bar">
+        <div id="progress-skill" style="width: 80%;"></div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 John Njoroge. All rights reserved.</p>
+</footer>
+
+<script>
+    // Dark Mode Toggle Function
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+    }
+
+    // Dynamic Greeting Based on Time
+    window.onload = function() {
+        let greeting = '';
+        const hour = new Date().getHours();
+        if (hour < 12) {
+            greeting = 'Good Morning';
+        } else if (hour < 18) {
+            greeting = 'Good Afternoon';
+        } else {
+            greeting = 'Good Evening';
+        }
+        alert(greeting + ', John Njoroge!');
+    };
+
+    // Reveal Sections on Scroll
+    const sections = document.querySelectorAll('section');
+    window.addEventListener('scroll', function() {
+        sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            if (sectionTop < window.innerHeight) {
+                section.style.opacity = 1;
+                section.style.transform = 'translateY(0)';
+            }
+        });
+    });
+
+    // Display progress bar on page load
+    window.onload = function() {
+        setTimeout(function() {
+            document.getElementById('progress-skill').style.width = '80%';
+        }, 500);
+    };
+</script>
+
+</body>
+</html>
