@@ -3,120 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>john_njoroge_gitau_portfolio</title>
+    <title>Gitau John Njoroge Portfolio</title>
     <link rel="stylesheet" href="john_njoroge_gitau_portfolio.css">
+    <style>
+        /* Responsive design styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header, footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+        .section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #headerText {
+            font-size: 24px;
+            color: #333;
+        }
+        #about, #portfolio, #contact {
+            margin: 20px auto;
+            max-width: 900px;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+        }
+        .scroll-to-top.active {
+            display: block;
+        }
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
 </head>
-  <body>
+<body>
     <script type="text/javascript">
+        // Dynamically updating header text based on day
         function updateDateTime() {
             var d = new Date();
             var theDay = d.getDay();
-            var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-             // Display day greeting
             var headerText = document.getElementById('headerText');
             switch (theDay) {
-                case 0:
-                    headerText.textContent = "Happy Sunday!";
-                    break;
-                case 1:
-                    headerText.textContent = "Marvelous Monday";
-                    break;
-                case 2:
-                    headerText.textContent = "Terrific Tuesday";
-                    break;
-                case 3:
-                    headerText.textContent = "Wonderful Wednesday";
-                    break;
-                case 4:
-                    headerText.textContent = "Thrilling Thursday";
-                    break;
-                case 5:
-                    headerText.textContent = "Finally Friday";
-                    break;
-                case 6:
-                    headerText.textContent = "Super Saturday";
-                    break;
-                default:
-                    headerText.textContent = "I'm looking forward to this weekend!";
+                case 0: headerText.textContent = "Happy Sunday!"; break;
+                case 1: headerText.textContent = "Marvelous Monday"; break;
+                case 2: headerText.textContent = "Terrific Tuesday"; break;
+                case 3: headerText.textContent = "Wonderful Wednesday"; break;
+                case 4: headerText.textContent = "Thrilling Thursday"; break;
+                case 5: headerText.textContent = "Finally Friday"; break;
+                case 6: headerText.textContent = "Super Saturday"; break;
             }
-            // Display date and time
-               var dateTime = document.getElementById('dateTime');
+
+            var dateTime = document.getElementById('dateTime');
             dateTime.textContent = "Current Date and Time: " + d.toLocaleString();
-              }
-           // Call the function when the page loads and update every second
+        }
+
         window.onload = function () {
-          updateDateTime();
+            updateDateTime();
             setInterval(updateDateTime, 1000); // Update every second
-           };
-      </script>
-            <div id="headerText"></div>
-          <div id="dateTime"></div>
-        <header>
-            <div class="section">
-                <h1>GITAU JOHN NJOROGE</h1>
-               <p>Welcome to my portfolio &#128518</p>
-              <img src="john.jpg"style="height: 300px;width: 300px;border-radius: 145px;">
-            </div> 
-          </header>
-        <section id="about">
-      <h2>About Me </h2>
-    <p style="font-family: 'Times New Roman', Times, serif;">I am Gitau John Njoroge, born on a crisp February 12th in 2003. My journey through the corridors of education has been a thrilling adventure. It all began in 2008, a wide-eyed, curious child, venturing into the world of formal education. The pages of my life turned as I embarked on my academic odyssey. My early years in primary school were marked by a thirst for knowledge and a desire to explore the limitless horizons of learning. In 2016, with boundless determination, I successfully completed my primary education, laying the foundation for my future endeavors. The transition to secondary school in 2017 marked a new chapter. These formative years were not only about academics but also about personal growth, friendships, and nurturing my innate passion for technology. The years from 2017 to 2021 were a whirlwind of experiences, challenges, and achievements. I not only excelled academically but also engaged in various extracurricular activities like Sports. It was during this time that I discovered my true calling - computer science. The world of coding, algorithms, and problem-solving fascinated me. This revelation propelled me into a journey of self-discovery. In 2021, I proudly graduated from secondary school, my heart set on the fascinating world of computer science. Kirinyaga University became my next destination, where I enrolled in a Computer Science course. This was a pivotal moment in my life. The university provided the perfect platform to pursue my passion. Today, I am a university student, exploring the realms of computer science, diving into the intricate world of programming, software development, and artificial intelligence. With a heart full of dreams and a head full of ideas, I am committed to making a positive impact on the world through technology. My journey is one of perseverance, ambition, and a relentless pursuit of knowledge, and I'm excited to see where it will lead me.</p>
-      </section>
-         <section id="portfolio">
-            <h2> My Portfolio</h2>
-              <div class="left">
-                  <p> <b>My website page :</b> <a href=Home.html>Please click here!</a></p>
-                      <img src="WhatsApp Image 2024-02-11 at 19.04.54_2b60aef8.jpg" alt="jonte rob" style="height: 200px;width: 200px;border-radius: 100px;"><br>
-                         <script>
-                            function Description() {
-                             var age = prompt("Please enter your age here");
+            updateFooterYear();  // Update footer year
+            setupScrollToTop(); // Set up scroll to top button
+        };
 
-                                if (age === null) {
-                                alert("Prompt canceled.");
-                                return;
-                                }
+        // Dynamically set current year in footer
+        function updateFooterYear() {
+            var currentYear = new Date().getFullYear();
+            document.getElementById('footerYear').textContent = currentYear;
+        }
 
-                            var x = parseInt(age);
+        // Function to handle scroll-to-top button visibility
+        function setupScrollToTop() {
+            var scrollToTopButton = document.querySelector(".scroll-to-top");
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 200) {
+                    scrollToTopButton.classList.add("active");
+                } else {
+                    scrollToTopButton.classList.remove("active");
+                }
+            });
+            scrollToTopButton.addEventListener("click", function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        }
 
-                        if (isNaN(x)) {
-                      alert("Invalid input! Please enter a valid number.");
-                       } else if (x <= 0) {
-                      alert("Invalid input! Age must be greater than 0.");
-                       } else if (x <= 18) {
-                      alert("Sorry, you are not allowed to access this.");
-                       } else {
-                      alert("Jonte Rob Is A Hardworking student, Excellent In Academic Performance And very Good In Discipline, Humble And Self-Driven.");
-                    }
-                  }
-              </script
-        <form>
-          </script>
-            <input type="button" value="Know More? Click me!"onclick="Description()" style="color: red;">
-        </form>
-    </div>
-                       <div class="section">
-                   </div>
-                </section><section id="contact">
-            <h2>Contact Me</h2>
-               <ul><li> <b>Email to:</b> <a href="mailto:jonterob756@gmail.com">jonterob756@gmail.com</a></li><br></b><li><b> Tel : </b>[+254110856452]</li></ul>
-                   </section>
-                    <footer>
-                 <p>&copy; 2024 <a href="mailto:jonterob756@gmail.com"> jonterob</a> </p>
-                 
-          
-        </footer> 
-        <script>
-                document.addEventListener("DOMContentLoaded", function () {
-                  var scrollToTopButton = document.querySelector(".scroll-to-top");
-                    window.addEventListener("scroll", function () {
-                    if (window.scrollY > 0) {
-                      scrollToTopButton.classList.add("active");
-                    } else {
-                      scrollToTopButton.classList.remove("active");
-                    }
-                  });
-                });
-              </script>
-            <a href="#top">↑ Scroll to Top ↑</a>
-     </body>
+        // Display dynamic age-based message
+        function Description() {
+            var age = prompt("Please enter your age");
+            if (age === null) {
+                alert("Prompt canceled.");
+                return;
+            }
+
+            var ageNum = parseInt(age);
+            if (isNaN(ageNum)) {
+                alert("Invalid input! Please enter a valid number.");
+            } else if (ageNum <= 0) {
+                alert("Invalid input! Age must be greater than 0.");
+            } else if (ageNum <= 18) {
+                alert("Sorry, you are not allowed to access this.");
+            } else {
+                alert("You are eligible to view further details about the portfolio!");
+            }
+        }
+    </script>
+
+    <header>
+        <h1>Gitau John Njoroge</h1>
+        <p>Welcome to my portfolio &#128518</p>
+        <img src="john.jpg" style="height: 300px;width: 300px;border-radius: 145px;">
+    </header>
+
+    <div id="headerText"></div>
+    <div id="dateTime"></div>
+
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>I am Gitau John Njoroge, a passionate computer science student with a deep interest in coding, software development, and artificial intelligence. My journey in tech started in high school, and today I am honing my skills at Kirinyaga University. I strive to bring innovative solutions through programming and problem-solving.</p>
+        <p>Check out my <button onclick="Description()" style="background-color: #333; color: white;">Personal Details</button></p>
+    </section>
+
+    <section id="portfolio" class="section">
+        <h2>My Portfolio</h2>
+        <div class="card" onclick="window.location='Home.html';">
+            <h3>Website Project</h3>
+            <img src="WhatsApp Image 2024-02-11 at 19.04.54_2b60aef8.jpg" alt="Project Image" />
+            <p>Click to visit my website page</p>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <ul>
+            <li><b>Email:</b> <a href="mailto:jonterob756@gmail.com">jonterob756@gmail.com</a></li>
+            <li><b>Phone:</b> [+254110856452]</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="footerYear"></span> <a href="mailto:jonterob756@gmail.com">Gitau John Njoroge</a></p>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top">&#8593;</div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var scrollToTopButton = document.querySelector(".scroll-to-top");
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 200) {
+                    scrollToTopButton.classList.add("active");
+                } else {
+                    scrollToTopButton.classList.remove("active");
+                }
+            });
+        });
+    </script>
+</body>
 </html>
