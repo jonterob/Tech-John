@@ -64,21 +64,21 @@ a:hover {
 
 .social-media {
     display: flex;
-    justify-content: center;
-    margin-top: 15px;
-}
-
-.social-media {
-    display: flex;
     justify-content: space-evenly; /* Distributes icons evenly with equal space between them */
     margin-top: 15px;
     width: 60%; /* Adjust the width for better distribution */
     margin-left: auto;
     margin-right: auto; /* Center align the icons */
+    margin: 0 15px; /* Spacing between icons */
+    font-size: 3em; /* Increase font size */
+    color: #333; /* Icon color */
+    transition: color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
 }
 
 .social-media a:hover {
     color: #b700ff;
+    color: #b700ff; /* Highlight color on hover */
+    transform: scale(1.2); /* Slightly enlarge on hover */
 }
 
 footer {
