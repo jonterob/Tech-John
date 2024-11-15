@@ -39,6 +39,7 @@ body {
     gap: 10px;
     border: 1px solid black;
     flex-wrap: nowrap; /* Prevent wrapping */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
 }
 
 .nav a {
