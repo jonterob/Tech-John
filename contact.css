@@ -67,10 +67,10 @@ a:hover {
     display: flex;
     justify-content: space-evenly; /* Distributes icons evenly with equal space between them */
     margin-top: 15px;
-    width: 80%; /* Adjust the width for better distribution */
+    width: 100%; /* Adjust the width for better distribution */
     margin-left: auto;
     margin-right: auto; /* Center align the icons */
-    margin: 0 15px; /* Spacing between icons */
+    margin: 0 20px; /* Spacing between icons */
     font-size: 3em; /* Increase font size */
     color: #0000ff; /* Icon color (blue) */
     transition: color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
