@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #3e8e41;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-family: 'Bodoni MT', serif;
+}
+header img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+section {
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+h1, h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+p {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+}
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #34495e;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+#scrollTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 20px;
+    display: none;
+    cursor: pointer;
+}
+#scrollTopBtn.active {
+    display: block;
+}
+.left img {
+    border-radius: 50%;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    section {
+        width: 95%;
+    }
+    header img {
+        height: 100px;
+        width: 100px;
+    }
+}
