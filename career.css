@@ -50,6 +50,23 @@ footer {
     width: 80%;
     margin: 0 auto;
 }
+#portfolioDesc {
+    display: none; /* Initially hide the description */
+    margin-top: 20px;
+}
+
+#showDescriptionBtn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#showDescriptionBtn:hover {
+    background-color: #2980b9;
+}
+
 #scrollTopBtn {
     position: fixed;
     bottom: 20px;
