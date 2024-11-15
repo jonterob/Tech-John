@@ -3,188 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gitau John Njoroge Portfolio</title>
-    <link rel="stylesheet" href="jhn_njoroge_gitau_portfolio.css">
+    <title>john_njoroge_gitau_portfolio</title>
     <style>
-        /* Responsive design styles */
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
         }
-        header, footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
+        header {
+            background-color: #3e8e41;
             color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-family: 'Bodoni MT', serif;
         }
-        .section {
-            margin: 20px;
+        header img {
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+        section {
             padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        #headerText {
-            font-size: 24px;
-            color: #333;
-        }
-        #about, #portfolio, #contact {
             margin: 20px auto;
-            max-width: 900px;
+            width: 80%;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        img {
-            max-width: 100%;
-            border-radius: 10px;
+        h1, h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
         }
-        .scroll-to-top {
+        p {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #34495e;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        #scrollTopBtn {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #333;
+            background-color: #3498db;
             color: white;
             padding: 10px;
             border-radius: 50%;
-            cursor: pointer;
+            font-size: 20px;
             display: none;
+            cursor: pointer;
         }
-        .scroll-to-top.active {
+        #scrollTopBtn.active {
             display: block;
         }
-        .card {
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
+        .left img {
+            border-radius: 50%;
         }
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        footer p {
-            margin: 0;
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            section {
+                width: 95%;
+            }
+            header img {
+                height: 100px;
+                width: 100px;
+            }
         }
     </style>
 </head>
 <body>
-    <script type="text/javascript">
-        // Dynamically updating header text based on day
-        function updateDateTime() {
-            var d = new Date();
-            var theDay = d.getDay();
-            var headerText = document.getElementById('headerText');
-            switch (theDay) {
-                case 0: headerText.textContent = "Happy Sunday!"; break;
-                case 1: headerText.textContent = "Marvelous Monday"; break;
-                case 2: headerText.textContent = "Terrific Tuesday"; break;
-                case 3: headerText.textContent = "Wonderful Wednesday"; break;
-                case 4: headerText.textContent = "Thrilling Thursday"; break;
-                case 5: headerText.textContent = "Finally Friday"; break;
-                case 6: headerText.textContent = "Super Saturday"; break;
-            }
 
-            var dateTime = document.getElementById('dateTime');
-            dateTime.textContent = "Current Date and Time: " + d.toLocaleString();
+<header>
+    <h1>Gitau John Njoroge</h1>
+    <p>Welcome to my portfolio!</p>
+    <img src="john.jpg" alt="Gitau's Photo">
+</header>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>I am Gitau John Njoroge, born on February 12th, 2003. A passionate computer science student...</p>
+</section>
+
+<section id="portfolio">
+    <h2>My Portfolio</h2>
+    <p><b>My website page:</b> <a href="Home.html">Please click here!</a></p>
+    <div class="left">
+        <img src="WhatsApp Image 2024-02-11.jpg" alt="Portfolio Image" style="height: 200px; width: 200px;">
+        <button id="showDescriptionBtn" onclick="showDescription()">Know More</button>
+    </div>
+    <p id="portfolioDesc" style="display: none;">Jonte Rob is a hardworking student...</p>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <ul>
+        <li><b>Email to:</b> <a href="mailto:jonterob756@gmail.com">jonterob756@gmail.com</a></li>
+        <li><b>Tel:</b> [+254110856452]</li>
+    </ul>
+</section>
+
+<button id="scrollTopBtn" onclick="scrollToTop()">↑ Scroll to Top ↑</button>
+
+<footer>
+    <p>&copy; 2024 <a href="mailto:jonterob756@gmail.com">jonterob</a></p>
+</footer>
+
+<script>
+    // Function to display a greeting based on the time of day
+    function updateDateTime() {
+        const d = new Date();
+        const theDay = d.getDay();
+        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const headerText = document.querySelector('header p');
+        const dateTime = document.createElement('p');
+        dateTime.style.fontSize = "14px";
+        dateTime.textContent = "Current Date and Time: " + d.toLocaleString();
+
+        headerText.textContent = `Happy ${daysOfWeek[theDay]}!`;
+        headerText.appendChild(dateTime);
+    }
+
+    // Show description when clicking on the button
+    function showDescription() {
+        const desc = document.getElementById('portfolioDesc');
+        const btn = document.getElementById('showDescriptionBtn');
+        if (desc.style.display === 'none') {
+            desc.style.display = 'block';
+            btn.textContent = 'Hide Description';
+        } else {
+            desc.style.display = 'none';
+            btn.textContent = 'Know More';
         }
+    }
 
-        window.onload = function () {
-            updateDateTime();
-            setInterval(updateDateTime, 1000); // Update every second
-            updateFooterYear();  // Update footer year
-            setupScrollToTop(); // Set up scroll to top button
-        };
-
-        // Dynamically set current year in footer
-        function updateFooterYear() {
-            var currentYear = new Date().getFullYear();
-            document.getElementById('footerYear').textContent = currentYear;
-        }
-
-        // Function to handle scroll-to-top button visibility
-        function setupScrollToTop() {
-            var scrollToTopButton = document.querySelector(".scroll-to-top");
-            window.addEventListener("scroll", function () {
-                if (window.scrollY > 200) {
-                    scrollToTopButton.classList.add("active");
-                } else {
-                    scrollToTopButton.classList.remove("active");
-                }
-            });
-            scrollToTopButton.addEventListener("click", function () {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-            });
-        }
-
-        // Display dynamic age-based message
-        function Description() {
-            var age = prompt("Please enter your age");
-            if (age === null) {
-                alert("Prompt canceled.");
-                return;
-            }
-
-            var ageNum = parseInt(age);
-            if (isNaN(ageNum)) {
-                alert("Invalid input! Please enter a valid number.");
-            } else if (ageNum <= 0) {
-                alert("Invalid input! Age must be greater than 0.");
-            } else if (ageNum <= 18) {
-                alert("Sorry, you are not allowed to access this.");
-            } else {
-                alert("You are eligible to view further details about the portfolio!");
-            }
-        }
-    </script>
-
-    <header>
-        <h1>Gitau John Njoroge</h1>
-        <p>Welcome to my portfolio &#128518</p>
-        <img src="john.jpg" style="height: 300px;width: 300px;border-radius: 145px;">
-    </header>
-
-    <div id="headerText"></div>
-    <div id="dateTime"></div>
-
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <p>I am Gitau John Njoroge, a passionate computer science student with a deep interest in coding, software development, and artificial intelligence. My journey in tech started in high school, and today I am honing my skills at Kirinyaga University. I strive to bring innovative solutions through programming and problem-solving.</p>
-        <p>Check out my <button onclick="Description()" style="background-color: #333; color: white;">Personal Details</button></p>
-    </section>
-
-    <section id="portfolio" class="section">
-        <h2>My Portfolio</h2>
-        <div class="card" onclick="window.location='Home.html';">
-            <h3>Website Project</h3>
-            <img src="WhatsApp Image 2024-02-11 at 19.04.54_2b60aef8.jpg" alt="Project Image" />
-            <p>Click to visit my website page</p>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <h2>Contact Me</h2>
-        <ul>
-            <li><b>Email:</b> <a href="mailto:jonterob756@gmail.com">jonterob756@gmail.com</a></li>
-            <li><b>Phone:</b> [+254110856452]</li>
-        </ul>
-    </section>
-
-    <footer>
-        <p>&copy; <span id="footerYear"></span> <a href="mailto:jonterob756@gmail.com">Gitau John Njoroge</a></p>
-    </footer>
-
-    <!-- Scroll to Top Button -->
-    <div class="scroll-to-top">&#8593;</div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var scrollToTopButton = document.querySelector(".scroll-to-top");
-            window.addEventListener("scroll", function () {
-                if (window.scrollY > 200) {
-                    scrollToTopButton.classList.add("active");
-                } else {
-                    scrollToTopButton.classList.remove("active");
-                }
-            });
+    // Scroll to top functionality
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
-    </script>
+    }
+
+    // Show "Scroll to Top" button when scrolling down
+    window.addEventListener('scroll', () => {
+        const scrollBtn = document.getElementById('scrollTopBtn');
+        if (window.scrollY > 100) {
+            scrollBtn.classList.add('active');
+        } else {
+            scrollBtn.classList.remove('active');
+        }
+    });
+
+    // Load date and time update when the page loads
+    document.addEventListener('DOMContentLoaded', function () {
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    });
+</script>
+
 </body>
 </html>
