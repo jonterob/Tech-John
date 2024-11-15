@@ -32,8 +32,7 @@ body {
 .nav {
     display: flex; /* Default Flexbox */
     flex-direction: row; /* Horizontal layout */
-    justify-content: space-around; /* Space between links */  
-    align-items: center; /* Center items vertically */
+    justify-content: space-around; /* Optional: space links evenly within the nav */
     background-color: white;
     padding: 10px;
     gap: 10px;
@@ -49,6 +48,8 @@ body {
     font-weight: bold;
     padding: 10px;
     transition: color 0.3s ease, background-color 0.3s ease;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
 }
 
 .nav a:hover {
@@ -115,12 +116,12 @@ body {
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-    .nav {
-        flex-direction: column; /* Stack navigation links vertically */
+    .nav a{
+        flex-direction: row; /* Stack navigation links vertically */
     }
 
     @media screen and (max-width: 768px) {
-    .nav {
+    .nav a{
         flex-direction: row; /* Keep horizontal layout */
         overflow-x: auto; /* Allow horizontal scrolling if space runs out */
     }
