@@ -91,11 +91,6 @@ footer {
     width: 100%;
 }
 
-.toggle-btn:hover {
-    color: #b700ff; /* Highlight color on hover */
-    transform: scale(1.2); /* Slightly enlarge on hover */
-}
-
     background-color: #b700ff;
     color: white;
     padding: 10px;
