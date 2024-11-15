@@ -40,7 +40,7 @@ a {
 }
 footer {
     text-align: center;
-    padding: 10px;
+    padding: 5px;
     background-color: #34495e;
     color: white;
     position: fixed;
@@ -49,8 +49,8 @@ footer {
 }
 #scrollTopBtn {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 15px;
+    right: 15px;
     background-color: #3498db;
     color: white;
     padding: 10px;
