@@ -70,7 +70,7 @@ a:hover {
 
 .social-media {
     display: flex;
-    justify-content: space-between; /* Distributes icons evenly with space between them */
+    justify-content: space-evenly; /* Distributes icons evenly with equal space between them */
     margin-top: 15px;
     width: 60%; /* Adjust the width for better distribution */
     margin-left: auto;
