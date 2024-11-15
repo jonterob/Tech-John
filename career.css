@@ -3,9 +3,6 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    min-height: 100vh;  /* Ensure that the body takes at least the full height of the viewport */
-    display: flex;
-    flex-direction: column; /* Allows the footer to stay at the bottom if content is shorter */
 }
 header {
     background-color: #3e8e41;
@@ -26,8 +23,7 @@ section {
     width: 80%;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex-grow: 1;  /* Allow section content to take up remaining space */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 h1, h2 {
     color: #2c3e50;
@@ -47,8 +43,9 @@ footer {
     padding: 10px;
     background-color: #34495e;
     color: white;
+    position: fixed;
+    bottom: 0;
     width: 100%;
-    margin: 0 auto;
 }
 #scrollTopBtn {
     position: fixed;
