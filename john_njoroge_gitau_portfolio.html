@@ -3,103 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>john_njoroge_gitau_portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #3e8e41;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            font-family: 'Bodoni MT', serif;
-        }
-        header img {
-            height: 150px;
-            width: 150px;
-            border-radius: 50%;
-            margin-top: 20px;
-        }
-        section {
-            padding: 20px;
-            margin: 20px auto;
-            width: 80%;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        h1, h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-        }
-        p {
-            font-family: 'Times New Roman', Times, serif;
-            line-height: 1.6;
-        }
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #34495e;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        #scrollTopBtn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #3498db;
-            color: white;
-            padding: 10px;
-            border-radius: 50%;
-            font-size: 20px;
-            display: none;
-            cursor: pointer;
-        }
-        #scrollTopBtn.active {
-            display: block;
-        }
-        .left img {
-            border-radius: 50%;
-        }
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            section {
-                width: 95%;
-            }
-            header img {
-                height: 100px;
-                width: 100px;
-            }
-        }
-    </style>
+    <title>john_nwpkmQKwMjkjh.com</title>
+    <link rel="stylesheet" href="career.css">
 </head>
 <body>
 
 <header>
-    <h1>Gitau John Njoroge</h1>
+    <h1>Gitau Njoroge</h1>
     <p>Welcome to my portfolio!</p>
     <img src="john.jpg" alt="Gitau's Photo">
 </header>
 
 <section id="about">
     <h2>About Me</h2>
-    <p>I am Gitau John Njoroge, born on February 12th, 2003. A passionate computer science student...</p>
+    <p>I am Gitau John Njoroge, born February 12, 2003. I embarked on my educational journey in 2008, completed primary school in 2016, and secondary school in 2021. Currently, I'm pursuing Computer Science at Kirinyaga University, passionate about technology and eager to make a positive impact.</p>
 </section>
 
 <section id="portfolio">
     <h2>My Portfolio</h2>
-    <p><b>My website page:</b> <a href="Home.html">Please click here!</a></p>
+    <p><b>My website page:</b> <a href="IMG_20240623_184231_221.jpg">Please click here!</a></p>
     <div class="left">
         <img src="WhatsApp Image 2024-02-11.jpg" alt="Portfolio Image" style="height: 200px; width: 200px;">
         <button id="showDescriptionBtn" onclick="showDescription()">Know More</button>
@@ -121,58 +43,6 @@
     <p>&copy; 2024 <a href="mailto:jonterob756@gmail.com">jonterob</a></p>
 </footer>
 
-<script>
-    // Function to display a greeting based on the time of day
-    function updateDateTime() {
-        const d = new Date();
-        const theDay = d.getDay();
-        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        const headerText = document.querySelector('header p');
-        const dateTime = document.createElement('p');
-        dateTime.style.fontSize = "14px";
-        dateTime.textContent = "Current Date and Time: " + d.toLocaleString();
-
-        headerText.textContent = `Happy ${daysOfWeek[theDay]}!`;
-        headerText.appendChild(dateTime);
-    }
-
-    // Show description when clicking on the button
-    function showDescription() {
-        const desc = document.getElementById('portfolioDesc');
-        const btn = document.getElementById('showDescriptionBtn');
-        if (desc.style.display === 'none') {
-            desc.style.display = 'block';
-            btn.textContent = 'Hide Description';
-        } else {
-            desc.style.display = 'none';
-            btn.textContent = 'Know More';
-        }
-    }
-
-    // Scroll to top functionality
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
-
-    // Show "Scroll to Top" button when scrolling down
-    window.addEventListener('scroll', () => {
-        const scrollBtn = document.getElementById('scrollTopBtn');
-        if (window.scrollY > 100) {
-            scrollBtn.classList.add('active');
-        } else {
-            scrollBtn.classList.remove('active');
-        }
-    });
-
-    // Load date and time update when the page loads
-    document.addEventListener('DOMContentLoaded', function () {
-        updateDateTime();
-        setInterval(updateDateTime, 1000);
-    });
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
