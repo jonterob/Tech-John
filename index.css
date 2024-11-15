@@ -38,6 +38,7 @@ body {
     padding: 10px;
     gap: 10px;
     border: 1px solid black;
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .nav a {
@@ -116,6 +117,14 @@ body {
     .nav {
         flex-direction: column; /* Stack navigation links vertically */
     }
+
+    @media screen and (max-width: 768px) {
+    .nav {
+        flex-direction: row; /* Keep horizontal layout */
+        overflow-x: auto; /* Allow horizontal scrolling if space runs out */
+    }
+}
+
 
     .main .card {
         width: 90%;
