@@ -91,7 +91,11 @@ footer {
     width: 100%;
 }
 
-.toggle-btn {
+.toggle-btn:hover {
+    color: #b700ff; /* Highlight color on hover */
+    transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
     background-color: #b700ff;
     color: white;
     padding: 10px;
@@ -101,6 +105,8 @@ footer {
     font-size: 1.2em;
     border-radius: 5px;
 }
+
+.toggle-btn {
 
 .dark-mode {
     background-color: #333;
