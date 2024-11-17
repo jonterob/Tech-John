@@ -58,6 +58,9 @@ footer {
 }
 .left img {
     border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    margin-top: 20px;
 }
 /* Responsive Design */
 @media (max-width: 768px) {
