@@ -40,7 +40,7 @@ h2{
   gap: 10px;
 }
 
-h2 i, h3 i {
+h2 i {
   font-style: normal; /* Prevent the icon from being italic */
   margin-right: 10px;
 }
