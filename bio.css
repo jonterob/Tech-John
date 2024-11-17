@@ -14,8 +14,7 @@ body {
   padding: 20px;
 }
 
-/* Header */
-.header {
+.header{      
   text-align: center;
   background-color: #0073e6;
   color: #fff;
@@ -29,7 +28,7 @@ body {
   margin: 0;
 }
 
-h2 {
+h2, h3{
   font-style: normal; /* Ensure normal font style */
   display: flex;
   align-items: center;
@@ -41,7 +40,7 @@ h2 {
   gap: 10px;
 }
 
-h2 i {
+h2 i, h3 i {
   font-style: normal; /* Prevent the icon from being italic */
   margin-right: 10px;
 }
