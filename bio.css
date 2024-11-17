@@ -32,7 +32,6 @@ h2{
   font-style: normal; /* Ensure normal font style */
   display: flex;
   align-items: center;
-  font-size: 2em;
   font-size: 1.8em;
   color: #333;
   display: flex;
@@ -48,7 +47,7 @@ h2 i {
 h3 {
   font-size: 0.75em; /* Very small size, adjust as needed */
   font-weight: normal; /* Optional: make it less bold */
-  color: #555; /* Optional: use a lighter color for subtlety */
+  color: #666; /* Subtle, lighter color */
 }
 
 .theme-toggle {
