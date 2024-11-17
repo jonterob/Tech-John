@@ -83,8 +83,8 @@ section:hover {
 /* Profile Section */
 .profile-images {
   display: flex;
-  justify-content: center;
   gap: 20px;
+  justify-content: space-between; /* Push items to far ends */
 }
 
 .profile-images img {
