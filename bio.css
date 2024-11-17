@@ -1,4 +1,3 @@
-/* Global Styles */
 body {
   font-family: 'Cambria', serif;
   line-height: 1.6;
@@ -9,60 +8,71 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Interests Section */
-.interests-section {
-  background-color: wheat;
+.container {
+  max-width: 900px;
+  margin: auto;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  max-width: 1000px;
 }
 
-.interests-section h2 {
-  font-size: 2em;
+/* Header */
+.header {
+  text-align: center;
+  background-color: #0073e6;
+  color: #fff;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+h2 {
+  font-style: normal; /* Ensure normal font style */
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  font-size: 1.8em;
   color: #333;
   display: flex;
   align-items: center;
   gap: 10px;
-  border-bottom: 2px solid #ff6f61;
-  padding-bottom: 5px;
-  margin-bottom: 20px;
 }
 
-.interests-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
+h2 i {
+  font-style: normal; /* Prevent the icon from being italic */
+  margin-right: 10px;
 }
 
-/* Interest Item */
-.interest-item {
-  background-color: #fafafa;
-  padding: 15px;
+.theme-toggle {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #ff9900;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.theme-toggle:hover {
+  background-color: #e68a00;
+}
+
+/* Sections */
+section {
+  margin: 20px 0;
+  padding: 20px;
   border-radius: 8px;
-  text-align: center;
+  background-color: wheat; /* Wheat background for contrast */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  gap: 15px;  /* Space between the icon and text */
-  transition: transform 0.3s;
+  transition: transform 0.2s;
 }
 
-.interest-item:hover {
-  transform: translateY(-5px);
-}
-
-.interest-item i {
-  font-size: 3em;
-  color: #ff6f61;
-}
-
-.interest-item p {
-  font-size: 1.1em;
-  color: #333;
-  margin: 0;
-  flex: 1; /* Ensures the text takes available space */
+section:hover {
+  transform: scale(1.02);
 }
 
 /* Profile Section */
@@ -104,43 +114,56 @@ body.dark-mode .footer {
   background-color: #000000;
 }
 
-/* Theme Toggle Button */
-.theme-toggle {
-  margin-top: 10px;
-  padding: 10px 15px;
-  background-color: #ff9900;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 14px;
-}
+.interests-section {
+      background-color: wheat;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      max-width: 1000px;
+    }
 
-.theme-toggle:hover {
-  background-color: #e68a00;
-}
+    .interests-section h2 {
+      font-size: 2em;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 2px solid #ff6f61;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+    }
 
-/* Interests List (in case of list view) */
-.interests-section ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 10px;
-}
+    .interests-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
 
-.interests-section ul li {
-  font-size: 1.2em;
-  margin: 10px 0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+    .interest-item {
+      background-color: #fafafa;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 15px;  /* Space between the icon and text */
+      transition: transform 0.3s;
+    }
 
-.interests-section ul li i {
-  color: #42a5f5; /* A calm blue to differentiate from the previous design */
-  font-size: 1.5em;
-}
+    .interest-item:hover {
+      transform: translateY(-5px);
+    }
 
-.interests-section ul li:hover {
-  color: #ff6f61; /* Change text color on hover for interactivity */
-  transition: color 0.3s;
-}
+    .interest-item i {
+      font-size: 3em;
+      color: #ff6f61;
+    }
+
+    .interest-item p {
+      font-size: 1.1em;
+      color: #333;
+      margin: 0;
+      flex: 1; /* Ensures the text takes available space */
+    }
