@@ -20,17 +20,18 @@ body {
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around; /* Optional: space links evenly within the nav */
     background-color: #f4a261;
     color: white;
     padding: 10px;
-    border-radius: 50px;
+    border-radius: 30px;
     margin-top: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     position: sticky;
     top: 0;
     z-index: 100;
     width: 100%;
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .navbar a {
