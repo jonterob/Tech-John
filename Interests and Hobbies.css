@@ -1,0 +1,84 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* Interests Section */
+.interests-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 1000px;
+}
+
+.interests-section h2 {
+  font-size: 2em;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 2px solid #ff6f61;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+/* Container for Interests */
+.interests-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Individual Interest Item */
+.interest-item {
+  background-color: #fafafa;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 15px;  /* Space between the icon and text */
+  transition: transform 0.3s;
+}
+
+.interest-item:hover {
+  transform: translateY(-5px);
+}
+
+.interest-item i {
+  font-size: 3em;
+  color: #ff6f61;
+}
+
+.interest-item p {
+  font-size: 1.1em;
+  color: #333;
+  margin: 0;
+  flex: 1; /* Ensures the text takes available space */
+}
+
+/* Styles for the Show More / Show Less Button */
+.show-more-btn {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #ff6f61;
+  color: white;
+  font-size: 1.1em;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.show-more-btn:hover {
+  background-color: #ff6347;
+}
