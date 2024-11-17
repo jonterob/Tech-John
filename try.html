@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>John_Njoroge_Gitau_web_page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            transition: background-color 0.5s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f4a261;
+            color: white;
+            padding: 10px;
+            border-radius: 50px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #e76f51;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .banner {
+            background-position: center;
+            text-align: center;
+            padding: 50px 0;
+            background-color: #264653;
+            color: white;
+            font-family: 'Georgia', serif;
+        }
+
+        .banner h1 {
+            font-size: 60px;
+            text-shadow: 4px 4px 6px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+        }
+
+        .section {
+            padding: 40px 20px;
+        }
+
+        .section h2 {
+            text-align: center;
+            color: #2a9d8f;
+            font-size: 35px;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .about img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .about img:hover {
+            transform: scale(1.1);
+        }
+
+        .about p {
+            width: 80%;
+            max-width: 600px;
+            font-size: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .skills, .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill, .project {
+            background-color: #f1faee;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .skill:hover, .project:hover {
+            transform: scale(1.05);
+        }
+
+        .skill-icon {
+            font-size: 50px;
+            color: #2a9d8f;
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .project img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-info {
+            display: none;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .project:hover .project-info {
+            display: block;
+        }
+
+        .project-title {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .project-link {
+            color: #e76f51;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .footer {
+            background-color: #264653;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 50px;
+            margin-top: 50px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        /* Disable responsive adjustments */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: row; /* Keep navbar items in row */
+            }
+
+            .about {
+                flex-direction: row; /* Maintain about section in row */
+            }
+
+            .about img {
+                width: 250px; /* Maintain image size */
+                height: 250px; /* Maintain image size */
+            }
+
+            .skills {
+                grid-template-columns: repeat(3, 1fr); /* Keep 3 columns for skills */
+            }
+
+            .projects {
+                grid-template-columns: repeat(3, 1fr); /* Keep 3 columns for projects */
+            }
+        }
+
+        /* Keep layout the same on all devices */
+        @media (max-width: 480px) {
+            .navbar {
+                flex-direction: row; /* Maintain navbar as row */
+            }
+
+            .about {
+                flex-direction: row; /* Maintain about section in row */
+            }
+
+            .skills {
+                grid-template-columns: repeat(3, 1fr); /* Keep 3 columns for skills */
+            }
+
+            .projects {
+                grid-template-columns: repeat(3, 1fr); /* Keep 3 columns for projects */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo"><a href="portal-1.html">John Njoroge Gitau</a></div>
+            <div class="menu">
+                <a href="Curriculum_Vitae.html">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a> 
+                <a href="my_contact_information.html">Contact</a>
+            </div>
+        </div>
+
+        <div class="banner">
+            <h1>Welcome to my Website</h1>
+        </div>
+
+        <div class="section" id="about">
+            <h2>About Me</h2>
+            <div class="about">
+                <img src="john.jpg" alt="John Njoroge Gitau">
+                <p>Hi, I'm <a href="index.html">John Njoroge Gitau</a>, a web developer based in Kutus, Kenya. Currently, I'm pursuing a Bachelor's degree in Computer Science at <a href="https://www.kyu.ac.ke/">Kirinyaga University</a>. I have a passion for creating beautiful and functional websites using HTML, CSS and JavaScript. I enjoy learning new technologies and improving my skills every day.</p>
+            </div>
+        </div>
+
+        <div class="section" id="skills">
+            <h2>My Skills</h2>
+            <div class="skills">
+                <div class="skill">
+                    <div class="skill-icon"><i class="fa fa-html5"></i></div>
+                    <div class="skill-name"><a href="calculator.html">HTML</a></div>
+                    <div class="skill-level">Advanced</div>
+                </div>
+                <div class="skill">
+                    <div class="skill-icon"><i class="fa fa-css3"></i></div>
+                    <div class="skill-name"><a href="john_njoroge_gitau_portfolio.html">CSS</a></div>
+                    <div class="skill-level">Advanced</div>
+                </div>
+                <div class="skill">
+                    <div class="skill-icon"><i class="fa fa-js"></i></div>
+                    <div class="skill-name"><a href="Game-1.html">JavaScript</a></div>
+                    <div class="skill-level">Intermediate</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="projects">
+            <h2>My Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <img src="1701541549283.jpg" alt="Project 1">
+                    <div class="project-info">
+                        <div class="project-title">Form</div>
+                        <div class="project-link"><a href="personalDetails.html">Click Here!</a></div>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="1701539134070.jpg" alt="Project 2">
+                    <div class="project-info">
+                        <div class="project-title">Game</div>
+                        <div class="project-link"><a href="Game-1.html">Click Here!</a></div>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="1701539261245.jpg" alt="Project 3">
+                    <div class="project-info">
+                        <div class="project-title">Calculator</div>
+                        <div class="project-link"><a href="calculator.html">Click Here!</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 John Njoroge Gitau | All Rights Reserved</p>
+        </div>
+    </div>
+</body>
+</html>
