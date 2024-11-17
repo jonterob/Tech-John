@@ -121,8 +121,8 @@ h2 i {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    gap: 20px;
+    align-items: stretch;
+    gap: 10px;
     flex-direction: row; /* Horizontal layout */
     justify-content: space-around; /* Optional: space links evenly within the nav */
     flex-wrap: nowrap; /* Prevent wrapping */
