@@ -7,50 +7,61 @@
   <!-- Link to Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
     .interests-section {
       background-color: #fff;
       padding: 20px;
+      margin: 30px auto;
+      width: 80%;
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .interests-section h2 {
-      font-size: 1.8em;
+      font-size: 2em;
       color: #333;
       display: flex;
       align-items: center;
       gap: 10px;
       border-bottom: 2px solid #ff6f61;
-      padding-bottom: 5px;
+      padding-bottom: 10px;
       margin-bottom: 20px;
     }
 
     .interests-container {
-      display: block;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 20px;
-      justify-content: space-between;
+      justify-items: center;
     }
 
     .interest-item {
-      display: block;
-      flex-direction: column;
-      align-items: center;
+      background-color: #fafafa;
+      padding: 20px;
       text-align: center;
-      width: 150px; /* Set a fixed width for each block */
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
     }
 
     .interest-item i {
-      font-size: 2em;
+      font-size: 2.5em;
       color: #ff6f61;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
     .interest-item p {
-      font-size: 1.1em;
+      font-size: 1.2em;
       color: #333;
       margin: 0;
     }
+
   </style>
 </head>
 <body>
