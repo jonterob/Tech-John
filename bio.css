@@ -28,7 +28,7 @@ body {
   margin: 0;
 }
 
-h2, h3{
+h2{
   font-style: normal; /* Ensure normal font style */
   display: flex;
   align-items: center;
