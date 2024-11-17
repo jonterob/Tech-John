@@ -20,7 +20,7 @@ body {
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-around; /* Optional: space links evenly within the nav */
+    justify-content: space-between;
     background-color: #f4a261;
     color: white;
     padding: 10px;
@@ -49,6 +49,39 @@ body {
     font-weight: bold;
     font-size: 24px;
 }
+
+/* Style for the menu items */
+.menu a {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Tooltip Text */
+.menu a .tooltip {
+    visibility: hidden; /* Hidden by default */
+    position: absolute;
+    bottom: 100%; /* Position above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+    opacity: 0; /* Make the tooltip invisible */
+    transition: opacity 0.3s ease;
+    z-index: 10; /* Make sure tooltip is on top */
+}
+
+/* Show the tooltip when hovering over the menu item */
+.menu a:hover .tooltip {
+    visibility: visible;
+    opacity: 1; /* Make the tooltip visible */
+}
+
 
 .banner {
     background-position: center;
