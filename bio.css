@@ -31,11 +31,15 @@ body {
 }
 
 h2 {
-  font-family: Arial, sans-serif;
+  font-style: normal; /* Ensure normal font style */
   display: flex;
   align-items: center;
   font-size: 28px;
-  font-style: normal; /* Ensure normal font style */
+  font-size: 1.8em;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 h2 i {
@@ -112,8 +116,8 @@ body.dark-mode .footer {
 }
 
 .interests-section {
-  background-color: #f9f9f9; /* Light background for contrast */
-  padding: 20px;
+  background-color: wheat; /* Wheat background for contrast */
+  padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -141,12 +145,11 @@ body.dark-mode .footer {
 }
 
 .interests-section ul li i {
-  color: #ff6f61; /* Icon color */
-  font-size: 1.5em;
-}
-
-.interests-section ul li i {
   color: #42a5f5; /* A calm blue to differentiate from the previous design */
   font-size: 1.5em;
 }
 
+.interests-section ul li:hover {
+  color: #ff6f61; /* Change text color on hover for interactivity */
+  transition: color 0.3s;
+}
