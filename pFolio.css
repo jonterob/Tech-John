@@ -118,36 +118,41 @@ h2 i {
 }
 
 .about {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    gap: 10px;
-    flex-direction: row; /* Horizontal layout */
-    justify-content: space-around; /* Optional: space links evenly within the nav */
-    flex-wrap: nowrap; /* Prevent wrapping */
-    overflow-x: auto; /* Allow horizontal scrolling if needed */
-}
+            padding: 80px 30px;
+            background-color: white;
+            text-align: center;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+            margin: -50px 30px 30px 30px;
+            border-radius: 10px;
+        }
 
-.about img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
+        .about img {
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            margin-bottom: 30px;
+        }
 
-.about img:hover {
-    transform: scale(1.1);
-}
+        .about h2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
 
-.about p {
-    width: 80%;
-    max-width: 600px;
-    font-size: 20px;
-    line-height: 1.6;
-    color: #333;
-}
+        .about p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .about a {
+            color: #f4a261;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
 
 .skills, .projects {
     display: grid;
