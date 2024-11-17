@@ -69,6 +69,7 @@ section {
   background-color: wheat; /* Wheat background for contrast */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
+  
 }
 
 section:hover {
@@ -115,8 +116,23 @@ body.dark-mode .footer {
 }
 
 .interests-section {
+      background-color: wheat;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       margin: 20px auto;
       max-width: 1000px;
+    }
+
+    .interests-section h2 {
+      font-size: 2em;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 2px solid #ff6f61;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
     }
 
     .interests-container {
