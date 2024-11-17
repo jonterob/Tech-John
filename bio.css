@@ -114,16 +114,7 @@ body.dark-mode .footer {
   background-color: #000000;
 }
 
-.interests-section {
-      background-color: wheat;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      margin: 20px auto;
-      max-width: 1000px;
-    }
-
-    .interests-section h2 {
+  .interests-section h2 {
       font-size: 2em;
       color: #333;
       display: flex;
