@@ -45,6 +45,12 @@ h2 i {
   margin-right: 10px;
 }
 
+h3 {
+  font-size: 0.75em; /* Very small size, adjust as needed */
+  font-weight: normal; /* Optional: make it less bold */
+  color: #555; /* Optional: use a lighter color for subtlety */
+}
+
 .theme-toggle {
   margin-top: 10px;
   padding: 10px 15px;
