@@ -110,3 +110,43 @@ body.dark-mode {
 body.dark-mode .footer {
   background-color: #555;
 }
+
+.interests-section {
+  background-color: #f9f9f9; /* Light background for contrast */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.interests-section h2 {
+  font-size: 1.8em;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.interests-section ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.interests-section ul li {
+  font-size: 1.2em;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.interests-section ul li i {
+  color: #ff6f61; /* Icon color */
+  font-size: 1.5em;
+}
+
+.interests-section ul li i {
+  color: #42a5f5; /* A calm blue to differentiate from the previous design */
+  font-size: 1.5em;
+}
+
