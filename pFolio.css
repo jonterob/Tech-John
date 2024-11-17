@@ -123,6 +123,10 @@ h2 i {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    flex-direction: row; /* Horizontal layout */
+    justify-content: space-around; /* Optional: space links evenly within the nav */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
 }
 
 .about img {
