@@ -9,18 +9,18 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
     }
 
     .interests-section {
       background-color: #fff;
       padding: 20px;
-      margin: 30px auto;
-      width: 80%;
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      max-width: 1000px;
     }
 
     .interests-section h2 {
@@ -30,34 +30,37 @@
       align-items: center;
       gap: 10px;
       border-bottom: 2px solid #ff6f61;
-      padding-bottom: 10px;
+      padding-bottom: 5px;
       margin-bottom: 20px;
     }
 
     .interests-container {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 20px;
-      justify-items: center;
     }
 
     .interest-item {
       background-color: #fafafa;
-      padding: 20px;
-      text-align: center;
+      padding: 15px;
       border-radius: 8px;
+      text-align: center;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      width: 100%;
+      transition: transform 0.3s;
+    }
+
+    .interest-item:hover {
+      transform: translateY(-5px);
     }
 
     .interest-item i {
-      font-size: 2.5em;
+      font-size: 3em;
       color: #ff6f61;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     .interest-item p {
-      font-size: 1.2em;
+      font-size: 1.1em;
       color: #333;
       margin: 0;
     }
