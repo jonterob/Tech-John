@@ -67,7 +67,7 @@ section {
   margin: 20px 0;
   padding: 20px;
   border-radius: 8px;
-  background-color: wheat;
+  background-color: wheat; /* Wheat background for contrast */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
 }
@@ -112,22 +112,7 @@ body.dark-mode {
 }
 
 body.dark-mode .footer {
-  background-color: #555;
-}
-
-.interests-section {
-  background-color: wheat; /* Wheat background for contrast */
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.interests-section h2 {
-  font-size: 1.8em;
-  color: #333;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  background-color: #000000;
 }
 
 .interests-section ul {
@@ -148,6 +133,28 @@ body.dark-mode .footer {
   color: #42a5f5; /* A calm blue to differentiate from the previous design */
   font-size: 1.5em;
 }
+
+.interests-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.interest-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 150px; /* Set a fixed width for each block */
+}
+
+.interest-item i {
+  font-size: 2em;
+  color: #ff6f61;
+  margin-bottom: 10px;
+}
+
 
 .interests-section ul li:hover {
   color: #ff6f61; /* Change text color on hover for interactivity */
