@@ -45,7 +45,7 @@ h2 i {
 }
 
 h3 {
-  font-size: 0.75em; /* Very small size, adjust as needed */
+  font-size: 0.9em; /* Very small size, adjust as needed */
   font-weight: normal; /* Optional: make it less bold */
   color: #666; /* Subtle, lighter color */
 }
