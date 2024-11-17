@@ -54,20 +54,7 @@ footer {
     bottom: 0;
     width: 100%;
 }
-#scrollTopBtn {
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    background-color: #3498db;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    font-size: 20px;
-    display: none;
-    cursor: pointer;
-}
-#scrollTopBtn.active {
-    display: block;
+
 }
 .left img {
     border-radius: 50%;
