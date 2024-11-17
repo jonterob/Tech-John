@@ -128,8 +128,8 @@ h2 i {
 
         .about img {
             border-radius: 50%;
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
             object-fit: cover;
             margin-bottom: 30px;
         }
