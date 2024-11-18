@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Njoroge Gitau - Curriculum Vitae</title>
+    <!-- Link to the external CSS file -->
+    <link href="styles.css" rel="stylesheet">
+    <!-- Add Font Awesome CDN for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#personal-info" class="smooth-scroll">Personal Info</a></li>
+            <li><a href="#education" class="smooth-scroll">Education</a></li>
+            <li><a href="#skills" class="smooth-scroll">Skills</a></li>
+            <li><a href="#projects" class="smooth-scroll">Projects</a></li>
+            <li><a href="#more-info" class="smooth-scroll">More Info</a></li>
+            <li><a href="#contact" class="smooth-scroll">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="section" id="personal-info">
+        <h1>John Njoroge Gitau</h1>
+        <div class="animated-text">Computer Science Student | Developer | Tech Enthusiast</div>
+    </section>
+
+    <section class="section" id="education">
+        <h2>Education</h2>
+        <div class="card">
+            <h3>Bachelor of Science in Computer Science</h3>
+            <p><strong>School:</strong> Kirinyaga University (2022 - Present)</p>
+            <p><strong>Focus:</strong> Web Development, Algorithms, Software Engineering</p>
+        </div>
+        <div class="card">
+            <h3>High School - Matu School</h3>
+            <p><strong>Year:</strong> 2017 - 2020</p>
+            <p><strong>KCSE Grade:</strong> B+</p>
+        </div>
+    </section>
+
+    <section class="section" id="skills">
+        <h2>Skills & Technologies</h2>
+        <ul class="skills">
+            <li><i class="fab fa-js-square"></i><strong>JavaScript</strong>
+                <div class="progress-bar"><span style="width: 80%; background-color: #007BFF;"></span></div>
+            </li>
+            <li><i class="fab fa-python"></i><strong>Python</strong>
+                <div class="progress-bar"><span style="width: 70%; background-color: #D63384;"></span></div>
+            </li>
+            <li><i class="fab fa-react"></i><strong>React</strong>
+                <div class="progress-bar"><span style="width: 60%; background-color: #28a745;"></span></div>
+            </li>
+        </ul>
+    </section>
+
+    <section class="section" id="projects">
+        <h2>Projects</h2>
+        <div class="card" onclick="openModal('Portfolio Website')">
+            <h3>Portfolio Website</h3>
+            <p>Built a dynamic portfolio website using HTML, CSS, and JavaScript. Added animations and interactive elements.</p>
+        </div>
+        <div class="card" onclick="openModal('Task Manager App')">
+            <h3>Task Manager App</h3>
+            <p>A full-stack web application to manage tasks using React and Node.js. Implemented user authentication and real-time data updates.</p>
+        </div>
+    </section>
+
+    <section class="section" id="more-info">
+        <h2>More Information</h2>
+        <button class="toggle-btn" onclick="toggleSection()">Show More</button>
+        <div id="more-info-section" style="display:none;">
+            <p>This section contains more details about my previous projects and internships...</p>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <h2>Contact Information</h2>
+        <ul class="contact">
+            <li><i class="fas fa-envelope"></i><strong>Email:</strong> <a href="mailto:jonterob756@gmail.com">jonterob756@gmail.com</a></li>
+            <li><i class="fas fa-phone"></i><strong>Phone:</strong> <a href="tel:+254110856452">+254 110 856 452</a></li>
+            <li><i class="fas fa-map-marker-alt"></i><strong>Address:</strong> P.O.Box 143-10300, Kerugoga, Kenya</li>
+        </ul>
+    </section>
+
+    <!-- Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="project-title"></h2>
+            <p id="project-description"></p>
+        </div>
+    </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="scripts.js"></script>
+</body>
+</html>
