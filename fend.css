@@ -1,0 +1,97 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #f6d365, #fda085);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+form {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+h1 {
+    text-align: center;
+    color: #ff7e5f;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+input, select {
+    width: calc(100% - 10px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+input[type="radio"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+input[type="submit"], input[type="reset"] {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+    width: 120px; /* Reduced width */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+input[type="reset"] {
+    background: linear-gradient(90deg, #6dd5ed, #2193b0);
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gender-options {
+    margin-bottom: 15px;
+}
+
+.gender-options label {
+    display: inline-block;
+    margin-right: 15px;
+    color: #444;
+    transition: color 0.2s ease-in-out;
+}
+
+.gender-options input:checked + label {
+    color: #ff7e5f;
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    display: none;
+}
