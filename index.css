@@ -57,6 +57,28 @@ body {
     border-radius: 5px;
 }
 
+/* Tooltip Text */
+.nav a .tooltip {
+    visibility: hidden;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    color: blue;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.nav a:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
 .main {
     display: flex;
     flex-wrap: wrap;
