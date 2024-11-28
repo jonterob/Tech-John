@@ -1,3 +1,4 @@
+
 /* General Reset */
 * {
     margin: 0;
@@ -10,11 +11,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: white;
     transition: background-color 0.5s ease;
-}
-
-.container {
-    max-width: 100%;
-    margin: 0 auto;
+    padding-bottom: 60px; /* Matches footer height for fixed footer */
 }
 
 /* Navbar */
@@ -51,37 +48,6 @@ body {
     font-size: 24px;
 }
 
-/* Menu Items */
-.menu a {
-    position: relative;
-    display: inline-block;
-    padding: 10px;
-    color: white;
-    text-decoration: none;
-}
-
-/* Tooltip Text */
-.menu a .tooltip {
-    visibility: hidden;
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: white;
-    color: blue;
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 14px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 10;
-}
-
-.menu a:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-}
-
 /* Banner */
 .banner {
     background-position: center;
@@ -96,26 +62,6 @@ body {
     font-size: 30px;
     text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
     margin-bottom: 7px;
-}
-
-/* Section */
-.section {
-    padding: 10px 5px;
-    font-size: 1em;
-    font-weight: normal;
-}
-
-.section h2 {
-    text-align: center;
-    color: #2a9d8f;
-    font-size: 35px;
-    margin-bottom: 30px;
-    font-weight: bold;
-}
-
-h2 i {
-    font-style: normal;
-    margin-right: 10px;
 }
 
 /* About Section */
@@ -155,15 +101,20 @@ h2 i {
     font-weight: 600;
 }
 
-/* Skills and Projects */
-.skills,
+/* Skills Section */
+.skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Projects Section */
 .projects {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
-.skill,
 .project {
     background-color: #f1faee;
     border-radius: 12px;
@@ -172,21 +123,8 @@ h2 i {
     transition: transform 0.3s ease;
 }
 
-.skill:hover,
 .project:hover {
     transform: scale(1.05);
-}
-
-.skill-icon {
-    font-size: 50px;
-    color: #2a9d8f;
-    margin-bottom: 15px;
-}
-
-.skill-name {
-    font-weight: bold;
-    margin-bottom: 10px;
-    font-size: 22px;
 }
 
 .project img {
@@ -224,19 +162,26 @@ h2 i {
     font-size: 16px;
 }
 
-/* Footer */
+/* Footer (Fixed Option - Always Visible) */
 .footer {
     background-color: #f4a261;
     color: white;
     padding: 20px;
     text-align: center;
-    margin-top: 50px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    position: fixed;
+    position: fixed; /* Always visible */
     bottom: 0;
     width: 100%;
     z-index: 1000;
+    height: 60px; /* Explicit height */
 }
+
+/* Sticky Footer Option (Replace 'fixed' with this if needed) */
+/* Uncomment this block if you prefer sticky behavior */
+ /*.footer {
+     position: sticky; /* Sticks to the bottom near the end */
+     bottom: 0;
+ }*/
 
 /* Media Queries */
 @media (max-width: 768px) {
@@ -246,11 +191,6 @@ h2 i {
 
     .about {
         flex-direction: row;
-    }
-
-    .about img {
-        width: 250px;
-        height: 250px;
     }
 
     .skills {
