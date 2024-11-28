@@ -17,6 +17,7 @@ body {
     margin: 0 auto;
 }
 
+/* Navbar */
 .navbar {
     display: flex;
     align-items: center;
@@ -25,12 +26,12 @@ body {
     color: white;
     padding: 10px;
     margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
     z-index: 100;
     width: 100%;
-    flex-wrap: nowrap; /* Prevent wrapping */
+    flex-wrap: nowrap;
 }
 
 .navbar a {
@@ -50,7 +51,7 @@ body {
     font-size: 24px;
 }
 
-/* Style for the menu items */
+/* Menu Items */
 .menu a {
     position: relative;
     display: inline-block;
@@ -61,9 +62,9 @@ body {
 
 /* Tooltip Text */
 .menu a .tooltip {
-    visibility: hidden; /* Hidden by default */
+    visibility: hidden;
     position: absolute;
-    bottom: 100%; /* Position above the icon */
+    bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
     background-color: white;
@@ -71,18 +72,17 @@ body {
     border-radius: 5px;
     padding: 5px;
     font-size: 14px;
-    opacity: 0; /* Make the tooltip invisible */
+    opacity: 0;
     transition: opacity 0.3s ease;
-    z-index: 10; /* Make sure tooltip is on top */
+    z-index: 10;
 }
 
-/* Show the tooltip when hovering over the menu item */
 .menu a:hover .tooltip {
     visibility: visible;
-    opacity: 1; /* Make the tooltip visible */
+    opacity: 1;
 }
 
-
+/* Banner */
 .banner {
     background-position: center;
     text-align: center;
@@ -94,14 +94,15 @@ body {
 
 .banner h1 {
     font-size: 45px;
-    text-shadow: 4px 4px 6px rgba(0,0,0,0.3);
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
     margin-bottom: 7px;
 }
 
+/* Section */
 .section {
     padding: 10px 5px;
-    font-size: 1em; /* Very small size, adjust as needed */
-    font-weight: normal; /* Optional: make it less bold */
+    font-size: 1em;
+    font-weight: normal;
 }
 
 .section h2 {
@@ -113,163 +114,168 @@ body {
 }
 
 h2 i {
-  font-style: normal; /* Prevent the icon from being italic */
-  margin-right: 10px;
+    font-style: normal;
+    margin-right: 10px;
 }
 
+/* About Section */
 .about {
-            padding: 80px 30px;
-            background-color: white;
-            text-align: center;
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
-            margin: -50px 30px 30px 30px;
-            border-radius: 10px;
-        }
+    padding: 80px 30px;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    margin: -50px 30px 30px 30px;
+    border-radius: 10px;
+}
 
-        .about img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            margin-bottom: 30px;
-        }
+.about img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 30px;
+}
 
-        .about h2 {
-            font-size: 32px;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
+.about h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
 
-        .about p {
-            font-size: 18px;
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
+.about p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
 
-        .about a {
-            color: #f4a261;
-            text-decoration: none;
-            font-weight: 600;
-        }
-.skills, .projects {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
+.about a {
+    color: #f4a261;
+    text-decoration: none;
+    font-weight: 600;
+}
 
-        .skill, .project {
-            background-color: #f1faee;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
+/* Skills and Projects */
+.skills,
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
 
-        .skill:hover, .project:hover {
-            transform: scale(1.05);
-        }
+.skill,
+.project {
+    background-color: #f1faee;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
 
-        .skill-icon {
-            font-size: 50px;
-            color: #2a9d8f;
-            margin-bottom: 15px;
-        }
+.skill:hover,
+.project:hover {
+    transform: scale(1.05);
+}
 
-        .skill-name {
-            font-weight: bold;
-            margin-bottom: 10px;
-            font-size: 22px;
-        }
+.skill-icon {
+    font-size: 50px;
+    color: #2a9d8f;
+    margin-bottom: 15px;
+}
 
-        .project img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
+.skill-name {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
 
-        .project-info {
-            display: none;
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            right: 10px;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 10px;
-            color: white;
-            border-radius: 10px;
-        }
+.project img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
 
-        .project:hover .project-info {
-            display: block;
-        }
+.project-info {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+}
 
-        .project-title {
-            font-weight: bold;
-            font-size: 20px;
-        }
+.project:hover .project-info {
+    display: block;
+}
 
-        .project-link {
-            color: #e76f51;
-            text-decoration: none;
-            font-size: 16px;
-        }
+.project-title {
+    font-weight: bold;
+    font-size: 20px;
+}
 
-        .footer {
+.project-link {
+    color: #e76f51;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Footer */
+.footer {
     background-color: wheat;
     color: white;
     padding: 20px;
     text-align: center;
     margin-top: 50px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    position: fixed; /* Ensures the footer stays fixed */
-    bottom: 0; /* Sticks the footer to the bottom of the viewport */
-    width: 100%; /* Makes the footer span the entire width of the viewport */
-    z-index: 1000; /* Keeps the footer on top of other elements if overlapping occurs */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
-        /* Disable responsive adjustments */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: row; /* Keep navbar items in row */
-            }
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+    }
 
-            .about {
-                flex-direction: row; /* Maintain about section in row */
-            }
+    .about {
+        flex-direction: row;
+    }
 
-            .about img {
-                width: 250px; /* Maintain image size */
-                height: 250px; /* Maintain image size */
-            }
+    .about img {
+        width: 250px;
+        height: 250px;
+    }
 
-            .skills {
-                grid-template-columns: repeat(3, 1fr); /* Keep 3 columns for skills */
-            }
+    .skills {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
-            .projects {
-                grid-template-columns: repeat(3, 1fr); /* Keep 3 columns for projects */
-            }
-        }
+    .projects {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 
-        /* Keep layout the same on all devices */
-        @media (max-width: 480px) {
-            .navbar {
-                flex-direction: row; /* Maintain navbar as row */
-            }
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: row;
+    }
 
-            .about {
-                flex-direction: row; /* Maintain about section in row */
-            }
+    .about {
+        flex-direction: row;
+    }
 
-            .skills {
-                grid-template-columns: repeat(3, 1fr); /* Keep 3 columns for skills */
-            }
+    .skills {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
-            .projects {
-                grid-template-columns: repeat(3, 1fr); /* Keep 3 columns for projects */
-            }
-        }
-    
+    .projects {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
