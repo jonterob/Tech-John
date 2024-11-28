@@ -1,4 +1,3 @@
-
 /* General Reset */
 * {
     margin: 0;
@@ -11,7 +10,11 @@ body {
     font-family: Arial, sans-serif;
     background-color: white;
     transition: background-color 0.5s ease;
-    padding-bottom: 60px; /* Matches footer height for fixed footer */
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 /* Navbar */
@@ -48,6 +51,37 @@ body {
     font-size: 24px;
 }
 
+/* Menu Items */
+.menu a {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Tooltip Text */
+.menu a .tooltip {
+    visibility: hidden;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    color: blue;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.menu a:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
 /* Banner */
 .banner {
     background-position: center;
@@ -62,6 +96,26 @@ body {
     font-size: 30px;
     text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
     margin-bottom: 7px;
+}
+
+/* Section */
+.section {
+    padding: 10px 5px;
+    font-size: 1em;
+    font-weight: normal;
+}
+
+.section h2 {
+    text-align: center;
+    color: #2a9d8f;
+    font-size: 35px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+h2 i {
+    font-style: normal;
+    margin-right: 10px;
 }
 
 /* About Section */
@@ -101,11 +155,35 @@ body {
     font-weight: 600;
 }
 
-/* Skills Section */
+/* Skills */
 .skills {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+}
+
+.skill {
+    background-color: #f1faee;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.skill:hover {
+    transform: scale(1.05);
+}
+
+.skill-icon {
+    font-size: 50px;
+    color: #2a9d8f;
+    margin-bottom: 15px;
+}
+
+.skill-name {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 22px;
 }
 
 /* Projects Section */
@@ -183,6 +261,7 @@ body {
      bottom: 0;
  }*/
 
+
 /* Media Queries */
 @media (max-width: 768px) {
     .navbar {
@@ -191,6 +270,11 @@ body {
 
     .about {
         flex-direction: row;
+    }
+
+    .about img {
+        width: 250px;
+        height: 250px;
     }
 
     .skills {
