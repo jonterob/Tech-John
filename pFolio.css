@@ -37,7 +37,7 @@ body {
     color: white;
     text-decoration: none;
     margin: 0 15px;
-    font-size: 18px;
+    font-size: 20px;
     transition: color 0.3s ease;
 }
 
@@ -218,7 +218,7 @@ h2 i {
         }
 
         .footer {
-            background-color: #264653;
+            background-color: wheat;
             color: white;
             padding: 20px;
             text-align: center;
