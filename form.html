@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudentRegistrationForm</title>
+    <title>RegistrationForm</title>
     <link rel="stylesheet" type="text/css" href="fend.css">
 </head>
 <body>
     <form id="registrationForm" action="process_registration.php" method="POST">
-        <h1>Student Registration</h1>
+        <h1>Registration Form</h1>
         <div class="error" id="errorMessage"></div>
 
-        <label for="Regno">Registration Number:</label>
-        <input type="number" id="regno" name="Registration_Number" required>
+        <label for="Regno">Identification Number :</label>
+        <input type="number" id="IdNo" name="Identification_Number" required>
 
-        <label for="StudentName">Student Name:</label>
-        <input type="text" id="studentName" name="StudentName" required>
+        <label for="StudentName">First Name :</label>
+        <input type="text" id="FName" name="First_Name" required>
 
-        <label for="Age">Age:</label>
-        <input type="number" id="age" name="Age" required readonly> <!-- Age input is read-only -->
+        <label for="StudentName">Middle Name :</label>
+        <input type="text" id="MName" name="Middle_Name" required>
+
+        <label for="StudentName">Last Name :</label>
+        <input type="text" id="LName" name="Last_Name" required>
 
         <div class="gender-options">
             <label for="Gender">Gender:</label>
@@ -32,6 +35,9 @@
 
         <label for="DateofBirth">Date of Birth:</label>
         <input type="date" id="dob" name="DateofBirth" required>
+
+        <label for="Age">Age:</label>
+        <input type="number" id="age" name="Age" required readonly> <!-- Age input is read-only -->
 
         <label for="Programme">Programme:</label>
         <input type="text" id="programme" name="Programme" required>
@@ -52,49 +58,6 @@
             <input type="reset" id="resetBtn" value="Reset">
         </div>
     </form>
-
-    <script>
-        document.getElementById('dob').addEventListener('change', function() {
-            const dob = new Date(this.value);
-            const today = new Date();
-            const age = today.getFullYear() - dob.getFullYear();
-            const m = today.getMonth() - dob.getMonth();
-
-            if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
-                age--;
-            }
-
-            document.getElementById('age').value = age; // Set calculated age in the Age field
-        });
-
-        document.getElementById('registrationForm').addEventListener('submit', function (e) {
-            // Validate all fields before allowing submission
-            const regno = document.getElementById('regno').value.trim();
-            const studentName = document.getElementById('studentName').value.trim();
-            const age = document.getElementById('age').value.trim();
-            const dob = document.getElementById('dob').value;
-            const programme = document.getElementById('programme').value.trim();
-            const school = document.getElementById('school').value.trim();
-            const modeOfStudy = document.getElementById('modeOfStudy').value;
-
-            const errorMessage = document.getElementById('errorMessage');
-
-            if (!regno || !studentName || !age || !dob || !programme || !school || !modeOfStudy) {
-                e.preventDefault(); // Prevent form submission
-                errorMessage.textContent = 'Please fill all fields.';
-                errorMessage.style.display = 'block';
-                return;
-            }
-
-            errorMessage.style.display = 'none';
-        });
-
-        document.getElementById('resetBtn').addEventListener('click', function (e) {
-            const confirmReset = confirm('Are you sure you want to reset the form?');
-            if (!confirmReset) {
-                e.preventDefault(); // Prevent reset
-            }
-        });
-    </script>
+  <script src="form.js"></script>
 </body>
 </html>
