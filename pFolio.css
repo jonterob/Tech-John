@@ -6,10 +6,12 @@
 }
 
 /* Body and Typography */
+/* Body and Typography */
 body {
     font-family: Arial, sans-serif;
     background-color: white;
     transition: background-color 0.5s ease;
+    padding-bottom: 60px; /* Matches footer height for fixed footer */
 }
 
 .container {
