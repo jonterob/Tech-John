@@ -34,7 +34,7 @@ body {
     flex-direction: row; /* Horizontal layout */
     justify-content: space-around; /* Optional: space links evenly within the nav */
     background-color: white;
-    padding: 10px;
+    padding: 6px;
     gap: 10px;
     border: 1px solid black;
     flex-wrap: nowrap; /* Prevent wrapping */
@@ -44,16 +44,16 @@ body {
 .nav a {
     text-decoration: none;
     color: blue;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
-    padding: 10px;
+    padding: 8px;
     transition: color 0.3s ease, background-color 0.3s ease;
     flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .nav a:hover {
     color: yellow;
-    background-color: blue;
+    background-color: wheat;
     border-radius: 5px;
 }
 
