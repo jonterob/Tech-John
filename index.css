@@ -39,7 +39,7 @@ body {
     border: 1px solid black;
     flex-wrap: nowrap; /* Prevent wrapping */
     overflow-x: auto; /* Allow horizontal scrolling if needed */
-    
+    position: relative; /* Needed for tooltip positioning */
 }
 
 .nav a {
@@ -48,13 +48,8 @@ body {
     font-size: 20px;
     font-weight: bold;
     padding: 2px;
+    position: relative; /* Needed for tooltip positioning */
     transition: color 0.3s ease, background-color 0.3s ease;
-    flex-wrap: nowrap; /* Prevent wrapping */
-    position: relative;
-    display: inline-block;
-    padding: 10px;
-    color: white;
-    text-decoration: none;
 }
 
 .nav a:hover {
@@ -63,28 +58,24 @@ body {
     border-radius: 5px;
 }
 
-/* Tooltip Text */
-.nav a .tooltip {
-    visibility: hidden;
+/* Tooltip Styling */
+.nav a[title]:hover::after {
+    content: attr(title);
     position: absolute;
-    bottom: 100%;
+    background-color: #333;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    top: 25px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: white;
-    color: blue;
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 14px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    white-space: nowrap;
     z-index: 10;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-.nav a:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-}
-
+/* Main content section */
 .main {
     display: flex;
     flex-wrap: wrap;
@@ -96,7 +87,7 @@ body {
     width: 30%;
     margin: 10px;
     background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .main .card img {
@@ -143,18 +134,17 @@ body {
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-    .nav a{
+    .nav a {
         flex-direction: row; /* Stack navigation links vertically */
     }
 
-    @media screen and (min-width: 768px) {
-    .nav a{
-        flex-direction: row; /* Keep horizontal layout */
+    .main .card {
+        width: 90%;
     }
 }
 
-
-    .main .card {
-        width: 90%;
+@media screen and (min-width: 768px) {
+    .nav a {
+        flex-direction: row; /* Keep horizontal layout */
     }
 }
