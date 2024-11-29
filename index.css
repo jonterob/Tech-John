@@ -39,7 +39,7 @@ body {
     border: 1px solid black;
     flex-wrap: nowrap; /* Prevent wrapping */
     overflow-x: auto; /* Allow horizontal scrolling if needed */
-    position: relative; /* Needed for tooltip positioning */
+    
 }
 
 .nav a {
@@ -48,8 +48,8 @@ body {
     font-size: 20px;
     font-weight: bold;
     padding: 2px;
-    position: relative; /* Needed for tooltip positioning */
     transition: color 0.3s ease, background-color 0.3s ease;
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .nav a:hover {
@@ -58,35 +58,6 @@ body {
     border-radius: 5px;
 }
 
-/* Tooltip Styling */
-.tooltip {
-    position: relative;
-    display: inline-block;
-}
-
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    border-radius: 5px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -60px;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-}
-
-/* Main content section */
 .main {
     display: flex;
     flex-wrap: wrap;
@@ -98,7 +69,7 @@ body {
     width: 30%;
     margin: 10px;
     background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .main .card img {
@@ -145,17 +116,18 @@ body {
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-    .nav a {
+    .nav a{
         flex-direction: row; /* Stack navigation links vertically */
     }
 
-    .main .card {
-        width: 90%;
+    @media screen and (min-width: 768px) {
+    .nav a{
+        flex-direction: row; /* Keep horizontal layout */
     }
 }
 
-@media screen and (min-width: 768px) {
-    .nav a {
-        flex-direction: row; /* Keep horizontal layout */
+
+    .main .card {
+        width: 90%;
     }
 }
