@@ -39,6 +39,7 @@ body {
     border: 1px solid black;
     flex-wrap: nowrap; /* Prevent wrapping */
     overflow-x: auto; /* Allow horizontal scrolling if needed */
+    
 }
 
 .nav a {
@@ -49,6 +50,11 @@ body {
     padding: 2px;
     transition: color 0.3s ease, background-color 0.3s ease;
     flex-wrap: nowrap; /* Prevent wrapping */
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
 }
 
 .nav a:hover {
