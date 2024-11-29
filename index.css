@@ -59,20 +59,31 @@ body {
 }
 
 /* Tooltip Styling */
-.nav a[title]:hover::after {
-    content: attr(title);
-    position: absolute;
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
     background-color: #333;
-    color: white;
-    padding: 8px;
+    color: #fff;
+    text-align: center;
     border-radius: 5px;
-    font-size: 14px;
-    top: 25px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
     left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;
-    z-index: 10;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }
 
 /* Main content section */
