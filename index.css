@@ -32,28 +32,58 @@ body {
 .nav {
     display: flex; /* Default Flexbox */
     flex-direction: row; /* Horizontal layout */
-    justify-content: space-around; /* Optional: space links evenly within the nav */
-    background-color: white;
+    justify-content: space-between; /* Optional: space links evenly within the nav */
+    background-color: #f4a261;
     padding: 6px;
     gap: 10px;
     border: 1px solid black;
     flex-wrap: nowrap; /* Prevent wrapping */
     overflow-x: auto; /* Allow horizontal scrolling if needed */
-    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    flex-wrap: nowrap;
+    z-index: 100;
+    width: 100%;
+    flex-wrap: nowrap;
 }
 
 .nav a {
     text-decoration: none;
-    color: blue;
     font-size: 20px;
     font-weight: bold;
     padding: 2px;
     transition: color 0.3s ease, background-color 0.3s ease;
     flex-wrap: nowrap; /* Prevent wrapping */
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Tooltip Text */
+.nav a .tooltip {
+    visibility: hidden;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    color: blue;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.nav a:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
 }
 
 .nav a:hover {
-    color: yellow;
+    color: #e76f51;
     background-color: wheat;
     border-radius: 5px;
 }
