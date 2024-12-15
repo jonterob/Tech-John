@@ -36,6 +36,11 @@ section {
     transition: opacity 0.5s, transform 0.5s;
 }
 
+section#contact {
+    padding-bottom: 60px; /* Adjust the padding so the section is not overlapped */
+}
+
+
 h2 {
     color: #b700ff;
     font-size: 1.8em;
