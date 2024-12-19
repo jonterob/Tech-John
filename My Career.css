@@ -18,8 +18,8 @@ body {
 header {
     text-align: center; /* Center align header content */
     padding: 40px 0; /* Vertical padding for space above and below */
-    background: blue; /* Blue background for header */
-    color: #fff; /* White text color */
+    background: #fff; /* Blue background for header */
+    color: blue; /* White text color */
 }
 
 /* Header title styling for size, margin, and weight */
