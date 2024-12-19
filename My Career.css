@@ -1,99 +1,116 @@
+/* Reset margins, padding, and ensure consistent box-sizing across elements */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Set base styles for the body, including font, background color, and text color */
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background: wheat);
-    color: #fff;
-    padding: 0 15px;
+    background: wheat; /* Changed background to wheat color */
+    color: #fff; /* White text color */
+    padding: 0 15px; /* Add horizontal padding */
+}
 
-
+/* Header styling for alignment and spacing */
 header {
-    text-align: center;
-    padding: 40px 0;
+    text-align: center; /* Center align header content */
+    padding: 40px 0; /* Vertical padding for space above and below */
 }
 
+/* Header title styling for size, margin, and weight */
 header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    font-weight: 600;
+    font-size: 2.5em; /* Large font size */
+    margin-bottom: 10px; /* Space below the header title */
+    font-weight: 600; /* Semi-bold font weight */
 }
 
+/* Header subtitle styling for smaller size and lighter font weight */
 header p {
-    font-size: 1.2em;
-    font-weight: 300;
+    font-size: 1.2em; /* Medium font size */
+    font-weight: 300; /* Light font weight */
 }
 
+/* Container for central content with a white background and shadow */
 .container {
-    max-width: 800px;
-    margin: 20px auto;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    color: #333;
-    overflow: hidden;
+    max-width: 800px; /* Limit the width */
+    margin: 20px auto; /* Center the container with margin */
+    background: #fff; /* White background color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    color: #333; /* Dark text color */
+    overflow: hidden; /* Prevent content overflow */
 }
 
+/* General section styling for padding and text alignment */
 .container section {
-    padding: 30px;
-    text-align: center;
+    padding: 30px; /* Add space inside sections */
+    text-align: center; /* Center align text */
 }
 
+/* Section headings styling for size, color, and spacing */
 .container h2 {
-    font-size: 2em;
-    color: #3498db;
-    margin-bottom: 15px;
-    font-weight: 600;
+    font-size: 2em; /* Large font size for headings */
+    color: #3498db; /* Blue color for headings */
+    margin-bottom: 15px; /* Space below the heading */
+    font-weight: 600; /* Semi-bold font weight */
 }
 
+/* Paragraph styling within the container for readability */
 .container p {
-    font-size: 1.1em;
-    margin-bottom: 15px;
+    font-size: 1.1em; /* Slightly larger font size */
+    margin-bottom: 15px; /* Space below each paragraph */
 }
 
+/* Skills container as a flexible grid layout */
 .skills {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center align skills */
+    flex-wrap: wrap; /* Allow wrapping to new lines */
+    gap: 10px; /* Space between skills */
+    margin-top: 20px; /* Space above the skills section */
 }
 
+/* Individual skill badge styling */
 .skills span {
-    background: #3498db;
-    color: #fff;
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-size: 1em;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
+    background: #3498db; /* Blue background for badges */
+    color: #fff; /* White text color */
+    padding: 8px 15px; /* Space inside the badge */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1em; /* Standard font size */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    transition: transform 0.3s; /* Smooth scaling effect */
 }
 
+/* Hover effect for skill badges */
 .skills span:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Slightly enlarge the badge on hover */
 }
 
+/* Footer styling for alignment and spacing */
 footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-    font-size: 0.9em;
-    color: #ddd;
+    text-align: center; /* Center align footer content */
+    padding: 20px; /* Space inside the footer */
+    margin-top: 20px; /* Space above the footer */
+    font-size: 0.9em; /* Smaller font size */
+    color: #ddd; /* Light gray text color */
 }
 
+/* Responsive design adjustments for smaller screens */
 @media (max-width: 768px) {
+    /* Adjust header title font size for small screens */
     header h1 {
         font-size: 2em;
     }
 
+    /* Adjust header subtitle font size for small screens */
     header p {
         font-size: 1em;
     }
 
+    /* Adjust section heading font size for small screens */
     .container h2 {
         font-size: 1.8em;
     }
