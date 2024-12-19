@@ -3,6 +3,8 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    max-width: 100vw; /* Prevents content overflow */
+    overflow-x: hidden; /* Hides horizontal scrolling */
 }
 header {
     background-color: #3e8e41;
@@ -12,36 +14,33 @@ header {
     font-family: 'Bodoni MT', serif;
 }
 header img {
-    height: 150px;
+    height: auto;
     width: 150px;
+    max-width: 100%; /* Responsive images */
     border-radius: 50%;
     margin-top: 20px;
 }
 section {
     padding: 20px;
     margin: 20px auto;
-    width: 80%;
+    width: calc(100% - 40px); /* Ensures responsiveness */
+    max-width: 80%;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 section#contact {
     padding-bottom: 60px; /* Adjust the padding so the section is not overlapped */
 }
-
-h1,h2 {
+h1, h2 {
     color: #2c3e50;
     border-bottom: 2px solid #3498db;
     padding-bottom: 10px;
 }
-
 h2 i {
-  font-style: normal; /* Prevent the icon from being italic */
-  margin-right: 10px;
-  
+    font-style: normal; /* Prevent the icon from being italic */
+    margin-right: 10px;
 }
-
 p {
     font-family: 'Times New Roman', Times, serif;
     line-height: 1.6;
@@ -59,8 +58,6 @@ footer {
     bottom: 0;
     width: 100%;
 }
-
-}
 .left img {
     border-radius: 50%;
 }
@@ -70,7 +67,7 @@ footer {
         width: 95%;
     }
     header img {
-        height: 100px;
+        height: auto;
         width: 100px;
     }
 }
