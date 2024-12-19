@@ -97,7 +97,7 @@ header p {
 /* Footer styling for alignment, spacing, and color */
 footer {
     text-align: center; /* Center align footer content */
-    padding: 20px; /* Space inside the footer */
+    padding: 30px; /* Space inside the footer */
     margin: auto;
     margin-top: 20px; /* Space above the footer */
     font-size: 0.9em; /* Smaller font size */
