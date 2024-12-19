@@ -9,8 +9,8 @@
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background: #fff; /* Background color is wheat */
-    color: wheat; /* White text color */
+    background: wheat; /* Background color is wheat */
+    color: #fff; /* White text color */
     padding: 0 15px; /* Add horizontal padding */
 }
 
