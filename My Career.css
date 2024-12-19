@@ -17,9 +17,11 @@ body {
 /* Header styling for alignment, spacing, and color */
 header {
     text-align: center; /* Center align header content */
-    padding: 40px 0; /* Vertical padding for space above and below */
+    padding: 20px;
+    margin-top: 20px; /* Space between the header and top of the page */
     background: #fff; /* White background for header */
     color: blue; /* Blue text color */
+    max-width: 800px; /* Limit the width */
 }
 
 /* Header title styling for size, margin, and weight */
@@ -97,8 +99,9 @@ footer {
     padding: 20px; /* Space inside the footer */
     margin-top: 20px; /* Space above the footer */
     font-size: 0.9em; /* Smaller font size */
-    background: blue; /* Blue background for footer */
-    color: #ddd; /* Light gray text color */
+    background: white; /* White background for footer */
+    color: blue; /* Blue text color */
+    max-width: 800px; /* Limit the width */
 }
 
 /* Responsive design adjustments for smaller screens */
