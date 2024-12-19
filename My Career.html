@@ -29,7 +29,11 @@
         </section>
     </div>
     <footer>
-        &copy; 2024 John Gitau | Designed with passion for the web
+        &copy; <span id="current-year"></span> <a href="https://jonterob.github.io/Tech-John">John Gitau.</a> All rights reserved.
     </footer>
+    <script>
+        // Update footer year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
