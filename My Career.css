@@ -103,7 +103,7 @@ footer {
     margin-bottom: 30px;
     font-size: 0.9em; /* Smaller font size */
     background: white; /* White background for footer */
-    color: blue; /* Blue text color */
+    color: black; /* Blue text color */
     max-width: 800px; /* Limit the width */
 }
 
