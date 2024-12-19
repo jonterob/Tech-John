@@ -7,10 +7,10 @@
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background: linear-gradient(to bottom, #3498db, #2c3e50);
+    background: wheat);
     color: #fff;
     padding: 0 15px;
-}
+
 
 header {
     text-align: center;
