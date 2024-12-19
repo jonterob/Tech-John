@@ -100,6 +100,7 @@ footer {
     padding: 30px; /* Space inside the footer */
     margin: auto;
     margin-top: 30px; /* Space above the footer */
+    margin-bottom: 30px;
     font-size: 0.9em; /* Smaller font size */
     background: white; /* White background for footer */
     color: blue; /* Blue text color */
