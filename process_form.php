@@ -94,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <!-- Link to redirect back to the form page -->
         <div class="button-container">
-            <a href="index.html">Go Back to Form</a>
+            <a href="survey.html">Go Back to Form</a>
         </div>
     </div>
 </body>
