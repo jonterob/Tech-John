@@ -89,6 +89,8 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    text-align: center;
+    font-weight: bold;
 }
 .toggle-btn {
     background-color: #b700ff;
