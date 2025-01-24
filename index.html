@@ -3,56 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bgQiop86eiomZx.com</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>SurveyForm</title>
+    <link rel="stylesheet" href="Fend.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>John Njoroge Gitau</h1>
-        </div>
-        <div class="nav">
-                <a href="Home.html"><i class="fas fa-home"></i><span class="tooltip"> </span></a>
-                <a href="about.html"><i class="fas fa-user"></i><span class="tooltip"> </span></a>
-                <a href="pFolio.html"><i class="fas fa-briefcase"></i><span class="tooltip"> </span></a>
-                <a href="contact.html"><i class="fas fa-envelope"></i><span class="tooltip"> </span></a>
-        </div>
-        <div class="main">
-            <div class="card">
-                <img src="Screenshot_20231217-121019~2.jpg" alt="John Gitau"/>
-                <div class="content">
-                    <h3>My Career</h3>
-                    <p>Hi, I'm John Gitau, a web developer based in Kutus, Kenya. Currently, I'm pursuing a Bachelor's degree in Computer Science at Kirinyaga University. I have a passion in Websites using HTML, CSS, and JavaScript and improving my skills every day.</p>
-                    <a href="My Career.html">Read More</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="Screenshot_20231005-083802.png" alt="John Njoroge Gitau"/>
-                <div class="content">
-                    <h3>Educational Journey</h3>
-                    <p>My educational journey began in 2008. I completed my primary education in 2016 and joined Matu High School from 2017 to 2020. I embarked on a new chapter at Kirinyaga University, pursuing a degree in Computer Science.<br></p>
-                    <a href="biography.html">Read More</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="images.jpg" alt="John Njoroge Gitau"/>
-                <div class="content">
-                    <h3>Career Objective</h3>
-                    <p>My mission is to leverage my Computer Science education to develop innovative software solutions that address real-world challenges, enhance user experiences and foster meaningful progress. I'm striving for excellence every step of the way.<br></p>
-                    <a href="career.html">Read More</a>
-                </div>
-            </div>
-        </div>
+    <div class="form-container">
+        <h1>Survey Form</h1>
+        <form action="process_form.php" method="post" onsubmit="return validateForm()" id="surveyForm">
+            <label for="Firstname">First Name:</label>
+            <input type="text" id="Firstname" name="Firstname" required>
 
-        <div class="footer">
-            &copy; <span id="current-year"></span> <a href="https://jonterob.github.io/Tech-John">John Gitau.</a> All rights reserved.
-        </div>
+            <label for="Middlename">Middle Name:</label>
+            <input type="text" id="Middlename" name="Middlename" required>
+
+            <label for="Lastname">Last Name:</label>
+            <input type="text" id="Lastname" name="Lastname" required>
+
+            <label for="Age">Age:</label>
+            <input type="number" id="Age" name="Age" required>
+
+            <label for="Email">Email:</label>
+            <input type="email" id="Email" name="Email" required>
+
+            <label for="Occupation">Occupation:</label>
+            <input type="text" id="Occupation" name="Occupation" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <div class="button-container">
+                <input type="submit" id="submitButton" value="Submit">
+                <input type="button" id="clearButton" value="Clear" onclick="clearForm()">
+            </div>
+        </form>
     </div>
 
-    <script>
-        // Update footer year
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+    <script src="Bend.jsx"></script>
 </body>
 </html>
