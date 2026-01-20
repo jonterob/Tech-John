@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - John Gitau</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: var(--dark);
+            line-height: 1.7;
+            background-color: #f8fafc;
+        }
+        
+        .navbar {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .terms-header {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 6rem 0 4rem;
+            margin-bottom: 4rem;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        
+        .section-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .terms-section {
+            margin-bottom: 3rem;
+        }
+        
+        .terms-section h3 {
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .terms-list {
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .terms-list li {
+            margin-bottom: 0.8rem;
+            color: var(--gray);
+        }
+        
+        .warning-box {
+            background: linear-gradient(120deg, rgba(245, 158, 11, 0.1) 0%, rgba(251, 191, 36, 0.1) 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #f59e0b;
+            margin: 2rem 0;
+        }
+        
+        .info-box {
+            background: linear-gradient(120deg, rgba(37, 99, 235, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            margin: 2rem 0;
+        }
+        
+        .table-of-contents {
+            position: sticky;
+            top: 100px;
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .toc-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .toc-item:last-child {
+            border-bottom: none;
+        }
+        
+        .toc-item a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .toc-item a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+        
+        .toc-item a i {
+            margin-right: 0.8rem;
+            font-size: 0.9rem;
+            color: var(--primary);
+        }
+        
+        .update-badge {
+            background: var(--primary);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .terms-header {
+                padding: 5rem 0 3rem;
+            }
+            
+            .section-card {
+                padding: 1.5rem;
+            }
+            
+            .table-of-contents {
+                position: static;
+                margin-bottom: 2rem;
+            }
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+            color: white;
+        }
+        
+        .legal-terms {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 1rem;
+        }
+        
+        .agreement-check {
+            background: #10b981;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-code me-2"></i>John Gitau
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="terms-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <span class="update-badge">Last Updated: <span id="current-date"></span></span>
+                    <h1 class="display-5 fw-bold mb-3">Terms of Service</h1>
+                    <p class="lead mb-0">Please read these terms carefully before using our website and services.</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fas fa-file-contract fa-6x opacity-75"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Table of Contents -->
+            <div class="col-lg-4 mb-4">
+                <div class="table-of-contents">
+                    <h4 class="mb-3"><i class="fas fa-list me-2"></i>Contents</h4>
+                    <div class="toc-item">
+                        <a href="#agreement"><i class="fas fa-chevron-right"></i> Agreement to Terms</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#services"><i class="fas fa-chevron-right"></i> Services Description</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#intellectual-property"><i class="fas fa-chevron-right"></i> Intellectual Property</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#user-content"><i class="fas fa-chevron-right"></i> User Content</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#prohibited-uses"><i class="fas fa-chevron-right"></i> Prohibited Uses</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#limitation-liability"><i class="fas fa-chevron-right"></i> Limitation of Liability</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#termination"><i class="fas fa-chevron-right"></i> Termination</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#governing-law"><i class="fas fa-chevron-right"></i> Governing Law</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#changes"><i class="fas fa-chevron-right"></i> Changes to Terms</a>
+                    </div>
+                    <div class="toc-item">
+                        <a href="#contact"><i class="fas fa-chevron-right"></i> Contact Information</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terms of Service Content -->
+            <div class="col-lg-8">
+                <!-- Agreement to Terms -->
+                <div class="section-card" id="agreement">
+                    <div class="terms-section">
+                        <h3><i class="fas fa-handshake me-2"></i>Agreement to Terms</h3>
+                        <p>By accessing and using this website (the "Service"), operated by John Gitau ("we", "us", or "our"), you accept and agree to be bound by these Terms of Service.</p>
+                        
+                        <div class="info-box">
+                            <p class="mb-0"><i class="fas fa-exclamation-circle me-2"></i>
+                                <strong>Important:</strong> If you do not agree to these terms, please do not use our Service. Your continued use of the Service constitutes your acceptance of any revised terms.
+                            </p>
+                        </div>
+                        
+                        <div class="agreement-check">
+                            <i class="fas fa-check-circle me-2"></i>By using this site, you agree to these terms
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services Description -->
+                <div class="section-card" id="services">
+                    <div class="terms-section">
+                        <h3><i class="fas fa-laptop-code me-2"></i>Services Description</h3>
+                        <p>The Service provided through this website includes:</p>
+                        
+                        <ul class="terms-list">
+                            <li>Display of portfolio projects and professional work</li>
+                            <li>Provision of contact information for professional inquiries</li>
+                            <li>Processing of contact form submissions</li>
+                            <li>Sharing of technical skills and expertise</li>
+                        </ul>
+                        
+                        <p><strong>Scope of Service:</strong> This website serves as a professional portfolio and contact platform. Any professional services discussed or initiated through this website are subject to separate agreements and terms.</p>
+                    </div>
+                </div>
+
+                <!-- Intellectual Property -->
+                <div class="section-card" id="intellectual-property">
+                    <div class="terms-section">
+                        <h3><i class="fas fa-copyright me-2"></i>Intellectual Property Rights</h3>
+                        <p>The Service and its original content, features, and functionality are owned by John Gitau and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
+                        
+                        <div class="warning-box">
+                            <p class="mb-0"><i class="fas fa-ban me-2"></i>
+                                <strong>Restrictions:</strong> You may not copy, modify, distribute, sell, or lease any part of our Service or included software, nor may you reverse engineer or attempt to extract the source code of that software.
+                            </p>
+                        </div>
+                        
+                        <p><strong>License:</strong> We grant you a limited, non-exclusive, non-transferable, and revocable license to access and use the Service for personal, non-commercial purposes.</p>
+                    </div>
+                </div>
+
+                <!-- User Content -->
+                <div class="section-card" id="user-content">
+                    <div class="terms-section">
+                        <h3><i class="fas fa-comment-alt me-2"></i>User Content</h3>
+                        <p>When you submit content through our contact form, you grant us a worldwide, non-exclusive, royalty-free license to use, reproduce, and display such content for the purpose of responding to your inquiry.</p>
+                        
+                        <p><strong>You represent and warrant that:</strong></p>
+                        <ul class="terms-list">
+                            <li>The content is yours or you have the right to use it</li>
+                            <li>The content does not violate any third-party rights</li>
+                            <li>The content is not unlawful, offensive, or inappropriate</li>
+                        </ul>
+                        
+                        <p>We reserve the right to remove any content that violates these terms or is otherwise objectionable.</p>
+                    </div>
+                </div>
+
+                <!-- Prohibited Uses -->
+                <div class="section-card" id="prohibited-uses">
+                    <div class="terms-section">
+                        <h3><i class="fas fa-ex
