@@ -794,274 +794,254 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-<!-- EmailJS SDK -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-<script>
-    // ⚠️ REPLACE THESE WITH YOUR ACTUAL EMAILJS CREDENTIALS
-    const PUBLIC_KEY = "Q1Db3xO7terlVPf3w";    // Your Public Key
-    const SERVICE_ID = "service_v9bijqc";      // Your Service ID
-    const TEMPLATE_ID = "template_wszcdnw";    // Your Template ID
-    
-    console.log("📧 EmailJS Configuration:");
-    console.log("Public Key:", PUBLIC_KEY);
-    console.log("Service ID:", SERVICE_ID);
-    console.log("Template ID:", TEMPLATE_ID);
-    
-    // Initialize EmailJS
-    (function() {
-        console.log("🔄 Initializing EmailJS...");
-        if (!PUBLIC_KEY || PUBLIC_KEY === "YOUR_PUBLIC_KEY_HERE") {
-            console.error("❌ ERROR: Public Key is not set! Please replace with your actual key.");
-            showAlert("EmailJS not configured. Please contact site administrator.", "danger");
-            return;
-        }
-        
-        emailjs.init(PUBLIC_KEY)
-            .then(() => {
-                console.log("✅ EmailJS initialized successfully");
-            })
-            .catch(error => {
-                console.error("❌ EmailJS initialization failed:", error);
-                showAlert("Email service temporarily unavailable.", "warning");
-            });
-    })();
-    
-    // Update year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-    
-    // Navbar scroll effect
-    window.addEventListener('scroll', () => {
-        document.querySelector('.navbar').classList.toggle('navbar-scrolled', window.scrollY > 50);
-    });
-    
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if(target) {
-                window.scrollTo({
-                    top: target.offsetTop - 70,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // Alert helper function
-    function showAlert(message, type = 'info', duration = 5000) {
-        const alertDiv = document.getElementById('form-alert');
-        const alertClass = type === 'success' ? 'alert-success' : 
-                          type === 'danger' ? 'alert-danger' : 
-                          type === 'warning' ? 'alert-warning' : 'alert-info';
-        
-        const icon = type === 'success' ? 'check-circle' : 
-                    type === 'danger' ? 'exclamation-circle' : 
-                    type === 'warning' ? 'exclamation-triangle' : 'info-circle';
-        
-        alertDiv.innerHTML = `
-            <div class="alert ${alertClass} alert-dismissible fade show shadow-sm">
-                <i class="fas fa-${icon} me-2"></i>
-                ${message}
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            </div>
-        `;
-        
-        if (duration > 0) {
-            setTimeout(() => {
-                const alert = alertDiv.querySelector('.alert');
-                if (alert) {
-                    alert.classList.remove('show');
-                    setTimeout(() => alert.remove(), 300);
-                }
-            }, duration);
-        }
-    }
-    
-    // Contact Form Submission
-    document.getElementById('contact-form').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        console.log("📝 Form submission started...");
-        
-        const form = this;
-        const submitBtn = document.getElementById('submit-btn');
-        const btnText = document.getElementById('btn-text');
-        const btnSpinner = document.getElementById('btn-spinner');
-        
-        // Get form values - MUST MATCH YOUR TEMPLATE VARIABLES
-        const templateParams = {
-            name: document.getElementById('name').value.trim(),
-            email: document.getElementById('email').value.trim(),
-            subject: document.getElementById('subject').value.trim(),
-            message: document.getElementById('message').value.trim()
+    <script>
+        // Configure Toastr
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": true,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
         };
-        
-        console.log("📤 Sending data:", templateParams);
-        
-        // Validate required fields
-        if (!templateParams.name || !templateParams.email || !templateParams.message) {
-            showAlert("Please fill in all required fields (Name, Email, Message).", "warning");
-            return;
-        }
-        
-        // Auto-generate subject if empty
-        if (!templateParams.subject) {
-            const preview = templateParams.message.length > 40 
-                ? templateParams.message.substring(0, 40) + '...' 
-                : templateParams.message;
-            templateParams.subject = `Message from ${templateParams.name}: ${preview}`;
-        }
-        
-        // Show loading state
-        submitBtn.disabled = true;
-        btnSpinner.classList.remove('d-none');
-        btnText.textContent = 'Sending...';
-        
-        try {
-            console.log("✉️ Attempting to send email...");
-            console.log("Service ID:", SERVICE_ID);
-            console.log("Template ID:", TEMPLATE_ID);
-            console.log("Template Params:", templateParams);
-            
-            const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
-            
-            console.log("✅ Email sent successfully!", response);
-            console.log("Status:", response.status);
-            console.log("Text:", response.text);
-            
-            // Success message
-            showAlert("Message sent successfully! I'll get back to you within 24 hours.", "success");
-            
-            // Reset form
-            form.reset();
-            
-            // Also send a copy to yourself (optional)
-            try {
-                const adminTemplateParams = {
-                    name: templateParams.name,
-                    email: templateParams.email,
-                    subject: `Portfolio Contact: ${templateParams.subject}`,
-                    message: templateParams.message,
-                    timestamp: new Date().toLocaleString()
+
+        // EmailJS Configuration
+        const EMAILJS_CONFIG = {
+            PUBLIC_KEY: "Q1Db3xO7terlVPf3w",
+            SERVICE_ID: "service_v9bijqc",
+            TEMPLATE_ID: "template_wszcdnw"
+        };
+
+        // Debug logging
+        console.log("📧 EmailJS Configuration Loaded");
+        console.log("Public Key:", EMAILJS_CONFIG.PUBLIC_KEY ? "✅ Set" : "❌ Missing");
+        console.log("Service ID:", EMAILJS_CONFIG.SERVICE_ID ? "✅ Set" : "❌ Missing");
+        console.log("Template ID:", EMAILJS_CONFIG.TEMPLATE_ID ? "✅ Set" : "❌ Missing");
+
+        // Initialize EmailJS
+        (function initEmailJS() {
+            if (!EMAILJS_CONFIG.PUBLIC_KEY || EMAILJS_CONFIG.PUBLIC_KEY.includes("YOUR_")) {
+                console.error("❌ EmailJS Public Key is not configured!");
+                toastr.error("Contact form is not configured. Please contact site administrator.", "Configuration Error");
+                return;
+            }
+
+            emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY)
+                .then(() => {
+                    console.log("✅ EmailJS initialized successfully");
+                })
+                .catch(error => {
+                    console.error("❌ EmailJS initialization failed:", error);
+                    toastr.warning("Email service temporarily unavailable.", "Service Notice");
+                });
+        })();
+
+        // DOM Ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Navbar scroll effect
+            window.addEventListener('scroll', () => {
+                document.querySelector('.navbar').classList.toggle('navbar-scrolled', window.scrollY > 50);
+                
+                // Update active nav link
+                updateActiveNavLink();
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') === '#') return;
+                    
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - navbarHeight - 20;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update active nav link
+                        updateActiveNavLink();
+                    }
+                });
+            });
+
+            // Contact Form Submission
+            document.getElementById('contact-form').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const form = this;
+                const submitBtn = document.getElementById('submit-btn');
+                const btnText = document.getElementById('btn-text');
+                const btnSpinner = document.getElementById('btn-spinner');
+                
+                // Get form values
+                const formData = {
+                    name: document.getElementById('name').value.trim(),
+                    email: document.getElementById('email').value.trim(),
+                    subject: document.getElementById('subject').value.trim(),
+                    message: document.getElementById('message').value.trim(),
+                    date: new Date().toLocaleDateString('en-US', {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    }),
+                    time: new Date().toLocaleTimeString('en-US', {
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    })
                 };
                 
-                // If you want to send a copy to yourself, you need another template
-                // emailjs.send(SERVICE_ID, "YOUR_ADMIN_TEMPLATE_ID", adminTemplateParams);
-                
-            } catch (adminError) {
-                console.log("Note: Admin copy not sent (optional)", adminError);
-            }
-            
-        } catch (error) {
-            console.error("❌ EmailJS Error Details:", error);
-            
-            // Detailed error analysis
-            let errorMessage = "Failed to send message. Please try again or email me directly.";
-            let errorType = "danger";
-            
-            if (error.status) {
-                console.log("Error Status:", error.status);
-                
-                switch (error.status) {
-                    case 0:
-                        errorMessage = "Network error. Please check your internet connection.";
-                        break;
-                    case 400:
-                        errorMessage = "Bad request. Please check your form data.";
-                        console.log("Likely issue: Template parameters don't match template variables");
-                        break;
-                    case 401:
-                        errorMessage = "Authentication failed. Invalid API key.";
-                        console.log("Check your Public Key:", PUBLIC_KEY);
-                        break;
-                    case 403:
-                        errorMessage = "Permission denied. Check your EmailJS service configuration.";
-                        console.log("Check if your email service is properly connected in EmailJS");
-                        break;
-                    case 404:
-                        errorMessage = "Service or template not found. Check your Service ID and Template ID.";
-                        console.log("Service ID:", SERVICE_ID, "Template ID:", TEMPLATE_ID);
-                        break;
-                    case 429:
-                        errorMessage = "Too many requests. Please try again later.";
-                        errorType = "warning";
-                        break;
-                    case 500:
-                        errorMessage = "Server error. Please try again in a few minutes.";
-                        break;
-                    default:
-                        errorMessage = `Error ${error.status}: ${error.text || 'Please try again.'}`;
+                // Validate form
+                if (!formData.name || !formData.email || !formData.message) {
+                    toastr.warning("Please fill in all required fields.", "Validation Error");
+                    return;
                 }
-            }
+                
+                // Auto-generate subject if empty
+                if (!formData.subject) {
+                    const preview = formData.message.length > 50 
+                        ? formData.message.substring(0, 50) + '...' 
+                        : formData.message;
+                    formData.subject = `Message from ${formData.name}: ${preview}`;
+                }
+                
+                // Show loading state
+                submitBtn.disabled = true;
+                btnSpinner.classList.remove('d-none');
+                btnText.textContent = 'Sending...';
+                
+                try {
+                    console.log("📤 Sending email with data:", formData);
+                    
+                    const response = await emailjs.send(
+                        EMAILJS_CONFIG.SERVICE_ID,
+                        EMAILJS_CONFIG.TEMPLATE_ID,
+                        formData
+                    );
+                    
+                    console.log("✅ Email sent successfully:", response);
+                    
+                    // Show success toast
+                    toastr.success(
+                        "Your message has been sent successfully! I'll get back to you within 24 hours.",
+                        "Message Sent!"
+                    );
+                    
+                    // Reset form
+                    form.reset();
+                    
+                } catch (error) {
+                    console.error("❌ EmailJS Error:", error);
+                    
+                    // User-friendly error messages
+                    let errorMessage = "Failed to send message. Please try again or email me directly.";
+                    
+                    if (error.status === 400) {
+                        errorMessage = "Invalid form data. Please check your inputs.";
+                    } else if (error.status === 401) {
+                        errorMessage = "Authentication failed. Please refresh the page.";
+                    } else if (error.status === 403) {
+                        errorMessage = "Service configuration error.";
+                    } else if (error.status === 404) {
+                        errorMessage = "Service not found. Please try again later.";
+                    } else if (error.status === 429) {
+                        errorMessage = "Too many requests. Please try again in a few minutes.";
+                    }
+                    
+                    toastr.error(errorMessage, "Sending Failed");
+                    
+                } finally {
+                    // Reset button state
+                    submitBtn.disabled = false;
+                    btnSpinner.classList.add('d-none');
+                    btnText.textContent = 'Send Message';
+                }
+            });
             
-            if (error.text) {
-                console.log("Error Text:", error.text);
-                errorMessage += ` (${error.text})`;
-            }
-            
-            showAlert(errorMessage, errorType);
-            
-            // Suggest alternatives
-            if (error.status === 400 || error.status === 404) {
-                console.log("💡 Suggestion: Check if template variables match exactly:");
-                console.log("Template expects: {{name}}, {{email}}, {{subject}}, {{message}}");
-                console.log("You're sending:", Object.keys(templateParams));
-            }
-            
-        } finally {
-            // Reset button state
-            submitBtn.disabled = false;
-            btnSpinner.classList.add('d-none');
-            btnText.textContent = 'Send Message';
-        }
-    });
-    
-    // Form validation styling
-    const formInputs = document.querySelectorAll('#contact-form input, #contact-form textarea');
-    formInputs.forEach(input => {
-        input.addEventListener('input', function() {
-            if (this.checkValidity()) {
-                this.classList.remove('is-invalid');
-                this.classList.add('is-valid');
-            } else {
-                this.classList.remove('is-valid');
-            }
+            // Form validation styling
+            const formInputs = document.querySelectorAll('#contact-form input, #contact-form textarea');
+            formInputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    this.classList.remove('is-invalid');
+                    if (this.checkValidity()) {
+                        this.classList.add('is-valid');
+                    } else {
+                        this.classList.remove('is-valid');
+                    }
+                });
+                
+                input.addEventListener('blur', function() {
+                    if (!this.checkValidity()) {
+                        this.classList.add('is-invalid');
+                    }
+                });
+            });
         });
-        
-        input.addEventListener('blur', function() {
-            if (!this.checkValidity()) {
-                this.classList.add('is-invalid');
-                this.classList.add('was-validated');
-            }
-        });
-    });
-    
-    // Test EmailJS connection on page load
-    window.addEventListener('load', function() {
-        console.log("🔍 Testing EmailJS configuration...");
-        
-        // Test if credentials look valid
-        const isValidKey = PUBLIC_KEY && PUBLIC_KEY.length > 10 && !PUBLIC_KEY.includes("YOUR_");
-        const isValidService = SERVICE_ID && SERVICE_ID.startsWith("service_");
-        const isValidTemplate = TEMPLATE_ID && TEMPLATE_ID.startsWith("template_");
-        
-        console.log("Public Key valid:", isValidKey);
-        console.log("Service ID valid:", isValidService);
-        console.log("Template ID valid:", isValidTemplate);
-        
-        if (!isValidKey || !isValidService || !isValidTemplate) {
-            console.warn("⚠️ One or more EmailJS credentials appear to be placeholders!");
-            console.log("Please update these in the JavaScript code:");
-            if (!isValidKey) console.log("- PUBLIC_KEY");
-            if (!isValidService) console.log("- SERVICE_ID");
-            if (!isValidTemplate) console.log("- TEMPLATE_ID");
+
+        // Helper function to update active nav link
+        function updateActiveNavLink() {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPos = window.scrollY + 100;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
         }
-    });
-</script>
+
+        // Lazy load images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.add('loaded');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            }, {
+                rootMargin: '50px 0px',
+                threshold: 0.1
+            });
+            
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    </script>
 </body>
 </html>
