@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>John Gitau · full‑stack dev</title>
-    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+    <!-- YOUR ORIGINAL FAVICON (restored) -->
+    <link rel="icon" type="image/png" href="favicon.png"> 
     
     <!-- lean, modern fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,19 +20,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
     <style>
-        /* ----- MODERN RESET / VARIABLES (clean & minimal) ----- */
+        /* ----- WARM, HUMAN COLOR PALETTE (no AI‑ish blues/neons) ----- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --bg: #fafbfc;
+            --bg: #fefcf7;           /* warm off-white */
             --surface: #ffffff;
-            --primary: #0b2b4f;        /* deep navy – professional */
-            --primary-light: #1e4a6f;
-            --accent: #c4285c;          /* subtle magenta – for energy */
-            --text-dark: #1e2b37;
-            --text-muted: #4d5f71;
-            --border-light: #e9ecf0;
-            --shadow-sm: 0 8px 20px -8px rgba(0,20,40,0.08);
-            --shadow-hover: 0 20px 28px -12px rgba(0,35,70,0.15);
+            --primary: #3a2c2a;       /* rich dark brown – warm, grounded */
+            --primary-light: #5e4b48;  /* warmer brown */
+            --accent: #b85c4b;         /* terracotta – organic, not neon */
+            --text-dark: #2e2624;      /* soft black-brown */
+            --text-muted: #5f554f;     /* warm gray */
+            --border-light: #e7ddd5;   /* sandy border */
+            --shadow-sm: 0 8px 20px -8px rgba(70, 40, 30, 0.08);
+            --shadow-hover: 0 20px 28px -12px rgba(90, 50, 40, 0.12);
             --font-base: 0.9rem;         /* smaller base for compact screens */
         }
 
@@ -46,7 +47,7 @@
         }
 
         /* ----- TYPOGRAPHY (smaller, pc‑friendly) ----- */
-        h1, h2, h3, h4, .display-6 { font-weight: 600; letter-spacing: -0.02em; }
+        h1, h2, h3, h4, .display-6 { font-weight: 600; letter-spacing: -0.01em; color: var(--primary); }
         h2 { font-size: 2rem; }        /* scales down on mobile */
         p { color: var(--text-muted); max-width: 65ch; }
         .section-title {
@@ -73,13 +74,13 @@
 
         /* ----- NAV (clean, no clutter) ----- */
         .navbar {
-            background: rgba(255,255,255,0.85);
+            background: rgba(255, 251, 245, 0.85);
             backdrop-filter: blur(12px);
             padding: 0.7rem 0;
             border-bottom: 1px solid rgba(0,0,0,0.02);
             transition: 0.2s;
         }
-        .navbar-scrolled { background: rgba(255,255,255,0.96); box-shadow: var(--shadow-sm); }
+        .navbar-scrolled { background: rgba(255, 251, 245, 0.96); box-shadow: var(--shadow-sm); }
         .navbar-brand { font-weight: 700; color: var(--primary); font-size: 1.3rem; letter-spacing: -0.3px; }
         .nav-link {
             font-weight: 500;
@@ -92,27 +93,29 @@
         }
         .nav-link:hover, .nav-link.active { color: var(--accent); border-bottom-color: var(--accent); }
 
-        /* ----- HERO – smaller padding, no huge clip path ----- */
+        /* ----- HERO – warm gradient, no AI blue ----- */
         .hero {
-            background: linear-gradient(145deg, var(--primary) 0%, #163a5e 100%);
+            background: linear-gradient(145deg, #4f3d38 0%, #2e2522 100%);
             color: white;
             padding: 7rem 0 5rem;
             margin-top: 58px;
         }
-        .hero h1 { font-size: 2.6rem; font-weight: 700; line-height: 1.2; }
-        .hero .lead { font-size: 1rem; opacity: 0.85; margin-bottom: 1.8rem; }
+        .hero h1 { font-size: 2.6rem; font-weight: 700; line-height: 1.2; color: #fff; }
+        .hero .lead { font-size: 1rem; opacity: 0.9; margin-bottom: 1.8rem; color: #f0eae7; }
+        .hero .btn-light { background: #fef6f2; color: var(--primary); border: none; }
+        .hero .btn-outline-light { border-color: rgba(255,255,255,0.4); color: white; }
         .hero-img {
             border-radius: 24px;
             box-shadow: 0 30px 35px -20px rgba(0,0,0,0.4);
             transition: transform 0.3s ease;
         }
 
-        /* ----- cards / sections (minimal, airy) ----- */
+        /* ----- cards / sections (warm, papery) ----- */
         .section { padding: 4rem 0; }
         .card {
             border: none;
             background: var(--surface);
-            border-radius: 20px;
+            border-radius: 24px;
             box-shadow: var(--shadow-sm);
             transition: all 0.2s;
             height: 100%;
@@ -120,9 +123,9 @@
         }
         .card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
         .card-body { padding: 1.5rem; }
-        .card-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.75rem; }
+        .card-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--primary); }
         .badge {
-            background: #edf2f7;
+            background: #f0e8e2;
             color: var(--primary);
             font-weight: 500;
             font-size: 0.7rem;
@@ -134,31 +137,32 @@
         /* skill icon box */
         .skill-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 24px;
             padding: 1.8rem 1.2rem;
             text-align: center;
             box-shadow: var(--shadow-sm);
             height: 100%;
             transition: 0.2s;
+            border: 1px solid var(--border-light);
         }
         .skill-card:hover { box-shadow: var(--shadow-hover); }
         .skill-icon { font-size: 2.2rem; color: var(--accent); margin-bottom: 1rem; }
 
-        /* contact section — modern, clean, smaller fonts */
+        /* contact section — warm, not blue, small fonts */
         .contact-section {
-            background: var(--surface);
+            background: #fcf8f3;   /* warm linen */
             border-top: 1px solid var(--border-light);
             border-bottom: 1px solid var(--border-light);
             padding: 4rem 0;
         }
         .contact-info-card {
-            background: #f2f6fc;
+            background: #f4ede7;    /* soft almond */
             border-radius: 28px;
             padding: 2rem 1.8rem;
             height: 100%;
         }
         .contact-info-card i { color: var(--accent); width: 2rem; font-size: 1.2rem; }
-        .contact-info-card p { margin-bottom: 0.8rem; font-size: 0.9rem; }
+        .contact-info-card p { margin-bottom: 0.8rem; font-size: 0.9rem; color: var(--text-dark); }
         .social-mini {
             display: inline-flex;
             align-items: center;
@@ -174,11 +178,11 @@
         }
         .social-mini:hover { background: var(--primary); color: white; transform: scale(1.1); }
 
-        /* contact form – small font, no big gaps */
+        /* contact form – warm, minimal */
         .contact-form .form-control {
             background: white;
             border: 1.5px solid var(--border-light);
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 0.7rem 1.2rem;
             font-size: 0.85rem;
             transition: 0.2s;
@@ -186,7 +190,7 @@
         }
         .contact-form .form-control:focus {
             border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(196,40,92,0.1);
+            box-shadow: 0 0 0 3px rgba(184, 92, 75, 0.1);
         }
         .btn-send {
             background: var(--primary);
@@ -224,18 +228,18 @@
             opacity: 0.98;
             backdrop-filter: blur(4px);
         }
-        .toast-success { background: #0f3b3b !important; color: white; }
-        .toast-error { background: #842029 !important; color: white; }
+        .toast-success { background: #6f5e4e !important; color: white; }  /* warm brown success */
+        .toast-error { background: #aa4e41 !important; color: white; }
         .toast .toast-message { text-align: center; }
 
-        /* footer minimal */
+        /* footer warm */
         footer {
             background: var(--primary);
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 248, 240, 0.7);
             padding: 2.5rem 0 1.5rem;
             font-size: 0.85rem;
         }
-        footer a { color: rgba(255,255,255,0.8); text-decoration: none; border-bottom: 1px dotted transparent; }
+        footer a { color: rgba(255, 248, 240, 0.8); text-decoration: none; border-bottom: 1px dotted transparent; }
         footer a:hover { color: white; border-bottom-color: white; }
 
         /* mobile fine‑tune */
@@ -257,7 +261,7 @@
     <!-- navigation (clean) -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#"><i class="fas fa-terminal me-2" style="color: var(--accent);"></i>John Gitau</a>
+            <a class="navbar-brand" href="#"><i class="fas fa-code me-2" style="color: var(--accent);"></i>John Gitau</a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -272,15 +276,15 @@
         </div>
     </nav>
 
-    <!-- hero (compact) -->
+    <!-- hero (compact, warm) -->
     <section class="hero">
         <div class="container">
             <div class="row align-items-center g-4">
                 <div class="col-lg-6">
                     <h1 class="display-6">full‑stack developer<br>from Nairobi</h1>
-                    <p class="lead">I design and build web & mobile experiences with clean, modern code. React, Node, cloud — and a touch of creativity.</p>
+                    <p class="lead">I design and build web & mobile experiences with clean, modern code. React, Node, cloud — and a touch of craft.</p>
                     <div class="d-flex flex-wrap gap-3">
-                        <a href="#projects" class="btn btn-light px-4 py-2 rounded-pill fw-semibold" style="background:white; color:var(--primary);">see work</a>
+                        <a href="#projects" class="btn btn-light px-4 py-2 rounded-pill fw-semibold">see work</a>
                         <a href="#contact" class="btn btn-outline-light px-4 py-2 rounded-pill">let's talk</a>
                     </div>
                 </div>
@@ -301,13 +305,13 @@
                     <p class="fs-6" style="max-width: 550px;">Graduated from Kirinyaga University (BSc CompSci). Over the past 3+ years I've built full‑stack apps for local businesses and global clients. I love solving problems with simple, maintainable code.</p>
                     <p>Currently exploring edge functions and real‑time features. When not coding, I mentor at local dev meetups.</p>
                     <div class="row mt-4 g-3">
-                        <div class="col-6"><div class="bg-white p-3 rounded-4 shadow-sm"><span class="fw-bold fs-4">3+</span><br><span class="text-muted small">years exp</span></div></div>
-                        <div class="col-6"><div class="bg-white p-3 rounded-4 shadow-sm"><span class="fw-bold fs-4">50+</span><br><span class="text-muted small">projects</span></div></div>
+                        <div class="col-6"><div class="bg-white p-3 rounded-4 shadow-sm border" style="border-color: var(--border-light) !important;"><span class="fw-bold fs-4">3+</span><br><span class="text-muted small">years exp</span></div></div>
+                        <div class="col-6"><div class="bg-white p-3 rounded-4 shadow-sm border" style="border-color: var(--border-light) !important;"><span class="fw-bold fs-4">50+</span><br><span class="text-muted small">projects</span></div></div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="bg-white p-4 rounded-4 shadow-sm">
-                        <h5 class="fw-semibold mb-3">⏳ timeline</h5>
+                    <div class="bg-white p-4 rounded-4 shadow-sm border" style="border-color: var(--border-light);">
+                        <h5 class="fw-semibold mb-3" style="color: var(--primary);">⏳ timeline</h5>
                         <div class="vstack gap-3">
                             <div><span class="fw-semibold">2023 – now</span> <span class="badge bg-light text-dark ms-2">senior dev @ stacklab</span><br><small class="text-secondary">full‑stack, team lead, cloud architecture</small></div>
                             <div><span class="fw-semibold">2021 – 2023</span> <span class="badge bg-light text-dark ms-2">junior dev @ afritech</span><br><small class="text-secondary">built 10+ production apps (React, Laravel)</small></div>
@@ -320,13 +324,13 @@
     </section>
 
     <!-- projects -->
-    <section id="projects" class="section bg-light">
+    <section id="projects" class="section bg-light" style="background-color: #fcf9f5 !important;">
         <div class="container">
             <div class="center-title mb-4">
                 <h2 class="section-title">selected projects</h2>
             </div>
             <div class="row g-4">
-                <!-- project cards (6 minimal items) -->
+                <!-- project cards (6 warm items) -->
                 <div class="col-md-6 col-lg-4">
                     <div class="card">
                         <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&auto=format&fit=crop" class="card-img-top" alt="e‑commerce" loading="lazy">
@@ -599,7 +603,7 @@
         })();
     </script>
 
-    <!-- extra CSS for forced center toast (overwrite any inline) -->
+    <!-- extra CSS for forced center toast (overwrite any inline) and original favicon preserved -->
     <style>
         /* force toast container to exact center, no matter what */
         #toast-container {
@@ -616,14 +620,14 @@
             background: var(--primary) !important; 
             border-radius: 60px !important;
             padding: 0.8rem 2rem !important;
-            box-shadow: 0 30px 60px rgba(0,20,40,0.3) !important;
+            box-shadow: 0 30px 60px rgba(90, 60, 40, 0.25) !important;
             border: none;
             font-weight: 500;
         }
-        .toast-success { background: #0e6245 !important; }
-        .toast-error { background: #a12b2b !important; }
-        .toast-info { background: #1b4f7a !important; }
+        .toast-success { background: #6f5e4e !important; }
+        .toast-error { background: #aa4e41 !important; }
         .toast .toast-message { font-size: 0.95rem; }
+        /* favicon is already linked – no AI colors used */
     </style>
 </body>
 </html>
