@@ -1,3 +1,4 @@
+why I'm getting this error?   Failed to send message. Please try again or email me directly.
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,451 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>John Gitau | Full Stack Developer</title>
     <link rel="icon" type="image/png" href="favicon.png"> 
-    
-    <!-- Google Fonts for better typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Toast Notification CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
     <style>
-        :root { 
-            --primary: #2563eb; 
-            --primary-dark: #1d4ed8;
-            --secondary: #7c3aed; 
-            --dark: #1e293b; 
-            --light: #f8fafc; 
-            --gray-light: #e2e8f0;
-            --gray: #64748b;
-            --success: #10b981;
-            --error: #ef4444;
-            --warning: #f59e0b;
-        }
-        
+        :root { --primary: #2563eb; --secondary: #7c3aed; --dark: #1e293b; --light: #f8fafc; }
         html { scroll-behavior: smooth; }
-        
-        body { 
-            font-family: 'Inter', system-ui, -apple-system, sans-serif; 
-            font-size: 0.95rem; 
-            line-height: 1.6;
-            color: var(--dark);
-            overflow-x: hidden;
-        }
-        
-        .navbar { 
-            background: rgba(255,255,255,0.98); 
-            backdrop-filter: blur(10px); 
-            transition: all 0.3s ease;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-        
-        .navbar-scrolled { 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
-            padding: 0.5rem 0;
-        }
-        
-        .navbar-brand {
-            font-weight: 700;
-            color: var(--primary);
-            font-size: 1.4rem;
-        }
-        
-        .nav-link {
-            font-weight: 500;
-            color: var(--dark);
-            margin: 0 0.5rem;
-            transition: color 0.3s;
-            position: relative;
-        }
-        
-        .nav-link:hover, .nav-link.active {
-            color: var(--primary);
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after, .nav-link.active::after {
-            width: 100%;
-        }
-        
-        .hero { 
-            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%); 
-            color: white; 
-            padding: 9rem 0 7rem; 
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.03"><polygon fill="white" points="0,1000 1000,0 1000,1000"/></svg>');
-            background-size: cover;
-        }
-        
-        .display-5 {
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-        
-        .lead {
-            font-size: 1.1rem;
-            font-weight: 400;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-        }
-        
-        .section { 
-            padding: 5rem 0; 
-        }
-        
-        .card { 
-            border: none; 
-            box-shadow: 0 6px 16px rgba(0,0,0,0.08); 
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border-radius: 12px;
-            overflow: hidden;
-            height: 100%;
-        }
-        
-        .card:hover { 
-            transform: translateY(-8px); 
-            box-shadow: 0 12px 28px rgba(0,0,0,0.15); 
-        }
-        
-        .card-img-top {
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .card:hover .card-img-top {
-            transform: scale(1.05);
-        }
-        
-        .skill-icon { 
-            font-size: 2.5rem; 
-            color: var(--primary); 
-            margin-bottom: 1.2rem;
-            transition: transform 0.3s;
-        }
-        
-        .skill-icon:hover {
-            transform: scale(1.1);
-        }
-        
-        .contact { 
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); 
-            color: white; 
-            padding: 6rem 0;
-            position: relative;
-            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
-        }
-        
-        .contact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.03"><polygon fill="white" points="0,0 1000,1000 0,1000"/></svg>');
-            background-size: cover;
-        }
-        
-        .contact-info {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 12px;
-            padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .contact-info i {
-            width: 40px;
-            text-align: center;
-        }
-        
-        .btn-primary { 
-            background: var(--primary); 
-            border: none; 
-            padding: 0.75rem 2rem; 
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
-        }
-        
-        .form-control { 
-            border-radius: 8px; 
-            border: 1px solid var(--gray-light); 
-            padding: 0.75rem 1rem; 
-            font-size: 0.95rem;
-            font-family: 'Poppins', sans-serif;
-            transition: all 0.3s;
-        }
-        
-        .form-control:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-        
-        .badge { 
-            background: var(--gray-light); 
-            color: var(--dark); 
-            padding: 0.4rem 0.9rem; 
-            margin: 0.2rem; 
-            font-size: 0.85rem;
-            border-radius: 20px;
-            font-weight: 500;
-        }
-        
-        .timeline { 
-            border-left: 3px solid var(--primary); 
-            padding-left: 2rem; 
-            margin-left: 1rem; 
-        }
-        
-        .timeline-item { 
-            position: relative; 
-            margin-bottom: 2rem; 
-        }
-        
-        .timeline-item::before { 
-            content: ''; 
-            position: absolute; 
-            left: -2.5rem; 
-            top: 0.5rem; 
-            width: 16px; 
-            height: 16px; 
-            background: var(--primary); 
-            border-radius: 50%;
-            border: 4px solid white;
-            box-shadow: 0 0 0 4px var(--primary);
-        }
-        
-        .social-icon {
-            width: 45px;
-            height: 45px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-        
-        .social-icon:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-4px);
-            color: white;
-        }
-        
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 3rem 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 0.9rem;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        @media (max-width: 768px) { 
-            .hero { 
-                padding: 7rem 0 5rem; 
-                text-align: center;
-            } 
-            
-            .section { 
-                padding: 3rem 0; 
-            }
-            
-            .navbar-nav {
-                text-align: center;
-                padding: 1rem 0;
-            }
-            
-            .contact {
-                clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
-            }
-        }
-        
-        /* Custom toast notification styling */
-        #toast-container {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 999999;
-        }
-        
-        .toast-success {
-            background: var(--success);
-        }
-        
-        .toast-error {
-            background: var(--error);
-        }
-        
-        .toast-warning {
-            background: var(--warning);
-        }
-        
-        /* Contact form specific styling */
-        .contact-form .form-control {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            font-size: 1rem;
-        }
-        
-        .contact-form .form-control::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-        
-        .contact-form .form-control:focus {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.5);
-            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
-            color: white;
-        }
-        
-        .contact-form .btn-light {
-            background: white;
-            color: var(--primary);
-            font-weight: 600;
-            padding: 0.9rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-form .btn-light:hover {
-            background: #f8f9fa;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        }
-        
-        .contact-form .btn-light:disabled {
-            opacity: 0.7;
-            transform: none;
-            box-shadow: none;
-        }
-        
-        /* Stats styling */
-        .stat-box {
-            background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            border: 1px solid var(--gray-light);
-            transition: transform 0.3s;
-        }
-        
-        .stat-box:hover {
-            transform: translateY(-5px);
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-label {
-            color: var(--gray);
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-        
-        /* Animation for hero image */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .hero-img {
-            animation: float 4s ease-in-out infinite;
-            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.3));
-            border-radius: 15px;
-            overflow: hidden;
-        }
-        
-        /* Section title styling */
-        .section-title {
-            position: relative;
-            margin-bottom: 3rem;
-            padding-bottom: 1rem;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--primary);
-            border-radius: 2px;
-        }
-        
-        .center-title .section-title::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; font-size: 0.9rem; line-height: 1.5; }
+        .navbar { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); transition: all 0.3s; }
+        .navbar-scrolled { box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .hero { background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%); color: white; padding: 8rem 0 6rem; clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+        .section { padding: 4rem 0; }
+        .card { border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+        .skill-icon { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; }
+        .contact { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 5rem 0; }
+        .btn-primary { background: var(--primary); border: none; padding: 0.5rem 1.5rem; border-radius: 6px; }
+        .form-control { border-radius: 6px; border: 1px solid #e2e8f0; padding: 0.5rem; font-size: 0.9rem; }
+        .badge { background: #e2e8f0; color: var(--dark); padding: 0.25rem 0.75rem; margin: 0.1rem; font-size: 0.8rem; }
+        .timeline { border-left: 2px solid var(--primary); padding-left: 1.5rem; margin-left: 0.5rem; }
+        .timeline-item { position: relative; margin-bottom: 1.5rem; }
+        .timeline-item::before { content: ''; position: absolute; left: -1.7rem; top: 0.25rem; width: 12px; height: 12px; background: var(--primary); border-radius: 50%; }
+        @media (max-width: 768px) { .hero { padding: 6rem 0 4rem; } .section { padding: 3rem 0; } }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-code me-2"></i>John Gitau
-            </a>
+        <div class="container"><a class="navbar-brand fw-bold" href="#">John Gitau</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
@@ -461,587 +46,423 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="display-5 fw-bold mb-4">Full Stack Developer</h1>
+                    <h1 class="display-5 fw-bold mb-3">Full Stack Developer</h1>
                     <p class="lead mb-4">Building modern web & mobile applications with clean, efficient code. Specializing in React, Node.js, and cloud solutions.</p>
-                    <div class="d-flex flex-wrap gap-3">
-                        <a href="#projects" class="btn btn-light btn-lg px-4">View My Work</a>
-                        <a href="#contact" class="btn btn-outline-light btn-lg px-4">Contact Me</a>
-                    </div>
+                    <a href="#projects" class="btn btn-light me-2">View Work</a>
+                    <a href="#contact" class="btn btn-outline-light">Contact Me</a>
                 </div>
-                <div class="col-lg-6 text-center mt-5 mt-lg-0">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                         class="img-fluid hero-img" 
-                         alt="Developer workspace"
-                         loading="eager">
+                <div class="col-lg-6 text-center">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="img-fluid rounded shadow" alt="Developer" style="max-width: 85%;">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title fw-bold">About Me</h2>
-            <div class="row">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <p class="mb-3 fs-5">I'm a passionate <strong class="text-primary">Full Stack Developer</strong> with expertise in building modern web and mobile applications.</p>
-                    <p class="mb-3">Graduated with a BSc in Computer Science from Kirinyaga University. I create digital solutions that solve real problems with exceptional user experiences.</p>
-                    <p class="mb-4">My approach combines technical expertise with a keen eye for design and user experience, ensuring every project delivers both functionality and beauty.</p>
-                    
-                    <div class="row mt-4 g-3">
-                        <div class="col-md-6">
-                            <div class="stat-box">
-                                <div class="stat-number">3+</div>
-                                <div class="stat-label">Years Experience</div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="stat-box">
-                                <div class="stat-number">50+</div>
-                                <div class="stat-label">Projects Completed</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="p-4 border rounded bg-white shadow-sm">
-                        <h5 class="mb-4 fw-bold">Education & Background</h5>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <h6 class="fw-bold">BSc Computer Science</h6>
-                                <p class="text-muted mb-2">Kirinyaga University | 2019-2023</p>
-                                <p>Graduated with honors, focusing on software engineering, database systems, and web technologies. Completed advanced coursework in algorithms and mobile development.</p>
-                            </div>
-                            <div class="timeline-item">
-                                <h6 class="fw-bold">Professional Development</h6>
-                                <p class="text-muted mb-2">Continuous Learning | 2023-Present</p>
-                                <p>Staying current with industry trends through online courses, tech conferences, and hands-on project development. Specializing in React, Node.js, and cloud technologies.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section bg-light">
-        <div class="container">
-            <div class="text-center center-title mb-5">
-                <h2 class="section-title fw-bold">My Projects</h2>
-                <p class="lead">A selection of my recent work across various domains</p>
-            </div>
-            <div class="row g-4">
-                <!-- Project 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                             class="card-img-top" 
-                             alt="E-commerce Platform"
-                             loading="lazy">
-                        <div class="card-body p-4">
-                            <h5 class="card-title fw-bold mb-3">E-commerce Platform</h5>
-                            <p class="card-text mb-3">Full-featured online store with shopping cart, user authentication, and payment processing. Includes admin dashboard for inventory management.</p>
-                            <div>
-                                <span class="badge">React</span>
-                                <span class="badge">Node.js</span>
-                                <span class="badge">MongoDB</span>
-                                <span class="badge">Stripe API</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                             class="card-img-top" 
-                             alt="Group Management System"
-                             loading="lazy">
-                        <div class="card-body p-4">
-                            <h5 class="card-title fw-bold mb-3">Group Management System</h5>
-                            <p class="card-text mb-3">Comprehensive platform for managing organizations with user roles, permissions, event scheduling, and communication tools.</p>
-                            <div>
-                                <span class="badge">Vue.js</span>
-                                <span class="badge">PHP</span>
-                                <span class="badge">MySQL</span>
-                                <span class="badge">WebSockets</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                             class="card-img-top" 
-                             alt="Transport App"
-                             loading="lazy">
-                        <div class="card-body p-4">
-                            <h5 class="card-title fw-bold mb-3">Nairobi Transport App</h5>
-                            <p class="card-text mb-3">Mobile application that helps users navigate Nairobi's public transport system with real-time updates, route planning, and fare estimation.</p>
-                            <div>
-                                <span class="badge">React Native</span>
-                                <span class="badge">Firebase</span>
-                                <span class="badge">Maps API</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 4 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                             class="card-img-top" 
-                             alt="Agricultural Platform"
-                             loading="lazy">
-                        <div class="card-body p-4">
-                            <h5 class="card-title fw-bold mb-3">Agricultural Market Platform</h5>
-                            <p class="card-text mb-3">Web platform connecting Kenyan farmers directly with buyers, featuring inventory management, pricing tools, and secure transactions.</p>
-                            <div>
-                                <span class="badge">Vue.js</span>
-                                <span class="badge">Express</span>
-                                <span class="badge">MySQL</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 5 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                             class="card-img-top" 
-                             alt="Analytics Dashboard"
-                             loading="lazy">
-                        <div class="card-body p-4">
-                            <h5 class="card-title fw-bold mb-3">Business Analytics Dashboard</h5>
-                            <p class="card-text mb-3">Interactive dashboard for visualizing business metrics with customizable reports, data filtering, and export functionality.</p>
-                            <div>
-                                <span class="badge">React</span>
-                                <span class="badge">D3.js</span>
-                                <span class="badge">Python</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 6 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                             class="card-img-top" 
-                             alt="Task Management System"
-                             loading="lazy">
-                        <div class="card-body p-4">
-                            <h5 class="card-title fw-bold mb-3">Task Management System</h5>
-                            <p class="card-text mb-3">Collaborative project management tool with task assignment, progress tracking, file sharing, and team communication features.</p>
-                            <div>
-                                <span class="badge">Angular</span>
-                                <span class="badge">Node.js</span>
-                                <span class="badge">MongoDB</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <div class="text-center center-title mb-5">
-                <h2 class="section-title fw-bold">Technical Skills</h2>
-                <p class="lead">Technologies and tools I work with</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="text-center p-4 border rounded bg-white shadow-sm h-100">
-                        <i class="fas fa-code skill-icon"></i>
-                        <h5 class="fw-bold mb-3">Frontend</h5>
-                        <p class="mb-0">React, Vue.js, Angular, TypeScript, Bootstrap, Tailwind CSS, HTML5, CSS3, JavaScript</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="text-center p-4 border rounded bg-white shadow-sm h-100">
-                        <i class="fas fa-server skill-icon"></i>
-                        <h5 class="fw-bold mb-3">Backend</h5>
-                        <p class="mb-0">Node.js, Express, Python, PHP, Laravel, REST APIs, GraphQL, JWT, Authentication</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="text-center p-4 border rounded bg-white shadow-sm h-100">
-                        <i class="fas fa-mobile-alt skill-icon"></i>
-                        <h5 class="fw-bold mb-3">Mobile</h5>
-                        <p class="mb-0">React Native, Flutter, Android Studio, Kotlin, iOS Development, Mobile UI/UX</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="text-center p-4 border rounded bg-white shadow-sm h-100">
-                        <i class="fas fa-database skill-icon"></i>
-                        <h5 class="fw-bold mb-3">Tools & DevOps</h5>
-                        <p class="mb-0">MySQL, MongoDB, Git, Docker, AWS, Firebase, CI/CD, Linux, Nginx</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container position-relative">
-            <h2 class="text-white mb-5 fw-bold">Get In Touch</h2>
-            <div class="row">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <div class="contact-info">
-                        <p class="mb-4 fs-5">Available for freelance projects and full-time opportunities. Let's create something amazing together!</p>
-                        
-                        <div class="mb-4">
-                            <p class="mb-3"><i class="fas fa-envelope me-3"></i>jonterob756@gmail.com</p>
-                            <p class="mb-3"><i class="fas fa-phone me-3"></i>+254 110 856 452</p>
-                            <p class="mb-4"><i class="fas fa-map-marker-alt me-3"></i>Nairobi, Kenya</p>
-                        </div>
-                        
-                        <div class="mb-4">
-                            <h5 class="mb-3">Connect with me</h5>
-                            <div class="d-flex flex-wrap gap-3">
-                                <a href="https://github.com/johngitau" class="social-icon" target="_blank" aria-label="GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://linkedin.com/in/johngitau" class="social-icon" target="_blank" aria-label="LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="https://twitter.com/johngitau" class="social-icon" target="_blank" aria-label="Twitter">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="https://instagram.com/johngitau" class="social-icon" target="_blank" aria-label="Instagram">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-6">
-                    <form id="contact-form" class="contact-form">
-                        <div class="mb-3">
-                            <input type="text" class="form-control" name="name" id="name" 
-                                   placeholder="Your Name" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control" name="email" id="email" 
-                                   placeholder="Your Email" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" name="subject" id="subject" 
-                                   placeholder="Subject (e.g., Project Inquiry)" required>
-                        </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" name="message" id="message" rows="5" 
-                                      placeholder="Tell me about your project or inquiry..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-light w-100 py-3 fw-bold" id="submit-btn">
-                            <span id="btn-text">Send Message</span>
-                            <span id="btn-spinner" class="spinner-border spinner-border-sm d-none ms-2"></span>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
+            <h2 class="mb-4 fw-bold">About Me</h2>
             <div class="row">
                 <div class="col-lg-6 mb-4">
-                    <h5 class="mb-3">John Gitau</h5>
-                    <p class="mb-3 opacity-75">Full Stack Developer creating innovative digital solutions through clean, efficient code.</p>
-                    <div class="d-flex gap-3">
-                        <a href="https://github.com/johngitau" class="text-white opacity-75" target="_blank"><i class="fab fa-github fa-lg"></i></a>
-                        <a href="https://linkedin.com/in/johngitau" class="text-white opacity-75" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
-                        <a href="https://twitter.com/johngitau" class="text-white opacity-75" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
+                    <p class="mb-3">I'm a passionate <strong>Full Stack Developer</strong> with expertise in building modern web and mobile applications.</p>
+                    <p class="mb-3">Graduated with a BSc in Computer Science from Kirinyaga University. I create digital solutions that solve real problems with exceptional user experiences.</p>
+                    <div class="row mt-4">
+                        <div class="col-6"><div class="text-center p-3 border rounded"><h4 class="fw-bold">3+</h4><small>Years Experience</small></div></div>
+                        <div class="col-6"><div class="text-center p-3 border rounded"><h4 class="fw-bold">50+</h4><small>Projects</small></div></div>
                     </div>
                 </div>
-                <div class="col-lg-3 mb-4">
-                    <h6 class="mb-3">Legal</h6>
-                    <div class="footer-links">
-                        <p class="mb-2"><a href="privacy-policy.html">Privacy Policy</a></p>
-                        <p class="mb-2"><a href="terms-of-service.html">Terms of Service</a></p>
+                <div class="col-lg-6">
+                    <div class="p-4 border rounded">
+                        <h5 class="mb-3">Education & Background</h5>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h6>BSc Computer Science</h6>
+                                <p class="text-muted mb-2">Kirinyaga University | 2019-2023</p>
+                                <p class="small">Software engineering, databases, algorithms, and mobile development.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h6>Professional Development</h6>
+                                <p class="text-muted mb-2">Continuous Learning | 2023-Present</p>
+                                <p class="small">Staying current with React, Node.js, and cloud technologies.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 mb-4">
-                    <h6 class="mb-3">Contact</h6>
-                    <div class="opacity-75">
-                        <p class="mb-2"><i class="fas fa-envelope me-2"></i>jonterob756@gmail.com</p>
-                        <p class="mb-2"><i class="fas fa-phone me-2"></i>+254 110 856 452</p>
-                    </div>
-                </div>
-            </div>
-            <hr class="opacity-25 my-4">
-            <div class="text-center">
-                <p class="mb-0 opacity-75">&copy; <span id="current-year"></span> John Gitau. All rights reserved.</p>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <section id="projects" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold">My Projects</h2>
+            <div class="row g-3">
+                <div class="col-md-6 col-lg-4"><div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" style="height:180px;object-fit:cover;" alt="E-commerce">
+                    <div class="card-body"><h5>E-commerce Platform</h5><p class="small">Full-featured online store with cart, auth, and payment processing.</p>
+                        <span class="badge">React</span><span class="badge">Node.js</span><span class="badge">MongoDB</span></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" style="height:180px;object-fit:cover;" alt="Management System">
+                    <div class="card-body"><h5>General Group Management System</h5><p class="small">Platform for organizations with roles, permissions, and scheduling.</p>
+                        <span class="badge">Vue.js</span><span class="badge">PHP</span><span class="badge">MySQL</span></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" style="height:180px;object-fit:cover;" alt="Transport App">
+                    <div class="card-body"><h5>Nairobi Transport App</h5><p class="small">Mobile app for navigating public transport with real-time updates.</p>
+                        <span class="badge">React Native</span><span class="badge">Firebase</span><span class="badge">Maps API</span></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" style="height:180px;object-fit:cover;" alt="Agricultural Platform">
+                    <div class="card-body"><h5>Agricultural Market Platform</h5><p class="small">Connects farmers with buyers for direct transactions.</p>
+                        <span class="badge">Vue.js</span><span class="badge">Express</span><span class="badge">MySQL</span></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" style="height:180px;object-fit:cover;" alt="Analytics Dashboard">
+                    <div class="card-body"><h5>Business Analytics Dashboard</h5><p class="small">Interactive dashboard for visualizing business metrics.</p>
+                        <span class="badge">React</span><span class="badge">D3.js</span><span class="badge">Python</span></div></div></div>
+                <div class="col-md-6 col-lg-4"><div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" style="height:180px;object-fit:cover;" alt="Task Management">
+                    <div class="card-body"><h5>Task Management System</h5><p class="small">Collaborative tool with task assignment and progress tracking.</p>
+                        <span class="badge">Angular</span><span class="badge">Node.js</span><span class="badge">MongoDB</span></div></div></div>
+            </div>
+        </div>
+    </section>
 
-    <script>
-        // Configure Toastr
-        toastr.options = {
-            "closeButton": true,
-            "debug": false,
-            "newestOnTop": true,
-            "progressBar": true,
-            "positionClass": "toast-top-right",
-            "preventDuplicates": true,
-            "onclick": null,
-            "showDuration": "300",
-            "hideDuration": "1000",
-            "timeOut": "5000",
-            "extendedTimeOut": "1000",
-            "showEasing": "swing",
-            "hideEasing": "linear",
-            "showMethod": "fadeIn",
-            "hideMethod": "fadeOut"
-        };
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold">Technical Skills</h2>
+            <div class="row g-3">
+                <div class="col-md-6 col-lg-3"><div class="text-center p-4 border rounded">
+                    <i class="fas fa-code skill-icon"></i><h6>Frontend</h6><p class="small">React, Vue.js, Angular, TypeScript, Bootstrap</p></div></div>
+                <div class="col-md-6 col-lg-3"><div class="text-center p-4 border rounded">
+                    <i class="fas fa-server skill-icon"></i><h6>Backend</h6><p class="small">Node.js, Express, Python, PHP, Laravel, REST APIs</p></div></div>
+                <div class="col-md-6 col-lg-3"><div class="text-center p-4 border rounded">
+                    <i class="fas fa-mobile-alt skill-icon"></i><h6>Mobile</h6><p class="small">React Native, Flutter, Android, iOS</p></div></div>
+                <div class="col-md-6 col-lg-3"><div class="text-center p-4 border rounded">
+                    <i class="fas fa-database skill-icon"></i><h6>Tools</h6><p class="small">MySQL, MongoDB, Git, Docker, AWS, Firebase</p></div></div>
+            </div>
+        </div>
+    </section>
 
-        // EmailJS Configuration
-        const EMAILJS_CONFIG = {
-            PUBLIC_KEY: "Q1Db3xO7terlVPf3w",
-            SERVICE_ID: "service_v9bijqc",
-            TEMPLATE_ID: "template_wszcdnw"
-        };
+    <section id="contact" class="contact">
+    <div class="container">
+        <h2 class="text-white mb-4">Get In Touch</h2>
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <p class="mb-3">Available for freelance projects and full-time opportunities.</p>
+                <p class="mb-2"><i class="fas fa-envelope me-2"></i>jonterob756@gmail.com</p>
+                <p class="mb-2"><i class="fas fa-phone me-2"></i>+254 110 856 452</p>
+                <p class="mb-4"><i class="fas fa-map-marker-alt me-2"></i>Nairobi, Kenya</p>
+                <div class="d-flex gap-3">
+                    <a href="https://github.com/johngitau" class="text-white" target="_blank"><i class="fab fa-github fa-lg"></i></a>
+                    <a href="https://linkedin.com/in/johngitau" class="text-white" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="https://twitter.com/johngitau" class="text-white" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="https://instagram.com/johngitau" class="text-white" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <form id="contact-form">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="name" id="name" 
+                               placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" name="email" id="email" 
+                               placeholder="Your Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="subject" id="subject" 
+                               placeholder="Subject (e.g., Project Inquiry)" required>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" name="message" id="message" rows="4" 
+                                  placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-light w-100" id="submit-btn">
+                        <span id="btn-text">Send Message</span>
+                        <span id="btn-spinner" class="spinner-border spinner-border-sm d-none ms-2"></span>
+                    </button>
+                    <div id="form-alert" class="mt-3"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 
-        // Debug logging
-        console.log("📧 EmailJS Configuration Loaded");
-        console.log("Public Key:", EMAILJS_CONFIG.PUBLIC_KEY ? "✅ Set" : "❌ Missing");
-        console.log("Service ID:", EMAILJS_CONFIG.SERVICE_ID ? "✅ Set" : "❌ Missing");
-        console.log("Template ID:", EMAILJS_CONFIG.TEMPLATE_ID ? "✅ Set" : "❌ Missing");
+<footer class="py-4 bg-dark text-white text-center">
+    <div class="container">
+        <p class="mb-2 small">&copy; <span id="year"></span> John Gitau. All rights reserved.</p>
+        <p class="mb-0 small opacity-75">Built with Bootstrap 5 & EmailJS</p>
+    </div>
+</footer>
 
-        // Initialize EmailJS
-        (function initEmailJS() {
-            if (!EMAILJS_CONFIG.PUBLIC_KEY || EMAILJS_CONFIG.PUBLIC_KEY.includes("YOUR_")) {
-                console.error("❌ EmailJS Public Key is not configured!");
-                toastr.error("Contact form is not configured. Please contact site administrator.", "Configuration Error");
-                return;
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script>
+    // ⚠️ REPLACE THESE WITH YOUR ACTUAL EMAILJS CREDENTIALS
+    const PUBLIC_KEY = "Q1Db3xO7terlVPf3w";    // Your Public Key
+    const SERVICE_ID = "service_v9bijqc";      // Your Service ID
+    const TEMPLATE_ID = "template_wszcdnw";    // Your Template ID
+    
+    console.log("📧 EmailJS Configuration:");
+    console.log("Public Key:", PUBLIC_KEY);
+    console.log("Service ID:", SERVICE_ID);
+    console.log("Template ID:", TEMPLATE_ID);
+    
+    // Initialize EmailJS
+    (function() {
+        console.log("🔄 Initializing EmailJS...");
+        if (!PUBLIC_KEY || PUBLIC_KEY === "YOUR_PUBLIC_KEY_HERE") {
+            console.error("❌ ERROR: Public Key is not set! Please replace with your actual key.");
+            showAlert("EmailJS not configured. Please contact site administrator.", "danger");
+            return;
+        }
+        
+        emailjs.init(PUBLIC_KEY)
+            .then(() => {
+                console.log("✅ EmailJS initialized successfully");
+            })
+            .catch(error => {
+                console.error("❌ EmailJS initialization failed:", error);
+                showAlert("Email service temporarily unavailable.", "warning");
+            });
+    })();
+    
+    // Update year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        document.querySelector('.navbar').classList.toggle('navbar-scrolled', window.scrollY > 50);
+    });
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) {
+                window.scrollTo({
+                    top: target.offsetTop - 70,
+                    behavior: 'smooth'
+                });
             }
-
-            emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY)
-                .then(() => {
-                    console.log("✅ EmailJS initialized successfully");
-                })
-                .catch(error => {
-                    console.error("❌ EmailJS initialization failed:", error);
-                    toastr.warning("Email service temporarily unavailable.", "Service Notice");
-                });
-        })();
-
-        // DOM Ready
-        document.addEventListener('DOMContentLoaded', function() {
-            // Update current year in footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-
-            // Navbar scroll effect
-            window.addEventListener('scroll', () => {
-                document.querySelector('.navbar').classList.toggle('navbar-scrolled', window.scrollY > 50);
-                
-                // Update active nav link
-                updateActiveNavLink();
-            });
-
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    if (this.getAttribute('href') === '#') return;
-                    
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                        const targetPosition = targetElement.offsetTop - navbarHeight - 20;
-                        
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-                        
-                        // Update active nav link
-                        updateActiveNavLink();
-                    }
-                });
-            });
-
-            // Contact Form Submission
-            document.getElementById('contact-form').addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                const form = this;
-                const submitBtn = document.getElementById('submit-btn');
-                const btnText = document.getElementById('btn-text');
-                const btnSpinner = document.getElementById('btn-spinner');
-                
-                // Get form values
-                const formData = {
-                    name: document.getElementById('name').value.trim(),
-                    email: document.getElementById('email').value.trim(),
-                    subject: document.getElementById('subject').value.trim(),
-                    message: document.getElementById('message').value.trim(),
-                    date: new Date().toLocaleDateString('en-US', {
-                        weekday: 'long',
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                    }),
-                    time: new Date().toLocaleTimeString('en-US', {
-                        hour: '2-digit',
-                        minute: '2-digit'
-                    })
+        });
+    });
+    
+    // Alert helper function
+    function showAlert(message, type = 'info', duration = 5000) {
+        const alertDiv = document.getElementById('form-alert');
+        const alertClass = type === 'success' ? 'alert-success' : 
+                          type === 'danger' ? 'alert-danger' : 
+                          type === 'warning' ? 'alert-warning' : 'alert-info';
+        
+        const icon = type === 'success' ? 'check-circle' : 
+                    type === 'danger' ? 'exclamation-circle' : 
+                    type === 'warning' ? 'exclamation-triangle' : 'info-circle';
+        
+        alertDiv.innerHTML = `
+            <div class="alert ${alertClass} alert-dismissible fade show shadow-sm">
+                <i class="fas fa-${icon} me-2"></i>
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        `;
+        
+        if (duration > 0) {
+            setTimeout(() => {
+                const alert = alertDiv.querySelector('.alert');
+                if (alert) {
+                    alert.classList.remove('show');
+                    setTimeout(() => alert.remove(), 300);
+                }
+            }, duration);
+        }
+    }
+    
+    // Contact Form Submission
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        console.log("📝 Form submission started...");
+        
+        const form = this;
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = document.getElementById('btn-text');
+        const btnSpinner = document.getElementById('btn-spinner');
+        
+        // Get form values - MUST MATCH YOUR TEMPLATE VARIABLES
+        const templateParams = {
+            name: document.getElementById('name').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            subject: document.getElementById('subject').value.trim(),
+            message: document.getElementById('message').value.trim()
+        };
+        
+        console.log("📤 Sending data:", templateParams);
+        
+        // Validate required fields
+        if (!templateParams.name || !templateParams.email || !templateParams.message) {
+            showAlert("Please fill in all required fields (Name, Email, Message).", "warning");
+            return;
+        }
+        
+        // Auto-generate subject if empty
+        if (!templateParams.subject) {
+            const preview = templateParams.message.length > 40 
+                ? templateParams.message.substring(0, 40) + '...' 
+                : templateParams.message;
+            templateParams.subject = `Message from ${templateParams.name}: ${preview}`;
+        }
+        
+        // Show loading state
+        submitBtn.disabled = true;
+        btnSpinner.classList.remove('d-none');
+        btnText.textContent = 'Sending...';
+        
+        try {
+            console.log("✉️ Attempting to send email...");
+            console.log("Service ID:", SERVICE_ID);
+            console.log("Template ID:", TEMPLATE_ID);
+            console.log("Template Params:", templateParams);
+            
+            const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
+            
+            console.log("✅ Email sent successfully!", response);
+            console.log("Status:", response.status);
+            console.log("Text:", response.text);
+            
+            // Success message
+            showAlert("Message sent successfully! I'll get back to you within 24 hours.", "success");
+            
+            // Reset form
+            form.reset();
+            
+            // Also send a copy to yourself (optional)
+            try {
+                const adminTemplateParams = {
+                    name: templateParams.name,
+                    email: templateParams.email,
+                    subject: `Portfolio Contact: ${templateParams.subject}`,
+                    message: templateParams.message,
+                    timestamp: new Date().toLocaleString()
                 };
                 
-                // Validate form
-                if (!formData.name || !formData.email || !formData.message) {
-                    toastr.warning("Please fill in all required fields.", "Validation Error");
-                    return;
-                }
+                // If you want to send a copy to yourself, you need another template
+                // emailjs.send(SERVICE_ID, "YOUR_ADMIN_TEMPLATE_ID", adminTemplateParams);
                 
-                // Auto-generate subject if empty
-                if (!formData.subject) {
-                    const preview = formData.message.length > 50 
-                        ? formData.message.substring(0, 50) + '...' 
-                        : formData.message;
-                    formData.subject = `Message from ${formData.name}: ${preview}`;
-                }
-                
-                // Show loading state
-                submitBtn.disabled = true;
-                btnSpinner.classList.remove('d-none');
-                btnText.textContent = 'Sending...';
-                
-                try {
-                    console.log("📤 Sending email with data:", formData);
-                    
-                    const response = await emailjs.send(
-                        EMAILJS_CONFIG.SERVICE_ID,
-                        EMAILJS_CONFIG.TEMPLATE_ID,
-                        formData
-                    );
-                    
-                    console.log("✅ Email sent successfully:", response);
-                    
-                    // Show success toast
-                    toastr.success(
-                        "Your message has been sent successfully! I'll get back to you within 24 hours.",
-                        "Message Sent!"
-                    );
-                    
-                    // Reset form
-                    form.reset();
-                    
-                } catch (error) {
-                    console.error("❌ EmailJS Error:", error);
-                    
-                    // User-friendly error messages
-                    let errorMessage = "Failed to send message. Please try again or email me directly.";
-                    
-                    if (error.status === 400) {
-                        errorMessage = "Invalid form data. Please check your inputs.";
-                    } else if (error.status === 401) {
-                        errorMessage = "Authentication failed. Please refresh the page.";
-                    } else if (error.status === 403) {
-                        errorMessage = "Service configuration error.";
-                    } else if (error.status === 404) {
-                        errorMessage = "Service not found. Please try again later.";
-                    } else if (error.status === 429) {
-                        errorMessage = "Too many requests. Please try again in a few minutes.";
-                    }
-                    
-                    toastr.error(errorMessage, "Sending Failed");
-                    
-                } finally {
-                    // Reset button state
-                    submitBtn.disabled = false;
-                    btnSpinner.classList.add('d-none');
-                    btnText.textContent = 'Send Message';
-                }
-            });
+            } catch (adminError) {
+                console.log("Note: Admin copy not sent (optional)", adminError);
+            }
             
-            // Form validation styling
-            const formInputs = document.querySelectorAll('#contact-form input, #contact-form textarea');
-            formInputs.forEach(input => {
-                input.addEventListener('input', function() {
-                    this.classList.remove('is-invalid');
-                    if (this.checkValidity()) {
-                        this.classList.add('is-valid');
-                    } else {
-                        this.classList.remove('is-valid');
-                    }
-                });
+        } catch (error) {
+            console.error("❌ EmailJS Error Details:", error);
+            
+            // Detailed error analysis
+            let errorMessage = "Failed to send message. Please try again or email me directly.";
+            let errorType = "danger";
+            
+            if (error.status) {
+                console.log("Error Status:", error.status);
                 
-                input.addEventListener('blur', function() {
-                    if (!this.checkValidity()) {
-                        this.classList.add('is-invalid');
-                    }
-                });
-            });
+                switch (error.status) {
+                    case 0:
+                        errorMessage = "Network error. Please check your internet connection.";
+                        break;
+                    case 400:
+                        errorMessage = "Bad request. Please check your form data.";
+                        console.log("Likely issue: Template parameters don't match template variables");
+                        break;
+                    case 401:
+                        errorMessage = "Authentication failed. Invalid API key.";
+                        console.log("Check your Public Key:", PUBLIC_KEY);
+                        break;
+                    case 403:
+                        errorMessage = "Permission denied. Check your EmailJS service configuration.";
+                        console.log("Check if your email service is properly connected in EmailJS");
+                        break;
+                    case 404:
+                        errorMessage = "Service or template not found. Check your Service ID and Template ID.";
+                        console.log("Service ID:", SERVICE_ID, "Template ID:", TEMPLATE_ID);
+                        break;
+                    case 429:
+                        errorMessage = "Too many requests. Please try again later.";
+                        errorType = "warning";
+                        break;
+                    case 500:
+                        errorMessage = "Server error. Please try again in a few minutes.";
+                        break;
+                    default:
+                        errorMessage = `Error ${error.status}: ${error.text || 'Please try again.'}`;
+                }
+            }
+            
+            if (error.text) {
+                console.log("Error Text:", error.text);
+                errorMessage += ` (${error.text})`;
+            }
+            
+            showAlert(errorMessage, errorType);
+            
+            // Suggest alternatives
+            if (error.status === 400 || error.status === 404) {
+                console.log("💡 Suggestion: Check if template variables match exactly:");
+                console.log("Template expects: {{name}}, {{email}}, {{subject}}, {{message}}");
+                console.log("You're sending:", Object.keys(templateParams));
+            }
+            
+        } finally {
+            // Reset button state
+            submitBtn.disabled = false;
+            btnSpinner.classList.add('d-none');
+            btnText.textContent = 'Send Message';
+        }
+    });
+    
+    // Form validation styling
+    const formInputs = document.querySelectorAll('#contact-form input, #contact-form textarea');
+    formInputs.forEach(input => {
+        input.addEventListener('input', function() {
+            if (this.checkValidity()) {
+                this.classList.remove('is-invalid');
+                this.classList.add('is-valid');
+            } else {
+                this.classList.remove('is-valid');
+            }
         });
-
-        // Helper function to update active nav link
-        function updateActiveNavLink() {
-            const sections = document.querySelectorAll('section[id]');
-            const scrollPos = window.scrollY + 100;
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                const sectionId = section.getAttribute('id');
-                
-                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                    document.querySelectorAll('.nav-link').forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${sectionId}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
+        
+        input.addEventListener('blur', function() {
+            if (!this.checkValidity()) {
+                this.classList.add('is-invalid');
+                this.classList.add('was-validated');
+            }
+        });
+    });
+    
+    // Test EmailJS connection on page load
+    window.addEventListener('load', function() {
+        console.log("🔍 Testing EmailJS configuration...");
+        
+        // Test if credentials look valid
+        const isValidKey = PUBLIC_KEY && PUBLIC_KEY.length > 10 && !PUBLIC_KEY.includes("YOUR_");
+        const isValidService = SERVICE_ID && SERVICE_ID.startsWith("service_");
+        const isValidTemplate = TEMPLATE_ID && TEMPLATE_ID.startsWith("template_");
+        
+        console.log("Public Key valid:", isValidKey);
+        console.log("Service ID valid:", isValidService);
+        console.log("Template ID valid:", isValidTemplate);
+        
+        if (!isValidKey || !isValidService || !isValidTemplate) {
+            console.warn("⚠️ One or more EmailJS credentials appear to be placeholders!");
+            console.log("Please update these in the JavaScript code:");
+            if (!isValidKey) console.log("- PUBLIC_KEY");
+            if (!isValidService) console.log("- SERVICE_ID");
+            if (!isValidTemplate) console.log("- TEMPLATE_ID");
         }
-
-        // Lazy load images
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.add('loaded');
-                        imageObserver.unobserve(img);
-                    }
-                });
-            }, {
-                rootMargin: '50px 0px',
-                threshold: 0.1
-            });
-            
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
-    </script>
+    });
+</script>
 </body>
 </html>
