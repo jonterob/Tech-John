@@ -133,21 +133,26 @@
     </style>
 
     <style>
-        /* Modern CSS with minimal, clean design */
+        /* Modern CSS with better background colors */
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
+            --primary-light: #3b82f6;
             --secondary: #7c3aed;
+            --accent: #f59e0b;
             --dark: #0f172a;
-            --light: #f8fafc;
+            --dark-soft: #1e293b;
+            --light: #ffffff;
+            --light-soft: #f8fafc;
+            --light-muted: #f1f5f9;
             --gray: #64748b;
-            --gray-light: #e2e8f0;
+            --gray-light: #94a3b8;
+            --gray-soft: #e2e8f0;
             --success: #10b981;
             --error: #ef4444;
-            --warning: #f59e0b;
         }
         
-        /* Base styles with responsive font scaling */
+        /* Base styles */
         html {
             scroll-behavior: smooth;
             font-size: clamp(14px, 1vw, 16px);
@@ -158,11 +163,17 @@
             line-height: 1.5;
             color: var(--dark);
             overflow-x: hidden;
+            background-color: var(--light-soft);
+        }
+        
+        /* No underlines on any links */
+        a {
+            text-decoration: none !important;
         }
         
         /* Clean navbar */
         .navbar {
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             padding: 0.75rem 0;
             transition: all 0.3s;
@@ -171,44 +182,36 @@
         
         .navbar-scrolled {
             padding: 0.5rem 0;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
         
         .navbar-brand {
             font-weight: 600;
-            color: var(--primary);
+            color: var(--primary) !important;
             font-size: 1.25rem;
             letter-spacing: -0.02em;
         }
         
         .nav-link {
-            color: var(--dark);
+            color: var(--dark) !important;
             font-weight: 500;
             font-size: 0.9375rem;
             padding: 0.5rem 1rem !important;
             transition: color 0.2s;
+            border-radius: 6px;
         }
         
         .nav-link:hover,
         .nav-link.active {
-            color: var(--primary);
+            color: var(--primary) !important;
+            background-color: rgba(37, 99, 235, 0.05);
         }
         
         /* Modern hero section */
         .hero {
             padding: 7rem 0 5rem;
-            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            background: linear-gradient(135deg, #ffffff 0%, var(--light-muted) 100%);
             position: relative;
-        }
-        
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gray-light), transparent);
         }
         
         .hero-title {
@@ -226,13 +229,21 @@
             max-width: 600px;
         }
         
-        /* Section styling */
+        /* Section styling with better backgrounds */
         .section {
             padding: 5rem 0;
         }
         
-        .section-sm {
-            padding: 3rem 0;
+        .section-light {
+            background-color: var(--light);
+        }
+        
+        .section-soft {
+            background-color: var(--light-soft);
+        }
+        
+        .section-muted {
+            background-color: var(--light-muted);
         }
         
         .section-title {
@@ -241,6 +252,7 @@
             margin-bottom: 2rem;
             position: relative;
             display: inline-block;
+            color: var(--dark);
         }
         
         .section-title::after {
@@ -259,20 +271,21 @@
             transform: translateX(-50%);
         }
         
-        /* Clean cards */
+        /* Clean cards with better backgrounds */
         .card {
-            border: 1px solid var(--gray-light);
+            background-color: var(--light);
+            border: 1px solid var(--gray-soft);
             border-radius: 12px;
             overflow: hidden;
             transition: all 0.3s;
             height: 100%;
-            background: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
         
         .card:hover {
             transform: translateY(-4px);
             box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-            border-color: transparent;
+            border-color: var(--primary-light);
         }
         
         .card-img-top {
@@ -288,6 +301,7 @@
             font-size: 1.125rem;
             font-weight: 600;
             margin-bottom: 0.75rem;
+            color: var(--dark);
         }
         
         .card-text {
@@ -296,21 +310,23 @@
             margin-bottom: 1rem;
         }
         
-        /* Skills styling */
+        /* Skills styling with better backgrounds */
         .skill-item {
-            background: white;
-            border: 1px solid var(--gray-light);
+            background: var(--light);
+            border: 1px solid var(--gray-soft);
             border-radius: 8px;
-            padding: 1rem;
+            padding: 1.5rem 1rem;
             text-align: center;
             transition: all 0.3s;
             height: 100%;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
         
         .skill-item:hover {
             border-color: var(--primary);
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.08);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.12);
+            background: linear-gradient(135deg, var(--light), var(--light-soft));
         }
         
         .skill-icon {
@@ -320,9 +336,10 @@
         }
         
         .skill-name {
-            font-weight: 500;
+            font-weight: 600;
             font-size: 0.9375rem;
             margin-bottom: 0.25rem;
+            color: var(--dark);
         }
         
         .skill-level {
@@ -332,7 +349,7 @@
         
         /* Badges */
         .badge-tech {
-            background: var(--gray-light);
+            background: var(--light-muted);
             color: var(--dark);
             padding: 0.35rem 0.75rem;
             border-radius: 20px;
@@ -340,20 +357,36 @@
             font-weight: 500;
             margin: 0.25rem;
             display: inline-block;
+            border: 1px solid var(--gray-soft);
         }
         
-        /* Modern contact section */
+        /* Modern contact section - More visible */
         .contact {
-            background: var(--dark);
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-soft) 100%);
             color: white;
             padding: 5rem 0;
+            position: relative;
+        }
+        
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.03"><polygon fill="white" points="0,1000 1000,0 1000,1000"/></svg>');
+            background-size: cover;
         }
         
         .contact-info {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 16px;
             padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 2;
         }
         
         .contact-info p {
@@ -362,17 +395,18 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+            color: rgba(255, 255, 255, 0.9);
         }
         
         .contact-info i {
             width: 20px;
-            color: var(--primary);
+            color: var(--primary-light);
         }
         
         /* Modern form */
         .form-control-modern {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 8px;
             padding: 0.75rem 1rem;
             color: white;
@@ -382,15 +416,15 @@
         }
         
         .form-control-modern:focus {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--primary-light);
             outline: none;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
             color: white;
         }
         
         .form-control-modern::placeholder {
-            color: rgba(255, 255, 255, 0.4);
+            color: rgba(255, 255, 255, 0.5);
         }
         
         .form-control-modern.is-valid {
@@ -405,21 +439,21 @@
             font-size: 0.8125rem;
             margin-top: 0.25rem;
             display: none;
+            color: var(--error);
         }
         
         .is-invalid ~ .validation-feedback {
             display: block;
-            color: var(--error);
         }
         
-        /* Buttons */
+        /* Buttons - More visible */
         .btn-modern {
             background: var(--primary);
-            color: white;
+            color: white !important;
             border: none;
             padding: 0.75rem 1.5rem;
             border-radius: 8px;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 0.9375rem;
             transition: all 0.3s;
             cursor: pointer;
@@ -427,13 +461,14 @@
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
         
         .btn-modern:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
-            color: white;
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+            color: white !important;
         }
         
         .btn-modern:disabled {
@@ -444,50 +479,96 @@
         
         .btn-outline-modern {
             background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
+            border: 1px solid var(--primary);
+            color: var(--primary) !important;
             padding: 0.75rem 1.5rem;
             border-radius: 8px;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 0.9375rem;
             transition: all 0.3s;
             cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
         
         .btn-outline-modern:hover {
-            background: white;
-            color: var(--dark);
-            border-color: white;
+            background: var(--primary);
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
         }
         
-        /* Social icons */
+        /* Contact buttons - More visible */
+        .btn-contact {
+            background: var(--primary);
+            color: white !important;
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        }
+        
+        .btn-contact:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
+            color: white !important;
+        }
+        
+        .btn-contact:disabled {
+            opacity: 0.6;
+            transform: none;
+        }
+        
+        /* Social icons - More visible */
         .social-icon {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-size: 1.125rem;
+            background: var(--primary);
+            color: white !important;
+            font-size: 1.25rem;
             transition: all 0.3s;
             text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
         
         .social-icon:hover {
+            background: var(--primary-dark);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+            color: white !important;
+        }
+        
+        .social-icon-light {
+            background: rgba(255, 255, 255, 0.15);
+            color: white !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-icon-light:hover {
             background: var(--primary);
-            color: white;
-            transform: translateY(-3px);
+            color: white !important;
         }
         
         /* Stats */
         .stat-box {
             text-align: center;
             padding: 1.5rem;
-            background: white;
+            background: var(--light);
             border-radius: 12px;
-            border: 1px solid var(--gray-light);
+            border: 1px solid var(--gray-soft);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
         
         .stat-number {
@@ -528,6 +609,7 @@
             border-radius: 50%;
             background: var(--primary);
             border: 2px solid white;
+            box-shadow: 0 0 0 2px var(--primary-light);
         }
         
         .timeline-date {
@@ -540,6 +622,7 @@
             font-weight: 600;
             font-size: 1rem;
             margin-bottom: 0.5rem;
+            color: var(--dark);
         }
         
         .timeline-text {
@@ -556,14 +639,15 @@
         }
         
         .footer-links a {
-            color: rgba(255, 255, 255, 0.6);
-            text-decoration: none;
+            color: rgba(255, 255, 255, 0.7) !important;
             font-size: 0.875rem;
             transition: color 0.2s;
+            display: inline-block;
         }
         
         .footer-links a:hover {
-            color: white;
+            color: white !important;
+            transform: translateX(2px);
         }
         
         /* Responsive adjustments */
@@ -601,6 +685,10 @@
             
             .nav-link {
                 text-align: center;
+            }
+            
+            .nav-link:hover {
+                background-color: rgba(37, 99, 235, 0.1);
             }
         }
         
@@ -691,7 +779,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
+    <section id="about" class="section section-light">
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="row">
@@ -737,7 +825,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section bg-light">
+    <section id="projects" class="section section-muted">
         <div class="container">
             <div class="text-center center-title mb-5">
                 <h2 class="section-title">My Projects</h2>
@@ -874,7 +962,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section">
+    <section id="skills" class="section section-light">
         <div class="container">
             <div class="text-center center-title mb-5">
                 <h2 class="section-title">Technical Skills</h2>
@@ -913,9 +1001,9 @@
         </div>
     </section>
 
-    <!-- Contact Section - Modern and responsive -->
+    <!-- Contact Section - More Visible -->
     <section id="contact" class="contact">
-        <div class="container">
+        <div class="container position-relative" style="z-index: 2;">
             <h2 class="section-title text-white mb-5">Get In Touch</h2>
             <div class="row g-5">
                 <div class="col-lg-5">
@@ -929,16 +1017,19 @@
                         </div>
                         
                         <div>
-                            <h6 class="mb-3 fs-6">Connect with me</h6>
+                            <h6 class="mb-3 fs-6 text-white">Connect with me</h6>
                             <div class="d-flex gap-3">
-                                <a href="https://github.com/johngitau" class="social-icon" target="_blank" aria-label="GitHub">
+                                <a href="https://github.com/johngitau" class="social-icon social-icon-light" target="_blank" aria-label="GitHub">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="https://linkedin.com/in/johngitau" class="social-icon" target="_blank" aria-label="LinkedIn">
+                                <a href="https://linkedin.com/in/johngitau" class="social-icon social-icon-light" target="_blank" aria-label="LinkedIn">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
-                                <a href="https://twitter.com/johngitau" class="social-icon" target="_blank" aria-label="Twitter">
+                                <a href="https://twitter.com/johngitau" class="social-icon social-icon-light" target="_blank" aria-label="Twitter">
                                     <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="https://wa.me/254110856452" class="social-icon social-icon-light" target="_blank" aria-label="WhatsApp">
+                                    <i class="fab fa-whatsapp"></i>
                                 </a>
                             </div>
                         </div>
@@ -968,7 +1059,7 @@
                                 <div class="validation-feedback">Please enter your message</div>
                             </div>
                             <div class="col-12">
-                                <button type="submit" class="btn-modern w-100" id="submit-btn">
+                                <button type="submit" class="btn-contact" id="submit-btn">
                                     <span id="btn-text">Send Message</span>
                                     <span id="btn-spinner" class="spinner d-none"></span>
                                 </button>
