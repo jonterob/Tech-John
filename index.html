@@ -187,6 +187,8 @@
             font-size: 0.9375rem;
             padding: 0.5rem 1rem !important;
             transition: color 0.2s;
+            /* no underline ever */
+            text-decoration: none !important;
         }
         
         .nav-link:hover,
@@ -340,6 +342,7 @@
             font-weight: 500;
             margin: 0.25rem;
             display: inline-block;
+            text-decoration: none; /* ensure no underline if ever wrapped in a */
         }
         
         /* Modern contact section */
@@ -427,6 +430,7 @@
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
+            text-decoration: none !important; /* no underline */
         }
         
         .btn-modern:hover {
@@ -452,6 +456,10 @@
             font-size: 0.9375rem;
             transition: all 0.3s;
             cursor: pointer;
+            text-decoration: none !important; /* no underline */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .btn-outline-modern:hover {
@@ -472,7 +480,7 @@
             color: white;
             font-size: 1.125rem;
             transition: all 0.3s;
-            text-decoration: none;
+            text-decoration: none !important;
         }
         
         .social-icon:hover {
@@ -557,7 +565,7 @@
         
         .footer-links a {
             color: rgba(255, 255, 255, 0.6);
-            text-decoration: none;
+            text-decoration: none !important;
             font-size: 0.875rem;
             transition: color 0.2s;
         }
@@ -675,7 +683,8 @@
                     <p class="hero-subtitle">Building modern web & mobile applications with clean, efficient code. Specializing in React, Node.js, and cloud solutions.</p>
                     <div class="d-flex flex-wrap gap-3 justify-content-start">
                         <a href="#projects" class="btn-modern">View My Work</a>
-                        <a href="#contact" class="btn-outline-modern">Contact Me</a>
+                        <!-- Contact Me button now uses solid primary style + glow to be extra visible -->
+                        <a href="#contact" class="btn-modern" style="background: var(--primary-dark); box-shadow: 0 4px 12px rgba(37,99,235,0.4);">Contact Me</a>
                     </div>
                 </div>
                 <div class="col-lg-6 text-center mt-5 mt-lg-0">
