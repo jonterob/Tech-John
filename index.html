@@ -22,7 +22,7 @@
     <!-- Critical CSS inline to avoid render blocking -->
     <style>
         /* Critical path CSS */
-        *{margin:0;padding:0;box-sizing:border-box}:root{--primary:#2563eb;--primary-dark:#1d4ed8;--dark:#0f172a;--gray:#64748b;--gray-light:#e2e8f0}body{font-family:'Inter',sans-serif;line-height:1.5;color:var(--dark);overflow-x:hidden}.navbar{background:rgba(255,255,255,.98);backdrop-filter:blur(10px);padding:.75rem 0;position:fixed;top:0;width:100%;z-index:1000}.hero{padding:7rem 0 5rem;background:#f8fafc}.container{max-width:1280px;margin:0 auto;padding:0 1.5rem}.btn-modern{background:var(--primary);color:#fff;border:none;padding:.75rem 1.5rem;border-radius:8px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;text-decoration:none}.text-primary{color:var(--primary)}.section{padding:5rem 0}.bg-light{background:#f8fafc}.contact{background:var(--dark);color:#fff;padding:5rem 0}.footer{background:var(--dark);color:#fff;padding:3rem 0}
+        *{margin:0;padding:0;box-sizing:border-box}:root{--primary:#2563eb;--primary-dark:#1d4ed8;--dark:#0f172a;--gray:#64748b;--gray-light:#e2e8f2}body{font-family:'Inter',sans-serif;line-height:1.5;color:var(--dark);overflow-x:hidden}.navbar{background:rgba(255,255,255,.98);backdrop-filter:blur(10px);padding:.75rem 0;position:fixed;top:0;width:100%;z-index:1000}.hero{padding:7rem 0 5rem;background:#f8fafc}.container{max-width:1280px;margin:0 auto;padding:0 1.5rem}.btn-modern{background:var(--primary);color:#fff;border:none;padding:.75rem 1.5rem;border-radius:8px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;text-decoration:none}.text-primary{color:var(--primary)}.section{padding:5rem 0}.bg-light{background:#f8fafc}.contact{background:var(--dark);color:#fff;padding:5rem 0}.footer{background:var(--dark);color:#fff;padding:3rem 0}
     </style>
     
     <!-- Deferred styles -->
@@ -32,308 +32,66 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
-    <!-- Non-critical styles -->
+    <!-- Non-critical styles (each CSS block in 1 line) -->
     <style>
         /* Toast container */
-        .toast-container-custom {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 999999;
-            pointer-events: none;
-        }
-        
-        .toast-custom {
-            background: white;
-            border-radius: 12px;
-            padding: 1rem 2rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            min-width: 300px;
-            max-width: 450px;
-            animation: toastSlideIn 0.3s ease forwards;
-            border-left: 4px solid;
-            pointer-events: auto;
-        }
-        
+        .toast-container-custom { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 999999; pointer-events: none; }
+        .toast-custom { background: white; border-radius: 12px; padding: 1rem 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 1rem; min-width: 300px; max-width: 450px; animation: toastSlideIn 0.3s ease forwards; border-left: 4px solid; pointer-events: auto; }
         .toast-custom.success { border-left-color: #10b981; }
         .toast-custom.error { border-left-color: #ef4444; }
         .toast-custom.warning { border-left-color: #f59e0b; }
         .toast-custom.info { border-left-color: #3b82f6; }
-        
-        @keyframes toastSlideIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes toastSlideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         
         /* Modern card designs */
-        .card {
-            border: 1px solid var(--gray-light);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s;
-            height: 100%;
-            background: white;
-        }
+        .card { border: 1px solid var(--gray-light); border-radius: 12px; overflow: hidden; transition: all 0.3s; height: 100%; background: white; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); border-color: transparent; }
+        .card-img-top { height: 180px; object-fit: cover; width: 100%; background: #f1f5f9; }
         
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-            border-color: transparent;
-        }
+        /* Client cards - updated: no hover effect, smaller font */
+        .client-card { border: 1px solid var(--gray-light); border-radius: 12px; padding: 1.5rem; text-align: center; height: 100%; background: white; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .client-icon { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: rgba(37, 99, 235, 0.1); border-radius: 50%; }
+        .client-name { font-size: 1.25rem; margin-bottom: 0.25rem; }
+        .client-website { font-size: 0.8rem; color: var(--gray); margin-bottom: 0.75rem; }
+        .client-description { font-size: 0.875rem; line-height: 1.4; color: var(--dark); margin-bottom: 1rem; }
+        .client-link { color: var(--primary); text-decoration: none; font-size: 0.875rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.2s; }
+        .client-link:hover { gap: 0.75rem; color: var(--primary-dark); }
+        .client-link:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
         
-        .card-img-top {
-            height: 180px;
-            object-fit: cover;
-            width: 100%;
-            background: #f1f5f9; /* Placeholder background */
-        }
-        
-        .client-card {
-            border: 1px solid var(--gray-light);
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            height: 100%;
-            background: white;
-            transition: all 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .client-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-            border-color: var(--primary);
-        }
-        
-        .client-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(37, 99, 235, 0.1);
-            border-radius: 50%;
-        }
-        
-        .client-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-size: 0.9375rem;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: gap 0.2s;
-        }
-        
-        .client-link:hover {
-            gap: 0.75rem;
-            color: var(--primary-dark);
-        }
-        
-        .client-link:focus-visible {
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
-            border-radius: 4px;
-        }
-        
-        .skill-item {
-            background: white;
-            border: 1px solid var(--gray-light);
-            border-radius: 8px;
-            padding: 1rem;
-            text-align: center;
-            transition: all 0.3s;
-            height: 100%;
-        }
-        
-        .skill-item:hover {
-            border-color: var(--primary);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.08);
-        }
-        
-        .badge-tech {
-            background: var(--gray-light);
-            color: var(--dark);
-            padding: 0.35rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.8125rem;
-            font-weight: 500;
-            margin: 0.25rem;
-            display: inline-block;
-        }
-        
-        .contact-info {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .form-control-modern {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            padding: 0.75rem 1rem;
-            color: white;
-            font-size: 0.9375rem;
-            transition: all 0.3s;
-            width: 100%;
-        }
-        
-        .form-control-modern:focus {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--primary);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
-            color: white;
-        }
-        
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-size: 1.125rem;
-            transition: all 0.3s;
-            text-decoration: none !important;
-        }
-        
-        .social-icon:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-        }
-        
-        .social-icon:focus-visible {
-            outline: 2px solid white;
-            outline-offset: 2px;
-        }
-        
-        .stat-box {
-            text-align: center;
-            padding: 1.5rem;
-            background: white;
-            border-radius: 12px;
-            border: 1px solid var(--gray-light);
-        }
-        
-        .timeline {
-            border-left: 2px solid var(--primary);
-            padding-left: 1.5rem;
-        }
-        
-        .timeline-item {
-            position: relative;
-            padding-bottom: 1.5rem;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -1.9rem;
-            top: 0.25rem;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--primary);
-            border: 2px solid white;
-        }
-        
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.6);
-            text-decoration: none !important;
-            font-size: 0.875rem;
-            transition: color 0.2s;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        .footer-links a:focus-visible {
-            outline: 2px solid white;
-            outline-offset: 2px;
-            border-radius: 4px;
-        }
+        .skill-item { background: white; border: 1px solid var(--gray-light); border-radius: 8px; padding: 1rem; text-align: center; transition: all 0.3s; height: 100%; }
+        .skill-item:hover { border-color: var(--primary); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37, 99, 235, 0.08); }
+        .badge-tech { background: var(--gray-light); color: var(--dark); padding: 0.35rem 0.75rem; border-radius: 20px; font-size: 0.8125rem; font-weight: 500; margin: 0.25rem; display: inline-block; }
+        .contact-info { background: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .form-control-modern { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 0.75rem 1rem; color: white; font-size: 0.9375rem; transition: all 0.3s; width: 100%; }
+        .form-control-modern:focus { background: rgba(255, 255, 255, 0.1); border-color: var(--primary); outline: none; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2); color: white; }
+        .social-icon { width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255, 255, 255, 0.1); color: white; font-size: 1.125rem; transition: all 0.3s; text-decoration: none !important; }
+        .social-icon:hover { background: var(--primary); color: white; transform: translateY(-3px); }
+        .social-icon:focus-visible { outline: 2px solid white; outline-offset: 2px; }
+        .stat-box { text-align: center; padding: 1.5rem; background: white; border-radius: 12px; border: 1px solid var(--gray-light); }
+        .timeline { border-left: 2px solid var(--primary); padding-left: 1.5rem; }
+        .timeline-item { position: relative; padding-bottom: 1.5rem; }
+        .timeline-item::before { content: ''; position: absolute; left: -1.9rem; top: 0.25rem; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); border: 2px solid white; }
+        .footer-links a { color: rgba(255, 255, 255, 0.6); text-decoration: none !important; font-size: 0.875rem; transition: color 0.2s; }
+        .footer-links a:hover { color: white; }
+        .footer-links a:focus-visible { outline: 2px solid white; outline-offset: 2px; border-radius: 4px; }
         
         /* Responsive */
-        @media (max-width: 768px) {
-            .hero { padding: 6rem 0 4rem; text-align: center; }
-            .section { padding: 3rem 0; }
-            .section-title::after { left: 50%; transform: translateX(-50%); }
-            .navbar-collapse { background: white; padding: 1rem; border-radius: 12px; margin-top: 1rem; }
-        }
+        @media (max-width: 768px) { .hero { padding: 6rem 0 4rem; text-align: center; } .section { padding: 3rem 0; } .section-title::after { left: 50%; transform: translateX(-50%); } .navbar-collapse { background: white; padding: 1rem; border-radius: 12px; margin-top: 1rem; } }
         
         /* Accessibility */
-        .section-title {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: 600;
-            margin-bottom: 2rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -0.5rem;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--primary);
-            border-radius: 2px;
-        }
-        
-        .center-title .section-title::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        a:focus-visible, button:focus-visible {
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
-        }
+        .section-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; margin-bottom: 2rem; position: relative; display: inline-block; }
+        .section-title::after { content: ''; position: absolute; bottom: -0.5rem; left: 0; width: 60px; height: 3px; background: var(--primary); border-radius: 2px; }
+        .center-title .section-title::after { left: 50%; transform: translateX(-50%); }
+        a:focus-visible, button:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
         
         /* High contrast mode support */
-        @media (prefers-contrast: high) {
-            :root {
-                --primary: #0000ff;
-                --primary-dark: #0000cc;
-            }
-        }
+        @media (prefers-contrast: high) { :root { --primary: #0000ff; --primary-dark: #0000cc; } }
         
         /* Reduced motion */
-        @media (prefers-reduced-motion: reduce) {
-            * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-        }
+        @media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
         
         /* Loading spinner */
-        .spinner {
-            width: 20px;
-            height: 20px;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-top-color: white;
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-            display: inline-block;
-        }
-        
+        .spinner { width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.8s linear infinite; display: inline-block; }
         @keyframes spin { to { transform: rotate(360deg); } }
     </style>
 </head>
@@ -574,23 +332,25 @@
             </div>
         </section>
 
-        <!--Clients Section -->
+        <!-- Clients Section - Updated to show all 3 clients side by side with proper responsive grid -->
         <section id="clients" class="section" aria-labelledby="clients-heading">
             <div class="container">
                 <div class="text-center center-title mb-5">
                     <h2 id="clients-heading" class="section-title">Satisfied Clients</h2>
                     <p class="text-secondary">Trusted by organizations to deliver robust digital solutions</p>
                 </div>
-                <div class="row g-4 justify-content-center">
+                
+                <!-- All 3 clients in a responsive grid - fits across all screen sizes -->
+                <div class="row g-3 justify-content-center">
                     <!-- Client 1: Pioneer Legacy Group -->
-                    <div class="col-md-6 col-lg-5">
+                    <div class="col-sm-6 col-md-4">
                         <div class="client-card">
                             <div class="client-icon" aria-hidden="true">
                                 <i class="fas fa-building"></i>
                             </div>
-                            <h3 class="client-name h4">PioLG</h3>
+                            <h3 class="client-name h5">PioLG</h3>
                             <div class="client-website">pioneer-legacy-group.fwh.is</div>
-                            <p class="client-description">A secure web-based organizational management system featuring role-based access control, member registration, financial tracking, meeting scheduling, authentication systemand administrative dashboard for streamlined operations.</p>
+                            <p class="client-description">A secure web-based organizational management system featuring role-based access control, member registration, financial tracking, meeting scheduling, authentication system and administrative dashboard.</p>
                             <a href="https://pioneer-legacy-group.fwh.is/" target="_blank" rel="noopener noreferrer" class="client-link" aria-label="Visit Pioneer Legacy Group website">
                                 Visit Website <i class="fas fa-arrow-right" aria-hidden="true"></i>
                             </a>
@@ -598,14 +358,14 @@
                     </div>
                     
                     <!-- Client 2: Gacharage Tea Welfare Staff Group -->
-                    <div class="col-md-6 col-lg-5">
+                    <div class="col-sm-6 col-md-4">
                         <div class="client-card">
                             <div class="client-icon" aria-hidden="true">
                                 <i class="fas fa-users"></i>
                             </div>
-                            <h3 class="client-name h4">GTWSG</h3>
+                            <h3 class="client-name h5">GTWSG</h3>
                             <div class="client-website">gacharagewelfarestaff.co.ke</div>
-                            <p class="client-description">A comprehensive staff welfare management portal with secure login, role-based dashboards (Chairman, Secretary, Treasurer, Members), contribution tracking, internal communication and structured record management.</p>
+                            <p class="client-description">A comprehensive staff welfare management portal with secure login, role-based dashboards, contribution tracking, internal communication and structured record management.</p>
                             <a href="https://gacharagewelfarestaff.co.ke/" target="_blank" rel="noopener noreferrer" class="client-link" aria-label="Visit Gacharage Tea Welfare Staff Group portal">
                                 Visit Website <i class="fas fa-arrow-right" aria-hidden="true"></i>
                             </a>
@@ -613,41 +373,41 @@
                     </div>
                     
                     <!-- Client 3: Buffalo10 -->
-                    <div class="col-md-6 col-lg-5">
+                    <div class="col-sm-6 col-md-4">
                         <div class="client-card">
-                           <div class="client-icon" aria-hidden="true">
-                              <i class="fas fa-globe"></i>
-                           </div>
-                           <h3 class="client-name h4">Buffalo10</h3>
-                           <div class="client-website">buffalo10.great-site.net</div>
-                           <p class="client-description">A modern business web platform designed to showcase services, manage client interactions, and provide a responsive user experience. Built with structured backend integration, secure authentication and scalable architecture for growing digital operations.</p>
-                           <a href="https://buffalo10.great-site.net/" target="_blank" rel="noopener noreferrer" class="client-link" aria-label="Visit Buffalo10 website">
-                              Visit Website <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                           </a>
+                            <div class="client-icon" aria-hidden="true">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3 class="client-name h5">Buffalo10</h3>
+                            <div class="client-website">buffalo10.great-site.net</div>
+                            <p class="client-description">A modern business web platform designed to showcase services, manage client interactions, and provide a responsive user experience with structured backend integration and secure authentication.</p>
+                            <a href="https://buffalo10.great-site.net/" target="_blank" rel="noopener noreferrer" class="client-link" aria-label="Visit Buffalo10 website">
+                                Visit Website <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </a>
                         </div>
-                      </div>
                     </div>
+                </div>
                 
                 <!-- Additional client information -->
-                <div class="row mt-5">
+                <div class="row mt-4">
                     <div class="col-12">
-                        <div class="bg-light p-4 rounded-4 text-center">
-                            <p class="mb-3 text-secondary">Working with organizations across Kenya to build scalable, secure, and user-friendly web applications.</p>
-                            <div class="d-flex justify-content-center gap-4 flex-wrap">
-                                <div class="d-flex align-items-center gap-2">
-                                    <i class="fas fa-check-circle text-primary" aria-hidden="true"></i>
+                        <div class="bg-light p-3 rounded-4 text-center">
+                            <p class="mb-2 small text-secondary">Working with organizations across Kenya to build scalable, secure, and user-friendly web applications.</p>
+                            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                                <div class="d-flex align-items-center gap-1">
+                                    <i class="fas fa-check-circle text-primary small" aria-hidden="true"></i>
                                     <span class="small">Custom Development</span>
                                 </div>
-                                <div class="d-flex align-items-center gap-2">
-                                    <i class="fas fa-check-circle text-primary" aria-hidden="true"></i>
+                                <div class="d-flex align-items-center gap-1">
+                                    <i class="fas fa-check-circle text-primary small" aria-hidden="true"></i>
                                     <span class="small">Staff Portals</span>
                                 </div>
-                                <div class="d-flex align-items-center gap-2">
-                                    <i class="fas fa-check-circle text-primary" aria-hidden="true"></i>
+                                <div class="d-flex align-items-center gap-1">
+                                    <i class="fas fa-check-circle text-primary small" aria-hidden="true"></i>
                                     <span class="small">Business Systems</span>
                                 </div>
-                                <div class="d-flex align-items-center gap-2">
-                                    <i class="fas fa-check-circle text-primary" aria-hidden="true"></i>
+                                <div class="d-flex align-items-center gap-1">
+                                    <i class="fas fa-check-circle text-primary small" aria-hidden="true"></i>
                                     <span class="small">Ongoing Support</span>
                                 </div>
                             </div>
