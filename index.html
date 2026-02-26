@@ -48,13 +48,13 @@
         .card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); border-color: transparent; }
         .card-img-top { height: 180px; object-fit: cover; width: 100%; background: #f1f5f9; }
         
-        /* Client cards - updated: no hover effect, smaller font */
-        .client-card { border: 1px solid var(--gray-light); border-radius: 12px; padding: 1.5rem; text-align: center; height: 100%; background: white; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        /* Client cards - updated: no hover, flex-friendly, smaller font */
+        .client-card { border: 1px solid var(--gray-light); border-radius: 12px; padding: 1.5rem; text-align: center; background: white; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0; transition: none; }
         .client-icon { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: rgba(37, 99, 235, 0.1); border-radius: 50%; }
         .client-name { font-size: 1.25rem; margin-bottom: 0.25rem; }
         .client-website { font-size: 0.8rem; color: var(--gray); margin-bottom: 0.75rem; }
         .client-description { font-size: 0.875rem; line-height: 1.4; color: var(--dark); margin-bottom: 1rem; }
-        .client-link { color: var(--primary); text-decoration: none; font-size: 0.875rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.2s; }
+        .client-link { color: var(--primary); text-decoration: none; font-size: 0.875rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem; }
         .client-link:hover { gap: 0.75rem; color: var(--primary-dark); }
         .client-link:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
         
@@ -332,7 +332,7 @@
             </div>
         </section>
 
-        <!-- Clients Section - Updated to show all 3 clients side by side with proper responsive grid -->
+        <!-- Clients Section - Updated with flex layout and no hover -->
         <section id="clients" class="section" aria-labelledby="clients-heading">
             <div class="container">
                 <div class="text-center center-title mb-5">
@@ -340,51 +340,45 @@
                     <p class="text-secondary">Trusted by organizations to deliver robust digital solutions</p>
                 </div>
                 
-                <!-- All 3 clients in a responsive grid - fits across all screen sizes -->
-                <div class="row g-3 justify-content-center">
+                <!-- Flex container for clients - fits all screen sizes -->
+                <div class="d-flex flex-wrap justify-content-center g-3" style="gap: 1rem;">
                     <!-- Client 1: Pioneer Legacy Group -->
-                    <div class="col-sm-6 col-md-4">
-                        <div class="client-card">
-                            <div class="client-icon" aria-hidden="true">
-                                <i class="fas fa-building"></i>
-                            </div>
-                            <h3 class="client-name h5">PioLG</h3>
-                            <div class="client-website">pioneer-legacy-group.fwh.is</div>
-                            <p class="client-description">A secure web-based organizational management system featuring role-based access control, member registration, financial tracking, meeting scheduling, authentication system and administrative dashboard.</p>
-                            <a href="https://pioneer-legacy-group.fwh.is/" target="_blank" rel="noopener noreferrer" class="client-link" aria-label="Visit Pioneer Legacy Group website">
-                                Visit Website <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                            </a>
+                    <div class="client-card" style="flex: 1 1 300px; max-width: 350px; min-width: 280px;">
+                        <div class="client-icon" aria-hidden="true">
+                            <i class="fas fa-building"></i>
                         </div>
+                        <h3 class="client-name h5">PioLG</h3>
+                        <div class="client-website">pioneer-legacy-group.fwh.is</div>
+                        <p class="client-description">A secure web-based organizational management system featuring role-based access control, member registration, financial tracking, meeting scheduling, authentication system and administrative dashboard.</p>
+                        <a href="https://pioneer-legacy-group.fwh.is/" target="_blank" rel="noopener noreferrer" class="client-link" aria-label="Visit Pioneer Legacy Group website">
+                            Visit Website <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
                     </div>
                     
                     <!-- Client 2: Gacharage Tea Welfare Staff Group -->
-                    <div class="col-sm-6 col-md-4">
-                        <div class="client-card">
-                            <div class="client-icon" aria-hidden="true">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <h3 class="client-name h5">GTWSG</h3>
-                            <div class="client-website">gacharagewelfarestaff.co.ke</div>
-                            <p class="client-description">A comprehensive staff welfare management portal with secure login, role-based dashboards, contribution tracking, internal communication and structured record management.</p>
-                            <a href="https://gacharagewelfarestaff.co.ke/" target="_blank" rel="noopener noreferrer" class="client-link" aria-label="Visit Gacharage Tea Welfare Staff Group portal">
-                                Visit Website <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                            </a>
+                    <div class="client-card" style="flex: 1 1 300px; max-width: 350px; min-width: 280px;">
+                        <div class="client-icon" aria-hidden="true">
+                            <i class="fas fa-users"></i>
                         </div>
+                        <h3 class="client-name h5">GTWSG</h3>
+                        <div class="client-website">gacharagewelfarestaff.co.ke</div>
+                        <p class="client-description">A comprehensive staff welfare management portal with secure login, role-based dashboards, contribution tracking, internal communication and structured record management.</p>
+                        <a href="https://gacharagewelfarestaff.co.ke/" target="_blank" rel="noopener noreferrer" class="client-link" aria-label="Visit Gacharage Tea Welfare Staff Group portal">
+                            Visit Website <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
                     </div>
                     
                     <!-- Client 3: Buffalo10 -->
-                    <div class="col-sm-6 col-md-4">
-                        <div class="client-card">
-                            <div class="client-icon" aria-hidden="true">
-                                <i class="fas fa-globe"></i>
-                            </div>
-                            <h3 class="client-name h5">Buffalo10</h3>
-                            <div class="client-website">buffalo10.great-site.net</div>
-                            <p class="client-description">A modern business web platform designed to showcase services, manage client interactions, and provide a responsive user experience with structured backend integration and secure authentication.</p>
-                            <a href="https://buffalo10.great-site.net/" target="_blank" rel="noopener noreferrer" class="client-link" aria-label="Visit Buffalo10 website">
-                                Visit Website <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                            </a>
+                    <div class="client-card" style="flex: 1 1 300px; max-width: 350px; min-width: 280px;">
+                        <div class="client-icon" aria-hidden="true">
+                            <i class="fas fa-globe"></i>
                         </div>
+                        <h3 class="client-name h5">Buffalo10</h3>
+                        <div class="client-website">buffalo10.great-site.net</div>
+                        <p class="client-description">A modern business web platform designed to showcase services, manage client interactions, and provide a responsive user experience with structured backend integration and secure authentication.</p>
+                        <a href="https://buffalo10.great-site.net/" target="_blank" rel="noopener noreferrer" class="client-link" aria-label="Visit Buffalo10 website">
+                            Visit Website <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
                 
