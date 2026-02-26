@@ -564,11 +564,11 @@
 
     <script>
         (function() {
-            // EmailJS Configuration - Using your template variables
+            // EmailJS Configuration - MATCHING YOUR TEST
             const EMAILJS_CONFIG = {
-                PUBLIC_KEY: "Q1Db3xO7terlVPf3w",  // Your public key
-                SERVICE_ID: "service_v9bijqc",    // Your service ID
-                TEMPLATE_ID: "template_wszcdnw"    // Your template ID
+                PUBLIC_KEY: "Q1Db3xO7terlVPf3w",
+                SERVICE_ID: "service_v9bijqc",
+                TEMPLATE_ID: "template_wszcdnw"
             };
 
             // Toast notification system
@@ -657,7 +657,7 @@
                     });
                 });
 
-                // Contact Form - IMPORTANT: Using your exact template variables
+                // Contact Form - EXACT PARAMETERS FROM YOUR TEST
                 const contactForm = document.getElementById('contact-form');
                 
                 contactForm.addEventListener('submit', async function(e) {
@@ -690,19 +690,18 @@
                     btnSpinner.classList.remove('d-none');
                     btnText.textContent = 'Sending...';
                     
-                    // IMPORTANT: Template parameters MUST match your EmailJS template
-                    // Your template uses: {{name}}, {{subject}}, {{message}}, {{email}}
+                    // EXACT PARAMETERS FROM YOUR TEST - name, subject, message, email
                     const templateParams = {
-                        name: name,           // This matches {{name}} in your template
-                        email: email,         // This matches {{email}} in your template
-                        subject: subject,     // This matches {{subject}} in your template
-                        message: message      // This matches {{message}} in your template
+                        name: name,
+                        subject: subject,
+                        message: message,
+                        email: email
                     };
                     
                     console.log('Sending with params:', templateParams);
                     
                     try {
-                        // Send email using EmailJS
+                        // Send email using EmailJS - EXACTLY as tested
                         const response = await emailjs.send(
                             EMAILJS_CONFIG.SERVICE_ID,
                             EMAILJS_CONFIG.TEMPLATE_ID,
