@@ -490,13 +490,11 @@
                                     <label for="name" class="visually-hidden">Your Name</label>
                                     <input type="text" class="form-control-modern" name="name" id="name" 
                                            placeholder="Your Name" required aria-required="true">
-                                    <div class="validation-feedback" id="name-error">Please enter your name</div>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="email" class="visually-hidden">Your Email</label>
                                     <input type="email" class="form-control-modern" name="email" id="email" 
                                            placeholder="Your Email" required aria-required="true">
-                                    <div class="validation-feedback" id="email-error">Please enter a valid email</div>
                                 </div>
                                 <div class="col-12">
                                     <label for="subject" class="visually-hidden">Subject</label>
@@ -507,7 +505,6 @@
                                     <label for="message" class="visually-hidden">Message</label>
                                     <textarea class="form-control-modern" name="message" id="message" rows="5" 
                                               placeholder="Tell me about your project..." required aria-required="true"></textarea>
-                                    <div class="validation-feedback" id="message-error">Please enter your message</div>
                                 </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn-modern w-100" id="submit-btn">
@@ -563,221 +560,168 @@
 
     <!-- Deferred scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <script>
-        // Defer non-critical JavaScript
-        (function() {
-            // Toast notification system
-            const Toast = {
-                container: document.getElementById('toast-container'),
-                show(message, type = 'info', title = '') {
-                    const titles = { success:'Success', error:'Error', warning:'Warning', info:'Information' };
-                    const icons = { success:'fa-circle-check', error:'fa-circle-exclamation', warning:'fa-triangle-exclamation', info:'fa-circle-info' };
-                    
-                    const toast = document.createElement('div');
-                    toast.className = `toast-custom ${type}`;
-                    toast.setAttribute('role', 'alert');
-                    toast.setAttribute('aria-live', 'assertive');
-                    toast.setAttribute('aria-atomic', 'true');
-                    
-                    toast.innerHTML = `
-                        <div class="toast-icon" aria-hidden="true"><i class="fas ${icons[type]}"></i></div>
-                        <div class="toast-content">
-                            <div class="toast-title">${title || titles[type]}</div>
-                            <div class="toast-message">${message}</div>
-                        </div>
-                        <button class="toast-close" onclick="this.closest('.toast-custom').remove()" aria-label="Close notification">
-                            <i class="fas fa-times" aria-hidden="true"></i>
-                        </button>
-                    `;
-                    
-                    this.container.appendChild(toast);
-                    
-                    setTimeout(() => {
-                        if (toast.parentNode) {
-                            toast.style.animation = 'toastSlideOut 0.3s ease forwards';
-                            setTimeout(() => toast.remove(), 300);
-                        }
-                    }, 5000);
-                },
-                success(m) { this.show(m,'success'); },
-                error(m) { this.show(m,'error'); },
-                warning(m) { this.show(m,'warning'); },
-                info(m) { this.show(m,'info'); }
-            };
+        // EmailJS Configuration - UPDATED to match your template
+        const EMAILJS_CONFIG = {
+            PUBLIC_KEY: "Q1Db3xO7terlVPf3w",
+            SERVICE_ID: "service_v9bijqc",
+            TEMPLATE_ID: "template_wszcdnw"
+        };
 
-            // EmailJS Configuration
-            const EMAILJS_CONFIG = {
-                PUBLIC_KEY: "Q1Db3xO7terlVPf3w",
-                SERVICE_ID: "service_v9bijqc",
-                TEMPLATE_ID: "template_wszcdnw"
-            };
-
-            // Initialize when DOM is ready
-            document.addEventListener('DOMContentLoaded', function() {
-                // Update current year
-                document.getElementById('current-year').textContent = new Date().getFullYear();
-
-                // Navbar scroll effect
-                let ticking = false;
-                window.addEventListener('scroll', () => {
-                    if (!ticking) {
-                        window.requestAnimationFrame(() => {
-                            document.querySelector('.navbar').classList.toggle('navbar-scrolled', window.scrollY > 50);
-                            ticking = false;
-                        });
-                        ticking = true;
+        // Toast notification system
+        const Toast = {
+            container: document.getElementById('toast-container'),
+            show(message, type = 'info', title = '') {
+                const titles = { success:'Success', error:'Error', warning:'Warning', info:'Information' };
+                const icons = { success:'fa-circle-check', error:'fa-circle-exclamation', warning:'fa-triangle-exclamation', info:'fa-circle-info' };
+                
+                const toast = document.createElement('div');
+                toast.className = `toast-custom ${type}`;
+                toast.setAttribute('role', 'alert');
+                toast.setAttribute('aria-live', 'assertive');
+                toast.setAttribute('aria-atomic', 'true');
+                
+                toast.innerHTML = `
+                    <div class="toast-icon" aria-hidden="true"><i class="fas ${icons[type]}"></i></div>
+                    <div class="toast-content">
+                        <div class="toast-title">${title || titles[type]}</div>
+                        <div class="toast-message">${message}</div>
+                    </div>
+                    <button class="toast-close" onclick="this.closest('.toast-custom').remove()" aria-label="Close notification">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                `;
+                
+                this.container.appendChild(toast);
+                
+                setTimeout(() => {
+                    if (toast.parentNode) {
+                        toast.remove();
                     }
-                });
+                }, 5000);
+            },
+            success(m) { this.show(m,'success'); },
+            error(m) { this.show(m,'error'); },
+            warning(m) { this.show(m,'warning'); },
+            info(m) { this.show(m,'info'); }
+        };
 
-                // Smooth scrolling for navigation links
-                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                    anchor.addEventListener('click', function(e) {
-                        const href = this.getAttribute('href');
-                        if (href === '#') return;
-                        
-                        e.preventDefault();
-                        const targetElement = document.querySelector(href);
-                        
-                        if (targetElement) {
-                            const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                            const targetPosition = targetElement.offsetTop - navbarHeight - 20;
-                            
-                            window.scrollTo({
-                                top: targetPosition,
-                                behavior: 'smooth'
-                            });
-                            
-                            // Close mobile menu
-                            const navbarCollapse = document.querySelector('.navbar-collapse');
-                            if (navbarCollapse.classList.contains('show')) {
-                                bootstrap.Collapse.getInstance(navbarCollapse)?.hide();
-                            }
-                        }
-                    });
-                });
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update current year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
 
-                // Initialize EmailJS
-                if (EMAILJS_CONFIG.PUBLIC_KEY) {
-                    emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY).catch(error => {
-                        console.error('EmailJS init failed:', error);
-                        Toast.warning('Contact form unavailable. Please email me directly.');
+            // Navbar scroll effect
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        document.querySelector('.navbar').classList.toggle('navbar-scrolled', window.scrollY > 50);
+                        ticking = false;
                     });
+                    ticking = true;
                 }
+            });
 
-                // Contact Form
-                document.getElementById('contact-form').addEventListener('submit', async function(e) {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#') return;
+                    
                     e.preventDefault();
+                    const targetElement = document.querySelector(href);
                     
-                    const form = this;
-                    const submitBtn = document.getElementById('submit-btn');
-                    const btnText = document.getElementById('btn-text');
-                    const btnSpinner = document.getElementById('btn-spinner');
-                    
-                    const formData = {
-                        name: document.getElementById('name').value.trim(),
-                        email: document.getElementById('email').value.trim(),
-                        subject: document.getElementById('subject').value.trim() || 'New Message from Portfolio',
-                        message: document.getElementById('message').value.trim()
-                    };
-                    
-                    // Validation
-                    if (!formData.name || !formData.email || !formData.message) {
-                        Toast.error('Please fill in all required fields');
-                        ['name', 'email', 'message'].forEach(field => {
-                            const input = document.getElementById(field);
-                            if (!input.value.trim()) {
-                                input.classList.add('is-invalid');
-                            } else {
-                                input.classList.remove('is-invalid');
-                            }
-                        });
-                        return;
-                    }
-                    
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(formData.email)) {
-                        Toast.error('Please enter a valid email address');
-                        document.getElementById('email').classList.add('is-invalid');
-                        return;
-                    }
-                    
-                    // Loading state
-                    submitBtn.disabled = true;
-                    btnSpinner.classList.remove('d-none');
-                    btnText.textContent = 'Sending...';
-                    
-                    try {
-                        await emailjs.send(
-                            EMAILJS_CONFIG.SERVICE_ID,
-                            EMAILJS_CONFIG.TEMPLATE_ID,
-                            {
-                                ...formData,
-                                date: new Date().toLocaleDateString('en-US', { 
-                                    weekday: 'long', 
-                                    year: 'numeric', 
-                                    month: 'long', 
-                                    day: 'numeric' 
-                                }),
-                                time: new Date().toLocaleTimeString('en-US', { 
-                                    hour: '2-digit', 
-                                    minute: '2-digit' 
-                                })
-                            }
-                        );
+                    if (targetElement) {
+                        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - navbarHeight - 20;
                         
-                        Toast.success('Message sent! I\'ll respond within 24 hours.');
-                        form.reset();
-                        document.querySelectorAll('.form-control-modern').forEach(i => {
-                            i.classList.remove('is-valid', 'is-invalid');
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
                         });
                         
-                    } catch (error) {
-                        console.error('Email error:', error);
-                        Toast.error('Failed to send. Please email me directly at jonterob756@gmail.com');
-                    } finally {
-                        submitBtn.disabled = false;
-                        btnSpinner.classList.add('d-none');
-                        btnText.textContent = 'Send Message';
-                    }
-                });
-
-                // Real-time validation
-                document.querySelectorAll('#contact-form input, #contact-form textarea').forEach(input => {
-                    input.addEventListener('input', function() {
-                        this.classList.remove('is-invalid');
-                        if (this.checkValidity()) {
-                            this.classList.add('is-valid');
-                        } else {
-                            this.classList.remove('is-valid');
+                        // Close mobile menu
+                        const navbarCollapse = document.querySelector('.navbar-collapse');
+                        if (navbarCollapse.classList.contains('show')) {
+                            bootstrap.Collapse.getInstance(navbarCollapse)?.hide();
                         }
-                    });
+                    }
                 });
             });
 
-            // Lazy loading with Intersection Observer
-            if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const img = entry.target;
-                            if (img.dataset.src) {
-                                img.src = img.dataset.src;
-                                img.removeAttribute('data-src');
-                            }
-                            imageObserver.unobserve(img);
-                        }
-                    });
-                }, { rootMargin: '50px' });
-                
-                document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-                    if (img.src && !img.complete) {
-                        imageObserver.observe(img);
-                    }
-                });
+            // Initialize EmailJS
+            if (EMAILJS_CONFIG.PUBLIC_KEY) {
+                emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
             }
-        })();
+
+            // Contact Form
+            document.getElementById('contact-form').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const form = this;
+                const submitBtn = document.getElementById('submit-btn');
+                const btnText = document.getElementById('btn-text');
+                const btnSpinner = document.getElementById('btn-spinner');
+                
+                const formData = {
+                    name: document.getElementById('name').value.trim(),
+                    email: document.getElementById('email').value.trim(),
+                    subject: document.getElementById('subject').value.trim() || 'New Message from Portfolio',
+                    message: document.getElementById('message').value.trim()
+                };
+                
+                // Validation
+                if (!formData.name || !formData.email || !formData.message) {
+                    Toast.error('Please fill in all required fields');
+                    return;
+                }
+                
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(formData.email)) {
+                    Toast.error('Please enter a valid email address');
+                    return;
+                }
+                
+                // Loading state
+                submitBtn.disabled = true;
+                btnSpinner.classList.remove('d-none');
+                btnText.textContent = 'Sending...';
+                
+                try {
+                    // IMPORTANT: Match template parameters exactly with your EmailJS template
+                    const templateParams = {
+                        name: formData.name,
+                        email: formData.email,
+                        subject: formData.subject,
+                        message: formData.message
+                    };
+                    
+                    console.log('Sending with params:', templateParams); // Debug log
+                    
+                    const response = await emailjs.send(
+                        EMAILJS_CONFIG.SERVICE_ID,
+                        EMAILJS_CONFIG.TEMPLATE_ID,
+                        templateParams
+                    );
+                    
+                    console.log('EmailJS response:', response); // Debug log
+                    
+                    Toast.success('Message sent! I\'ll respond within 24 hours.');
+                    form.reset();
+                    
+                } catch (error) {
+                    console.error('Email error:', error);
+                    Toast.error('Failed to send. Please email me directly at jonterob756@gmail.com');
+                } finally {
+                    submitBtn.disabled = false;
+                    btnSpinner.classList.add('d-none');
+                    btnText.textContent = 'Send Message';
+                }
+            });
+        });
     </script>
 </body>
 </html>
