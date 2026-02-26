@@ -564,11 +564,11 @@
 
     <script>
         (function() {
-            // EmailJS Configuration - VERIFY THESE ARE CORRECT
+            // EmailJS Configuration - Using your template variables
             const EMAILJS_CONFIG = {
-                PUBLIC_KEY: "Q1Db3xO7terlVPf3w",  // Make sure this is your actual public key
-                SERVICE_ID: "service_v9bijqc",     // Make sure this is your actual service ID
-                TEMPLATE_ID: "template_wszcdnw"     // Make sure this is your actual template ID
+                PUBLIC_KEY: "Q1Db3xO7terlVPf3w",  // Your public key
+                SERVICE_ID: "service_v9bijqc",    // Your service ID
+                TEMPLATE_ID: "template_wszcdnw"    // Your template ID
             };
 
             // Toast notification system
@@ -611,7 +611,7 @@
 
             // Initialize EmailJS
             emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
-            console.log('EmailJS initialized with public key:', EMAILJS_CONFIG.PUBLIC_KEY);
+            console.log('EmailJS initialized');
 
             // DOM Ready
             document.addEventListener('DOMContentLoaded', function() {
@@ -657,7 +657,7 @@
                     });
                 });
 
-                // Contact Form
+                // Contact Form - IMPORTANT: Using your exact template variables
                 const contactForm = document.getElementById('contact-form');
                 
                 contactForm.addEventListener('submit', async function(e) {
@@ -690,17 +690,16 @@
                     btnSpinner.classList.remove('d-none');
                     btnText.textContent = 'Sending...';
                     
-                    // Prepare template parameters - MUST match your EmailJS template variables
+                    // IMPORTANT: Template parameters MUST match your EmailJS template
+                    // Your template uses: {{name}}, {{subject}}, {{message}}, {{email}}
                     const templateParams = {
-                        to_name: "John Gitau",
-                        from_name: name,
-                        from_email: email,
-                        subject: subject,
-                        message: message,
-                        reply_to: email
+                        name: name,           // This matches {{name}} in your template
+                        email: email,         // This matches {{email}} in your template
+                        subject: subject,     // This matches {{subject}} in your template
+                        message: message      // This matches {{message}} in your template
                     };
                     
-                    console.log('Sending email with params:', templateParams);
+                    console.log('Sending with params:', templateParams);
                     
                     try {
                         // Send email using EmailJS
@@ -710,7 +709,7 @@
                             templateParams
                         );
                         
-                        console.log('EmailJS success response:', response);
+                        console.log('EmailJS success:', response);
                         
                         if (response.status === 200) {
                             Toast.success('Message sent successfully! I\'ll respond within 24 hours.');
@@ -720,23 +719,10 @@
                         }
                         
                     } catch (error) {
-                        console.error('EmailJS error details:', error);
+                        console.error('EmailJS error:', error);
                         
-                        // More specific error message
-                        let errorMessage = 'Failed to send message. ';
-                        
-                        if (error.text) {
-                            errorMessage += error.text;
-                        } else if (error.message) {
-                            errorMessage += error.message;
-                        } else {
-                            errorMessage += 'Please check your EmailJS configuration.';
-                        }
-                        
-                        Toast.error(errorMessage);
-                        
-                        // Show fallback contact info
-                        Toast.info('You can also email me directly at jonterob756@gmail.com');
+                        // Show user-friendly error
+                        Toast.error('Failed to send message. Please email me directly at jonterob756@gmail.com');
                         
                     } finally {
                         // Reset button state
