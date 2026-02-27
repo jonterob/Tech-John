@@ -8,115 +8,79 @@
     <meta name="keywords" content="Full Stack Developer, React, Node.js, Web Development, Kenya, JavaScript">
     <meta name="author" content="John Gitau">
     
-    <!-- Favicon with proper sizes -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">   
-    <!-- Preconnect for external resources -->
+    
+    <!-- Preconnects -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
-    <!-- Google Fonts - Inter only (removed unused weights) -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Critical CSS inline to avoid render blocking -->
+    <!-- Calendly Widget -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    
+    <!-- Critical CSS -->
     <style>
-        /* Critical path CSS */
-        *{margin:0;padding:0;box-sizing:border-box}:root{--primary:#2563eb;--primary-dark:#1d4ed8;--dark:#0f172a;--gray:#64748b;--gray-light:#e2e8f2}body{font-family:'Inter',sans-serif;line-height:1.5;color:var(--dark);overflow-x:hidden}.navbar{background:rgba(255,255,255,.98);backdrop-filter:blur(10px);padding:.75rem 0;position:fixed;top:0;width:100%;z-index:1000}.hero{padding:7rem 0 5rem;background:#f8fafc}.container{max-width:1280px;margin:0 auto;padding:0 1.5rem}.btn-modern{background:var(--primary);color:#fff;border:none;padding:.75rem 1.5rem;border-radius:8px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;text-decoration:none}.text-primary{color:var(--primary)}.section{padding:5rem 0}.bg-light{background:#f8fafc}.contact{background:var(--dark);color:#fff;padding:5rem 0}.footer{background:var(--dark);color:#fff;padding:3rem 0}
+        *{margin:0;padding:0;box-sizing:border-box}:root{--primary:#2563eb;--primary-dark:#1d4ed8;--dark:#0f172a;--gray:#64748b;--gray-light:#e2e8f2;--bg-light:#f8fafc;--bg-dark:#1a1a1a;--text-dark:#0f172a;--text-light:#ffffff}body{font-family:'Inter',sans-serif;line-height:1.5;color:var(--text-dark);overflow-x:hidden;transition:background-color 0.3s,color 0.3s}body.dark-mode{--dark:#ffffff;--gray:#a0a0a0;--gray-light:#2d2d2d;--bg-light:#1a1a1a;background:var(--bg-dark);color:var(--text-light)}.navbar{background:rgba(255,255,255,.98);backdrop-filter:blur(10px);padding:.75rem 0;position:fixed;top:0;width:100%;z-index:1000}.dark-mode .navbar{background:rgba(45,45,45,.98)!important}.hero{padding:7rem 0 5rem;background:var(--bg-light)}.container{max-width:1280px;margin:0 auto;padding:0 1.5rem}.btn-modern{background:var(--primary);color:#fff;border:none;padding:.75rem 1.5rem;border-radius:8px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;transition:all 0.3s}.btn-modern:hover{background:var(--primary-dark);transform:translateY(-2px)}.text-primary{color:var(--primary)}.section{padding:5rem 0}.bg-light{background:var(--bg-light)}.contact{background:var(--dark);color:#fff;padding:5rem 0}.footer{background:var(--dark);color:#fff;padding:3rem 0}.toast-container-custom{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:999999;pointer-events:none}.toast-custom{background:white;border-radius:12px;padding:1rem 2rem;box-shadow:0 20px 40px rgba(0,0,0,0.2);display:flex;align-items:center;gap:1rem;min-width:300px;max-width:450px;animation:toastSlideIn 0.3s ease forwards;border-left:4px solid;pointer-events:auto}.dark-mode .toast-custom{background:#2d2d2d;color:#fff}.toast-custom.success{border-left-color:#10b981}.toast-custom.error{border-left-color:#ef4444}.toast-custom.warning{border-left-color:#f59e0b}.toast-custom.info{border-left-color:#3b82f6}@keyframes toastSlideIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.card{border:1px solid var(--gray-light);border-radius:12px;overflow:hidden;transition:all 0.3s;height:100%;background:white}.dark-mode .card{background:#2d2d2d;border-color:#404040}.card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.08);border-color:transparent}.card-img-top{height:180px;object-fit:cover;width:100%;background:#f1f5f9}.client-card{border:1px solid var(--gray-light);border-radius:12px;padding:1.5rem;text-align:center;background:white;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0}.dark-mode .client-card{background:#2d2d2d}.client-icon{font-size:2rem;color:var(--primary);margin-bottom:1rem;width:60px;height:60px;display:flex;align-items:center;justify-content:center;background:rgba(37,99,235,0.1);border-radius:50%}.skill-item{background:white;border:1px solid var(--gray-light);border-radius:8px;padding:1rem;text-align:center;transition:all 0.3s;height:100%}.dark-mode .skill-item{background:#2d2d2d}.badge-tech{background:var(--gray-light);color:var(--dark);padding:0.35rem 0.75rem;border-radius:20px;font-size:0.8125rem;font-weight:500;margin:0.25rem;display:inline-block}.dark-mode .badge-tech{background:#404040;color:#fff}.contact-info{background:rgba(255,255,255,0.05);border-radius:16px;padding:2rem;border:1px solid rgba(255,255,255,0.1)}.form-control-modern{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0.75rem 1rem;color:white;font-size:0.9375rem;transition:all 0.3s;width:100%}.form-control-modern:focus{background:rgba(255,255,255,0.1);border-color:var(--primary);outline:none;box-shadow:0 0 0 3px rgba(37,99,235,0.2)}.social-icon{width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,0.1);color:white;font-size:1.125rem;transition:all 0.3s;text-decoration:none!important}.social-icon:hover{background:var(--primary);color:white;transform:translateY(-3px)}.stat-box{text-align:center;padding:1.5rem;background:white;border-radius:12px;border:1px solid var(--gray-light)}.dark-mode .stat-box{background:#2d2d2d}.stat-number{font-size:2rem;font-weight:700;color:var(--primary)}.timeline{border-left:2px solid var(--primary);padding-left:1.5rem}.timeline-item{position:relative;padding-bottom:1.5rem}.timeline-item::before{content:'';position:absolute;left:-1.9rem;top:0.25rem;width:12px;height:12px;border-radius:50%;background:var(--primary);border:2px solid white}.footer-links a{color:rgba(255,255,255,0.6);text-decoration:none!important;font-size:0.875rem;transition:color 0.2s}.footer-links a:hover{color:white}.section-title{font-size:clamp(1.5rem,3vw,2rem);font-weight:600;margin-bottom:2rem;position:relative;display:inline-block}.section-title::after{content:'';position:absolute;bottom:-0.5rem;left:0;width:60px;height:3px;background:var(--primary);border-radius:2px}.center-title .section-title::after{left:50%;transform:translateX(-50%)}.spinner{width:20px;height:20px;border:2px solid rgba(255,255,255,0.3);border-top-color:white;border-radius:50%;animation:spin 0.8s linear infinite;display:inline-block}@keyframes spin{to{transform:rotate(360deg)}}.chat-button{position:fixed;bottom:2rem;right:2rem;background:var(--primary);color:white;border:none;border-radius:50px;padding:1rem 1.5rem;display:flex;align-items:center;gap:0.5rem;box-shadow:0 4px 12px rgba(37,99,235,0.3);z-index:1000;cursor:pointer;transition:transform 0.3s}.chat-button:hover{transform:translateY(-2px)}.dark-mode-toggle{position:fixed;bottom:2rem;left:2rem;background:var(--primary);color:white;border:none;border-radius:50px;padding:1rem;width:50px;height:50px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(37,99,235,0.3);z-index:1000;cursor:pointer;transition:transform 0.3s}.dark-mode-toggle:hover{transform:translateY(-2px)}.progress{height:8px;background-color:var(--gray-light);border-radius:4px;overflow:hidden}.progress-bar{height:100%;background:var(--primary);transition:width 0.3s ease}.visitor-counter{position:fixed;top:100px;right:20px;background:white;padding:0.5rem 1rem;border-radius:20px;box-shadow:0 2px 10px rgba(0,0,0,0.1);z-index:999;font-size:0.875rem}.dark-mode .visitor-counter{background:#2d2d2d;color:#fff}.project-filters{margin-bottom:2rem;display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center}.filter-btn{padding:0.5rem 1rem;border:1px solid var(--gray-light);background:white;border-radius:20px;cursor:pointer;transition:all 0.3s}.dark-mode .filter-btn{background:#2d2d2d;color:#fff;border-color:#404040}.filter-btn.active,.filter-btn:hover{background:var(--primary);color:white;border-color:var(--primary)}.language-switcher{position:fixed;top:100px;left:20px;z-index:999;padding:0.5rem;border-radius:8px;border:1px solid var(--gray-light);background:white}.dark-mode .language-switcher{background:#2d2d2d;color:#fff;border-color:#404040}.certificate-badge{width:50px;height:50px;margin-right:0.5rem;transition:transform 0.3s}.certificate-badge:hover{transform:scale(1.1)}.code-demo{background:#1e1e1e;color:#d4d4d4;border-radius:8px;padding:1rem;margin:1rem 0}.code-demo pre{margin:0;font-family:'Courier New',monospace}.blog-card .card-footer{background:transparent;border-top:1px solid var(--gray-light)}.service-card .display-4{font-size:3rem;line-height:1}.pricing-card{transition:transform 0.3s}.pricing-card:hover{transform:translateY(-10px)}.pricing-card.featured{border:2px solid var(--primary);transform:scale(1.05)}.github-repo-card{height:100%}.github-repo-card .card-body{display:flex;flex-direction:column}.github-stats{display:flex;gap:1rem;margin-top:auto}.testimonial-card{background:white;padding:2rem;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.05)}.dark-mode .testimonial-card{background:#2d2d2d}.testimonial-card i{font-size:2rem;color:var(--primary);opacity:0.2}.newsletter-section{background:linear-gradient(135deg,var(--primary),var(--primary-dark))}@media(max-width:768px){.hero{padding:6rem 0 4rem;text-align:center}.section{padding:3rem 0}.chat-button,.dark-mode-toggle{padding:0.75rem;font-size:0.875rem}.visitor-counter{top:auto;bottom:80px;right:20px}}@media(prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
     </style>
     
-    <!-- Deferred styles -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"></noscript>
-    
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    
-    <!-- Non-critical styles (each CSS block in 1 line) -->
-    <style>
-        /* Toast container */
-        .toast-container-custom { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 999999; pointer-events: none; }
-        .toast-custom { background: white; border-radius: 12px; padding: 1rem 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 1rem; min-width: 300px; max-width: 450px; animation: toastSlideIn 0.3s ease forwards; border-left: 4px solid; pointer-events: auto; }
-        .toast-custom.success { border-left-color: #10b981; }
-        .toast-custom.error { border-left-color: #ef4444; }
-        .toast-custom.warning { border-left-color: #f59e0b; }
-        .toast-custom.info { border-left-color: #3b82f6; }
-        @keyframes toastSlideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        
-        /* Modern card designs */
-        .card { border: 1px solid var(--gray-light); border-radius: 12px; overflow: hidden; transition: all 0.3s; height: 100%; background: white; }
-        .card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); border-color: transparent; }
-        .card-img-top { height: 180px; object-fit: cover; width: 100%; background: #f1f5f9; }
-        
-        /* Client cards - updated: no hover, flex-friendly, smaller font */
-        .client-card { border: 1px solid var(--gray-light); border-radius: 12px; padding: 1.5rem; text-align: center; background: white; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0; transition: none; }
-        .client-icon { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: rgba(37, 99, 235, 0.1); border-radius: 50%; }
-        .client-name { font-size: 1.25rem; margin-bottom: 0.25rem; }
-        .client-website { font-size: 0.8rem; color: var(--gray); margin-bottom: 0.75rem; }
-        .client-description { font-size: 0.875rem; line-height: 1.4; color: var(--dark); margin-bottom: 1rem; }
-        .client-link { color: var(--primary); text-decoration: none; font-size: 0.875rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem; }
-        .client-link:hover { gap: 0.75rem; color: var(--primary-dark); }
-        .client-link:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
-        
-        .skill-item { background: white; border: 1px solid var(--gray-light); border-radius: 8px; padding: 1rem; text-align: center; transition: all 0.3s; height: 100%; }
-        .badge-tech { background: var(--gray-light); color: var(--dark); padding: 0.35rem 0.75rem; border-radius: 20px; font-size: 0.8125rem; font-weight: 500; margin: 0.25rem; display: inline-block; }
-        .contact-info { background: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); }
-        .form-control-modern { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 0.75rem 1rem; color: white; font-size: 0.9375rem; transition: all 0.3s; width: 100%; }
-        .form-control-modern:focus { background: rgba(255, 255, 255, 0.1); border-color: var(--primary); outline: none; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2); color: white; }
-        .social-icon { width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255, 255, 255, 0.1); color: white; font-size: 1.125rem; transition: all 0.3s; text-decoration: none !important; }
-        .social-icon:hover { background: var(--primary); color: white; transform: translateY(-3px); }
-        .social-icon:focus-visible { outline: 2px solid white; outline-offset: 2px; }
-        .stat-box { text-align: center; padding: 1.5rem; background: white; border-radius: 12px; border: 1px solid var(--gray-light); }
-        .timeline { border-left: 2px solid var(--primary); padding-left: 1.5rem; }
-        .timeline-item { position: relative; padding-bottom: 1.5rem; }
-        .timeline-item::before { content: ''; position: absolute; left: -1.9rem; top: 0.25rem; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); border: 2px solid white; }
-        .footer-links a { color: rgba(255, 255, 255, 0.6); text-decoration: none !important; font-size: 0.875rem; transition: color 0.2s; }
-        .footer-links a:hover { color: white; }
-        .footer-links a:focus-visible { outline: 2px solid white; outline-offset: 2px; border-radius: 4px; }
-        
-        /* Responsive */
-        @media (max-width: 768px) { .hero { padding: 6rem 0 4rem; text-align: center; } .section { padding: 3rem 0; } .section-title::after { left: 50%; transform: translateX(-50%); } .navbar-collapse { background: white; padding: 1rem; border-radius: 12px; margin-top: 1rem; } }
-        
-        /* Accessibility */
-        .section-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; margin-bottom: 2rem; position: relative; display: inline-block; }
-        .section-title::after { content: ''; position: absolute; bottom: -0.5rem; left: 0; width: 60px; height: 3px; background: var(--primary); border-radius: 2px; }
-        .center-title .section-title::after { left: 50%; transform: translateX(-50%); }
-        a:focus-visible, button:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
-        
-        /* High contrast mode support */
-        @media (prefers-contrast: high) { :root { --primary: #0000ff; --primary-dark: #0000cc; } }
-        
-        /* Reduced motion */
-        @media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
-        
-        /* Loading spinner */
-        .spinner { width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.8s linear infinite; display: inline-block; }
-        @keyframes spin { to { transform: rotate(360deg); } }
-    </style>
+    <!-- Bootstrap & Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Skip to main content link for accessibility -->
-    <a href="#main-content" class="visually-hidden-focusable" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;">Skip to main content</a>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
 
-    <!-- Custom Toast Container -->
+    <!-- Toast Container -->
     <div id="toast-container" class="toast-container-custom"></div>
 
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Chat Button -->
+    <button class="chat-button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/johngitau/30min'});">
+        <i class="fas fa-comment-dots"></i>
+        <span>Book Consultation</span>
+    </button>
+
+    <!-- Visitor Counter -->
+    <div class="visitor-counter">
+        <i class="fas fa-eye me-1"></i>
+        <span id="visitorCount">247</span> views this week
+    </div>
+
+    <!-- Language Switcher -->
+    <select id="languageSwitcher" class="language-switcher" aria-label="Switch language">
+        <option value="en">English</option>
+        <option value="sw">Kiswahili</option>
+    </select>
+
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top" aria-label="Main navigation">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#" aria-label="John Gitau - Full Stack Developer">
-                <i class="fas fa-code me-2" aria-hidden="true"></i>John Gitau
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-code me-2"></i>John Gitau
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about" aria-current="page">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#clients">Clients</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about" data-i18n="about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects" data-i18n="projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services" data-i18n="services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog" data-i18n="blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#clients" data-i18n="clients">Clients</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials" data-i18n="testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills" data-i18n="skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -124,68 +88,83 @@
 
     <main id="main-content">
         <!-- Hero Section -->
-        <section class="hero" aria-label="Hero section">
+        <section class="hero">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <h1 class="hero-title">Full Stack Developer</h1>
-                        <p class="hero-subtitle">Building modern web & mobile applications with clean, efficient code. Specializing in React, Node.js and cloud solutions.</p>
-                        <div class="d-flex flex-wrap gap-3 justify-content-start">
-                            <a href="#projects" class="btn-modern">View My Work</a>
-                            <a href="#contact" class="btn-modern" style="background: var(--primary-dark);">Contact Me</a>
+                        <h1 class="hero-title" data-i18n="heroTitle">Full Stack Developer</h1>
+                        <p class="hero-subtitle" data-i18n="heroSubtitle">Building modern web & mobile applications with clean, efficient code. Specializing in React, Node.js and cloud solutions.</p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="#projects" class="btn-modern" data-i18n="viewWork">View My Work</a>
+                            <a href="#contact" class="btn-modern" style="background: var(--primary-dark);" data-i18n="contactMe">Contact Me</a>
+                            <a href="resume.pdf" download class="btn-modern" style="background: #10b981;">
+                                <i class="fas fa-download me-2"></i><span data-i18n="downloadResume">Download Resume</span>
+                            </a>
                         </div>
                     </div>
                     <div class="col-lg-6 text-center mt-5 mt-lg-0">
                         <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
                              class="img-fluid rounded-4 shadow-lg" 
-                             alt="Developer workspace with laptop and coffee"
+                             alt="Developer workspace"
                              width="500"
                              height="333"
-                             loading="eager"
-                             fetchpriority="high">
+                             loading="eager">
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="section" aria-labelledby="about-heading">
+        <section id="about" class="section">
             <div class="container">
-                <h2 id="about-heading" class="section-title">About Me</h2>
+                <h2 class="section-title" data-i18n="aboutTitle">About Me</h2>
                 <div class="row">
                     <div class="col-lg-6 mb-4 mb-lg-0">
-                        <p class="fs-5 mb-3">I'm a passionate <span class="text-primary fw-semibold">Full Stack Developer</span> with expertise in building modern web and mobile applications.</p>
-                        <p class="mb-3">Graduated with a BSc in Computer Science from Kirinyaga University. I create digital solutions that solve real problems with exceptional user experiences.</p>
-                        <p class="mb-4">My approach combines technical expertise with a keen eye for design and user experience, ensuring every project delivers both functionality and beauty.</p>
+                        <p class="fs-5 mb-3"><span class="text-primary fw-semibold" data-i18n="passionate">I'm a passionate Full Stack Developer</span> <span data-i18n="aboutText1">with expertise in building modern web and mobile applications.</span></p>
+                        <p class="mb-3" data-i18n="aboutText2">Graduated with a BSc in Computer Science from Kirinyaga University. I create digital solutions that solve real problems with exceptional user experiences.</p>
+                        <p class="mb-4" data-i18n="aboutText3">My approach combines technical expertise with a keen eye for design and user experience, ensuring every project delivers both functionality and beauty.</p>
                         
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="stat-box">
                                     <div class="stat-number">3+</div>
-                                    <div class="stat-label">Years Experience</div>
+                                    <div class="stat-label" data-i18n="yearsExp">Years Experience</div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="stat-box">
                                     <div class="stat-number">50+</div>
-                                    <div class="stat-label">Projects Completed</div>
+                                    <div class="stat-label" data-i18n="projectsCompleted">Projects Completed</div>
                                 </div>
+                            </div>
+                        </div>
+
+                        <!-- Certificate Badges -->
+                        <div class="certificates mt-4">
+                            <h3 class="h6 mb-3" data-i18n="certifications">Certifications</h3>
+                            <div>
+                                <img src="https://d1.awsstatic.com/training-and-certification/certification-badges/AWS-Certified-Developer-Associate_badge.5c083662d43a65d4d9d94e4ea02e81803f04dd7a.png" 
+                                     class="certificate-badge" alt="AWS Certified" title="AWS Certified Developer">
+                                <img src="https://www.gstatic.com/devrel-devsite/prod/v2e2821e445c26fe3e856d719f06ad8150f6d622b38c0f764ad8598a468bddae5/cloud/images/cloud-logo.svg" 
+                                     class="certificate-badge" alt="Google Cloud Certified" title="Google Cloud Certified">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/MongoDB_Logo.svg" 
+                                     class="certificate-badge" alt="MongoDB Certified" title="MongoDB Certified Developer">
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="p-4 bg-white rounded-4 border">
-                            <h3 class="h5 fw-semibold mb-4">Education & Background</h3>
+                            <h3 class="h5 fw-semibold mb-4" data-i18n="education">Education & Background</h3>
                             <div class="timeline">
                                 <div class="timeline-item">
                                     <div class="timeline-date">2019 - 2023</div>
-                                    <div class="timeline-title">BSc Computer Science</div>
-                                    <p class="timeline-text">Kirinyaga University - Graduated with honors, focusing on software engineering and web technologies.</p>
+                                    <div class="timeline-title" data-i18n="eduTitle1">BSc Computer Science</div>
+                                    <p class="timeline-text" data-i18n="eduDesc1">Kirinyaga University - Graduated with honors, focusing on software engineering and web technologies.</p>
                                 </div>
                                 <div class="timeline-item">
                                     <div class="timeline-date">2023 - Present</div>
-                                    <div class="timeline-title">Professional Development</div>
-                                    <p class="timeline-text">Continuous learning in React, Node.js and cloud technologies through courses and hands-on projects.</p>
+                                    <div class="timeline-title" data-i18n="eduTitle2">Professional Development</div>
+                                    <p class="timeline-text" data-i18n="eduDesc2">Continuous learning in React, Node.js and cloud technologies through courses and hands-on projects.</p>
                                 </div>
                             </div>
                         </div>
@@ -194,26 +173,88 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section bg-light" aria-labelledby="projects-heading">
+        <!-- Services Section -->
+        <section id="services" class="section bg-light">
             <div class="container">
                 <div class="text-center center-title mb-5">
-                    <h2 id="projects-heading" class="section-title">My Projects</h2>
-                    <p class="text-secondary">A selection of my recent work across various domains</p>
+                    <h2 class="section-title" data-i18n="servicesTitle">Services & Pricing</h2>
+                    <p class="text-secondary" data-i18n="servicesSubtitle">Professional solutions tailored to your needs</p>
                 </div>
                 <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card service-card pricing-card text-center p-4 h-100">
+                            <div class="display-4 text-primary mb-3">💻</div>
+                            <h3 class="h4" data-i18n="service1Title">Web Development</h3>
+                            <p class="text-muted mb-3" data-i18n="service1Desc">Custom websites and web applications</p>
+                            <h4 class="h2 mb-3">$2K+</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i><span data-i18n="service1Feature1">Responsive Design</span></li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i><span data-i18n="service1Feature2">SEO Optimized</span></li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i><span data-i18n="service1Feature3">3 Months Support</span></li>
+                            </ul>
+                            <a href="#contact" class="btn-modern mt-3" data-i18n="getQuote">Get Quote</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card service-card pricing-card featured text-center p-4 h-100">
+                            <div class="display-4 text-primary mb-3">📱</div>
+                            <h3 class="h4" data-i18n="service2Title">Mobile Development</h3>
+                            <p class="text-muted mb-3" data-i18n="service2Desc">Cross-platform mobile applications</p>
+                            <h4 class="h2 mb-3">$3K+</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i><span data-i18n="service2Feature1">iOS & Android</span></li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i><span data-i18n="service2Feature2">Push Notifications</span></li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i><span data-i18n="service2Feature3">App Store Deployment</span></li>
+                            </ul>
+                            <a href="#contact" class="btn-modern mt-3" data-i18n="getQuote">Get Quote</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card service-card pricing-card text-center p-4 h-100">
+                            <div class="display-4 text-primary mb-3">☁️</div>
+                            <h3 class="h4" data-i18n="service3Title">Cloud Solutions</h3>
+                            <p class="text-muted mb-3" data-i18n="service3Desc">Scalable cloud architecture & deployment</p>
+                            <h4 class="h2 mb-3">$1.5K+</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i><span data-i18n="service3Feature1">AWS/Azure/GCP</span></li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i><span data-i18n="service3Feature2">CI/CD Pipeline</span></li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i><span data-i18n="service3Feature3">24/7 Monitoring</span></li>
+                            </ul>
+                            <a href="#contact" class="btn-modern mt-3" data-i18n="getQuote">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section with Filters -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="text-center center-title mb-5">
+                    <h2 class="section-title" data-i18n="projectsTitle">My Projects</h2>
+                    <p class="text-secondary" data-i18n="projectsSubtitle">A selection of my recent work across various domains</p>
+                </div>
+
+                <!-- Project Filters -->
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all" data-i18n="all">All</button>
+                    <button class="filter-btn" data-filter="web" data-i18n="web">Web</button>
+                    <button class="filter-btn" data-filter="mobile" data-i18n="mobile">Mobile</button>
+                    <button class="filter-btn" data-filter="ecommerce" data-i18n="ecommerce">E-commerce</button>
+                    <button class="filter-btn" data-filter="dashboard" data-i18n="dashboard">Dashboard</button>
+                </div>
+
+                <div class="row g-4" id="projectsContainer">
                     <!-- Project 1 -->
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 project-card" data-category="ecommerce web">
                         <div class="card">
                             <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
                                  class="card-img-top" 
-                                 alt="E-commerce platform dashboard interface"
-                                 width="600"
-                                 height="400"
+                                 alt="E-commerce platform"
                                  loading="lazy">
                             <div class="card-body">
-                                <h3 class="card-title h5">E-commerce Platform</h3>
-                                <p class="card-text">Full-featured online store with cart, authentication and payment processing.</p>
+                                <h3 class="card-title h5" data-i18n="project1Title">E-commerce Platform</h3>
+                                <p class="card-text" data-i18n="project1Desc">Full-featured online store with cart, authentication and payment processing.</p>
                                 <div>
                                     <span class="badge-tech">React</span>
                                     <span class="badge-tech">Node.js</span>
@@ -224,17 +265,15 @@
                     </div>
                     
                     <!-- Project 2 -->
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 project-card" data-category="web dashboard">
                         <div class="card">
                             <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
                                  class="card-img-top" 
-                                 alt="Group management system interface"
-                                 width="600"
-                                 height="400"
+                                 alt="Group management system"
                                  loading="lazy">
                             <div class="card-body">
-                                <h3 class="card-title h5">Group Management System</h3>
-                                <p class="card-text">Comprehensive platform for managing organizations with roles and permissions.</p>
+                                <h3 class="card-title h5" data-i18n="project2Title">Group Management System</h3>
+                                <p class="card-text" data-i18n="project2Desc">Comprehensive platform for managing organizations with roles and permissions.</p>
                                 <div>
                                     <span class="badge-tech">Vue.js</span>
                                     <span class="badge-tech">PHP</span>
@@ -245,17 +284,15 @@
                     </div>
                     
                     <!-- Project 3 -->
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 project-card" data-category="mobile">
                         <div class="card">
                             <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
                                  class="card-img-top" 
-                                 alt="Mobile transport app interface"
-                                 width="600"
-                                 height="400"
+                                 alt="Transport app"
                                  loading="lazy">
                             <div class="card-body">
-                                <h3 class="card-title h5">Nairobi Transport App</h3>
-                                <p class="card-text">Mobile app for navigating public transport with real-time updates.</p>
+                                <h3 class="card-title h5" data-i18n="project3Title">Nairobi Transport App</h3>
+                                <p class="card-text" data-i18n="project3Desc">Mobile app for navigating public transport with real-time updates.</p>
                                 <div>
                                     <span class="badge-tech">React Native</span>
                                     <span class="badge-tech">Firebase</span>
@@ -266,17 +303,15 @@
                     </div>
                     
                     <!-- Project 4 -->
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 project-card" data-category="ecommerce web">
                         <div class="card">
                             <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
                                  class="card-img-top" 
-                                 alt="Agricultural platform dashboard"
-                                 width="600"
-                                 height="400"
+                                 alt="Agricultural platform"
                                  loading="lazy">
                             <div class="card-body">
-                                <h3 class="card-title h5">Agricultural Market Platform</h3>
-                                <p class="card-text">Platform connecting farmers with buyers, featuring inventory management.</p>
+                                <h3 class="card-title h5" data-i18n="project4Title">Agricultural Market Platform</h3>
+                                <p class="card-text" data-i18n="project4Desc">Platform connecting farmers with buyers, featuring inventory management.</p>
                                 <div>
                                     <span class="badge-tech">Vue.js</span>
                                     <span class="badge-tech">Express</span>
@@ -287,17 +322,15 @@
                     </div>
                     
                     <!-- Project 5 -->
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 project-card" data-category="dashboard">
                         <div class="card">
                             <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
                                  class="card-img-top" 
-                                 alt="Business analytics dashboard"
-                                 width="600"
-                                 height="400"
+                                 alt="Analytics dashboard"
                                  loading="lazy">
                             <div class="card-body">
-                                <h3 class="card-title h5">Business Analytics Dashboard</h3>
-                                <p class="card-text">Interactive dashboard for visualizing business metrics.</p>
+                                <h3 class="card-title h5" data-i18n="project5Title">Business Analytics Dashboard</h3>
+                                <p class="card-text" data-i18n="project5Desc">Interactive dashboard for visualizing business metrics.</p>
                                 <div>
                                     <span class="badge-tech">React</span>
                                     <span class="badge-tech">D3.js</span>
@@ -308,17 +341,15 @@
                     </div>
                     
                     <!-- Project 6 -->
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 project-card" data-category="web dashboard">
                         <div class="card">
                             <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
                                  class="card-img-top" 
-                                 alt="Task management system interface"
-                                 width="600"
-                                 height="400"
+                                 alt="Task management"
                                  loading="lazy">
                             <div class="card-body">
-                                <h3 class="card-title h5">Task Management System</h3>
-                                <p class="card-text">Collaborative project management tool with task assignment.</p>
+                                <h3 class="card-title h5" data-i18n="project6Title">Task Management System</h3>
+                                <p class="card-text" data-i18n="project6Desc">Collaborative project management tool with task assignment.</p>
                                 <div>
                                     <span class="badge-tech">Angular</span>
                                     <span class="badge-tech">Node.js</span>
@@ -331,118 +362,281 @@
             </div>
         </section>
 
-        <!-- Clients Section - Updated with flex layout and no hover -->
-        <section id="clients" class="section" aria-labelledby="clients-heading">
+        <!-- GitHub Repos Section -->
+        <section id="github" class="section bg-light">
             <div class="container">
                 <div class="text-center center-title mb-5">
-                    <h2 id="clients-heading" class="section-title">Satisfied Clients</h2>
-                    <p class="text-secondary">Trusted by organizations to deliver robust digital solutions</p>
+                    <h2 class="section-title" data-i18n="githubTitle">GitHub Activity</h2>
+                    <p class="text-secondary" data-i18n="githubSubtitle">My latest open source contributions</p>
                 </div>
-                
-                <!-- Flex container for clients - fits all screen sizes -->
-                <div class="d-flex flex-wrap justify-content-center g-3" style="gap: 1rem;">
-                    <!-- Client 1: Pioneer Legacy Group -->
-                    <div class="client-card" style="flex: 1 1 300px; max-width: 350px; min-width: 280px;">
-                        <div class="client-icon" aria-hidden="true">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <h3 class="client-name h5">PioLG</h3>
-                        <div class="client-website">pioneer-legacy-group.fwh.is</div>
-                        <p class="client-description">A secure web-based organizational management system featuring role-based access control, member registration, financial tracking, meeting scheduling, authentication system and administrative dashboard.</p>
-                        <a href="https://pioneer-legacy-group.fwh.is/" target="_blank" rel="noopener noreferrer" class="client-link" aria-label="Visit Pioneer Legacy Group website">
-                            Visit Website <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                    
-                    <!-- Client 2: Gacharage Tea Welfare Staff Group -->
-                    <div class="client-card" style="flex: 1 1 300px; max-width: 350px; min-width: 280px;">
-                        <div class="client-icon" aria-hidden="true">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3 class="client-name h5">GTWSG</h3>
-                        <div class="client-website">gacharagewelfarestaff.co.ke</div>
-                        <p class="client-description">A comprehensive staff welfare management portal with secure login, role-based dashboards, contribution tracking, internal communication and structured record management.</p>
-                        <a href="https://gacharagewelfarestaff.co.ke/" target="_blank" rel="noopener noreferrer" class="client-link" aria-label="Visit Gacharage Tea Welfare Staff Group portal">
-                            Visit Website <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                    
-                    <!-- Client 3: Buffalo10 -->
-                    <div class="client-card" style="flex: 1 1 300px; max-width: 350px; min-width: 280px;">
-                        <div class="client-icon" aria-hidden="true">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <h3 class="client-name h5">Buffalo10</h3>
-                        <div class="client-website">buffalo10.great-site.net</div>
-                        <p class="client-description">A modern business web platform designed to showcase services, manage client interactions, and provide a responsive user experience with structured backend integration and secure authentication.</p>
-                        <a href="https://buffalo10.great-site.net/" target="_blank" rel="noopener noreferrer" class="client-link" aria-label="Visit Buffalo10 website">
-                            Visit Website <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                        </a>
-                    </div>
+                <div class="row g-4" id="github-repos">
+                    <!-- Will be populated by JavaScript -->
                 </div>
-                
-                <!-- Additional client information -->
-                <div class="row mt-4">
-                    <div class="col-12">
-                        <div class="bg-light p-3 rounded-4 text-center">
-                            <p class="mb-2 small text-secondary">Working with organizations across Kenya to build scalable, secure and user-friendly web applications.</p>
-                            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                                <div class="d-flex align-items-center gap-1">
-                                    <i class="fas fa-check-circle text-primary small" aria-hidden="true"></i>
-                                    <span class="small">Custom Development</span>
-                                </div>
-                                <div class="d-flex align-items-center gap-1">
-                                    <i class="fas fa-check-circle text-primary small" aria-hidden="true"></i>
-                                    <span class="small">Staff Portals</span>
-                                </div>
-                                <div class="d-flex align-items-center gap-1">
-                                    <i class="fas fa-check-circle text-primary small" aria-hidden="true"></i>
-                                    <span class="small">Business Systems</span>
-                                </div>
-                                <div class="d-flex align-items-center gap-1">
-                                    <i class="fas fa-check-circle text-primary small" aria-hidden="true"></i>
-                                    <span class="small">Ongoing Support</span>
-                                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="section">
+            <div class="container">
+                <div class="text-center center-title mb-5">
+                    <h2 class="section-title" data-i18n="blogTitle">Latest Articles</h2>
+                    <p class="text-secondary" data-i18n="blogSubtitle">Sharing knowledge about web development</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <article class="card blog-card h-100">
+                            <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                                 class="card-img-top" alt="React performance" loading="lazy">
+                            <div class="card-body">
+                                <div class="text-muted small mb-2">March 15, 2024 • 5 min read</div>
+                                <h3 class="h5 card-title" data-i18n="blog1Title">10 React Performance Tips</h3>
+                                <p class="card-text small" data-i18n="blog1Desc">Optimize your React apps with these proven techniques...</p>
                             </div>
-                        </div>
+                            <div class="card-footer bg-transparent border-0 pb-3">
+                                <a href="#" class="btn btn-link p-0" data-i18n="readMore">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-4">
+                        <article class="card blog-card h-100">
+                            <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                                 class="card-img-top" alt="Node.js best practices" loading="lazy">
+                            <div class="card-body">
+                                <div class="text-muted small mb-2">March 10, 2024 • 7 min read</div>
+                                <h3 class="h5 card-title" data-i18n="blog2Title">Node.js Best Practices 2024</h3>
+                                <p class="card-text small" data-i18n="blog2Desc">Essential patterns and practices for production Node.js apps...</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0 pb-3">
+                                <a href="#" class="btn btn-link p-0" data-i18n="readMore">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-4">
+                        <article class="card blog-card h-100">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                                 class="card-img-top" alt="AWS deployment" loading="lazy">
+                            <div class="card-body">
+                                <div class="text-muted small mb-2">March 5, 2024 • 6 min read</div>
+                                <h3 class="h5 card-title" data-i18n="blog3Title">Deploying to AWS: A Complete Guide</h3>
+                                <p class="card-text small" data-i18n="blog3Desc">Step-by-step guide to deploying web apps on AWS...</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0 pb-3">
+                                <a href="#" class="btn btn-link p-0" data-i18n="readMore">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section bg-light" aria-labelledby="skills-heading">
+        <!-- Clients Section -->
+        <section id="clients" class="section bg-light">
             <div class="container">
                 <div class="text-center center-title mb-5">
-                    <h2 id="skills-heading" class="section-title">Technical Skills</h2>
-                    <p class="text-secondary">Technologies and tools I work with</p>
+                    <h2 class="section-title" data-i18n="clientsTitle">Satisfied Clients</h2>
+                    <p class="text-secondary" data-i18n="clientsSubtitle">Trusted by organizations to deliver robust digital solutions</p>
                 </div>
+                
+                <div class="d-flex flex-wrap justify-content-center g-3" style="gap: 1rem;">
+                    <!-- Client 1 -->
+                    <div class="client-card" style="flex: 1 1 300px; max-width: 350px; min-width: 280px;">
+                        <div class="client-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="client-name h5">PioLG</h3>
+                        <div class="client-website">pioneer-legacy-group.fwh.is</div>
+                        <p class="client-description" data-i18n="client1Desc">A secure web-based organizational management system featuring role-based access control, member registration, financial tracking, meeting scheduling, authentication system and administrative dashboard.</p>
+                        <a href="https://pioneer-legacy-group.fwh.is/" target="_blank" rel="noopener noreferrer" class="client-link" data-i18n="visitWebsite">
+                            Visit Website <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Client 2 -->
+                    <div class="client-card" style="flex: 1 1 300px; max-width: 350px; min-width: 280px;">
+                        <div class="client-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="client-name h5">GTWSG</h3>
+                        <div class="client-website">gacharagewelfarestaff.co.ke</div>
+                        <p class="client-description" data-i18n="client2Desc">A comprehensive staff welfare management portal with secure login, role-based dashboards, contribution tracking, internal communication and structured record management.</p>
+                        <a href="https://gacharagewelfarestaff.co.ke/" target="_blank" rel="noopener noreferrer" class="client-link" data-i18n="visitWebsite">
+                            Visit Website <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Client 3 -->
+                    <div class="client-card" style="flex: 1 1 300px; max-width: 350px; min-width: 280px;">
+                        <div class="client-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3 class="client-name h5">Buffalo10</h3>
+                        <div class="client-website">buffalo10.great-site.net</div>
+                        <p class="client-description" data-i18n="client3Desc">A modern business web platform designed to showcase services, manage client interactions, and provide a responsive user experience with structured backend integration and secure authentication.</p>
+                        <a href="https://buffalo10.great-site.net/" target="_blank" rel="noopener noreferrer" class="client-link" data-i18n="visitWebsite">
+                            Visit Website <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="section">
+            <div class="container">
+                <h2 class="section-title text-center mb-5" data-i18n="testimonialsTitle">What Clients Say</h2>
+                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row justify-content-center">
+                                <div class="col-md-8">
+                                    <div class="testimonial-card text-center">
+                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle mx-auto mb-3" width="80" height="80" alt="Client">
+                                        <i class="fas fa-quote-left text-primary opacity-50 mb-2"></i>
+                                        <p class="mb-3" data-i18n="testimonial1Text">"John delivered an exceptional e-commerce platform. His technical expertise and communication were outstanding."</p>
+                                        <h4 class="h6 mb-1">Jane Wanjiku</h4>
+                                        <p class="text-muted small" data-i18n="testimonial1Role">CEO, Pioneer Legacy Group</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-md-8">
+                                    <div class="testimonial-card text-center">
+                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle mx-auto mb-3" width="80" height="80" alt="Client">
+                                        <i class="fas fa-quote-left text-primary opacity-50 mb-2"></i>
+                                        <p class="mb-3" data-i18n="testimonial2Text">"Working with John was a great experience. He understood our requirements perfectly and delivered beyond expectations."</p>
+                                        <h4 class="h6 mb-1">Peter Mwangi</h4>
+                                        <p class="text-muted small" data-i18n="testimonial2Role">Director, Gacharage Welfare</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-md-8">
+                                    <div class="testimonial-card text-center">
+                                        <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle mx-auto mb-3" width="80" height="80" alt="Client">
+                                        <i class="fas fa-quote-left text-primary opacity-50 mb-2"></i>
+                                        <p class="mb-3" data-i18n="testimonial3Text">"The transport app John built for us has transformed how our users navigate the city. Highly recommended!"</p>
+                                        <h4 class="h6 mb-1">Sarah Odhiambo</h4>
+                                        <p class="text-muted small" data-i18n="testimonial3Role">Product Manager, Nairobi Transport</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon bg-primary rounded-circle p-3" aria-hidden="true"></span>
+                        <span class="visually-hidden" data-i18n="previous">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon bg-primary rounded-circle p-3" aria-hidden="true"></span>
+                        <span class="visually-hidden" data-i18n="next">Next</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section with Progress Bars -->
+        <section id="skills" class="section bg-light">
+            <div class="container">
+                <div class="text-center center-title mb-5">
+                    <h2 class="section-title" data-i18n="skillsTitle">Technical Skills</h2>
+                    <p class="text-secondary" data-i18n="skillsSubtitle">Technologies and tools I work with</p>
+                </div>
+                
+                <!-- Skills Progress Bars -->
+                <div class="row mb-5">
+                    <div class="col-md-6">
+                        <h3 class="h6 mb-3" data-i18n="frontendSkills">Frontend Development</h3>
+                        <div class="skill-progress mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>React</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>Vue.js</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>TypeScript</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="h6 mb-3" data-i18n="backendSkills">Backend Development</h3>
+                        <div class="skill-progress mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>Node.js</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>Python</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>PHP</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Cards -->
                 <div class="row g-4">
                     <div class="col-md-6 col-lg-3">
                         <div class="skill-item">
-                            <i class="fas fa-code skill-icon" aria-hidden="true"></i>
-                            <h3 class="skill-name h5">Frontend</h3>
+                            <i class="fas fa-code skill-icon"></i>
+                            <h3 class="skill-name h5" data-i18n="frontend">Frontend</h3>
                             <p class="skill-level">React, Vue, Angular, TypeScript</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="skill-item">
-                            <i class="fas fa-server skill-icon" aria-hidden="true"></i>
-                            <h3 class="skill-name h5">Backend</h3>
+                            <i class="fas fa-server skill-icon"></i>
+                            <h3 class="skill-name h5" data-i18n="backend">Backend</h3>
                             <p class="skill-level">Node.js, Python, PHP, Laravel</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="skill-item">
-                            <i class="fas fa-mobile-alt skill-icon" aria-hidden="true"></i>
-                            <h3 class="skill-name h5">Mobile</h3>
+                            <i class="fas fa-mobile-alt skill-icon"></i>
+                            <h3 class="skill-name h5" data-i18n="mobile">Mobile</h3>
                             <p class="skill-level">React Native, Flutter</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="skill-item">
-                            <i class="fas fa-database skill-icon" aria-hidden="true"></i>
-                            <h3 class="skill-name h5">Tools & DevOps</h3>
+                            <i class="fas fa-database skill-icon"></i>
+                            <h3 class="skill-name h5" data-i18n="tools">Tools & DevOps</h3>
                             <p class="skill-level">MySQL, MongoDB, Docker, AWS</p>
                         </div>
                     </div>
@@ -450,32 +644,78 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact" aria-labelledby="contact-heading">
+        <!-- Interactive Code Demo Section -->
+        <section class="section">
             <div class="container">
-                <h2 id="contact-heading" class="section-title text-white mb-5">Get In Touch</h2>
+                <div class="text-center center-title mb-5">
+                    <h2 class="section-title" data-i18n="codeDemoTitle">Interactive Code Demo</h2>
+                    <p class="text-secondary" data-i18n="codeDemoSubtitle">Try out this JavaScript function</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="code-demo">
+                            <pre><code class="language-javascript">
+// Interactive greeting function
+function greet(name) {
+    return `Hello, ${name}! Welcome to my portfolio.`;
+}
+
+// Try it out:
+console.log(greet('Visitor'));
+                            </code></pre>
+                            <div class="mt-3">
+                                <input type="text" id="demoName" class="form-control mb-2" placeholder="Enter your name" value="Visitor">
+                                <button class="btn-modern" onclick="runCodeDemo()" data-i18n="runCode">Run Code</button>
+                                <div id="demoOutput" class="mt-3 p-3 bg-dark text-light rounded"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section py-5 text-white">
+            <div class="container text-center">
+                <h3 class="h4 mb-3" data-i18n="newsletterTitle">Subscribe to My Newsletter</h3>
+                <p class="mb-4" data-i18n="newsletterSubtitle">Get weekly tips and updates about web development</p>
+                <form class="row g-2 justify-content-center" id="newsletterForm">
+                    <div class="col-md-6">
+                        <input type="email" class="form-control form-control-lg" placeholder="Your email address" required>
+                    </div>
+                    <div class="col-md-auto">
+                        <button type="submit" class="btn btn-light btn-lg" data-i18n="subscribe">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title text-white mb-5" data-i18n="contactTitle">Get In Touch</h2>
                 <div class="row g-5">
                     <div class="col-lg-5">
                         <div class="contact-info">
-                            <p class="mb-4 fs-6">Available for freelance projects and full-time opportunities. Let's create something amazing together!</p>
+                            <p class="mb-4 fs-6" data-i18n="contactText">Available for freelance projects and full-time opportunities. Let's create something amazing together!</p>
                             
                             <div class="mb-4">
-                                <p><i class="fas fa-envelope" aria-hidden="true"></i> jonterob756@gmail.com</p>
-                                <p><i class="fas fa-phone" aria-hidden="true"></i> +254 110 856 452</p>
-                                <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Nairobi, Kenya</p>
+                                <p><i class="fas fa-envelope me-2"></i> jonterob756@gmail.com</p>
+                                <p><i class="fas fa-phone me-2"></i> +254 110 856 452</p>
+                                <p><i class="fas fa-map-marker-alt me-2"></i> Nairobi, Kenya</p>
                             </div>
                             
                             <div>
-                                <h3 class="h6 mb-3 fs-6">Connect with me</h3>
+                                <h3 class="h6 mb-3 fs-6" data-i18n="connect">Connect with me</h3>
                                 <div class="d-flex gap-3">
-                                    <a href="https://github.com/johngitau" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-                                        <i class="fab fa-github" aria-hidden="true"></i>
+                                    <a href="https://github.com/johngitau" class="social-icon" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-github"></i>
                                     </a>
-                                    <a href="https://linkedin.com/in/johngitau" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-                                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                                    <a href="https://linkedin.com/in/johngitau" class="social-icon" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-linkedin-in"></i>
                                     </a>
-                                    <a href="https://twitter.com/johngitau" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Twitter profile">
-                                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                                    <a href="https://twitter.com/johngitau" class="social-icon" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-twitter"></i>
                                     </a>
                                 </div>
                             </div>
@@ -486,29 +726,25 @@
                         <form id="contact-form" novalidate>
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <label for="name" class="visually-hidden">Your Name</label>
                                     <input type="text" class="form-control-modern" name="name" id="name" 
-                                           placeholder="Your Name" required aria-required="true">
+                                           placeholder="Your Name" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="email" class="visually-hidden">Your Email</label>
                                     <input type="email" class="form-control-modern" name="email" id="email" 
-                                           placeholder="Your Email" required aria-required="true">
+                                           placeholder="Your Email" required>
                                 </div>
                                 <div class="col-12">
-                                    <label for="subject" class="visually-hidden">Subject</label>
                                     <input type="text" class="form-control-modern" name="subject" id="subject" 
                                            placeholder="Subject (optional)">
                                 </div>
                                 <div class="col-12">
-                                    <label for="message" class="visually-hidden">Message</label>
                                     <textarea class="form-control-modern" name="message" id="message" rows="5" 
-                                              placeholder="Tell me about your project..." required aria-required="true"></textarea>
+                                              placeholder="Tell me about your project..." required></textarea>
                                 </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn-modern w-100" id="submit-btn">
-                                        <span id="btn-text">Send Message</span>
-                                        <span id="btn-spinner" class="spinner d-none" role="status" aria-hidden="true"></span>
+                                        <span id="btn-text" data-i18n="sendMessage">Send Message</span>
+                                        <span id="btn-spinner" class="spinner d-none" role="status"></span>
                                     </button>
                                 </div>
                             </div>
@@ -520,217 +756,189 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer" aria-label="Footer">
+    <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <h2 class="h5 mb-3 fs-6">John Gitau</h2>
-                    <p class="opacity-75 small">Full Stack Developer creating innovative digital solutions through clean, efficient code.</p>
+                    <p class="opacity-75 small" data-i18n="footerText">Full Stack Developer creating innovative digital solutions through clean, efficient code.</p>
                     <div class="d-flex gap-3">
-                        <a href="https://github.com/johngitau" class="opacity-75 text-white" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-                        <a href="https://linkedin.com/in/johngitau" class="opacity-75 text-white" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                        <a href="https://twitter.com/johngitau" class="opacity-75 text-white" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://github.com/johngitau" class="opacity-75 text-white" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/johngitau" class="opacity-75 text-white" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/johngitau" class="opacity-75 text-white" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 mb-4 mb-lg-0">
-                    <h3 class="h6 mb-3 fs-6">Quick Links</h3>
+                    <h3 class="h6 mb-3 fs-6" data-i18n="quickLinks">Quick Links</h3>
                     <div class="footer-links d-flex flex-column gap-2">
-                        <a href="#about">About</a>
-                        <a href="#projects">Projects</a>
-                        <a href="#clients">Clients</a>
-                        <a href="#skills">Skills</a>
-                        <a href="#contact">Contact</a>
+                        <a href="#about" data-i18n="about">About</a>
+                        <a href="#projects" data-i18n="projects">Projects</a>
+                        <a href="#services" data-i18n="services">Services</a>
+                        <a href="#blog" data-i18n="blog">Blog</a>
+                        <a href="#contact" data-i18n="contact">Contact</a>
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <h3 class="h6 mb-3 fs-6">Legal</h3>
+                    <h3 class="h6 mb-3 fs-6" data-i18n="legal">Legal</h3>
                     <div class="footer-links d-flex flex-column gap-2">
-                        <a href="privacy.html" aria-disabled="true">Privacy Policy</a>
-                        <a href="terms.html" aria-disabled="true">Terms of Service</a>
+                        <a href="#" data-i18n="privacy">Privacy Policy</a>
+                        <a href="#" data-i18n="terms">Terms of Service</a>
                     </div>
                 </div>
             </div>
             <hr class="opacity-25 my-4">
             <div class="text-center">
-                <p class="mb-0 opacity-75 small">&copy; <span id="current-year"></span> John Gitau. All rights reserved.</p>
+                <p class="mb-0 opacity-75 small">&copy; <span id="current-year"></span> John Gitau. <span data-i18n="allRights">All rights reserved.</span></p>
             </div>
         </div>
     </footer>
 
-    <!-- EmailJS SDK -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
     <script>
         (function() {
-            // EmailJS Configuration
+            // Configuration
             const EMAILJS_CONFIG = {
                 PUBLIC_KEY: "Q1Db3xO7terlVPf3w",
                 SERVICE_ID: "service_v9bijqc",
                 TEMPLATE_ID: "template_wszcdnw"
             };
 
-            // Toast notification system
-            const Toast = {
-                container: document.getElementById('toast-container'),
-                show(message, type = 'info', title = '') {
-                    const titles = { success:'Success', error:'Error', warning:'Warning', info:'Information' };
-                    const icons = { success:'fa-circle-check', error:'fa-circle-exclamation', warning:'fa-triangle-exclamation', info:'fa-circle-info' };
-                    
-                    const toast = document.createElement('div');
-                    toast.className = `toast-custom ${type}`;
-                    toast.setAttribute('role', 'alert');
-                    toast.setAttribute('aria-live', 'assertive');
-                    toast.setAttribute('aria-atomic', 'true');
-                    
-                    toast.innerHTML = `
-                        <div class="toast-icon" aria-hidden="true"><i class="fas ${icons[type]}"></i></div>
-                        <div class="toast-content">
-                            <div class="toast-title">${title || titles[type]}</div>
-                            <div class="toast-message">${message}</div>
-                        </div>
-                        <button class="toast-close" onclick="this.closest('.toast-custom').remove()" aria-label="Close notification">
-                            <i class="fas fa-times" aria-hidden="true"></i>
-                        </button>
-                    `;
-                    
-                    this.container.appendChild(toast);
-                    
-                    setTimeout(() => {
-                        if (toast.parentNode) {
-                            toast.remove();
-                        }
-                    }, 5000);
+            // Translations
+            const translations = {
+                en: {
+                    about: 'About',
+                    projects: 'Projects',
+                    services: 'Services',
+                    blog: 'Blog',
+                    clients: 'Clients',
+                    testimonials: 'Testimonials',
+                    skills: 'Skills',
+                    contact: 'Contact',
+                    heroTitle: 'Full Stack Developer',
+                    heroSubtitle: 'Building modern web & mobile applications with clean, efficient code. Specializing in React, Node.js and cloud solutions.',
+                    viewWork: 'View My Work',
+                    contactMe: 'Contact Me',
+                    downloadResume: 'Download Resume',
+                    aboutTitle: 'About Me',
+                    passionate: "I'm a passionate Full Stack Developer",
+                    aboutText1: 'with expertise in building modern web and mobile applications.',
+                    aboutText2: 'Graduated with a BSc in Computer Science from Kirinyaga University. I create digital solutions that solve real problems with exceptional user experiences.',
+                    aboutText3: 'My approach combines technical expertise with a keen eye for design and user experience, ensuring every project delivers both functionality and beauty.',
+                    yearsExp: 'Years Experience',
+                    projectsCompleted: 'Projects Completed',
+                    certifications: 'Certifications',
+                    education: 'Education & Background',
+                    eduTitle1: 'BSc Computer Science',
+                    eduDesc1: 'Kirinyaga University - Graduated with honors, focusing on software engineering and web technologies.',
+                    eduTitle2: 'Professional Development',
+                    eduDesc2: 'Continuous learning in React, Node.js and cloud technologies through courses and hands-on projects.',
+                    servicesTitle: 'Services & Pricing',
+                    servicesSubtitle: 'Professional solutions tailored to your needs',
+                    service1Title: 'Web Development',
+                    service1Desc: 'Custom websites and web applications',
+                    service1Feature1: 'Responsive Design',
+                    service1Feature2: 'SEO Optimized',
+                    service1Feature3: '3 Months Support',
+                    service2Title: 'Mobile Development',
+                    service2Desc: 'Cross-platform mobile applications',
+                    service2Feature1: 'iOS & Android',
+                    service2Feature2: 'Push Notifications',
+                    service2Feature3: 'App Store Deployment',
+                    service3Title: 'Cloud Solutions',
+                    service3Desc: 'Scalable cloud architecture & deployment',
+                    service3Feature1: 'AWS/Azure/GCP',
+                    service3Feature2: 'CI/CD Pipeline',
+                    service3Feature3: '24/7 Monitoring',
+                    getQuote: 'Get Quote',
+                    projectsTitle: 'My Projects',
+                    projectsSubtitle: 'A selection of my recent work across various domains',
+                    all: 'All',
+                    web: 'Web',
+                    mobile: 'Mobile',
+                    ecommerce: 'E-commerce',
+                    dashboard: 'Dashboard',
+                    project1Title: 'E-commerce Platform',
+                    project1Desc: 'Full-featured online store with cart, authentication and payment processing.',
+                    project2Title: 'Group Management System',
+                    project2Desc: 'Comprehensive platform for managing organizations with roles and permissions.',
+                    project3Title: 'Nairobi Transport App',
+                    project3Desc: 'Mobile app for navigating public transport with real-time updates.',
+                    project4Title: 'Agricultural Market Platform',
+                    project4Desc: 'Platform connecting farmers with buyers, featuring inventory management.',
+                    project5Title: 'Business Analytics Dashboard',
+                    project5Desc: 'Interactive dashboard for visualizing business metrics.',
+                    project6Title: 'Task Management System',
+                    project6Desc: 'Collaborative project management tool with task assignment.',
+                    githubTitle: 'GitHub Activity',
+                    githubSubtitle: 'My latest open source contributions',
+                    blogTitle: 'Latest Articles',
+                    blogSubtitle: 'Sharing knowledge about web development',
+                    blog1Title: '10 React Performance Tips',
+                    blog1Desc: 'Optimize your React apps with these proven techniques...',
+                    blog2Title: 'Node.js Best Practices 2024',
+                    blog2Desc: 'Essential patterns and practices for production Node.js apps...',
+                    blog3Title: 'Deploying to AWS: A Complete Guide',
+                    blog3Desc: 'Step-by-step guide to deploying web apps on AWS...',
+                    readMore: 'Read More',
+                    clientsTitle: 'Satisfied Clients',
+                    clientsSubtitle: 'Trusted by organizations to deliver robust digital solutions',
+                    client1Desc: 'A secure web-based organizational management system featuring role-based access control, member registration, financial tracking, meeting scheduling, authentication system and administrative dashboard.',
+                    client2Desc: 'A comprehensive staff welfare management portal with secure login, role-based dashboards, contribution tracking, internal communication and structured record management.',
+                    client3Desc: 'A modern business web platform designed to showcase services, manage client interactions, and provide a responsive user experience with structured backend integration and secure authentication.',
+                    visitWebsite: 'Visit Website',
+                    testimonialsTitle: 'What Clients Say',
+                    testimonial1Text: '"John delivered an exceptional e-commerce platform. His technical expertise and communication were outstanding."',
+                    testimonial1Role: 'CEO, Pioneer Legacy Group',
+                    testimonial2Text: '"Working with John was a great experience. He understood our requirements perfectly and delivered beyond expectations."',
+                    testimonial2Role: 'Director, Gacharage Welfare',
+                    testimonial3Text: '"The transport app John built for us has transformed how our users navigate the city. Highly recommended!"',
+                    testimonial3Role: 'Product Manager, Nairobi Transport',
+                    previous: 'Previous',
+                    next: 'Next',
+                    skillsTitle: 'Technical Skills',
+                    skillsSubtitle: 'Technologies and tools I work with',
+                    frontendSkills: 'Frontend Development',
+                    backendSkills: 'Backend Development',
+                    frontend: 'Frontend',
+                    backend: 'Backend',
+                    mobile: 'Mobile',
+                    tools: 'Tools & DevOps',
+                    codeDemoTitle: 'Interactive Code Demo',
+                    codeDemoSubtitle: 'Try out this JavaScript function',
+                    runCode: 'Run Code',
+                    newsletterTitle: 'Subscribe to My Newsletter',
+                    newsletterSubtitle: 'Get weekly tips and updates about web development',
+                    subscribe: 'Subscribe',
+                    contactTitle: 'Get In Touch',
+                    contactText: 'Available for freelance projects and full-time opportunities. Let\'s create something amazing together!',
+                    connect: 'Connect with me',
+                    sendMessage: 'Send Message',
+                    footerText: 'Full Stack Developer creating innovative digital solutions through clean, efficient code.',
+                    quickLinks: 'Quick Links',
+                    legal: 'Legal',
+                    privacy: 'Privacy Policy',
+                    terms: 'Terms of Service',
+                    allRights: 'All rights reserved.'
                 },
-                success(m) { this.show(m,'success'); },
-                error(m) { this.show(m,'error'); },
-                warning(m) { this.show(m,'warning'); },
-                info(m) { this.show(m,'info'); }
-            };
-
-            // Initialize EmailJS
-            emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
-            console.log('EmailJS initialized');
-
-            // DOM Ready
-            document.addEventListener('DOMContentLoaded', function() {
-                // Update current year
-                document.getElementById('current-year').textContent = new Date().getFullYear();
-
-                // Navbar scroll effect
-                let ticking = false;
-                window.addEventListener('scroll', () => {
-                    if (!ticking) {
-                        window.requestAnimationFrame(() => {
-                            document.querySelector('.navbar').classList.toggle('navbar-scrolled', window.scrollY > 50);
-                            ticking = false;
-                        });
-                        ticking = true;
-                    }
-                });
-
-                // Smooth scrolling for navigation links
-                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                    anchor.addEventListener('click', function(e) {
-                        const href = this.getAttribute('href');
-                        if (href === '#') return;
-                        
-                        e.preventDefault();
-                        const targetElement = document.querySelector(href);
-                        
-                        if (targetElement) {
-                            const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                            const targetPosition = targetElement.offsetTop - navbarHeight - 20;
-                            
-                            window.scrollTo({
-                                top: targetPosition,
-                                behavior: 'smooth'
-                            });
-                            
-                            // Close mobile menu
-                            const navbarCollapse = document.querySelector('.navbar-collapse');
-                            if (navbarCollapse.classList.contains('show')) {
-                                bootstrap.Collapse.getInstance(navbarCollapse)?.hide();
-                            }
-                        }
-                    });
-                });
-
-                // Contact Form - EXACT PARAMETERS FROM YOUR TEST
-                const contactForm = document.getElementById('contact-form');
-                
-                contactForm.addEventListener('submit', async function(e) {
-                    e.preventDefault();
-                    
-                    const submitBtn = document.getElementById('submit-btn');
-                    const btnText = document.getElementById('btn-text');
-                    const btnSpinner = document.getElementById('btn-spinner');
-                    
-                    // Get form values
-                    const name = document.getElementById('name').value.trim();
-                    const email = document.getElementById('email').value.trim();
-                    const subject = document.getElementById('subject').value.trim() || 'New Message from Portfolio';
-                    const message = document.getElementById('message').value.trim();
-                    
-                    // Validation
-                    if (!name || !email || !message) {
-                        Toast.error('Please fill in all required fields');
-                        return;
-                    }
-                    
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(email)) {
-                        Toast.error('Please enter a valid email address');
-                        return;
-                    }
-                    
-                    // Loading state
-                    submitBtn.disabled = true;
-                    btnSpinner.classList.remove('d-none');
-                    btnText.textContent = 'Sending...';
-                    
-                    // EXACT PARAMETERS FROM YOUR TEST - name, subject, message, email
-                    const templateParams = {
-                        name: name,
-                        subject: subject,
-                        message: message,
-                        email: email
-                    };
-                    
-                    console.log('Sending with params:', templateParams);
-                    
-                    try {
-                        // Send email using EmailJS - EXACTLY as tested
-                        const response = await emailjs.send(
-                            EMAILJS_CONFIG.SERVICE_ID,
-                            EMAILJS_CONFIG.TEMPLATE_ID,
-                            templateParams
-                        );
-                        
-                        console.log('EmailJS success:', response);
-                        
-                        if (response.status === 200) {
-                            Toast.success('Message sent successfully! I\'ll respond within 24 hours.');
-                            contactForm.reset();
-                        } else {
-                            throw new Error('Failed to send email');
-                        }
-                        
-                    } catch (error) {
-                        console.error('EmailJS error:', error);
-                        
-                        // Show user-friendly error
-                        Toast.error('Failed to send message. Please email me directly at jonterob756@gmail.com');
-                        
-                    } finally {
-                        // Reset button state
-                        submitBtn.disabled = false;
-                        btnSpinner.classList.add('d-none');
-                        btnText.textContent = 'Send Message';
-                    }
-                });
-            });
-        })();
-    </script>
-</body>
-</html>
+                sw: {
+                    about: 'Kuhusu Mimi',
+                    projects: 'Miradi',
+                    services: 'Huduma',
+                    blog: 'Blogu',
+                    clients: 'Wateja',
+                    testimonials: 'Ushuhuda',
+                    skills: 'Ujuzi',
+                    contact: 'Wasiliana',
+                    heroTitle: 'Msanidi Programu Kamili',
+                    heroSubtitle: 'Kuunda programu za wavuti na simu za kisasa kwa msimbo safi na mzuri. Nitaalamu katika React, Node.js na suluhisho za wingu.',
+                    viewWork: 'Tazama Kazi Yangu',
+                    contactMe: 'Wasiliana Nami',
+                    downloadResume: 'Pakua Wasifu',
+                    aboutTitle: 'Kuhusu Mimi',
+                    passionate: "Mimi ni Msanidi Programu Kamili mwenye shauku",
+                    aboutText1: 'na utaalamu wa kuunda programu za kisasa za wavuti na simu.',
+                    aboutText2: 'Nilih
