@@ -32,23 +32,25 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
-    <!-- Non-critical styles (each CSS block in 1 line) -->
+    <!-- Styles-->
     <style>
-        /* Toast container */
-        .toast-container-custom { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 999999; pointer-events: none; }
-        .toast-custom { background: white; border-radius: 12px; padding: 1rem 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 1rem; min-width: 300px; max-width: 450px; animation: toastSlideIn 0.3s ease forwards; border-left: 4px solid; pointer-events: auto; }
-        .toast-custom.success { border-left-color: #10b981; }
-        .toast-custom.error { border-left-color: #ef4444; }
-        .toast-custom.warning { border-left-color: #f59e0b; }
-        .toast-custom.info { border-left-color: #3b82f6; }
-        @keyframes toastSlideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        /* Toast container*/
+        .toast-container-custom { position: fixed; top: 30px; right: 20px; z-index: 999999; display: flex; flex-direction: column; gap: 10px; pointer-events: none; }
+        .toast-custom { padding: 12px 24px; border-radius: 50px; font-weight: 500; font-size: 0.95rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1); animation: toastSlideInRight 0.3s ease forwards; max-width: 350px; pointer-events: auto; border: none; }
+        .toast-custom.success { background: #10b981; color: white; }
+        .toast-custom.error { background: #ef4444; color: white; }
+        .toast-custom.warning { background: #f59e0b; color: white; }
+        .toast-custom.info { background: #3b82f6; color: white; }
+        .toast-custom .toast-close { background: transparent; border: none; color: white; opacity: 0.8; margin-left: 15px; cursor: pointer; font-size: 1rem; }
+        .toast-custom .toast-close:hover { opacity: 1; }
+        @keyframes toastSlideInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
         
-        /* Modern card designs */
+        /* Card designs */
         .card { border: 1px solid var(--gray-light); border-radius: 12px; overflow: hidden; transition: all 0.3s; height: 100%; background: white; }
         .card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); border-color: transparent; }
         .card-img-top { height: 180px; object-fit: cover; width: 100%; background: #f1f5f9; }
         
-        /* Client cards - updated: no hover, flex-friendly, smaller font, consistent gaps */
+        /* Client cards */
         .client-card { border: 1px solid var(--gray-light); border-radius: 12px; padding: 1.5rem; text-align: center; background: white; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0; transition: none; gap: 1rem; width: 100%; }
         .client-icon { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: rgba(37, 99, 235, 0.1); border-radius: 50%; }
         .client-name { font-size: 1.25rem; margin-bottom: 0.25rem; }
@@ -63,8 +65,9 @@
         .contact-info { background: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); }
         .form-control-modern { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 0.75rem 1rem; color: white; font-size: 0.9375rem; transition: all 0.3s; width: 100%; }
         .form-control-modern:focus { background: rgba(255, 255, 255, 0.1); border-color: var(--primary); outline: none; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2); color: white; }
-        .social-icon { width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255, 255, 255, 0.1); color: white; font-size: 1.125rem; transition: all 0.3s; text-decoration: none !important; }
-        .social-icon:hover { background: var(--primary); color: white; transform: translateY(-3px); }
+        /* Social icons */
+        .social-icon { width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255, 255, 255, 0.15); color: white; font-size: 1.125rem; transition: all 0.3s; text-decoration: none !important; border: 1px solid rgba(255,255,255,0.2); }
+        .social-icon:hover { background: var(--primary); color: white; transform: translateY(-3px); border-color: var(--primary); }
         .social-icon:focus-visible { outline: 2px solid white; outline-offset: 2px; }
         .stat-box { text-align: center; padding: 1.5rem; background: white; border-radius: 12px; border: 1px solid var(--gray-light); }
         .timeline { border-left: 2px solid var(--primary); padding-left: 1.5rem; }
@@ -74,7 +77,7 @@
         .footer-links a:hover { color: white; }
         .footer-links a:focus-visible { outline: 2px solid white; outline-offset: 2px; border-radius: 4px; }
         
-        /* Responsive - optimized for smartphones */
+        /* Responsive*/
         @media (max-width: 576px) { 
             .hero { padding: 5rem 0 3rem; text-align: center; } 
             .section { padding: 2.5rem 0; } 
@@ -88,13 +91,17 @@
             .client-name { font-size: 1.1rem; }
             .stat-box { padding: 1rem; }
             .contact-info { padding: 1.5rem; }
-            .footer-links { align-items: center; }
+            /* Footer links grid layout for small devices */
+            .footer-links { display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 0.75rem 1rem !important; }
+            .footer-links a { text-align: left; }
         }
         @media (min-width: 577px) and (max-width: 768px) { 
             .hero { padding: 6rem 0 4rem; text-align: center; } 
             .section { padding: 3rem 0; } 
             .section-title::after { left: 50%; transform: translateX(-50%); } 
             .navbar-collapse { background: white; padding: 1rem; border-radius: 12px; margin-top: 1rem; }
+            /* Footer links grid for tablets as well */
+            .footer-links { display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 0.75rem 1rem !important; }
         }
         
         /* Accessibility */
@@ -351,7 +358,7 @@
             </div>
         </section>
 
-        <!-- Clients Section - Updated with consistent gaps between flexed rows and perfect mobile responsiveness -->
+        <!-- Clients Section-->
         <section id="clients" class="section" aria-labelledby="clients-heading">
             <div class="container">
                 <div class="text-center center-title mb-5">
@@ -359,7 +366,7 @@
                     <p class="text-secondary">Trusted by organizations to deliver robust digital solutions</p>
                 </div>
                 
-                <!-- Flex container for clients - consistent gaps between rows (1rem gap on all sides) and perfect for small screens -->
+                <!-- Flex container for clients -->
                 <div class="d-flex flex-wrap justify-content-center" style="gap: 1.5rem; margin-bottom: 1.5rem;">
                     <!-- Client 1: Pioneer Legacy Group -->
                     <div class="client-card" style="flex: 1 1 300px; max-width: 350px; min-width: 260px; width: 100%;">
@@ -401,7 +408,7 @@
                     </div>
                 </div>
 
-                <!-- Second row with client 4 and additional gap -->
+                <!-- Second row with additional gap -->
                 <div class="d-flex flex-wrap justify-content-center" style="gap: 1.5rem;">
                     <!-- Client 4: The Gwatchman -->
                     <div class="client-card" style="flex: 1 1 300px; max-width: 350px; min-width: 260px; width: 100%;">
@@ -417,7 +424,7 @@
                     </div>
                 </div>
                 
-                <!-- Additional client information -->
+                <!-- Client information -->
                 <div class="row mt-5">
                     <div class="col-12">
                         <div class="bg-light p-3 rounded-4 text-center">
@@ -534,7 +541,7 @@
                                 <div class="col-12">
                                     <label for="subject" class="visually-hidden">Subject</label>
                                     <input type="text" class="form-control-modern" name="subject" id="subject" 
-                                           placeholder="Subject (optional)">
+                                           placeholder="Subject" required aria-required="true">
                                 </div>
                                 <div class="col-12">
                                     <label for="message" class="visually-hidden">Message</label>
@@ -606,13 +613,10 @@
                 TEMPLATE_ID: "template_wszcdnw"
             };
 
-            // Toast notification system
+            // Toast notification system 
             const Toast = {
                 container: document.getElementById('toast-container'),
-                show(message, type = 'info', title = '') {
-                    const titles = { success:'Success', error:'Error', warning:'Warning', info:'Information' };
-                    const icons = { success:'fa-circle-check', error:'fa-circle-exclamation', warning:'fa-triangle-exclamation', info:'fa-circle-info' };
-                    
+                show(message, type = 'info') {
                     const toast = document.createElement('div');
                     toast.className = `toast-custom ${type}`;
                     toast.setAttribute('role', 'alert');
@@ -620,11 +624,7 @@
                     toast.setAttribute('aria-atomic', 'true');
                     
                     toast.innerHTML = `
-                        <div class="toast-icon" aria-hidden="true"><i class="fas ${icons[type]}"></i></div>
-                        <div class="toast-content">
-                            <div class="toast-title">${title || titles[type]}</div>
-                            <div class="toast-message">${message}</div>
-                        </div>
+                        <span>${message}</span>
                         <button class="toast-close" onclick="this.closest('.toast-custom').remove()" aria-label="Close notification">
                             <i class="fas fa-times" aria-hidden="true"></i>
                         </button>
@@ -636,7 +636,7 @@
                         if (toast.parentNode) {
                             toast.remove();
                         }
-                    }, 5000);
+                    }, 4000);
                 },
                 success(m) { this.show(m,'success'); },
                 error(m) { this.show(m,'error'); },
@@ -692,7 +692,7 @@
                     });
                 });
 
-                // Contact Form - EXACT PARAMETERS FROM YOUR TEST
+                // Contact Form
                 const contactForm = document.getElementById('contact-form');
                 
                 contactForm.addEventListener('submit', async function(e) {
@@ -705,11 +705,11 @@
                     // Get form values
                     const name = document.getElementById('name').value.trim();
                     const email = document.getElementById('email').value.trim();
-                    const subject = document.getElementById('subject').value.trim() || 'New Message from Portfolio';
+                    const subject = document.getElementById('subject').value.trim();
                     const message = document.getElementById('message').value.trim();
                     
                     // Validation
-                    if (!name || !email || !message) {
+                    if (!name || !email || !subject || !message) {
                         Toast.error('Please fill in all required fields');
                         return;
                     }
@@ -725,7 +725,7 @@
                     btnSpinner.classList.remove('d-none');
                     btnText.textContent = 'Sending...';
                     
-                    // EXACT PARAMETERS FROM YOUR TEST - name, subject, message, email
+                    // PARAMETERS - name, subject, message, email
                     const templateParams = {
                         name: name,
                         subject: subject,
@@ -736,7 +736,7 @@
                     console.log('Sending with params:', templateParams);
                     
                     try {
-                        // Send email using EmailJS - EXACTLY as tested
+                        // Send email using EmailJS 
                         const response = await emailjs.send(
                             EMAILJS_CONFIG.SERVICE_ID,
                             EMAILJS_CONFIG.TEMPLATE_ID,
