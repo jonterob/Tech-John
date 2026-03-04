@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /Tech-John/
+
+Sitemap: https://jonterob.github.io/Tech-John/sitemap.xml
