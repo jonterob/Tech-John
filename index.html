@@ -94,6 +94,15 @@
             /* Footer links grid layout for small devices */
             .footer-links { display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 0.75rem 1rem !important; }
             .footer-links a { text-align: left; }
+            
+            /* 1. Hero buttons in flex column on smartphone */
+            .hero-buttons-flex {
+                flex-direction: column !important;
+                width: 100%;
+            }
+            .hero-buttons-flex .btn-modern {
+                width: 100%;
+            }
         }
         @media (min-width: 577px) and (max-width: 768px) { 
             .hero { padding: 6rem 0 4rem; text-align: center; } 
@@ -121,17 +130,6 @@
         @keyframes spin { to { transform: rotate(360deg); } }
 
         /* ----- UPDATES FOR TASK 1,2,3 ----- */
-        /* 1. Hero buttons stack on mobile (flex direction column) */
-        @media (max-width: 576px) {
-            .hero-buttons-flex {
-                flex-direction: column !important;
-                width: 100%;
-            }
-            .hero-buttons-flex .btn-modern {
-                width: 100%;
-            }
-        }
-
         /* 2. tech-john logo style (replaces image) */
         .tech-john-logo {
             max-width: 400px; 
