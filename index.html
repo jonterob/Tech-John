@@ -1,820 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>John Gitau - Full Stack Developer</title>
-    <meta name="description" content="Full Stack Developer building modern, scalable web applications with React, Node.js, PHP & cloud technologies. Explore innovative projects, secure systems and professional web solutions.">
-    <meta name="keywords" content="Full Stack Developer Kenya, React Developer, Node.js Developer, PHP Developer, JavaScript Expert, Web Applications, Backend Development, Frontend Development, Cloud Solutions, Nairobi Developer">
-    <meta name="author" content="John Gitau">
-    
-    <!-- Favicon with proper sizes -->
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">   
-    <!-- Preconnect for external resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
-    <!-- Google Fonts - Inter only (removed unused weights) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Critical CSS inline to avoid render blocking -->
-    <style>
-        /* Critical path CSS */
-        *{margin:0;padding:0;box-sizing:border-box}:root{--primary:#2563eb;--primary-dark:#1d4ed8;--dark:#0f172a;--gray:#64748b;--gray-light:#e2e8f2}body{font-family:'Inter',sans-serif;line-height:1.5;color:var(--dark);overflow-x:hidden}.navbar{background:rgba(255,255,255,.98);backdrop-filter:blur(10px);padding:.75rem 0;position:fixed;top:0;width:100%;z-index:1000}.hero{padding:7rem 0 5rem;background:#f8fafc}.container{max-width:1280px;margin:0 auto;padding:0 1.5rem}.btn-modern{background:var(--primary);color:#fff;border:none;padding:.75rem 1.5rem;border-radius:8px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;text-decoration:none}.text-primary{color:var(--primary)}.section{padding:5rem 0}.bg-light{background:#f8fafc}.contact{background:var(--dark);color:#fff;padding:5rem 0}.footer{background:#0a0f1a;color:#fff;padding:3rem 0}
-    </style>
-    
-    <!-- Deferred styles -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"></noscript>
-    
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    
-    <!-- Styles-->
-    <style>
-        /* Toast container*/
-        .toast-container-custom { position: fixed; top: 30px; right: 20px; z-index: 999999; display: flex; flex-direction: column; gap: 10px; pointer-events: none; }
-        .toast-custom { padding: 12px 24px; border-radius: 50px; font-weight: 500; font-size: 0.95rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1); animation: toastSlideInRight 0.3s ease forwards; max-width: 350px; pointer-events: auto; border: none; }
-        .toast-custom.success { background: #10b981; color: white; }
-        .toast-custom.error { background: #ef4444; color: white; }
-        .toast-custom.warning { background: #f59e0b; color: white; }
-        .toast-custom.info { background: #3b82f6; color: white; }
-        .toast-custom .toast-close { background: transparent; border: none; color: white; opacity: 0.8; margin-left: 15px; cursor: pointer; font-size: 1rem; }
-        .toast-custom .toast-close:hover { opacity: 1; }
-        @keyframes toastSlideInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
-        
-        /* Card designs */
-        .card { border: 1px solid var(--gray-light); border-radius: 12px; overflow: hidden; transition: all 0.3s; height: 100%; background: white; }
-        .card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); border-color: transparent; }
-        .card-img-top { height: 180px; object-fit: cover; width: 100%; background: #f1f5f9; }
-        
-        /* Client cards */
-        .client-card { border: 1px solid var(--gray-light); border-radius: 12px; padding: 1.5rem; text-align: center; background: white; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0; transition: none; gap: 1rem; width: 100%; }
-        .client-icon { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: rgba(37, 99, 235, 0.1); border-radius: 50%; }
-        .client-name { font-size: 1.25rem; margin-bottom: 0.25rem; }
-        .client-website { font-size: 0.8rem; color: var(--gray); margin-bottom: 0.75rem; word-break: break-word; }
-        .client-description { font-size: 0.875rem; line-height: 1.4; color: var(--dark); margin-bottom: 1rem; }
-        .client-link { color: var(--primary); text-decoration: none; font-size: 0.875rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem; }
-        .client-link:hover { gap: 0.75rem; color: var(--primary-dark); }
-        .client-link:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
-        
-        .skill-item { background: white; border: 1px solid var(--gray-light); border-radius: 8px; padding: 1rem; text-align: center; transition: all 0.3s; height: 100%; }
-        .badge-tech { background: var(--gray-light); color: var(--dark); padding: 0.35rem 0.75rem; border-radius: 20px; font-size: 0.8125rem; font-weight: 500; margin: 0.25rem; display: inline-block; }
-        .contact-info { background: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); }
-        .form-control-modern { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 0.75rem 1rem; color: white; font-size: 0.9375rem; transition: all 0.3s; width: 100%; }
-        .form-control-modern:focus { background: rgba(255, 255, 255, 0.1); border-color: var(--primary); outline: none; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2); color: white; }
-        
-        /* Footer styles - updated for better icon visibility */
-        .footer { background: #0a0f1a; color: #fff; padding: 3rem 0; border-top: 1px solid rgba(255,255,255,0.05); }
-        .footer-links a { color: rgba(255, 255, 255, 0.7); text-decoration: none !important; font-size: 0.875rem; transition: color 0.2s; }
-        .footer-links a:hover { color: white; }
-        .footer-links a:focus-visible { outline: 2px solid white; outline-offset: 2px; border-radius: 4px; }
-        
-        /* Social icons in footer  */
-        .footer .d-flex.gap-3 a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-size: 1.25rem;
-            transition: all 0.3s;
-            text-decoration: none;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-        
-        .footer .d-flex.gap-3 a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-            border-color: var(--primary);
-        }
-        
-        .footer .d-flex.gap-3 a .fa-x-twitter {
-            color: white;
-            font-size: 1.25rem;
-        }
-        
-        .stat-box { text-align: center; padding: 1.5rem; background: white; border-radius: 12px; border: 1px solid var(--gray-light); }
-        .timeline { border-left: 2px solid var(--primary); padding-left: 1.5rem; }
-        .timeline-item { position: relative; padding-bottom: 1.5rem; }
-        .timeline-item::before { content: ''; position: absolute; left: -1.9rem; top: 0.25rem; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); border: 2px solid white; }
-        
-        /* Client row - exactly 3 cards per row */
-        .client-row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .client-row .client-card {
-            flex: 0 0 calc(33.333% - 1rem);
-            max-width: 350px;
-            min-width: 260px;
-        }
-        
-        /* Responsive*/
-        @media (max-width: 576px) { 
-            .hero { padding: 5rem 0 3rem; text-align: center; } 
-            .section { padding: 2.5rem 0; } 
-            .container { padding: 0 1.25rem; }
-            .hero-title { font-size: 1.75rem; }
-            .hero-subtitle { font-size: 1rem; }
-            .btn-modern { padding: 0.6rem 1.2rem; font-size: 0.95rem; width: 100%; justify-content: center; }
-            .d-flex.flex-wrap.gap-3 { gap: 0.75rem !important; }
-            /* Make buttons flex of 2 on smaller screens */
-            .hero .d-flex.flex-wrap.gap-3 { display: flex !important; flex-direction: row !important; }
-            .hero .d-flex.flex-wrap.gap-3 .btn-modern { flex: 0 0 calc(50% - 0.375rem); width: auto; margin: 0; }
-            
-            .client-row .client-card { 
-                flex: 0 0 100% !important; 
-                max-width: 100% !important;
-                min-width: 100% !important;
-            }
-            .client-icon { width: 50px; height: 50px; font-size: 1.5rem; }
-            .client-name { font-size: 1.1rem; }
-            .stat-box { padding: 1rem; }
-            .contact-info { padding: 1.5rem; }
-            /* Footer links grid layout for small devices */
-            .footer-links { display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 0.75rem 1rem !important; }
-            .footer-links a { text-align: left; }
-        }
-        @media (min-width: 577px) and (max-width: 768px) { 
-            .hero { padding: 6rem 0 4rem; text-align: center; } 
-            .section { padding: 3rem 0; } 
-            .section-title::after { left: 50%; transform: translateX(-50%); } 
-            .navbar-collapse { background: white; padding: 1rem; border-radius: 12px; margin-top: 1rem; }
-            /* Make buttons flex of 2 on tablets */
-            .hero .d-flex.flex-wrap.gap-3 { display: flex !important; flex-direction: row !important; justify-content: center !important; }
-            .hero .d-flex.flex-wrap.gap-3 .btn-modern { flex: 0 0 calc(50% - 0.375rem); width: auto; }
-            
-            .client-row .client-card { 
-                flex: 0 0 calc(50% - 0.75rem) !important;
-                min-width: calc(50% - 0.75rem) !important;
-                max-width: calc(50% - 0.75rem) !important;
-            }
-            /* Footer links grid for tablets as well */
-            .footer-links { display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 0.75rem 1rem !important; }
-        }
-        
-        /* Accessibility */
-        .section-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; margin-bottom: 2rem; position: relative; display: inline-block; }
-        .section-title::after { content: ''; position: absolute; bottom: -0.5rem; left: 0; width: 60px; height: 3px; background: var(--primary); border-radius: 2px; }
-        .center-title .section-title::after { left: 50%; transform: translateX(-50%); }
-        a:focus-visible, button:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
-        
-        /* High contrast mode support */
-        @media (prefers-contrast: high) { :root { --primary: #0000ff; --primary-dark: #0000cc; } }
-        
-        /* Reduced motion */
-        @media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
-        
-        /* Loading spinner */
-        .spinner { width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.8s linear infinite; display: inline-block; }
-        @keyframes spin { to { transform: rotate(360deg); } }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>John Gitau - Full Stack Developer</title>
+
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#2563eb;--primary-dark:#1d4ed8;--dark:#0f172a;--gray:#64748b;--gray-light:#e2e8f2}
+body{font-family:'Inter',sans-serif;line-height:1.5;color:var(--dark);overflow-x:hidden}
+.container{max-width:1280px;margin:auto;padding:0 1.5rem}
+.section{padding:5rem 0}
+.bg-light{background:#f8fafc}
+.hero{padding:7rem 0 5rem;background:#f8fafc}
+.btn-modern{background:var(--primary);color:#fff;border:none;padding:.75rem 1.5rem;border-radius:8px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem}
+.btn-modern:hover{background:var(--primary-dark)}
+.navbar{background:rgba(255,255,255,.98);backdrop-filter:blur(10px);padding:.75rem 0;position:fixed;width:100%;z-index:1000}
+.card{border:1px solid var(--gray-light);border-radius:12px;overflow:hidden;transition:.3s;height:100%;background:white}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.08);border-color:transparent}
+.card-img-top{height:180px;object-fit:cover}
+.skill-item{background:white;border:1px solid var(--gray-light);border-radius:8px;padding:1rem;text-align:center}
+.contact{background:var(--dark);color:white;padding:5rem 0}
+.contact-info{background:rgba(255,255,255,.05);border-radius:16px;padding:2rem;border:1px solid rgba(255,255,255,.1)}
+.form-control-modern{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.75rem 1rem;color:white;width:100%}
+.form-control-modern:focus{background:rgba(255,255,255,.1);border-color:var(--primary);outline:none;color:white}
+.social-icon{width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.15);color:white;font-size:1.1rem;border:1px solid rgba(255,255,255,.2);transition:.3s;text-decoration:none}
+.social-icon:hover{background:var(--primary);transform:translateY(-3px)}
+.section-title{font-size:2rem;font-weight:600;margin-bottom:2rem;position:relative;display:inline-block}
+.section-title::after{content:'';position:absolute;bottom:-.5rem;left:0;width:60px;height:3px;background:var(--primary)}
+
+.footer{background:#020617;color:#e2e8f0;padding:2rem 0;border-top:1px solid rgba(255,255,255,.08)}
+.footer p{font-size:.9rem}
+.footer a{color:#cbd5f5;transition:.25s}
+.footer a:hover{color:#fff}
+.footer .fab{font-size:1.05rem}
+.footer .fa-x-twitter{color:#fff;font-weight:600}
+.footer-links a{color:#cbd5f5;text-decoration:none;font-size:.85rem}
+.footer-links a:hover{color:#fff}
+
+</style>
 </head>
+
 <body>
-    <!-- Skip to main content link for accessibility -->
-    <a href="#main-content" class="visually-hidden-focusable" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;">Skip to main content</a>
 
-    <!-- Custom Toast Container -->
-    <div id="toast-container" class="toast-container-custom"></div>
+<nav class="navbar navbar-expand-lg fixed-top">
+<div class="container">
+<a class="navbar-brand" href="#"><i class="fas fa-code me-2"></i>John Gitau</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="nav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+<li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+<li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top" aria-label="Main navigation">
-        <div class="container">
-            <a class="navbar-brand" href="#" aria-label="John Gitau - Full Stack Developer">
-                <i class="fas fa-code me-2" aria-hidden="true"></i>John Gitau
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about" aria-current="page">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#clients">Clients</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<section class="hero">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-6">
+<h1>Full Stack Developer</h1>
+<p>Building modern web and mobile applications with scalable architecture.</p>
+<a href="#projects" class="btn-modern">View Work</a>
+</div>
+<div class="col-lg-6 text-center mt-5 mt-lg-0">
+<img src="tech-john.png" class="img-fluid rounded-4 shadow-lg" width="500">
+</div>
+</div>
+</div>
+</section>
 
-    <main id="main-content">
-        <!-- Hero Section -->
-        <section class="hero" aria-label="Hero section">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <h1 class="hero-title">Full Stack Developer</h1>
-                        <p class="hero-subtitle">Building modern web and mobile applications with scalable architecture, intuitive user experiences and efficient backend systems.</p>
-                        <div class="d-flex flex-wrap gap-3 justify-content-start">
-                            <a href="#projects" class="btn-modern">View My Work</a>
-                            <a href="#contact" class="btn-modern" style="background: var(--primary-dark);">Contact Me</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 text-center mt-5 mt-lg-0">
-                        <img src="tech-john.png"                              
-                             class="img-fluid rounded-4 shadow-lg" 
-                             alt="Tech-John logo"
-                             width="500"
-                             height="333"
-                             loading="eager"
-                             fetchpriority="high">
-                    </div>
-                </div>
-            </div>
-        </section>
+<section id="about" class="section">
+<div class="container">
+<h2 class="section-title">About Me</h2>
+<p>I'm a passionate Full Stack Developer with experience building modern web applications.</p>
+</div>
+</section>
 
-        <!-- About Section -->
-        <section id="about" class="section" aria-labelledby="about-heading">
-            <div class="container">
-                <h2 id="about-heading" class="section-title">About Me</h2>
-                <div class="row">
-                    <div class="col-lg-6 mb-4 mb-lg-0">
-                        <p class="fs-5 mb-3">I'm a passionate <span class="text-primary fw-semibold">Full Stack Developer</span> with expertise in building modern web and mobile applications.</p>
-                        <p class="mb-3">Graduated with a BSc in Computer Science from Kirinyaga University. I create digital solutions that solve real problems with exceptional user experiences.</p>
-                        <p class="mb-4">My approach combines technical expertise with a keen eye for design and user experience, ensuring every project delivers both functionality and beauty.</p>
-                        
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="stat-box">
-                                    <div class="stat-number">3+</div>
-                                    <div class="stat-label">Years Experience</div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="stat-box">
-                                    <div class="stat-number">50+</div>
-                                    <div class="stat-label">Projects Completed</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="p-4 bg-white rounded-4 border">
-                            <h3 class="h5 fw-semibold mb-4">Education & Background</h3>
-                            <div class="timeline">
-                                <div class="timeline-item">
-                                    <div class="timeline-date">2019 - 2023</div>
-                                    <div class="timeline-title">BSc Computer Science</div>
-                                    <p class="timeline-text">Kirinyaga University - Graduated with honors, focusing on software engineering and web technologies.</p>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-date">2023 - Present</div>
-                                    <div class="timeline-title">Professional Development</div>
-                                    <p class="timeline-text">Continuous learning in React, Node.js and cloud technologies through courses and hands-on projects.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section id="projects" class="section bg-light">
+<div class="container">
+<h2 class="section-title">Projects</h2>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section bg-light" aria-labelledby="projects-heading">
-            <div class="container">
-                <div class="text-center center-title mb-5">
-                    <h2 id="projects-heading" class="section-title">My Projects</h2>
-                    <p class="text-secondary">A selection of my recent work across various domains</p>
-                </div>
-                <div class="row g-4">
-                    <!-- Project 1 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card">
-                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                                 class="card-img-top" 
-                                 alt="E-commerce platform dashboard interface"
-                                 width="600"
-                                 height="400"
-                                 loading="lazy">
-                            <div class="card-body">
-                                <h3 class="card-title h5">E-commerce Platform</h3>
-                                <p class="card-text">Full-featured online store with cart, authentication and payment processing.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 2 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                                 class="card-img-top" 
-                                 alt="Group management system interface"
-                                 width="600"
-                                 height="400"
-                                 loading="lazy">
-                            <div class="card-body">
-                                <h3 class="card-title h5">Group Management System</h3>
-                                <p class="card-text">Comprehensive platform for managing organizations with roles and permissions.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 3 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card">
-                            <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                                 class="card-img-top" 
-                                 alt="Mobile transport app interface"
-                                 width="600"
-                                 height="400"
-                                 loading="lazy">
-                            <div class="card-body">
-                                <h3 class="card-title h5">Nairobi Transport App</h3>
-                                <p class="card-text">Mobile app for navigating public transport with real-time updates.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 4 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card">
-                            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                                 class="card-img-top" 
-                                 alt="Agricultural platform dashboard"
-                                 width="600"
-                                 height="400"
-                                 loading="lazy">
-                            <div class="card-body">
-                                <h3 class="card-title h5">Agricultural Market Platform</h3>
-                                <p class="card-text">Platform connecting farmers with buyers, featuring inventory management.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 5 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                                 class="card-img-top" 
-                                 alt="Business analytics dashboard"
-                                 width="600"
-                                 height="400"
-                                 loading="lazy">
-                            <div class="card-body">
-                                <h3 class="card-title h5">Business Analytics Dashboard</h3>
-                                <p class="card-text">Interactive dashboard for visualizing business metrics.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 6 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card">
-                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                                 class="card-img-top" 
-                                 alt="Task management system interface"
-                                 width="600"
-                                 height="400"
-                                 loading="lazy">
-                            <div class="card-body">
-                                <h3 class="card-title h5">Task Management System</h3>
-                                <p class="card-text">Collaborative project management tool with task assignment.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div class="row g-4">
 
-        <!-- Clients Section-->
-        <section id="clients" class="section" aria-labelledby="clients-heading">
-            <div class="container">
-                <div class="text-center center-title mb-5">
-                    <h2 id="clients-heading" class="section-title">Satisfied Clients</h2>
-                    <p class="text-secondary">Trusted by organizations to deliver robust digital solutions</p>
-                </div>
-                
-                <!-- First Row - 3 client cards -->
-                <div class="client-row">
-                    <!-- Client 1: Pioneer Legacy Group -->
-                    <div class="client-card">
-                        <div class="client-icon" aria-hidden="true">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <h3 class="client-name h5">PioLG</h3>
-                        <div class="client-website">pioneer-legacy-group.fwh.is</div>
-                        <p class="client-description">A secure web-based organizational management system featuring role-based access control, member registration, financial tracking, meeting scheduling, authentication system and administrative dashboard.</p>
-                        <a href="https://pioneer-legacy-group.fwh.is/" target="_blank" rel="noopener noreferrer" class="client-link" aria-label="Visit Pioneer Legacy Group website">
-                            Visit Website <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                    
-                    <!-- Client 2: Gacharage Tea Welfare Staff Group -->
-                    <div class="client-card">
-                        <div class="client-icon" aria-hidden="true">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3 class="client-name h5">GTWSG</h3>
-                        <div class="client-website">gacharagewelfarestaff.co.ke</div>
-                        <p class="client-description">A comprehensive staff welfare management portal with secure login, role-based dashboards, contribution tracking, internal communication and structured record management.</p>
-                        <a href="https://gacharagewelfarestaff.co.ke/" target="_blank" rel="noopener noreferrer" class="client-link" aria-label="Visit Gacharage Tea Welfare Staff Group portal">
-                            Visit Website <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                    
-                    <!-- Client 3: Buffalo10 -->
-                    <div class="client-card">
-                        <div class="client-icon" aria-hidden="true">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <h3 class="client-name h5">Buffalo10</h3>
-                        <div class="client-website">buffalo10.great-site.net</div>
-                        <p class="client-description">A modern business web platform designed to showcase services, manage client interactions, and provide a responsive user experience with structured backend integration and secure authentication.</p>
-                        <a href="https://buffalo10.great-site.net/" target="_blank" rel="noopener noreferrer" class="client-link" aria-label="Visit Buffalo10 website">
-                            Visit Website <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
+<div class="col-md-4">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=600&q=80" class="card-img-top">
+<div class="card-body">
+<h5>E-commerce Platform</h5>
+<p>Online store with authentication and payment processing.</p>
+</div>
+</div>
+</div>
 
-                <!-- Second Row - 2 client cards (will be centered) -->
-                <div class="client-row">
-                    <!-- Client 4: The Gwatchman -->
-                    <div class="client-card">
-                        <div class="client-icon" aria-hidden="true">
-                            <i class="fas fa-couch"></i>
-                        </div>
-                        <h3 class="client-name h5">The Gwatchman</h3>
-                        <div class="client-website">thegwatchman.co.ke</div>
-                        <p class="client-description">A professional furniture tracking and management system with secure authentication, order management, product control, reporting dashboard and structured database integration for efficient business operations.</p>
-                        <a href="https://thegwatchman.co.ke/" target="_blank" rel="noopener noreferrer" class="client-link" aria-label="Visit The Gwatchman website">
-                            Visit Website <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                    
-                    <!-- Client 5: Vincent Macharia Mwangi -->
-                    <div class="client-card">
-                        <div class="client-icon" aria-hidden="true">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h3 class="client-name h5">Vincent Macharia Mwangi</h3>
-                        <div class="client-website">vincent.fwh.is</div>
-                        <p class="client-description">Mechanical Design Engineer specializing in product development, FEA analysis, and mechanical system optimization with 2+ years of experience in innovative design solutions and engineering consultation.</p>
-                        <a href="https://vincent.fwh.is/" target="_blank" rel="noopener noreferrer" class="client-link" aria-label="Visit Vincent Macharia Mwangi website">
-                            Visit Website <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Client information -->
-                <div class="row mt-5">
-                    <div class="col-12">
-                        <div class="bg-light p-3 rounded-4 text-center">
-                            <p class="mb-2 small text-secondary">Working with organizations across Kenya to build scalable, secure and user-friendly web applications.</p>
-                            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                                <div class="d-flex align-items-center gap-1">
-                                    <i class="fas fa-check-circle text-primary small" aria-hidden="true"></i>
-                                    <span class="small">Custom Development</span>
-                                </div>
-                                <div class="d-flex align-items-center gap-1">
-                                    <i class="fas fa-check-circle text-primary small" aria-hidden="true"></i>
-                                    <span class="small">Staff Portals</span>
-                                </div>
-                                <div class="d-flex align-items-center gap-1">
-                                    <i class="fas fa-check-circle text-primary small" aria-hidden="true"></i>
-                                    <span class="small">Business Systems</span>
-                                </div>
-                                <div class="d-flex align-items-center gap-1">
-                                    <i class="fas fa-check-circle text-primary small" aria-hidden="true"></i>
-                                    <span class="small">Ongoing Support</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div class="col-md-4">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" class="card-img-top">
+<div class="card-body">
+<h5>Group Management System</h5>
+<p>Platform for managing organizations with roles and permissions.</p>
+</div>
+</div>
+</div>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section bg-light" aria-labelledby="skills-heading">
-            <div class="container">
-                <div class="text-center center-title mb-5">
-                    <h2 id="skills-heading" class="section-title">Technical Skills</h2>
-                    <p class="text-secondary">Technologies and tools I work with</p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-3">
-                        <div class="skill-item">
-                            <i class="fas fa-code skill-icon" aria-hidden="true"></i>
-                            <h3 class="skill-name h5">Frontend</h3>
-                            <p class="skill-level">React, Vue, Angular, TypeScript</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="skill-item">
-                            <i class="fas fa-server skill-icon" aria-hidden="true"></i>
-                            <h3 class="skill-name h5">Backend</h3>
-                            <p class="skill-level">Node.js, Python, PHP, Laravel</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="skill-item">
-                            <i class="fas fa-mobile-alt skill-icon" aria-hidden="true"></i>
-                            <h3 class="skill-name h5">Mobile</h3>
-                            <p class="skill-level">React Native, Flutter</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="skill-item">
-                            <i class="fas fa-database skill-icon" aria-hidden="true"></i>
-                            <h3 class="skill-name h5">Tools & DevOps</h3>
-                            <p class="skill-level">MySQL, MongoDB, Docker, AWS</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div class="col-md-4">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=600&q=80" class="card-img-top">
+<div class="card-body">
+<h5>Nairobi Transport App</h5>
+<p>Mobile app for navigating public transport.</p>
+</div>
+</div>
+</div>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact" aria-labelledby="contact-heading">
-            <div class="container">
-                <h2 id="contact-heading" class="section-title text-white mb-5">Get In Touch</h2>
-                <div class="row g-5">
-                    <div class="col-lg-5">
-                        <div class="contact-info">
-                            <p class="mb-4 fs-6">Available for freelance projects and full-time opportunities. Let's create something amazing together!</p>
-                            
-                            <div class="mb-4">
-                                <p><i class="fas fa-envelope" aria-hidden="true"></i> jonterob756@gmail.com</p>
-                                <p><i class="fas fa-phone" aria-hidden="true"></i> +254 110 856 452</p>
-                                <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Nairobi, Kenya</p>
-                            </div>
-                            
-                            <div>
-                                <h3 class="h6 mb-3 fs-6">Connect with me</h3>
-                                <div class="d-flex gap-3">
-                                    <a href="https://jonterob.github.io/Tech-John/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-                                        <i class="fab fa-github" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/john-gitau-834063254/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3Bz4DkSEozT3y2IVUHEHxf3g%3D%3D" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-                                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="https://x.com/JonteRob" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="X profile">
-                                        <i class="fab fa-x-twitter" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-7">
-                        <form id="contact-form" novalidate>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label for="name" class="visually-hidden">Your Name</label>
-                                    <input type="text" class="form-control-modern" name="name" id="name" 
-                                           placeholder="Your Name" required aria-required="true">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="email" class="visually-hidden">Your Email</label>
-                                    <input type="email" class="form-control-modern" name="email" id="email" 
-                                           placeholder="Your Email" required aria-required="true">
-                                </div>
-                                <div class="col-12">
-                                    <label for="subject" class="visually-hidden">Subject</label>
-                                    <input type="text" class="form-control-modern" name="subject" id="subject" 
-                                           placeholder="Subject" required aria-required="true">
-                                </div>
-                                <div class="col-12">
-                                    <label for="message" class="visually-hidden">Message</label>
-                                    <textarea class="form-control-modern" name="message" id="message" rows="5" 
-                                              placeholder="Tell me about your project..." required aria-required="true"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn-modern w-100" id="submit-btn">
-                                        <span id="btn-text">Send Message</span>
-                                        <span id="btn-spinner" class="spinner d-none" role="status" aria-hidden="true"></span>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+</div>
+</div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer" aria-label="Footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h2 class="h5 mb-3 fs-6">John Gitau</h2>
-                    <p class="opacity-75 small">Full Stack Developer creating innovative digital solutions through clean, efficient code.</p>
-                    <div class="d-flex gap-3">
-                        <a href="https://github.com/johngitau" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/johngitau" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://x.com/JonteRob" target="_blank" rel="noopener noreferrer" aria-label="X">
-                            <i class="fab fa-x-twitter" "></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-4 mb-lg-0">
-                    <h3 class="h6 mb-3 fs-6">Quick Links</h3>
-                    <div class="footer-links d-flex flex-column gap-2">
-                        <a href="#about">About</a>
-                        <a href="#projects">Projects</a>
-                        <a href="#clients">Clients</a>
-                        <a href="#skills">Skills</a>
-                        <a href="#contact">Contact</a>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <h3 class="h6 mb-3 fs-6">Legal</h3>
-                    <div class="footer-links d-flex flex-column gap-2">
-                        <a href="privacy.html" aria-disabled="true">Privacy Policy</a>
-                        <a href="terms.html" aria-disabled="true">Terms of Service</a>
-                    </div>
-                </div>
-            </div>
-            <hr class="opacity-25 my-4">
-            <div class="text-center">
-                <p class="mb-0 opacity-75 small">&copy; <span id="current-year"></span> John Gitau. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+<section id="skills" class="section bg-light">
+<div class="container">
+<h2 class="section-title">Skills</h2>
+<div class="row g-4">
+<div class="col-md-3"><div class="skill-item"><i class="fas fa-code"></i><h5>Frontend</h5><p>React, Vue, Angular</p></div></div>
+<div class="col-md-3"><div class="skill-item"><i class="fas fa-server"></i><h5>Backend</h5><p>Node.js, PHP</p></div></div>
+<div class="col-md-3"><div class="skill-item"><i class="fas fa-mobile"></i><h5>Mobile</h5><p>React Native</p></div></div>
+<div class="col-md-3"><div class="skill-item"><i class="fas fa-database"></i><h5>DevOps</h5><p>Docker, AWS</p></div></div>
+</div>
+</div>
+</section>
 
-    <!-- EmailJS SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<section id="contact" class="contact">
+<div class="container">
+<h2 class="section-title text-white">Get In Touch</h2>
+<div class="row g-5">
 
-    <script>
-        (function() {
-            // EmailJS Configuration
-            const EMAILJS_CONFIG = {
-                PUBLIC_KEY: "Q1Db3xO7terlVPf3w",
-                SERVICE_ID: "service_v9bijqc",
-                TEMPLATE_ID: "template_wszcdnw"
-            };
+<div class="col-lg-5">
+<div class="contact-info">
+<p>Email: jonterob756@gmail.com</p>
+<p>Phone: +254 110 856 452</p>
+<p>Nairobi, Kenya</p>
 
-            // Toast notification system 
-            const Toast = {
-                container: document.getElementById('toast-container'),
-                show(message, type = 'info') {
-                    const toast = document.createElement('div');
-                    toast.className = `toast-custom ${type}`;
-                    toast.setAttribute('role', 'alert');
-                    toast.setAttribute('aria-live', 'assertive');
-                    toast.setAttribute('aria-atomic', 'true');
-                    
-                    toast.innerHTML = `
-                        <span>${message}</span>
-                        <button class="toast-close" onclick="this.closest('.toast-custom').remove()" aria-label="Close notification">
-                            <i class="fas fa-times" aria-hidden="true"></i>
-                        </button>
-                    `;
-                    
-                    this.container.appendChild(toast);
-                    
-                    setTimeout(() => {
-                        if (toast.parentNode) {
-                            toast.remove();
-                        }
-                    }, 4000);
-                },
-                success(m) { this.show(m,'success'); },
-                error(m) { this.show(m,'error'); },
-                warning(m) { this.show(m,'warning'); },
-                info(m) { this.show(m,'info'); }
-            };
+<h6 class="mt-4">Connect with me</h6>
 
-            // Initialize EmailJS
-            emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
-            console.log('EmailJS initialized');
+<div class="d-flex gap-3">
+<a href="https://github.com/johngitau" class="social-icon"><i class="fab fa-github"></i></a>
+<a href="https://linkedin.com" class="social-icon"><i class="fab fa-linkedin"></i></a>
+<a href="https://x.com/JonteRob" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+</div>
 
-            // DOM Ready
-            document.addEventListener('DOMContentLoaded', function() {
-                // Update current year
-                document.getElementById('current-year').textContent = new Date().getFullYear();
+</div>
+</div>
 
-                // Navbar scroll effect
-                let ticking = false;
-                window.addEventListener('scroll', () => {
-                    if (!ticking) {
-                        window.requestAnimationFrame(() => {
-                            document.querySelector('.navbar').classList.toggle('navbar-scrolled', window.scrollY > 50);
-                            ticking = false;
-                        });
-                        ticking = true;
-                    }
-                });
+<div class="col-lg-7">
 
-                // Smooth scrolling for navigation links
-                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                    anchor.addEventListener('click', function(e) {
-                        const href = this.getAttribute('href');
-                        if (href === '#') return;
-                        
-                        e.preventDefault();
-                        const targetElement = document.querySelector(href);
-                        
-                        if (targetElement) {
-                            const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                            const targetPosition = targetElement.offsetTop - navbarHeight - 20;
-                            
-                            window.scrollTo({
-                                top: targetPosition,
-                                behavior: 'smooth'
-                            });
-                            
-                            // Close mobile menu
-                            const navbarCollapse = document.querySelector('.navbar-collapse');
-                            if (navbarCollapse.classList.contains('show')) {
-                                bootstrap.Collapse.getInstance(navbarCollapse)?.hide();
-                            }
-                        }
-                    });
-                });
+<form>
+<div class="row g-3">
+<div class="col-md-6"><input type="text" class="form-control-modern" placeholder="Name"></div>
+<div class="col-md-6"><input type="email" class="form-control-modern" placeholder="Email"></div>
+<div class="col-12"><input type="text" class="form-control-modern" placeholder="Subject"></div>
+<div class="col-12"><textarea class="form-control-modern" rows="5" placeholder="Message"></textarea></div>
+<div class="col-12"><button class="btn-modern w-100">Send Message</button></div>
+</div>
+</form>
 
-                // Contact Form
-                const contactForm = document.getElementById('contact-form');
-                
-                contactForm.addEventListener('submit', async function(e) {
-                    e.preventDefault();
-                    
-                    const submitBtn = document.getElementById('submit-btn');
-                    const btnText = document.getElementById('btn-text');
-                    const btnSpinner = document.getElementById('btn-spinner');
-                    
-                    // Get form values
-                    const name = document.getElementById('name').value.trim();
-                    const email = document.getElementById('email').value.trim();
-                    const subject = document.getElementById('subject').value.trim();
-                    const message = document.getElementById('message').value.trim();
-                    
-                    // Validation
-                    if (!name || !email || !subject || !message) {
-                        Toast.error('Please fill in all required fields');
-                        return;
-                    }
-                    
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(email)) {
-                        Toast.error('Please enter a valid email address');
-                        return;
-                    }
-                    
-                    // Loading state
-                    submitBtn.disabled = true;
-                    btnSpinner.classList.remove('d-none');
-                    btnText.textContent = 'Sending...';
-                    
-                    // PARAMETERS - name, subject, message, email
-                    const templateParams = {
-                        name: name,
-                        subject: subject,
-                        message: message,
-                        email: email
-                    };
-                    
-                    console.log('Sending with params:', templateParams);
-                    
-                    try {
-                        // Send email using EmailJS 
-                        const response = await emailjs.send(
-                            EMAILJS_CONFIG.SERVICE_ID,
-                            EMAILJS_CONFIG.TEMPLATE_ID,
-                            templateParams
-                        );
-                        
-                        console.log('EmailJS success:', response);
-                        
-                        if (response.status === 200) {
-                            Toast.success('Message sent successfully! I\'ll respond within 24 hours.');
-                            contactForm.reset();
-                        } else {
-                            throw new Error('Failed to send email');
-                        }
-                        
-                    } catch (error) {
-                        console.error('EmailJS error:', error);
-                        
-                        // Show user-friendly error
-                        Toast.error('Failed to send message. Please email me directly at jonterob756@gmail.com');
-                        
-                    } finally {
-                        // Reset button state
-                        submitBtn.disabled = false;
-                        btnSpinner.classList.add('d-none');
-                        btnText.textContent = 'Send Message';
-                    }
-                });
-            });
-        })();
-    </script>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+
+<div class="row">
+
+<div class="col-lg-6 mb-4">
+<h5>John Gitau</h5>
+<p>Full Stack Developer creating modern digital solutions.</p>
+
+<div class="d-flex gap-3">
+<a href="https://github.com/johngitau"><i class="fab fa-github"></i></a>
+<a href="https://linkedin.com"><i class="fab fa-linkedin"></i></a>
+<a href="https://x.com/JonteRob"><i class="fab fa-x-twitter"></i></a>
+</div>
+
+</div>
+
+<div class="col-lg-3">
+<h6>Quick Links</h6>
+<div class="footer-links d-flex flex-column gap-2">
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+
+<div class="col-lg-3">
+<h6>Legal</h6>
+<div class="footer-links d-flex flex-column gap-2">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms</a>
+</div>
+</div>
+
+</div>
+
+<hr class="opacity-25 my-4">
+
+<div class="text-center">
+<p class="mb-0 opacity-75">&copy; <span id="year"></span> John Gitau</p>
+</div>
+
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+
 </body>
 </html>
