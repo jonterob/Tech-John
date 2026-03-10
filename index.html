@@ -77,6 +77,9 @@
         .footer-links a:hover { color: white; }
         .footer-links a:focus-visible { outline: 2px solid white; outline-offset: 2px; border-radius: 4px; }
         
+        /* Make X icon visible in footer */
+        .footer .fa-x-twitter { color: #ffffff; }
+        
         /* Responsive*/
         @media (max-width: 576px) { 
             .hero { padding: 5rem 0 3rem; text-align: center; } 
@@ -247,11 +250,6 @@
                             <div class="card-body">
                                 <h3 class="card-title h5">E-commerce Platform</h3>
                                 <p class="card-text">Full-featured online store with cart, authentication and payment processing.</p>
-                                <div>
-                                    <span class="badge-tech">React</span>
-                                    <span class="badge-tech">Node.js</span>
-                                    <span class="badge-tech">MongoDB</span>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -268,11 +266,6 @@
                             <div class="card-body">
                                 <h3 class="card-title h5">Group Management System</h3>
                                 <p class="card-text">Comprehensive platform for managing organizations with roles and permissions.</p>
-                                <div>
-                                    <span class="badge-tech">Vue.js</span>
-                                    <span class="badge-tech">PHP</span>
-                                    <span class="badge-tech">MySQL</span>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -289,11 +282,6 @@
                             <div class="card-body">
                                 <h3 class="card-title h5">Nairobi Transport App</h3>
                                 <p class="card-text">Mobile app for navigating public transport with real-time updates.</p>
-                                <div>
-                                    <span class="badge-tech">React Native</span>
-                                    <span class="badge-tech">Firebase</span>
-                                    <span class="badge-tech">Maps API</span>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -310,11 +298,6 @@
                             <div class="card-body">
                                 <h3 class="card-title h5">Agricultural Market Platform</h3>
                                 <p class="card-text">Platform connecting farmers with buyers, featuring inventory management.</p>
-                                <div>
-                                    <span class="badge-tech">Vue.js</span>
-                                    <span class="badge-tech">Express</span>
-                                    <span class="badge-tech">MySQL</span>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -331,11 +314,6 @@
                             <div class="card-body">
                                 <h3 class="card-title h5">Business Analytics Dashboard</h3>
                                 <p class="card-text">Interactive dashboard for visualizing business metrics.</p>
-                                <div>
-                                    <span class="badge-tech">React</span>
-                                    <span class="badge-tech">D3.js</span>
-                                    <span class="badge-tech">Python</span>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -352,11 +330,6 @@
                             <div class="card-body">
                                 <h3 class="card-title h5">Task Management System</h3>
                                 <p class="card-text">Collaborative project management tool with task assignment.</p>
-                                <div>
-                                    <span class="badge-tech">Angular</span>
-                                    <span class="badge-tech">Node.js</span>
-                                    <span class="badge-tech">MongoDB</span>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -415,7 +388,7 @@
                 </div>
 
                 <!-- Second row with additional gap -->
-                <div class="d-flex flex-wrap justify-content-center" style="gap: 1.5rem;">
+                <div class="d-flex flex-wrap justify-content-center" style="gap: 1.5rem; margin-bottom: 1.5rem;">
                     <!-- Client 4: The Gwatchman -->
                     <div class="client-card" style="flex: 1 1 300px; max-width: 350px; min-width: 260px; width: 100%;">
                         <div class="client-icon" aria-hidden="true">
@@ -425,6 +398,22 @@
                         <div class="client-website">thegwatchman.co.ke</div>
                         <p class="client-description">A professional furniture tracking and management system with secure authentication, order management, product control, reporting dashboard and structured database integration for efficient business operations.</p>
                         <a href="https://thegwatchman.co.ke/" target="_blank" rel="noopener noreferrer" class="client-link" aria-label="Visit The Gwatchman website">
+                            Visit Website <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Third row with new client -->
+                <div class="d-flex flex-wrap justify-content-center" style="gap: 1.5rem;">
+                    <!-- Client 5: Vincent Macharia Mwangi -->
+                    <div class="client-card" style="flex: 1 1 300px; max-width: 350px; min-width: 260px; width: 100%;">
+                        <div class="client-icon" aria-hidden="true">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="client-name h5">Vincent Macharia Mwangi</h3>
+                        <div class="client-website">vincent.fwh.is</div>
+                        <p class="client-description">Mechanical Design Engineer specializing in product development, FEA analysis, and mechanical system optimization with 2+ years of experience in innovative design solutions and engineering consultation.</p>
+                        <a href="https://vincent.fwh.is/" target="_blank" rel="noopener noreferrer" class="client-link" aria-label="Visit Vincent Macharia Mwangi website">
                             Visit Website <i class="fas fa-arrow-right" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -578,7 +567,7 @@
                     <div class="d-flex gap-3">
                         <a href="https://github.com/johngitau" class="opacity-75 text-white" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
                         <a href="https://linkedin.com/in/johngitau" class="opacity-75 text-white" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                        <a href="https://twitter.com/johngitau" class="opacity-75 text-white" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://x.com/JonteRob" class="opacity-75 text-white" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 mb-4 mb-lg-0">
