@@ -86,6 +86,9 @@
             .hero-subtitle { font-size: 1rem; }
             .btn-modern { padding: 0.6rem 1.2rem; font-size: 0.95rem; width: 100%; justify-content: center; }
             .d-flex.flex-wrap.gap-3 { gap: 0.75rem !important; }
+            /* Make buttons flex of 2 on smaller screens */
+            .hero .d-flex.flex-wrap.gap-3 { display: flex !important; flex-direction: row !important; }
+            .hero .d-flex.flex-wrap.gap-3 .btn-modern { flex: 0 0 calc(50% - 0.375rem); width: auto; margin: 0; }
             .client-card { padding: 1.25rem; }
             .client-icon { width: 50px; height: 50px; font-size: 1.5rem; }
             .client-name { font-size: 1.1rem; }
@@ -94,21 +97,15 @@
             /* Footer links grid layout for small devices */
             .footer-links { display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 0.75rem 1rem !important; }
             .footer-links a { text-align: left; }
-            
-            /* 1. Hero buttons in flex column on smartphone */
-            .hero-buttons-flex {
-                flex-direction: column !important;
-                width: 100%;
-            }
-            .hero-buttons-flex .btn-modern {
-                width: 100%;
-            }
         }
         @media (min-width: 577px) and (max-width: 768px) { 
             .hero { padding: 6rem 0 4rem; text-align: center; } 
             .section { padding: 3rem 0; } 
             .section-title::after { left: 50%; transform: translateX(-50%); } 
             .navbar-collapse { background: white; padding: 1rem; border-radius: 12px; margin-top: 1rem; }
+            /* Make buttons flex of 2 on tablets */
+            .hero .d-flex.flex-wrap.gap-3 { display: flex !important; flex-direction: row !important; justify-content: center !important; }
+            .hero .d-flex.flex-wrap.gap-3 .btn-modern { flex: 0 0 calc(50% - 0.375rem); width: auto; }
             /* Footer links grid for tablets as well */
             .footer-links { display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 0.75rem 1rem !important; }
         }
@@ -128,98 +125,6 @@
         /* Loading spinner */
         .spinner { width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.8s linear infinite; display: inline-block; }
         @keyframes spin { to { transform: rotate(360deg); } }
-
-        /* ----- UPDATES FOR TASK 1,2,3 ----- */
-        /* 2. tech-john logo style (replaces image) */
-        .tech-john-logo {
-            max-width: 400px; 
-            width: 100%;
-            height: auto;
-            border-radius: 1rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            background: #ffffff;
-            padding: 1rem;
-        }
-
-        /* 3. Header/ Navbar more professional */
-        .navbar {
-            background: rgba(255,255,255,0.95);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-            font-weight: 500;
-            transition: all 0.2s;
-        }
-        .navbar.navbar-scrolled {
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            background: rgba(255,255,255,0.98);
-        }
-        .navbar-brand {
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            color: var(--dark) !important;
-        }
-        .navbar-brand i {
-            color: var(--primary);
-        }
-        .nav-link {
-            color: var(--gray) !important;
-            font-weight: 500;
-            padding: 0.5rem 1rem !important;
-            transition: color 0.2s;
-            position: relative;
-        }
-        .nav-link:hover,
-        .nav-link:focus-visible,
-        .nav-link.active {
-            color: var(--primary) !important;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.2s ease;
-        }
-        .nav-link:hover::after,
-        .nav-link:focus-visible::after,
-        .nav-link.active::after {
-            width: 70%;
-        }
-        @media (max-width: 991px) {
-            .navbar-collapse {
-                background: white;
-                margin-top: 0.75rem;
-                padding: 1rem;
-                border-radius: 1rem;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            }
-        }
-        /* navbar toggler modernization */
-        .navbar-toggler {
-            border: 1px solid var(--gray-light);
-            border-radius: 8px;
-            padding: 0.5rem;
-            transition: all 0.2s;
-        }
-        .navbar-toggler:focus {
-            box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
-            border-color: var(--primary);
-        }
-        /* brand icon */
-        .brand-icon {
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
-            border-radius: 8px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            margin-right: 8px;
-        }
     </style>
 </head>
 <body>
@@ -229,19 +134,18 @@
     <!-- Custom Toast Container -->
     <div id="toast-container" class="toast-container-custom"></div>
 
-    <!-- Navigation - Updated for professional UI -->
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top" aria-label="Main navigation">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#" aria-label="John Gitau - Full Stack Developer">
-                <span class="brand-icon me-2"><i class="fas fa-code" aria-hidden="true"></i></span>
-                <span class="fw-semibold">John Gitau</span>
+            <a class="navbar-brand" href="#" aria-label="John Gitau - Full Stack Developer">
+                <i class="fas fa-code me-2" aria-hidden="true"></i>John Gitau
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about" aria-current="page">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#clients">Clients</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
@@ -259,22 +163,19 @@
                     <div class="col-lg-6">
                         <h1 class="hero-title">Full Stack Developer</h1>
                         <p class="hero-subtitle">Building modern web & mobile applications with clean, efficient code. Specializing in React, Node.js and cloud solutions.</p>
-                        <!-- 1. Buttons in flex column for smartphone: added class hero-buttons-flex -->
-                        <div class="d-flex flex-wrap gap-3 justify-content-start hero-buttons-flex">
+                        <div class="d-flex flex-wrap gap-3 justify-content-start">
                             <a href="#projects" class="btn-modern">View My Work</a>
                             <a href="#contact" class="btn-modern" style="background: var(--primary-dark);">Contact Me</a>
                         </div>
                     </div>
                     <div class="col-lg-6 text-center mt-5 mt-lg-0">
-                        <!-- 2. Replaced image with tech-john logo (tech-john.png) -->
-                        <img src="tech-john.png" 
-                             class="img-fluid tech-john-logo" 
+                        <img src="tech-john.png"                              
+                             class="img-fluid rounded-4 shadow-lg" 
                              alt="Tech-John logo"
                              width="500"
                              height="333"
                              loading="eager"
-                             fetchpriority="high"
-                             onerror="this.onerror=null; this.src='https://via.placeholder.com/500x333/2563eb/ffffff?text=Tech-John';">
+                             fetchpriority="high">
                     </div>
                 </div>
             </div>
