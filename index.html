@@ -50,34 +50,8 @@
         .card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); border-color: transparent; }
         .card-img-top { height: 180px; object-fit: cover; width: 100%; background: #f1f5f9; }
         
-        /* Client cards container - 3 per row */
-        .clients-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .client-card { 
-            border: 1px solid var(--gray-light); 
-            border-radius: 12px; 
-            padding: 1.5rem; 
-            text-align: center; 
-            background: white; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            margin: 0; 
-            transition: none; 
-            gap: 1rem; 
-            width: calc(33.333% - 1rem);
-            min-width: 260px;
-            max-width: 350px;
-            flex: 1 1 260px;
-        }
-        
+        /* Client cards */
+        .client-card { border: 1px solid var(--gray-light); border-radius: 12px; padding: 1.5rem; text-align: center; background: white; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0; transition: none; gap: 1rem; width: 100%; }
         .client-icon { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: rgba(37, 99, 235, 0.1); border-radius: 50%; }
         .client-name { font-size: 1.25rem; margin-bottom: 0.25rem; }
         .client-website { font-size: 0.8rem; color: var(--gray); margin-bottom: 0.75rem; word-break: break-word; }
@@ -106,6 +80,21 @@
         /* Make X icon visible in footer */
         .footer .fa-x-twitter { color: #ffffff; }
         
+        /* Client row - exactly 3 cards per row */
+        .client-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .client-row .client-card {
+            flex: 0 0 calc(33.333% - 1rem);
+            max-width: 350px;
+            min-width: 260px;
+        }
+        
         /* Responsive*/
         @media (max-width: 576px) { 
             .hero { padding: 5rem 0 3rem; text-align: center; } 
@@ -118,8 +107,9 @@
             /* Make buttons flex of 2 on smaller screens */
             .hero .d-flex.flex-wrap.gap-3 { display: flex !important; flex-direction: row !important; }
             .hero .d-flex.flex-wrap.gap-3 .btn-modern { flex: 0 0 calc(50% - 0.375rem); width: auto; margin: 0; }
-            .client-card { 
-                width: 100% !important; 
+            
+            .client-row .client-card { 
+                flex: 0 0 100% !important; 
                 max-width: 100% !important;
                 min-width: 100% !important;
             }
@@ -139,8 +129,9 @@
             /* Make buttons flex of 2 on tablets */
             .hero .d-flex.flex-wrap.gap-3 { display: flex !important; flex-direction: row !important; justify-content: center !important; }
             .hero .d-flex.flex-wrap.gap-3 .btn-modern { flex: 0 0 calc(50% - 0.375rem); width: auto; }
-            .client-card { 
-                width: calc(50% - 0.75rem) !important;
+            
+            .client-row .client-card { 
+                flex: 0 0 calc(50% - 0.75rem) !important;
                 min-width: calc(50% - 0.75rem) !important;
                 max-width: calc(50% - 0.75rem) !important;
             }
@@ -380,8 +371,8 @@
                     <p class="text-secondary">Trusted by organizations to deliver robust digital solutions</p>
                 </div>
                 
-                <!-- Clients Grid - 3 per row with automatic wrapping -->
-                <div class="clients-grid">
+                <!-- First Row - 3 client cards -->
+                <div class="client-row">
                     <!-- Client 1: Pioneer Legacy Group -->
                     <div class="client-card">
                         <div class="client-icon" aria-hidden="true">
@@ -420,7 +411,10 @@
                             Visit Website <i class="fas fa-arrow-right" aria-hidden="true"></i>
                         </a>
                     </div>
-                    
+                </div>
+
+                <!-- Second Row - 2 client cards (will be centered) -->
+                <div class="client-row">
                     <!-- Client 4: The Gwatchman -->
                     <div class="client-card">
                         <div class="client-icon" aria-hidden="true">
