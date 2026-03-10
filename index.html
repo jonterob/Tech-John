@@ -22,7 +22,7 @@
     <!-- Critical CSS inline to avoid render blocking -->
     <style>
         /* Critical path CSS */
-        *{margin:0;padding:0;box-sizing:border-box}:root{--primary:#2563eb;--primary-dark:#1d4ed8;--dark:#0f172a;--gray:#64748b;--gray-light:#e2e8f2}body{font-family:'Inter',sans-serif;line-height:1.5;color:var(--dark);overflow-x:hidden}.navbar{background:rgba(255,255,255,.98);backdrop-filter:blur(10px);padding:.75rem 0;position:fixed;top:0;width:100%;z-index:1000}.hero{padding:7rem 0 5rem;background:#f8fafc}.container{max-width:1280px;margin:0 auto;padding:0 1.5rem}.btn-modern{background:var(--primary);color:#fff;border:none;padding:.75rem 1.5rem;border-radius:8px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;text-decoration:none}.text-primary{color:var(--primary)}.section{padding:5rem 0}.bg-light{background:#f8fafc}.contact{background:var(--dark);color:#fff;padding:5rem 0}.footer{background:var(--dark);color:#fff;padding:3rem 0}
+        *{margin:0;padding:0;box-sizing:border-box}:root{--primary:#2563eb;--primary-dark:#1d4ed8;--dark:#0f172a;--gray:#64748b;--gray-light:#e2e8f2}body{font-family:'Inter',sans-serif;line-height:1.5;color:var(--dark);overflow-x:hidden}.navbar{background:rgba(255,255,255,.98);backdrop-filter:blur(10px);padding:.75rem 0;position:fixed;top:0;width:100%;z-index:1000}.hero{padding:7rem 0 5rem;background:#f8fafc}.container{max-width:1280px;margin:0 auto;padding:0 1.5rem}.btn-modern{background:var(--primary);color:#fff;border:none;padding:.75rem 1.5rem;border-radius:8px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;text-decoration:none}.text-primary{color:var(--primary)}.section{padding:5rem 0}.bg-light{background:#f8fafc}.contact{background:var(--dark);color:#fff;padding:5rem 0}.footer{background:#0a0f1a;color:#fff;padding:3rem 0}
     </style>
     
     <!-- Deferred styles -->
@@ -65,20 +65,44 @@
         .contact-info { background: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); }
         .form-control-modern { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 0.75rem 1rem; color: white; font-size: 0.9375rem; transition: all 0.3s; width: 100%; }
         .form-control-modern:focus { background: rgba(255, 255, 255, 0.1); border-color: var(--primary); outline: none; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2); color: white; }
-        /* Social icons */
-        .social-icon { width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255, 255, 255, 0.15); color: white; font-size: 1.125rem; transition: all 0.3s; text-decoration: none !important; border: 1px solid rgba(255,255,255,0.2); }
-        .social-icon:hover { background: var(--primary); color: white; transform: translateY(-3px); border-color: var(--primary); }
-        .social-icon:focus-visible { outline: 2px solid white; outline-offset: 2px; }
+        
+        /* Footer styles - updated for better icon visibility */
+        .footer { background: #0a0f1a; color: #fff; padding: 3rem 0; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-links a { color: rgba(255, 255, 255, 0.7); text-decoration: none !important; font-size: 0.875rem; transition: color 0.2s; }
+        .footer-links a:hover { color: white; }
+        .footer-links a:focus-visible { outline: 2px solid white; outline-offset: 2px; border-radius: 4px; }
+        
+        /* Social icons in footer - enhanced visibility */
+        .footer .d-flex.gap-3 a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1.25rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        .footer .d-flex.gap-3 a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+            border-color: var(--primary);
+        }
+        
+        .footer .d-flex.gap-3 a .fa-x-twitter {
+            color: white;
+            font-size: 1.25rem;
+        }
+        
         .stat-box { text-align: center; padding: 1.5rem; background: white; border-radius: 12px; border: 1px solid var(--gray-light); }
         .timeline { border-left: 2px solid var(--primary); padding-left: 1.5rem; }
         .timeline-item { position: relative; padding-bottom: 1.5rem; }
         .timeline-item::before { content: ''; position: absolute; left: -1.9rem; top: 0.25rem; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); border: 2px solid white; }
-        .footer-links a { color: rgba(255, 255, 255, 0.6); text-decoration: none !important; font-size: 0.875rem; transition: color 0.2s; }
-        .footer-links a:hover { color: white; }
-        .footer-links a:focus-visible { outline: 2px solid white; outline-offset: 2px; border-radius: 4px; }
-        
-        /* Make X icon visible in footer */
-        .footer .fa-x-twitter { color: #ffffff; }
         
         /* Client row - exactly 3 cards per row */
         .client-row {
@@ -588,9 +612,15 @@
                     <h2 class="h5 mb-3 fs-6">John Gitau</h2>
                     <p class="opacity-75 small">Full Stack Developer creating innovative digital solutions through clean, efficient code.</p>
                     <div class="d-flex gap-3">
-                        <a href="https://github.com/johngitau" class="opacity-75 text-white" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-                        <a href="https://linkedin.com/in/johngitau" class="opacity-75 text-white" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                        <a href="https://x.com/JonteRob" class="opacity-75 text-white" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+                        <a href="https://github.com/johngitau" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/johngitau" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://x.com/JonteRob" target="_blank" rel="noopener noreferrer" aria-label="X">
+                            <i class="fab fa-x-twitter" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-3 mb-4 mb-lg-0">
