@@ -20,7 +20,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Critical CSS inline - each block on one line -->
-    <style>*{margin:0;padding:0;box-sizing:border-box}:root{--primary:#2563eb;--primary-dark:#1d4ed8;--dark:#0f172a;--gray:#64748b;--gray-light:#e2e8f2;--text-secondary:#4b5563}body{font-family:'Inter',sans-serif;line-height:1.5;color:var(--dark);overflow-x:hidden}.navbar{background:rgba(255,255,255,.98);backdrop-filter:blur(10px);padding:.75rem 0;position:fixed;top:0;width:100%;z-index:1000}.hero{padding:7rem 0 5rem;background:#f8fafc}.container{max-width:1280px;margin:0 auto;padding:0 1.5rem}.btn-modern{background:var(--primary);color:#fff;border:none;padding:.75rem 1.5rem;border-radius:8px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;text-decoration:none}.text-primary{color:var(--primary)}.text-secondary{color:var(--text-secondary)}.section{padding:5rem 0}.bg-light{background:#f8fafc}.contact{background:var(--dark);color:#fff;padding:5rem 0}.footer{background:#0a0f1a;color:#fff;padding:3rem 0;border-top:1px solid rgba(255,255,255,0.05)}</style>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--primary:#2563eb;--primary-dark:#1d4ed8;--dark:#0f172a;--gray:#64748b;--gray-light:#e2e8f2;--text-secondary:#4b5563}
+        body{font-family:'Inter',sans-serif;line-height:1.5;color:var(--dark);overflow-x:hidden}
+        .navbar{background:rgba(255,255,255,.98);backdrop-filter:blur(10px);padding:.75rem 0;position:fixed;top:0;width:100%;z-index:1000}
+        .hero{padding:7rem 0 5rem;background:#f8fafc}
+        .container{max-width:1280px;margin:0 auto;padding:0 1.5rem}
+        .btn-modern{background:var(--primary);color:#fff;border:none;padding:.75rem 1.5rem;border-radius:8px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;text-decoration:none}
+        .text-primary{color:var(--primary)}
+        .text-secondary{color:var(--text-secondary)}
+        .section{padding:5rem 0}
+        .bg-light{background:#f8fafc}
+        .contact{background:var(--dark);color:#fff;padding:5rem 0}
+        .footer{background:#0a0f1a;color:#fff;padding:3rem 0;border-top:1px solid rgba(255,255,255,0.05)}
+    </style>
     
     <!-- Deferred styles with improved loading -->
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -30,7 +44,100 @@
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- Optimized Styles - each block on one line -->
-    <style>.toast-container-custom{position:fixed;top:30px;right:20px;z-index:999999;display:flex;flex-direction:column;gap:10px;pointer-events:none}.toast-custom{padding:12px 24px;border-radius:50px;font-weight:500;font-size:.95rem;box-shadow:0 5px 15px rgba(0,0,0,.1);animation:toastSlideInRight .3s ease forwards;max-width:350px;pointer-events:auto;border:none}.toast-custom.success{background:#10b981;color:#fff}.toast-custom.error{background:#ef4444;color:#fff}.toast-custom.warning{background:#f59e0b;color:#fff}.toast-custom.info{background:#3b82f6;color:#fff}.toast-custom .toast-close{background:transparent;border:none;color:#fff;opacity:.8;margin-left:15px;cursor:pointer;font-size:1rem}.toast-custom .toast-close:hover{opacity:1}@keyframes toastSlideInRight{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}.card{border:1px solid var(--gray-light);border-radius:12px;overflow:hidden;transition:all .3s;height:100%;background:#fff}.card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.08);border-color:transparent}.card-img-top{height:180px;object-fit:cover;width:100%;background:#f1f5f9}.client-card{border:1px solid var(--gray-light);border-radius:12px;padding:1.5rem;text-align:center;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0;transition:none;gap:1rem;width:100%}.client-icon{font-size:2rem;color:var(--primary);margin-bottom:1rem;width:60px;height:60px;display:flex;align-items:center;justify-content:center;background:rgba(37,99,235,.1);border-radius:50%}.client-name{font-size:1.25rem;margin-bottom:.25rem}.client-website{font-size:.8rem;color:var(--gray);margin-bottom:.75rem;word-break:break-word}.client-description{font-size:.875rem;line-height:1.4;color:var(--dark);margin-bottom:1rem}.client-link{color:var(--primary);text-decoration:none;font-size:.875rem;font-weight:500;display:inline-flex;align-items:center;gap:.5rem}.client-link:hover{gap:.75rem;color:var(--primary-dark)}.client-link:focus-visible{outline:2px solid var(--primary);outline-offset:2px;border-radius:4px}.skill-item{background:#fff;border:1px solid var(--gray-light);border-radius:8px;padding:1rem;text-align:center;transition:all .3s;height:100%}.badge-tech{background:var(--gray-light);color:var(--dark);padding:.35rem .75rem;border-radius:20px;font-size:.8125rem;font-weight:500;margin:.25rem;display:inline-block}.contact-info{background:rgba(255,255,255,.05);border-radius:16px;padding:2rem;border:1px solid rgba(255,255,255,.1)}.form-control-modern{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.75rem 1rem;color:#fff;font-size:.9375rem;transition:all .3s;width:100%}.form-control-modern:focus{background:rgba(255,255,255,.1);border-color:var(--primary);outline:none;box-shadow:0 0 0 3px rgba(37,99,235,.2);color:#fff}.social-icon{width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;font-size:1.125rem;transition:all .3s;text-decoration:none!important;border:1px solid rgba(255,255,255,.2)}.social-icon:hover{background:var(--primary);color:#fff;transform:translateY(-3px);border-color:var(--primary)}.social-icon:focus-visible{outline:2px solid #fff;outline-offset:2px}.stat-box{text-align:center;padding:1.5rem;background:#fff;border-radius:12px;border:1px solid var(--gray-light)}.timeline{border-left:2px solid var(--primary);padding-left:1.5rem}.timeline-item{position:relative;padding-bottom:1.5rem}.timeline-item::before{content:'';position:absolute;left:-1.9rem;top:.25rem;width:12px;height:12px;border-radius:50%;background:var(--primary);border:2px solid #fff}.footer-links a{color:rgba(255,255,255,.7);text-decoration:none!important;font-size:.875rem;transition:color .2s}.footer-links a:hover{color:#fff}.footer-links a:focus-visible{outline:2px solid #fff;outline-offset:2px;border-radius:4px}.client-row{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-bottom:1.5rem}.client-row .client-card{flex:0 0 calc(33.333% - 1rem);max-width:350px;min-width:260px}.hero-img{max-width:100%;height:auto;width:100%;max-width:400px;margin:0 auto}.section-title{font-size:clamp(1.5rem,3vw,2rem);font-weight:600;margin-bottom:2rem;position:relative;display:inline-block}.section-title::after{content:'';position:absolute;bottom:-.5rem;left:0;width:60px;height:3px;background:var(--primary);border-radius:2px}.center-title .section-title::after{left:50%;transform:translateX(-50%)}a:focus-visible,button:focus-visible{outline:2px solid var(--primary);outline-offset:2px}.spinner{width:20px;height:20px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite;display:inline-block}@keyframes spin{to{transform:rotate(360deg)}}.footer .d-flex.gap-3 a{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;font-size:1.25rem;transition:all .3s;text-decoration:none;border:1px solid rgba(255,255,255,.25)}.footer .d-flex.gap-3 a:hover{background:var(--primary);transform:translateY(-3px);border-color:var(--primary)}.footer .d-flex.gap-3 a .fa-x-twitter{color:#fff;font-size:1.25rem}@media (max-width:576px){.hero{padding:5rem 0 3rem;text-align:center}.section{padding:2.5rem 0}.container{padding:0 1.25rem}.hero-title{font-size:1.75rem}.hero-subtitle{font-size:1rem}.btn-modern{padding:.6rem 1.2rem;font-size:.95rem;width:100%;justify-content:center}.d-flex.flex-wrap.gap-3{gap:.75rem!important}.hero .d-flex.flex-wrap.gap-3{display:flex!important;flex-direction:row!important}.hero .d-flex.flex-wrap.gap-3 .btn-modern{flex:0 0 calc(50% - .375rem);width:auto;margin:0}.client-row .client-card{flex:0 0 100%!important;max-width:100%!important;min-width:100%!important}.client-icon{width:50px;height:50px;font-size:1.5rem}.client-name{font-size:1.1rem}.stat-box{padding:1rem}.contact-info{padding:1.5rem}.footer-links{display:grid!important;grid-template-columns:repeat(2,1fr)!important;gap:.75rem 1rem!important}.footer-links a{text-align:left}}@media (min-width:577px) and (max-width:768px){.hero{padding:6rem 0 4rem;text-align:center}.section{padding:3rem 0}.section-title::after{left:50%;transform:translateX(-50%)}.navbar-collapse{background:#fff;padding:1rem;border-radius:12px;margin-top:1rem}.hero .d-flex.flex-wrap.gap-3{display:flex!important;flex-direction:row!important;justify-content:center!important}.hero .d-flex.flex-wrap.gap-3 .btn-modern{flex:0 0 calc(50% - .375rem);width:auto}.client-row .client-card{flex:0 0 calc(50% - .75rem)!important;min-width:calc(50% - .75rem)!important;max-width:calc(50% - .75rem)!important}.footer-links{display:grid!important;grid-template-columns:repeat(2,1fr)!important;gap:.75rem 1rem!important}}@media (prefers-contrast:high){:root{--primary:#0000ff;--primary-dark:#0000cc}}@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}</style>
+    <style>
+        .toast-container-custom{position:fixed;top:30px;right:20px;z-index:999999;display:flex;flex-direction:column;gap:10px;pointer-events:none}
+        .toast-custom{padding:12px 24px;border-radius:50px;font-weight:500;font-size:.95rem;box-shadow:0 5px 15px rgba(0,0,0,.1);animation:toastSlideInRight .3s ease forwards;max-width:350px;pointer-events:auto;border:none}
+        .toast-custom.success{background:#10b981;color:#fff}
+        .toast-custom.error{background:#ef4444;color:#fff}
+        .toast-custom.warning{background:#f59e0b;color:#fff}
+        .toast-custom.info{background:#3b82f6;color:#fff}
+        .toast-custom .toast-close{background:transparent;border:none;color:#fff;opacity:.8;margin-left:15px;cursor:pointer;font-size:1rem}
+        .toast-custom .toast-close:hover{opacity:1}
+        @keyframes toastSlideInRight{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
+        
+        .card{border:1px solid var(--gray-light);border-radius:12px;overflow:hidden;transition:all .3s;height:100%;background:#fff}
+        .card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.08);border-color:transparent}
+        .card-img-top{height:180px;object-fit:cover;width:100%;background:#f1f5f9}
+        
+        .client-card{border:1px solid var(--gray-light);border-radius:12px;padding:1.5rem;text-align:center;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0;transition:none;gap:1rem;width:100%}
+        .client-icon{font-size:2rem;color:var(--primary);margin-bottom:1rem;width:60px;height:60px;display:flex;align-items:center;justify-content:center;background:rgba(37,99,235,.1);border-radius:50%}
+        .client-name{font-size:1.25rem;margin-bottom:.25rem}
+        .client-website{font-size:.8rem;color:var(--gray);margin-bottom:.75rem;word-break:break-word}
+        .client-description{font-size:.875rem;line-height:1.4;color:var(--dark);margin-bottom:1rem}
+        .client-link{color:var(--primary);text-decoration:none;font-size:.875rem;font-weight:500;display:inline-flex;align-items:center;gap:.5rem}
+        .client-link:hover{gap:.75rem;color:var(--primary-dark)}
+        .client-link:focus-visible{outline:2px solid var(--primary);outline-offset:2px;border-radius:4px}
+        
+        .skill-item{background:#fff;border:1px solid var(--gray-light);border-radius:8px;padding:1rem;text-align:center;transition:all .3s;height:100%}
+        .badge-tech{background:var(--gray-light);color:var(--dark);padding:.35rem .75rem;border-radius:20px;font-size:.8125rem;font-weight:500;margin:.25rem;display:inline-block}
+        .contact-info{background:rgba(255,255,255,.05);border-radius:16px;padding:2rem;border:1px solid rgba(255,255,255,.1)}
+        .form-control-modern{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.75rem 1rem;color:#fff;font-size:.9375rem;transition:all .3s;width:100%}
+        .form-control-modern:focus{background:rgba(255,255,255,.1);border-color:var(--primary);outline:none;box-shadow:0 0 0 3px rgba(37,99,235,.2);color:#fff}
+        
+        .social-icon{width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;font-size:1.125rem;transition:all .3s;text-decoration:none!important;border:1px solid rgba(255,255,255,.2)}
+        .social-icon:hover{background:var(--primary);color:#fff;transform:translateY(-3px);border-color:var(--primary)}
+        .social-icon:focus-visible{outline:2px solid #fff;outline-offset:2px}
+        
+        .stat-box{text-align:center;padding:1.5rem;background:#fff;border-radius:12px;border:1px solid var(--gray-light)}
+        .timeline{border-left:2px solid var(--primary);padding-left:1.5rem}
+        .timeline-item{position:relative;padding-bottom:1.5rem}
+        .timeline-item::before{content:'';position:absolute;left:-1.9rem;top:.25rem;width:12px;height:12px;border-radius:50%;background:var(--primary);border:2px solid #fff}
+        
+        .footer-links a{color:rgba(255,255,255,.7);text-decoration:none!important;font-size:.875rem;transition:color .2s}
+        .footer-links a:hover{color:#fff}
+        .footer-links a:focus-visible{outline:2px solid #fff;outline-offset:2px;border-radius:4px}
+        
+        .client-row{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-bottom:1.5rem}
+        .client-row .client-card{flex:0 0 calc(33.333% - 1rem);max-width:350px;min-width:260px}
+        
+        .hero-img{max-width:100%;height:auto;width:100%;max-width:400px;margin:0 auto}
+        
+        .section-title{font-size:clamp(1.5rem,3vw,2rem);font-weight:600;margin-bottom:2rem;position:relative;display:inline-block}
+        .section-title::after{content:'';position:absolute;bottom:-.5rem;left:0;width:60px;height:3px;background:var(--primary);border-radius:2px}
+        .center-title .section-title::after{left:50%;transform:translateX(-50%)}
+        
+        a:focus-visible,button:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+        
+        .spinner{width:20px;height:20px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite;display:inline-block}
+        @keyframes spin{to{transform:rotate(360deg)}}
+        
+        .footer .d-flex.gap-3 a{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;font-size:1.25rem;transition:all .3s;text-decoration:none;border:1px solid rgba(255,255,255,.25)}
+        .footer .d-flex.gap-3 a:hover{background:var(--primary);transform:translateY(-3px);border-color:var(--primary)}
+        .footer .d-flex.gap-3 a .fa-x-twitter{color:#fff;font-size:1.25rem}
+        
+        @media (max-width:576px){
+            .hero{padding:5rem 0 3rem;text-align:center}
+            .section{padding:2.5rem 0}
+            .container{padding:0 1.25rem}
+            .hero-title{font-size:1.75rem}
+            .hero-subtitle{font-size:1rem}
+            .btn-modern{padding:.6rem 1.2rem;font-size:.95rem;width:100%;justify-content:center}
+            .d-flex.flex-wrap.gap-3{gap:.75rem!important}
+            .hero .d-flex.flex-wrap.gap-3{display:flex!important;flex-direction:row!important}
+            .hero .d-flex.flex-wrap.gap-3 .btn-modern{flex:0 0 calc(50% - .375rem);width:auto;margin:0}
+            .client-row .client-card{flex:0 0 100%!important;max-width:100%!important;min-width:100%!important}
+            .client-icon{width:50px;height:50px;font-size:1.5rem}
+            .client-name{font-size:1.1rem}
+            .stat-box{padding:1rem}
+            .contact-info{padding:1.5rem}
+            .footer-links{display:grid!important;grid-template-columns:repeat(2,1fr)!important;gap:.75rem 1rem!important}
+            .footer-links a{text-align:left}
+        }
+        
+        @media (min-width:577px) and (max-width:768px){
+            .hero{padding:6rem 0 4rem;text-align:center}
+            .section{padding:3rem 0}
+            .section-title::after{left:50%;transform:translateX(-50%)}
+            .navbar-collapse{background:#fff;padding:1rem;border-radius:12px;margin-top:1rem}
+            .hero .d-flex.flex-wrap.gap-3{display:flex!important;flex-direction:row!important;justify-content:center!important}
+            .hero .d-flex.flex-wrap.gap-3 .btn-modern{flex:0 0 calc(50% - .375rem);width:auto}
+            .client-row .client-card{flex:0 0 calc(50% - .75rem)!important;min-width:calc(50% - .75rem)!important;max-width:calc(50% - .75rem)!important}
+            .footer-links{display:grid!important;grid-template-columns:repeat(2,1fr)!important;gap:.75rem 1rem!important}
+        }
+        
+        @media (prefers-contrast:high){:root{--primary:#0000ff;--primary-dark:#0000cc}}
+        @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+    </style>
 </head>
 <body>
     <!-- Skip to main content link for accessibility -->
@@ -203,7 +310,7 @@
             </div>
         </section>
 
-        <!-- Clients Section -->
+        <!-- Clients Section-->
         <section id="clients" class="section" aria-labelledby="clients-heading">
             <div class="container">
                 <div class="text-center center-title mb-5">
@@ -353,13 +460,18 @@
                 <div class="col-lg-3 mb-4 mb-lg-0">
                     <h3 class="h6 mb-3 fs-6">Quick Links</h3>
                     <div class="footer-links d-flex flex-column gap-2">
-                        <a href="#about">About</a><a href="#projects">Projects</a><a href="#clients">Clients</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+                        <a href="#about">About</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#clients">Clients</a>
+                        <a href="#skills">Skills</a>
+                        <a href="#contact">Contact</a>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <h3 class="h6 mb-3 fs-6">Legal</h3>
                     <div class="footer-links d-flex flex-column gap-2">
-                        <a href="privacy.html" aria-disabled="true">Privacy Policy</a><a href="terms.html" aria-disabled="true">Terms of Service</a>
+                        <a href="privacy.html" aria-disabled="true">Privacy Policy</a>
+                        <a href="terms.html" aria-disabled="true">Terms of Service</a>
                     </div>
                 </div>
             </div>
@@ -370,10 +482,173 @@
         </div>
     </footer>
 
-    <!-- EmailJS SDK with async loading -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" async></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" async></script>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script>(function(){const EMAILJS_CONFIG={PUBLIC_KEY:"Q1Db3xO7terlVPf3w",SERVICE_ID:"service_v9bijqc",TEMPLATE_ID:"template_wszcdnw"};const Toast={container:document.getElementById('toast-container'),show(message,type='info'){const toast=document.createElement('div');toast.className=`toast-custom ${type}`;toast.setAttribute('role','alert');toast.setAttribute('aria-live','assertive');toast.setAttribute('aria-atomic','true');toast.innerHTML=`<span>${message}</span><button class="toast-close" onclick="this.closest('.toast-custom').remove()" aria-label="Close notification"><i class="fas fa-times" aria-hidden="true"></i></button>`;this.container.appendChild(toast);setTimeout(()=>{if(toast.parentNode)toast.remove()},4000)},success(m){this.show(m,'success')},error(m){this.show(m,'error')},warning(m){this.show(m,'warning')},info(m){this.show(m,'info')}};emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);document.addEventListener('DOMContentLoaded',function(){document.getElementById('current-year').textContent=new Date().getFullYear();let ticking=false;window.addEventListener('scroll',()=>{if(!ticking){window.requestAnimationFrame(()=>{document.querySelector('.navbar').classList.toggle('navbar-scrolled',window.scrollY>50);ticking=false});ticking=true}});document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',function(e){const href=this.getAttribute('href');if(href==='#')return;e.preventDefault();const targetElement=document.querySelector(href);if(targetElement){const navbarHeight=document.querySelector('.navbar').offsetHeight;const targetPosition=targetElement.offsetTop-navbarHeight-20;window.scrollTo({top:targetPosition,behavior:'smooth'});const navbarCollapse=document.querySelector('.navbar-collapse');if(navbarCollapse.classList.contains('show')){bootstrap.Collapse.getInstance(navbarCollapse)?.hide()}}})});const contactForm=document.getElementById('contact-form');contactForm.addEventListener('submit',async function(e){e.preventDefault();const submitBtn=document.getElementById('submit-btn');const btnText=document.getElementById('btn-text');const btnSpinner=document.getElementById('btn-spinner');const name=document.getElementById('name').value.trim();const email=document.getElementById('email').value.trim();const subject=document.getElementById('subject').value.trim();const message=document.getElementById('message').value.trim();if(!name||!email||!subject||!message){Toast.error('Please fill in all required fields');return}const emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;if(!emailRegex.test(email)){Toast.error('Please enter a valid email address');return}submitBtn.disabled=true;btnSpinner.classList.remove('d-none');btnText.textContent='Sending...';const templateParams={name:name,subject:subject,message:message,email:email};try{const response=await emailjs.send(EMAILJS_CONFIG.SERVICE_ID,EMAILJS_CONFIG.TEMPLATE_ID,templateParams);if(response.status===200){Toast.success('Message sent successfully! I\'ll respond within 24 hours.');contactForm.reset()}else{throw new Error('Failed to send email')}}catch(error){Toast.error('Failed to send message. Please email me directly at jonterob756@gmail.com')}finally{submitBtn.disabled=false;btnSpinner.classList.add('d-none');btnText.textContent='Send Message'}})})})();</script>
+    <script>
+        (function() {
+            // EmailJS Configuration
+            const EMAILJS_CONFIG = {
+                PUBLIC_KEY: "Q1Db3xO7terlVPf3w",
+                SERVICE_ID: "service_v9bijqc",
+                TEMPLATE_ID: "template_wszcdnw"
+            };
+
+            // Toast notification system 
+            const Toast = {
+                container: document.getElementById('toast-container'),
+                show(message, type = 'info') {
+                    const toast = document.createElement('div');
+                    toast.className = `toast-custom ${type}`;
+                    toast.setAttribute('role', 'alert');
+                    toast.setAttribute('aria-live', 'assertive');
+                    toast.setAttribute('aria-atomic', 'true');
+                    
+                    toast.innerHTML = `
+                        <span>${message}</span>
+                        <button class="toast-close" onclick="this.closest('.toast-custom').remove()" aria-label="Close notification">
+                            <i class="fas fa-times" aria-hidden="true"></i>
+                        </button>
+                    `;
+                    
+                    this.container.appendChild(toast);
+                    
+                    setTimeout(() => {
+                        if (toast.parentNode) {
+                            toast.remove();
+                        }
+                    }, 4000);
+                },
+                success(m) { this.show(m,'success'); },
+                error(m) { this.show(m,'error'); },
+                warning(m) { this.show(m,'warning'); },
+                info(m) { this.show(m,'info'); }
+            };
+
+            // Initialize EmailJS
+            emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+            console.log('EmailJS initialized');
+
+            // DOM Ready
+            document.addEventListener('DOMContentLoaded', function() {
+                // Update current year
+                document.getElementById('current-year').textContent = new Date().getFullYear();
+
+                // Navbar scroll effect
+                let ticking = false;
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        window.requestAnimationFrame(() => {
+                            document.querySelector('.navbar').classList.toggle('navbar-scrolled', window.scrollY > 50);
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                });
+
+                // Smooth scrolling for navigation links
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        const href = this.getAttribute('href');
+                        if (href === '#') return;
+                        
+                        e.preventDefault();
+                        const targetElement = document.querySelector(href);
+                        
+                        if (targetElement) {
+                            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                            const targetPosition = targetElement.offsetTop - navbarHeight - 20;
+                            
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                            
+                            // Close mobile menu
+                            const navbarCollapse = document.querySelector('.navbar-collapse');
+                            if (navbarCollapse.classList.contains('show')) {
+                                bootstrap.Collapse.getInstance(navbarCollapse)?.hide();
+                            }
+                        }
+                    });
+                });
+
+                // Contact Form
+                const contactForm = document.getElementById('contact-form');
+                
+                contactForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const submitBtn = document.getElementById('submit-btn');
+                    const btnText = document.getElementById('btn-text');
+                    const btnSpinner = document.getElementById('btn-spinner');
+                    
+                    // Get form values
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const subject = document.getElementById('subject').value.trim();
+                    const message = document.getElementById('message').value.trim();
+                    
+                    // Validation
+                    if (!name || !email || !subject || !message) {
+                        Toast.error('Please fill in all required fields');
+                        return;
+                    }
+                    
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        Toast.error('Please enter a valid email address');
+                        return;
+                    }
+                    
+                    // Loading state
+                    submitBtn.disabled = true;
+                    btnSpinner.classList.remove('d-none');
+                    btnText.textContent = 'Sending...';
+                    
+                    // PARAMETERS - name, subject, message, email
+                    const templateParams = {
+                        name: name,
+                        subject: subject,
+                        message: message,
+                        email: email
+                    };
+                    
+                    console.log('Sending with params:', templateParams);
+                    
+                    try {
+                        // Send email using EmailJS 
+                        const response = await emailjs.send(
+                            EMAILJS_CONFIG.SERVICE_ID,
+                            EMAILJS_CONFIG.TEMPLATE_ID,
+                            templateParams
+                        );
+                        
+                        console.log('EmailJS success:', response);
+                        
+                        if (response.status === 200) {
+                            Toast.success('Message sent successfully! I\'ll respond within 24 hours.');
+                            contactForm.reset();
+                        } else {
+                            throw new Error('Failed to send email');
+                        }
+                        
+                    } catch (error) {
+                        console.error('EmailJS error:', error);
+                        
+                        // Show user-friendly error
+                        Toast.error('Failed to send message. Please email me directly at jonterob756@gmail.com');
+                        
+                    } finally {
+                        // Reset button state
+                        submitBtn.disabled = false;
+                        btnSpinner.classList.add('d-none');
+                        btnText.textContent = 'Send Message';
+                    }
+                });
+            });
+        })();
+    </script>
 </body>
 </html>
