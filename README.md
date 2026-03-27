@@ -30,11 +30,13 @@ portfolio/
 ├─ about.html       # About me
 ├─ projects.html    # Project showcase
 ├─ contact.html     # Contact form
-├─ terms.html       # Terms & Conditions
-├─ privacy.html     # Privacy Policy
+├─ legal/
+│     └─ terms.html   # Terms & Conditions
+│     └─ privacy.html # Privacy Policy
 │
-├─ css/             # Stylesheets
-│   └─ style.css
+├─ assets
+      └─css/             
+│        └─ style.css # Stylesheets
 ├─ js/              # JavaScript files
 │   └─ main.js
 ├─ images/          # Portfolio images
