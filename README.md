@@ -26,21 +26,21 @@ I enjoy building **interactive, responsive and visually appealing websites**.
 ```text
 portfolio/
 │
-├─ index.html       # Home page
-├─ about.html       # About me
-├─ projects.html    # Project showcase
-├─ contact.html     # Contact form
+├─ index.html                    # Home page
+├─ about.html                    # About me
+├─ projects.html                 # Project showcase
+├─ contact.html                  # Contact form
 ├─ legal/
-│     └─ terms.html   # Terms & Conditions
-│     └─ privacy.html # Privacy Policy
+│     └─ terms.html              # Terms & Conditions
+│     └─ privacy.html            # Privacy Policy
 │
 ├─ assets
-      └─css/             
-│        └─ style.css # Stylesheets
-├─ js/              # JavaScript files
-│   └─ main.js
-├─ images/          # Portfolio images
-└─ README.md        # Project overview
+│     └─css/             
+│     │  └─ asset-styles.css     # Stylesheets
+├─    └─js/             
+│        └─ asset-main.js        # JavaScript files
+├─ images/                       # Portfolio images
+└─ README.md                     # Project overview
 
 🚀 How to Run Locally
 Clone this repository:
