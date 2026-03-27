@@ -52,7 +52,7 @@ portfolio/
 Clone this repository:
 git clone https://github.com/your-username/portfolio.git
 Open index.html in your browser.
-For backend features (forms, database), make sure XAMPP or your preferred server is running.
+For backend features (forms, database), make sure EmailJS or your preferred server is running.
 
 📄 Features
 ✅ Responsive layout across all devices
