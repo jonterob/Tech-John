@@ -74,4 +74,4 @@ Add blog or notes section
 ✉️ Contact Me
 Email: jonterob756@gmail.com
 LinkedIn: https://www.linkedin.com/in/john-gitau-834063254
-GitHub: github.com/jonterob
+GitHub: https://github.com/jonterob
