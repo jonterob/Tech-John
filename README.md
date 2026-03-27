@@ -1,4 +1,4 @@
-# Tech-Jonte Portfolio 🌐
+# Tech-John Portfolio 🌐
 
 ![Portfolio Badge](https://img.shields.io/badge/Portfolio-Web%20Portfolio-blue)
 ![Status Badge](https://img.shields.io/badge/Status-Active-brightgreen)
