@@ -43,7 +43,7 @@ portfolio/
 ├─ assets
 │     └─css/             
 │     │  └─ asset-styles.css     # Stylesheets
-├─    └─js/             
+│     └─js/             
 │        └─ asset-main.js        # JavaScript files
 ├─ images/                       # Portfolio images
 └─ README.md                     # Project overview
