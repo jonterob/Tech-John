@@ -5,9 +5,9 @@
 ![License Badge](https://img.shields.io/badge/License-MIT-green)
 ![GitHub Last Commit](https://img.shields.io/github/last-commit/jonterob/Tech-John)
 ![GitHub Repo Size](https://img.shields.io/github/repo-size/jonterob/Tech-John)
-![GitHub Issues](https://img.shields.io/github/issues/your-username/portfolio)
-![GitHub Forks](https://img.shields.io/github/forks/your-username/portfolio)
-![GitHub Stars](https://img.shields.io/github/stars/your-username/portfolio)
+![GitHub Issues](https://img.shields.io/github/issues/jonterob/Tech-John)
+![GitHub Forks](https://img.shields.io/github/forks/jonterob/Tech-John)
+![GitHub Stars](https://img.shields.io/github/stars/jonterob/Tech-John)
 ![GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-blue)
 
 Welcome to my personal web portfolio! This repository showcases my work as a **Full Stack Developer**, highlighting projects, skills and experience.
