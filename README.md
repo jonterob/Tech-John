@@ -1,8 +1,16 @@
 # Tech-Jonte Portfolio 🌐
 
+# Tech-Jonte Portfolio 🌐
+
 ![Portfolio Badge](https://img.shields.io/badge/Portfolio-Web%20Portfolio-blue)
 ![Status Badge](https://img.shields.io/badge/Status-Active-brightgreen)
 ![License Badge](https://img.shields.io/badge/License-MIT-green)
+![GitHub Last Commit](https://img.shields.io/github/last-commit/your-username/portfolio)
+![GitHub Repo Size](https://img.shields.io/github/repo-size/your-username/portfolio)
+![GitHub Issues](https://img.shields.io/github/issues/your-username/portfolio)
+![GitHub Forks](https://img.shields.io/github/forks/your-username/portfolio)
+![GitHub Stars](https://img.shields.io/github/stars/your-username/portfolio)
+![GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-blue)
 
 Welcome to my personal web portfolio! This repository showcases my work as a **Full Stack Developer**, highlighting projects, skills and experience.
 
@@ -62,10 +70,10 @@ Projects Page
 📌 Future Updates
 Add dynamic project loading using JavaScript
 Implement animations and hover effects
-Improve accessibility, SEO, and performance
+Improve accessibility, SEO and performance
 Add blog or notes section
 
 ✉️ Contact Me
 Email: jonterob756@gmail.com
 LinkedIn: https://www.linkedin.com/in/john-gitau-834063254
-GitHub: github.com/Tech-John
+GitHub: github.com/jonterob
