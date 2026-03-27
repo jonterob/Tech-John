@@ -4,13 +4,13 @@
 ![Status Badge](https://img.shields.io/badge/Status-Active-brightgreen)
 ![License Badge](https://img.shields.io/badge/License-MIT-green)
 
-Welcome to my personal web portfolio! This repository showcases my work as a **Full Stack Developer**, highlighting projects, skills, and experience.
+Welcome to my personal web portfolio! This repository showcases my work as a **Full Stack Developer**, highlighting projects, skills and experience.
 
 ---
 
 ## 🔹 About Me
-Hi! I’m **Jonte Rob**, a passionate Full Stack Developer with expertise in **JavaScript, HTML, CSS, and modern web technologies**.  
-I enjoy building **interactive, responsive, and visually appealing websites**.
+Hi! I’m **Jonte Rob**, a passionate Full Stack Developer with expertise.  
+I enjoy building **interactive, responsive and visually appealing websites**.
 
 ---
 
@@ -45,15 +45,16 @@ Clone this repository:
 git clone https://github.com/your-username/portfolio.git
 Open index.html in your browser.
 For backend features (forms, database), make sure XAMPP or your preferred server is running.
+
 📄 Features
 ✅ Responsive layout across all devices
 ✅ Interactive JavaScript elements
 ✅ Portfolio showcase with project descriptions
 ✅ Contact form integration (PHP & MySQL)
 ✅ Professional UI/UX design
+
 🖼 Screenshots
 Home Page
-
 Projects Page
 
 📌 Future Updates
@@ -61,7 +62,8 @@ Add dynamic project loading using JavaScript
 Implement animations and hover effects
 Improve accessibility, SEO, and performance
 Add blog or notes section
+
 ✉️ Contact Me
-Email: your.email@example.com
-LinkedIn: linkedin.com/in/yourprofile
-GitHub: github.com/your-username
+Email: jonterob756@gmail.com
+LinkedIn: https://www.linkedin.com/in/john-gitau-834063254
+GitHub: github.com/Tech-John
