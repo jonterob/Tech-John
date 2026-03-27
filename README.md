@@ -15,7 +15,7 @@ Welcome to my personal web portfolio! This repository showcases my work as a **F
 ---
 
 ## 🔹 About Me
-Hi! I’m **Jonte Rob**, a passionate Full Stack Developer with expertise.  
+Hi! I’m **Jonte Rob**, a passionate Full Stack Developer.  
 I enjoy building **interactive, responsive and visually appealing websites**.
 
 ---
