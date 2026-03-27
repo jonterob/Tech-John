@@ -8,7 +8,7 @@
 ![GitHub Issues](https://img.shields.io/github/issues/jonterob/Tech-John)
 ![GitHub Forks](https://img.shields.io/github/forks/jonterob/Tech-John)
 ![GitHub Stars](https://img.shields.io/github/stars/jonterob/Tech-John)
-[![GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-blue)](https://github.com/jonterob/Tech-John)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-blue)](https://jonterob.github.io/Tech-John/)
 
 Welcome to my personal web portfolio! This repository showcases my work as a **Full Stack Developer**, highlighting projects, skills and experience.
 
