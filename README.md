@@ -39,3 +39,29 @@ portfolio/
 │   └─ main.js
 ├─ images/          # Portfolio images
 └─ README.md        # Project overview
+
+🚀 How to Run Locally
+Clone this repository:
+git clone https://github.com/your-username/portfolio.git
+Open index.html in your browser.
+For backend features (forms, database), make sure XAMPP or your preferred server is running.
+📄 Features
+✅ Responsive layout across all devices
+✅ Interactive JavaScript elements
+✅ Portfolio showcase with project descriptions
+✅ Contact form integration (PHP & MySQL)
+✅ Professional UI/UX design
+🖼 Screenshots
+Home Page
+
+Projects Page
+
+📌 Future Updates
+Add dynamic project loading using JavaScript
+Implement animations and hover effects
+Improve accessibility, SEO, and performance
+Add blog or notes section
+✉️ Contact Me
+Email: your.email@example.com
+LinkedIn: linkedin.com/in/yourprofile
+GitHub: github.com/your-username
