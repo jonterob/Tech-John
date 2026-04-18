@@ -48,6 +48,16 @@ portfolio/
 ├─ images/                       # Portfolio images
 └─ README.md                     # Project overview
 
+## 📘 Documentation
+
+Detailed project documentation is available in the `docs/` folder:
+
+- [docs/README.md](docs/README.md) — Documentation index
+- [docs/overview.md](docs/overview.md) — Project goals and features
+- [docs/structure.md](docs/structure.md) — Repository layout and file responsibilities
+- [docs/technologies.md](docs/technologies.md) — Stack and tools
+- [docs/development.md](docs/development.md) — Local setup and update notes
+
 🚀 How to Run Locally
 Clone this repository:
 git clone https://github.com/your-username/portfolio.git
