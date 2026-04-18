@@ -16,6 +16,9 @@ Tech-John/
 │  ├─ privacy.html
 │  └─ terms.html
 ├─ pages/
+│  ├─ about.html
+│  ├─ contact.html
+│  └─ projects.html
 ├─ docs/
 │  ├─ README.md
 │  ├─ overview.md
@@ -52,7 +55,9 @@ Tech-John/
   - Reserved for reusable HTML or component fragments, if needed.
 
 - `pages/`
-  - Currently empty, reserved for additional pages or expansions.
+  - `about.html` — about page.
+  - `projects.html` — projects showcase page.
+  - `contact.html` — contact page.
 
 ## Notes
 

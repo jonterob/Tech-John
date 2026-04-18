@@ -1,4 +1,4 @@
-# Tech-John Portfolio 🌐
+# Tech-John Portfolio
 
 ![Portfolio Badge](https://img.shields.io/badge/Portfolio-Web%20Portfolio-blue)
 ![Status Badge](https://img.shields.io/badge/Status-Active-brightgreen)
@@ -10,17 +10,17 @@
 ![GitHub Stars](https://img.shields.io/github/stars/jonterob/Tech-John)
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-blue)](https://jonterob.github.io/Tech-John/)
 
-Welcome to my personal web portfolio! This repository showcases my work as a **Full Stack Developer**, highlighting projects, skills and experience.
+Welcome to my personal web portfolio. This repository showcases my work as a **Full Stack Developer**, highlighting projects, skills, and experience.
 
 ---
 
-## 🔹 About Me
+## About Me
 Hi! I’m **Jonte Rob**, a passionate Full Stack Developer.  
 I enjoy building **interactive, responsive and visually appealing websites**.
 
 ---
 
-## 💻 Technologies & Skills
+## Technologies & Skills
 - **Frontend:** HTML5, CSS3, JavaScript (ES6+), Tailwind CSS, React.js  
 - **Backend:** PHP, Node.js, MySQL, XAMPP  
 - **Tools:** Git, GitHub, VS Code, Postman  
@@ -28,27 +28,29 @@ I enjoy building **interactive, responsive and visually appealing websites**.
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 ```text
-portfolio/
-│
-├─ index.html                    # Home page
-├─ about.html                    # About me
-├─ projects.html                 # Project showcase
-├─ contact.html                  # Contact form
+Tech-John/
+├─ index.html                   # Home page
+├─ assets/
+│  ├─ css/
+│  │  └─ asset-styles.css       # Stylesheets
+│  └─ js/
+│     └─ asset-main.js          # JavaScript (EmailJS, UI interactions)
+├─ pages/
+│  ├─ about.html                # About page
+│  ├─ projects.html             # Projects page
+│  └─ contact.html              # Contact page
+├─ components/                  # Reusable fragments (if used)
+├─ images/                      # Images (logo, favicon, screenshots)
 ├─ legal/
-│     └─ terms.html              # Terms & Conditions
-│     └─ privacy.html            # Privacy Policy
-│
-├─ assets
-│     └─css/             
-│     │  └─ asset-styles.css     # Stylesheets
-│     └─js/             
-│        └─ asset-main.js        # JavaScript files
-├─ images/                       # Portfolio images
-└─ README.md                     # Project overview
+│  ├─ terms.html                # Terms & Conditions
+│  └─ privacy.html              # Privacy Policy
+├─ docs/                        # Extended documentation
+└─ README.md                    # Project overview (this file)
+```
 
-## 📘 Documentation
+## Documentation
 
 Detailed project documentation is available in the `docs/` folder:
 
@@ -58,30 +60,34 @@ Detailed project documentation is available in the `docs/` folder:
 - [docs/technologies.md](docs/technologies.md) — Stack and tools
 - [docs/development.md](docs/development.md) — Local setup and update notes
 
-🚀 How to Run Locally
-Clone this repository:
-git clone https://github.com/your-username/portfolio.git
-Open index.html in your browser.
-For backend features (forms, database), make sure EmailJS or your preferred server is running.
+## How to Run Locally
+1. Clone this repository:
 
-📄 Features
-✅ Responsive layout across all devices
-✅ Interactive JavaScript elements
-✅ Portfolio showcase with project descriptions
-✅ Contact form integration (PHP & MySQL)
-✅ Professional UI/UX design
+```bash
+git clone https://github.com/jonterob/Tech-John.git
+```
 
-🖼 Screenshots
-Home Page
-Projects Page
+2. Open `index.html` in your browser.
 
-📌 Future Updates
-Add dynamic project loading using JavaScript
-Implement animations and hover effects
-Improve accessibility, SEO and performance
-Add blog or notes section
+Note: Internet access is required for external assets (Bootstrap, Font Awesome, Google Fonts) and EmailJS.
 
-✉️ Contact Me
-Email: jonterob756@gmail.com
-LinkedIn: https://www.linkedin.com/in/john-gitau-834063254
-GitHub: https://github.com/jonterob
+## Features
+- Responsive layout across devices
+- Interactive JavaScript elements
+- Portfolio showcase with project descriptions
+- Contact form integration (EmailJS)
+- Professional UI/UX design
+
+## Screenshots
+Add screenshots to `images/` and link them here (optional).
+
+## Future Updates
+- Add dynamic project loading using JavaScript
+- Implement animations and hover effects
+- Improve accessibility, SEO, and performance
+- Add a blog/notes section
+
+## Contact
+- Email: jonterob756@gmail.com
+- LinkedIn: https://www.linkedin.com/in/john-gitau-834063254
+- GitHub: https://github.com/jonterob
