@@ -10,6 +10,7 @@ This documentation explains the project purpose, file structure, development wor
 - [Project Structure](structure.md)
 - [Technologies](technologies.md)
 - [Development & Local Setup](development.md)
+- [Project Overview from root README](project-overview.md)
 
 ## How to Use
 
