@@ -11,6 +11,7 @@ This documentation explains the project purpose, file structure, development wor
 - [Technologies](technologies.md)
 - [Development & Local Setup](development.md)
 - [Project Overview from root README](project-overview.md)
+- [Changelog](changelog.md)
 
 ## How to Use
 
