@@ -19,7 +19,7 @@
     <!-- Google Fonts with display swap -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Critical CSS inline  -->
+    <!-- Critical CSS inline -->
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
         :root{--primary:#2563eb;--primary-dark:#1d4ed8;--dark:#0f172a;--gray:#64748b;--gray-light:#e2e8f2;--text-secondary:#4b5563}
@@ -41,8 +41,10 @@
     
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    <!-- Optimized Styles-->
+    
+    <!-- Optimized Styles -->
     <link rel="preload" href="assets/css/asset-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="assets/css/asset-styles.css">
     
 </head>
 <body>
@@ -102,14 +104,15 @@
                         <p class="mb-3">Graduated with a BSc in Computer Science from Kirinyaga University. I create digital solutions that solve real problems with exceptional user experiences.</p>
                         <p class="mb-4">My approach combines technical expertise with a keen eye for design and user experience, ensuring every project delivers both functionality and beauty.</p>
                         
+                        <!-- UPDATED: Stats section with col-6 for 2 items per row on mobile -->
                         <div class="row g-3">
-                            <div class="col-md-6">
+                            <div class="col-6 col-md-6">
                                 <div class="stat-box">
                                     <div class="stat-number">3+</div>
                                     <div class="stat-label">Years Experience</div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-6 col-md-6">
                                 <div class="stat-box">
                                     <div class="stat-number">20+</div>
                                     <div class="stat-label">Projects Completed</div>
